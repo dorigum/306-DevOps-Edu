@@ -1,7 +1,7 @@
 package ex0206.array.goods;
+
 // 각 요청에 대한 로직(기능)을 담당할 클래스
 // (등록, 전체 검색, 부분 검색, 수정, 삭제 등등.....)
-
 public class GoodsService {
 	// 상품을 관리할 배열 선언
 	private Goods[] goodsArr = new Goods[10];
