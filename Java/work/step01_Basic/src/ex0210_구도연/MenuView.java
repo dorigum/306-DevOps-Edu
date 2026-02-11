@@ -5,7 +5,7 @@ import java.util.Scanner;
 // MenuView.java에서 등록, 수정하는 부분의 set() 제거
 public class MenuView {
 	private Scanner sc = new Scanner(System.in);
-	private GoodsService service; // 전역 변수 초기화
+	private GoodsService service = new GoodsService(); // 전역 변수 초기화
 
     // 전체 메뉴를 출력하는 메소드
 	public void printMenu(String[][] data) {
