@@ -1,0 +1,11 @@
+
+Goods 소스를 생성자를 추가해서 동작하도록 완성하세요.
+1)GoodsService.java생성자 추가  / init메소드 제거
+2)Goods.java 생성자 추가 / 생성자 overloading
+   MenuView.java에서   등록, 수정하는 부분의   setXxx을 제거한다.
+
+
+교재 
+6장 확인문제 (278 ~ )
+  : 9번, 18번 제외
+ : 19번 문제 풀때 요구사항 2번 상수선언은 제외
