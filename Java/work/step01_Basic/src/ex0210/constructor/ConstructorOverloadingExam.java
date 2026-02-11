@@ -54,7 +54,7 @@ class Puppy3 {
 	public Puppy3(boolean booPy) { // true
 		this(booPy + "쫑"); // String 1개를 받는 생성자 호출
 		System.out.println("public Puppy3(boolean booPy)가 호출되었습니다.");
-	}
+	} // Constructorcall must be thefirst statementin a constructor
 
 	/*
 	 * char 타입의 인수 1개를 받는 생성자 작성
