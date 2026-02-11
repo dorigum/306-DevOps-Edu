@@ -1,4 +1,4 @@
-package ex0210_구도연;
+package ex0210.constructor.goods;
 
 import java.util.Scanner;
 
