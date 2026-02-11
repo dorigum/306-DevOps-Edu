@@ -6,5 +6,4 @@ public class ex0210_20 {
 		
 
 	}
-
 }

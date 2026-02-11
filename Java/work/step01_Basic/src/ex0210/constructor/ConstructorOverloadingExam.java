@@ -1,9 +1,6 @@
 package ex0210.constructor;
 
 class Puppy3 {
-	/*
-	 * String 타입 전역 변수 선언 int 타입 전역 변수 선언
-	 */
 	String puppyName; // 초기값: null
 	int puppyNum; // 초기값: 0
 
@@ -40,7 +37,9 @@ class Puppy3 {
 	 * "public Puppy3()가 호출되었습니다" 출력
 	 */
 	public Puppy3(String s1, String s2) { // "Java", "HI"
-		this(s1 + s2);
+		//The Java feature 'Flexible Constructor Bodies' is only available with source level 25 and above
+		this(s1 + s2); // 문자열 하나 받는 생성자를 호출
+					   // Constructor call must be the first statement in a constructor
 		
 		System.out.println("public Puppy3(String s1, String s2)가 호출되었습니다.");
 	}
@@ -66,6 +65,9 @@ class Puppy3 {
 	public Puppy3(char ch) { // A
 		this(); // 인수가 없는 생성자 호출(기본 생성자)
 		this.puppyNum = ch; // promotion
+		
+		System.out.println("public Puppy3(char c)가 호출되었습니다.");
+		System.out.println("전역 변수: " + this.puppyNum);
 	}
 
 	/*
@@ -77,12 +79,10 @@ class Puppy3 {
 		System.out.println("전역 변수 puppyName = " + puppyName);
 		System.out.println("전역 변수 puppyNum = " + puppyNum);
 	}
-
 }
 
 // --------------------------------------------------------------------
 public class ConstructorOverloadingExam {
-	// 메인 메소드에서 Puppy3 클래스의 각 생성자를 한번씩 이용해 객체 5개 생성
 	public static void main(String[] args) {
 		System.out.println("---------(1)---------");
 		Puppy3 p1 = new Puppy3(); // 인수없는 생성자 호출
