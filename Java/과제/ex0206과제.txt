@@ -1,0 +1,20 @@
+학습한 내용
+5장(enum제외)
+6장(생성자, final, 싱글톤 제외)
+
+교재 6장까지 복습해주세요!
+---------------------------
+과제
+Student 마무리하기 - 
+   Service  에 수정 완성 / 
+   StudentTest에서  주석을 풀고 요청 결과를 받아  
+   StudentEndView를 결과를 전달해서 화면에 출력을 완성한다.
+
+
+제공한 Goods 완성하기
+C:\Edu\Java\실습_template\05_Array\Array_Goods실습
+----------------------------
+한주 동안 고생 많으셨습니다.
+
+월요일에는 과제 리뷰  후에 Git&GitHub수업 할게요.!
+https://github.com/에 회원가입해주세요.
