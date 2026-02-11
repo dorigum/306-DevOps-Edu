@@ -11,7 +11,7 @@ class Car { // Object 상속
 
 // ---------------------------------------------------------
 // Car를 상속받는 EfSonata, Excel, Carnival 3개 클래스 작성
-// 각 클래스에 인수를 받지않는 생성자 작성
+// 각 클래스에 인수를 받지 않는 생성자 작성
 // 각 클래스의 생성자의 구현부에서 carname과 cost에 적당한 값 할당
 class EfSonata extends Car {
 	int i = 100;
