@@ -36,12 +36,12 @@ class ReferenceExam {
 		 * Object를 상속받은 String은 toString을 재정의 
 		 */
 		System.out.println(c); // a
-		System.out.println(s01.toString()); // 도연 
+		System.out.println(s01); // 도연 
 		System.out.println(s02); // Java
 		
 		System.out.println(s03); // 월요일
 		
-		System.out.println(oe1); // 주소값
+		System.out.println(oe1.toString()); // 주소값
 		System.out.println(oe2); // 주소값
 	}
 }
