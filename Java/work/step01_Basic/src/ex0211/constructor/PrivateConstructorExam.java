@@ -29,6 +29,16 @@ public class PrivateConstructorExam {
 
 		System.out.println("t1 = " + t1);
 		System.out.println("t2 = " + t2);
-	}
 
+		System.out.println("------------------");
+
+		Test obj1 = Test.getInstance();
+		Test obj2 = Test.getInstance();
+
+		if (obj1 == obj2) {
+			System.out.println("같은 ShopService 객체입니다.");
+		} else {
+			System.out.println("다른 ShopService 객체입니다.");
+		}
+	}
 }

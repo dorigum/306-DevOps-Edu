@@ -11,12 +11,12 @@ class CarCenter {
 //		EfSonata efs = cd; // 부모 > 자식
 
 		// ObjectDownCasting을 한다.
-
 		if (cd instanceof EfSonata) {
-
-			EfSonata efs = (EfSonata) cd;
+			System.out.println("-----------------------");
+			EfSonata efs = (EfSonata) cd; // ClassCastException 예외 가능성
 			System.out.println("efs 주소 = " + efs);
 			System.out.println("efs.i = " + efs.i);
+			System.out.println("-----------------------");
 		}
 
 		System.out.print(cd.carname + " 수리완료!\t");
@@ -32,7 +32,6 @@ public class PolymorphismExam {
 		EfSonata ef = new EfSonata();
 		Carnival ca = new Carnival();
 		Excel ex = new Excel();
-
 		Car c = new Car();
 
 		cc.engineer(c); // c의 주소값이 전달
@@ -40,9 +39,9 @@ public class PolymorphismExam {
 		System.out.println("ef 주소 = " + ef);
 		System.out.println("ef.i = " + ef.i);
 
-		cc.engineer(ef); //
-		cc.engineer(ca); //
-		cc.engineer(ex); //
+		cc.engineer(ef);
+		cc.engineer(ca);
+		cc.engineer(ex);
 
 	}
 }

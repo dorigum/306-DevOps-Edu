@@ -54,6 +54,9 @@ public class InheritanceExam {
 		System.out.println("cn = " + ca);
 
 		System.out.println("---------------------------------");
-		System.out.println();
+		car.printAttributes();
+		ef.printAttributes();
+		ex.printAttributes();
+		ca.printAttributes();
 	}
 }
