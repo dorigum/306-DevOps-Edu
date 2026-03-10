@@ -25,4 +25,8 @@ Thumbs.db
 # 업로드 안 할 폴더
 Git/
 SW/
+<<<<<<< HEAD
 Git_GitHub/Git_Work/GitTest_306/spring-security/
+=======
+Git_GitHub/Git_Work/GitTest_306/spring-security/
+>>>>>>> 3a71c28c1ec0b2d354cf676d022fbfa76ebbab25
