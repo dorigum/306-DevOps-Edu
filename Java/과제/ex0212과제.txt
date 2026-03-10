@@ -1,0 +1,5 @@
+C:\Edu\Java\실습_template\08_Interface\interface_실습 폴더에
+클래스다이어그램,  MainApp,  출력결과 보고 코드를 완성한다.
+
+교재 7장 - 상속 책 읽기 
+7장 확인문제

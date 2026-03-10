@@ -1,0 +1,30 @@
+
+2월월 13일 금요일 수업내용입니다.
+ 1) Exception - 11장 (466page  ~ 474)
+      475 리소스 닫기  나중에.. IO, JDBC 다룰께요. 
+
+---------------------------------------------------------------------
+과제 
+  : 8장 interface 책 교재 소스 코딩 + 확인문제
+  : 11장  Exception 확인문제
+------------------------------------
+팀 미션!
+ * S O  L  I  D 조사하기
+  
+        SRP(Single Responsibility Principle)  - 4조
+        OCP(Open/Closed Principle) - 3조
+        LSP( Liskov Substitution Principle) - 2조
+        ISP( Interface Segregation Principle) - 1조
+        DIP(Dependency Inversion Principle) - 5조
+
+    준비는 
+     1) SOLID란
+     2) 우리가 맡은 xxxx은 무엇이다.
+     3) 그래서 잘못된 자바 코드는 이렇다. - 위반 사례
+      4) 잘못된 코드를 xxx을 적용하면 이렇다.  - 잘된 사례
+
+    2월 마지막 주에 발표 할 예정
+
+
+
+
