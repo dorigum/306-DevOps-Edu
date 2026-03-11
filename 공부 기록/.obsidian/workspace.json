@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "1287a3f5a05bcc49",
+        "id": "ce6823a5def06478",
         "type": "tabs",
         "children": [
           {
-            "id": "f75eb59e92f170f7",
+            "id": "7be6d7b73f61e134",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "21f751e21521c464",
@@ -183,20 +184,25 @@
       "bases:새 베이스 생성하기": false
     }
   },
-  "active": "615633c92c957c9b",
+  "active": "7be6d7b73f61e134",
   "lastOpenFiles": [
-    "공부 기록/2026-03-10.md",
+    "캡처/회원관리.png",
+    "캡처/테이블관계.png",
+    "캡처/Pasted image 20260306170226.png",
+    "캡처/Pasted image 20260306170113.png",
+    "캡처/Pasted image 20260306165937.png",
+    "캡처/Pasted image 20260306165822.png",
+    "캡처/Order_Goods_로그인02.png",
+    "캡처/Order_Goods_로그인01.png",
+    "캡처/20260309_102945.jpg",
+    "캡처/20260311_154226.jpg",
     "공부 기록/2026-03-11.md",
+    "20260311_154226.jpg",
+    "Project_Specification.md",
+    "Cafe_kiosk",
+    "공부 기록/2026-03-06.md",
+    "공부 기록/2026-03-10.md",
     "공부 기록/2026-03-09.md",
-    "20260309_102945.jpg",
-    "캡처/1_94pj0_fUOCE7eIgg2oOaHA.png",
-    "1_94pj0_fUOCE7eIgg2oOaHA.png",
-    "Pasted image 20260309092436.png",
-    "2026-03-06.md",
-    "Pasted image 20260306170226.png",
-    "Pasted image 20260306170113.png",
-    "Pasted image 20260306165937.png",
-    "Pasted image 20260306165822.png",
     "공부 기록/2026-03-03.md",
     "공부 기록/2026-02-26.md",
     "공부 기록/2026-03-04.md",
@@ -204,8 +210,6 @@
     "무제.base",
     "공부 기록/260203.md",
     "공부 기록/무제.canvas",
-    "캡처/동기화 비동기화.PNG",
-    "캡처/Pasted image 20260303120314.png",
     "무제.md",
     "공부 기록/2026-02-27.md",
     "공부 기록/2026-02-24.md",
@@ -225,8 +229,6 @@
     "팀플",
     "새 폴더",
     "260213 팀 발표.md",
-    "공부 기록/2026-02-11.md",
-    "DIP(Dependency Inversion Principle, 의존 역전 원칙).md",
     "기타/무제.base",
     "캡처",
     "공부 기록"

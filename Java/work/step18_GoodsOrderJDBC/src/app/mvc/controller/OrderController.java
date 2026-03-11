@@ -12,7 +12,7 @@ import app.mvc.view.MenuView;
 
 public class OrderController {
     private static OrderService orderService = new OrderService();
-	/**
+	/*
 	 * 주문하기
 	 * */
 	public static void insertOrders(Orders order) {
@@ -25,7 +25,7 @@ public class OrderController {
 		}
 	}
 	
-	/**
+	/*
 	 * 주문내역보기
 	 * */
 	public static void selectOrdersByUserId(String userId) {
