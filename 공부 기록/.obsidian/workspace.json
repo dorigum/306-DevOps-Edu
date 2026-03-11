@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "공부 기록/2026-03-10.md",
+                "file": "공부 기록/2026-03-11.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-03-10"
+              "title": "2026-03-11"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "21f751e21521c464",
@@ -184,10 +183,11 @@
       "bases:새 베이스 생성하기": false
     }
   },
-  "active": "f75eb59e92f170f7",
+  "active": "615633c92c957c9b",
   "lastOpenFiles": [
-    "공부 기록/2026-03-09.md",
     "공부 기록/2026-03-10.md",
+    "공부 기록/2026-03-11.md",
+    "공부 기록/2026-03-09.md",
     "20260309_102945.jpg",
     "캡처/1_94pj0_fUOCE7eIgg2oOaHA.png",
     "1_94pj0_fUOCE7eIgg2oOaHA.png",
@@ -227,7 +227,6 @@
     "260213 팀 발표.md",
     "공부 기록/2026-02-11.md",
     "DIP(Dependency Inversion Principle, 의존 역전 원칙).md",
-    "공부 기록/260205.md",
     "기타/무제.base",
     "캡처",
     "공부 기록"
