@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1> BOM 알아보자 </h1>
+<script type="text/javascript">
+   document.write("<h3>window 객체 </h3>");
+   for(let key  in window){ //in은 오른쪽 객체의 property정보를 가져온다 = key 
+	   document.write(`${key} = ${window[key]} <br>`);
+   }
+   
+   document.write("<hr color='red'>");
+   
+   document.write("<h3>location 객체 </h3>");
+   for(let key  in location){
+	   document.write(`${key} = ${location[key]} <br>`);
+   }
+   
+   document.write("<hr color='red'>");
+   
+  document.write("<h3>history 객체 </h3>");
+   for(let key  in history){
+	   document.write(`${key} = ${history[key]} <br>`);
+   }
+   
+   document.write("<hr color='red'>");
+   
+  document.write("<h3>screen 객체 </h3>");
+   for(let key  in screen){
+	   document.write(`${key} = ${screen[key]} <br>`);
+   }
+   
+   document.write("<hr color='red'>");
+   
+document.write("<h3>naviagtor 객체 </h3>");
+   
+   for(let key  in navigator){
+	   document.write(`${key} = ${navigator[key]} <br>`);
+   }
+   
+   document.write("<hr color='red'>");
+   
+   
+   alert("history.length = " + history.length)
+   
+</script>
+
+<form>
+  <input type="button" value="back()" onclick="history.back()">
+  <input type="button" value="forward()" onclick="history.forward()">
+  <input type="button" value="go(2)" onclick="history.go(2)">
+  <input type="button" value="go(-2)" onclick="history.go(-2)">
+  
+  <p>
+  <input type="button" value="location.href" onclick="location.href='http://www.naver.com'">
+  <input type="button" value="location.reload()" onclick="location.reload()">
+  <input type="button" value="location.replace()" onclick="location.replace('http://www.naver.com')">
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

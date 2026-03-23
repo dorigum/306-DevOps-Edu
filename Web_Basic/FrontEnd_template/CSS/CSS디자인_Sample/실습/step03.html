@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        전체 페이지를 감싸는 영역(id=wrap)
+        - 가로 너비는 1100px
+        - 안쪽 여백은 위 0, 오른쪽 0, 아래 50px, 왼쪽 0
+        - 테두리는 두께 2px, 색상은 #666, 실선
+        - 화면 가운데 정렬 (좌우 margin은 auto)
+        */
+        #wrap {width:1100px; padding:0 0 50px 0px; border:2px solid #666; margin:0 auto;}
+
+        /* 
+        상단 헤더 영역
+        - 가로 너비는 100% (부모 영역에 맞춤)
+        - 세로 높이는 100px
+        - 배경색은 빨간색
+        */
+        header {width:100%; height:100px; background-color:red;}
+
+        /* 
+        슬라이더 영역
+        - 가로 너비는 100% (부모 영역에 맞춤)
+        - 세로 높이는 300px
+        - 배경색은 하늘색
+        */
+        #slider {width:100%; height:300px; background-color:cyan;}
+
+
+ /* 상품 영역                      */
+ /* 
+   콘텐츠 영역(id="content")
+   - 가로 너비: 1100px
+   - 세로 높이: 600px
+   - 배경색: 토마토색
+*/
+
+
+/* 
+   #content 영역 안에 있는 h3 태그 스타일
+   - 글자를 가운데 정렬
+*/
+
+/* 
+   상품 영역
+   - 가로 너비: 900px
+   - 세로 높이: 200px
+   - 배경색: 금색
+   - 바깥 여백: 위 50px, 오른쪽 0, 아래 0, 왼쪽 100px
+   - 왼쪽으로 배치 (float:left)
+*/
+
+
+
+/* 
+   새로운 상품(박스) 공통 스타일(class="new")
+   - 가로 너비: 100px
+   - 세로 높이: 100px
+   - 배경색: 파란색
+   - 바깥 여백: 위 20px, 오른쪽 15px, 아래 20px, 왼쪽 15px
+   - 왼쪽으로 배치 (float:left)
+*/
+
+
+/* 
+   #product 영역 안의 두 번째 자식 div에 적용
+   - 바깥 여백: 위 20px, 오른쪽 15px, 아래 0, 왼쪽 75px
+   - 왼쪽으로 배치 (float:left)
+*/
+
+
+</style>
+</head>
+<body>
+<div id="wrap">
+    <header>
+        header영역
+    </header>
+
+    <div id="slider">
+       slider 영역
+    </div>
+
+    <section id="content">
+        <article id="product">
+            <h3>신상품</h3>
+            <div class="new">상품1</div>
+            <div class="new">상품2</div>
+            <div class="new">상품3</div>
+            <div class="new">상품4</div>
+            <div class="new">상품5</div>
+            <div class="new">상품6</div>
+        </article>
+
+        <article id="brand">
+           <h3>베스트 브랜드</h3> 
+           <div class="best">best1</div>
+           <div class="best">best2</div>
+           <div class="best">best3</div>
+           <div class="best">best4</div>
+        </article>
+    </section>   
+     
+    <footer>
+        footer영역
+    </footer>
+
+
+</div>
+</body>
+</html>
