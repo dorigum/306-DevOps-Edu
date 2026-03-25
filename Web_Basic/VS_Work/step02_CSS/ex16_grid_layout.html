@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 100px auto 50px;
+
+        grid-template-areas: "header header" "main aside" "footer footer";
+      }
+
+      header {
+        grid-area: header;
+        background-color: lightcoral;
+      }
+      main {
+        grid-area: main;
+        background-color: lightblue;
+        padding: 30px;
+      }
+      aside {
+        grid-area: aside;
+        background-color: lightgreen;
+      }
+      footer {
+        grid-area: footer;
+        background-color: lightgray;
+      }
+
+      .main {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 100px;
+
+        grid-template-areas: "a a a" "b c c" "d e f" "d g f";
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        opacity: 0.8;
+        border-radius: 20px;
+      }
+
+      .img1 {
+        grid-area: a;
+      }
+      .img2 {
+        grid-area: b;
+      }
+      .img3 {
+        grid-area: c;
+      }
+      .img4 {
+        grid-area: d;
+      }
+      .img5 {
+        grid-area: e;
+      }
+      .img6 {
+        grid-area: f;
+      }
+      .img7 {
+        grid-area: g;
+      }
+    </style>
+  </head>
+  <body>
+    <header>header</header>
+    <main>
+      <div class="main">
+        <img src="http://picsum.photos/id/100/200/200" alt="" class="img1" />
+        <img src="http://picsum.photos/id/110/200/200" alt="" class="img2" />
+        <img src="http://picsum.photos/id/120/200/200" alt="" class="img3" />
+        <img src="http://picsum.photos/id/130/200/200" alt="" class="img4" />
+        <img src="http://picsum.photos/id/140/200/200" alt="" class="img5" />
+        <img src="http://picsum.photos/id/151/200/200" alt="" class="img6" />
+        <img src="http://picsum.photos/id/160/200/200" alt="" class="img7" />
+      </div>
+    </main>
+    <aside>aside</aside>
+    <footer>footer</footer>
+  </body>
+</html>
