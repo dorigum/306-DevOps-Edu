@@ -1,0 +1,12 @@
+과제 
+  WS_03 - WS_03_BankTemplate.zip 압축 풀어서 import  한후 
+ WS_03객체_Bank.pdf 파일을 참조해서 출력결과.PNG 가 나올수 있도록 완성해주세요.
+
+  WS_03_BankSol.zip  제공함 --> 다시 import해서  눈으로 확인!! - 배열이용
+
+
+ WS_04 - Collection변경
+ WS_05 - AccountDto를 상속 변경
+ WS_06 - BankService를 interface 변경
+ WS_07 -  Exception 처리 
+--------------------------------------------------------------

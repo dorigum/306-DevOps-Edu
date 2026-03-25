@@ -1,0 +1,10 @@
+{
+	"nodes":[
+		{"id":"1131abeadfeccbd3","type":"text","text":"\n| ==번호(auto-in)== | 아이디(unique) | 이름  | 주소  | 연락처 |\n| --------------- | ----------- | --- | --- | --- |\n| 1               | koo         |     |     |     |\n| 2               | aaa         |     |     |     |\n| 3               | bbb         |     |     |     |","x":220,"y":-460,"width":485,"height":160},
+		{"id":"c11cbeac3c9b11f0","x":-360,"y":-497,"width":360,"height":217,"type":"text","text":"\n| ==상품코드== | 이름    | 가격   | 재고량 |\n| -------- | ----- | ---- | --- |\n| A01      | 새우깡   | 5000 | 5   |\n| A02      | 감자깡   | 1500 | 5   |\n| A03      | 콘칩    | 2000 | 5   |\n| A04      | 허니버터칩 | 3000 | 5   |"}
+	],
+	"edges":[
+		{"id":"cca1a2dc0b6d3792","fromNode":"c11cbeac3c9b11f0","fromSide":"right","toNode":"1131abeadfeccbd3","toSide":"left"},
+		{"id":"40cc97cffa63ce35","fromNode":"1131abeadfeccbd3","fromSide":"left","toNode":"c11cbeac3c9b11f0","toSide":"right"}
+	]
+}

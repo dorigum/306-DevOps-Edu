@@ -1,0 +1,8 @@
+{
+	"nodes":[
+		{"id":"af5ae199b47054ba","type":"text","text":"**ShopAgeException**\n예외 처리를 어떻게 할 것인지\n-> \"애들은 가라~~~\" 메세지 출력","x":-417,"y":-151,"width":297,"height":111},
+		{"id":"a9797b6d155ad4d5","type":"text","text":"**Shop(age: 18세 미만 설정)**\nif(age > 18)\nage + \" 살: 입장하신 걸 환영합니다.\"\n\nelse\nShopAgeException로 예외 던지기","x":83,"y":-151,"width":317,"height":171},
+		{"id":"4e30b95b9e330142","type":"text","text":"**MainShop**\nshopAge = Math.random() 난수 발생\ntry { } catch { } 실행","x":-180,"y":-380,"width":320,"height":120}
+	],
+	"edges":[]
+}

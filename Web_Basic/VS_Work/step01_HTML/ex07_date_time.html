@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Show a Date and Time Control</h1>
+
+    <form action="/action_page.php">
+      <label for="birthday">Birthday (date): 날짜만</label>
+      <input type="date" id="birthday" name="birthday" /> <br /><br />
+
+      <label for="start-time">시작시간 (time): 시간만</label>
+      <input type="time" id="start-time" name="start-time" /> <br /><br />
+
+      <label for="meetingDay">미팅 날짜 (date and time): 날짜와 시간</label>
+      <input type="datetime-local" id="meetingDay" name="meetingDay" />
+      <br /><br />
+
+      <!-- html5 초창기에 있던 속성 datetime 현재는 deprecated 되었다.-->
+      <label for="datetime">datetime (datetime):</label>
+      <input type="datetime" id="datetime" name="datetime" /> <br /><br />
+
+      <input type="submit" />
+    </form>
+  </body>
+</html>
