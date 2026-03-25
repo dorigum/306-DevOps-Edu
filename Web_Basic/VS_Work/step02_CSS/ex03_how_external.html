@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- 외부 CSS 연결하기 -->
+    <link rel="stylesheet" type="text/css" href="./css/basic.css" />
+  </head>
+  <body>
+    <!-- internal 방식 
+     현재 문서의 style 태그를 열어서 적용하는 방법
+    -->
+    <h1 id="a" class="a b">CSS 적용하기 1</h1>
+    <!-- id는 중복해서 사용할 수 없음! : 유일해야 함-->
+    <h2 class="a b">CSS 적용하기 2</h2>
+    <h1 id="b">CSS 적용하기 3</h1>
+
+    <hr />
+    <h4>The Descendant ( ) Combinator</h4>
+
+    <div>
+      <h2>Donald Duck</h2>
+      <p>Donald Duck lives in Duckburg.</p>
+    </div>
+
+    <div>
+      <span><p>I will be styled.</p></span>
+      <p>I will be styled.</p>
+    </div>
+
+    <p>Donald Duck's best friend is Mickey.</p>
+    <p>Donald Duck's best friend is Mickey.</p>
+    <p>Donald Duck's best friend is Mickey.</p>
+
+    <hr />
+    <form action="">
+      아이디 : <input type="text" id="name" /><br />
+      <input type="text" id="name" />
+      <input type="password" id="pwd" />
+    </form>
+
+    <hr />
+    <table>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

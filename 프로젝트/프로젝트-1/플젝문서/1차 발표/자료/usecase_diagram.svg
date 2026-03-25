@@ -1,0 +1,329 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 1480" width="1300" height="1480" font-family="Arial, sans-serif">
+
+  <rect width="1300" height="1480" fill="#f5f6fa" rx="12"/>
+
+  <!-- Title -->
+  <text x="650" y="38" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a1a2e">카페 키오스크 유즈케이스 다이어그램</text>
+  <text x="650" y="60" text-anchor="middle" font-size="13" fill="#666">Java 기반 카페 키오스크 서비스 (5조)</text>
+  <line x1="40" y1="72" x2="1260" y2="72" stroke="#ccc" stroke-width="1.5"/>
+
+  <!-- ===================================================== -->
+  <!--  ACTOR 정의                                            -->
+  <!--  비회원 : (90, 250)   주황 #f9a825                    -->
+  <!--  회원   : (90, 600)   초록 #43a047                    -->
+  <!--  관리자 : (90, 1100)  빨강 #e53935                    -->
+  <!-- ===================================================== -->
+
+  <!-- 비회원 -->
+  <circle cx="90" cy="228" r="19" fill="#fff8e1" stroke="#f9a825" stroke-width="2.2"/>
+  <line x1="90" y1="247" x2="90" y2="292" stroke="#f9a825" stroke-width="2.2"/>
+  <line x1="62" y1="266" x2="118" y2="266" stroke="#f9a825" stroke-width="2.2"/>
+  <line x1="90" y1="292" x2="72" y2="318" stroke="#f9a825" stroke-width="2.2"/>
+  <line x1="90" y1="292" x2="108" y2="318" stroke="#f9a825" stroke-width="2.2"/>
+  <text x="90" y="338" text-anchor="middle" font-size="14" font-weight="bold" fill="#e65100">비회원</text>
+
+  <!-- 회원 -->
+  <circle cx="90" cy="572" r="19" fill="#e8f5e9" stroke="#43a047" stroke-width="2.2"/>
+  <line x1="90" y1="591" x2="90" y2="636" stroke="#43a047" stroke-width="2.2"/>
+  <line x1="62" y1="610" x2="118" y2="610" stroke="#43a047" stroke-width="2.2"/>
+  <line x1="90" y1="636" x2="72" y2="662" stroke="#43a047" stroke-width="2.2"/>
+  <line x1="90" y1="636" x2="108" y2="662" stroke="#43a047" stroke-width="2.2"/>
+  <text x="90" y="680" text-anchor="middle" font-size="14" font-weight="bold" fill="#1b5e20">회원</text>
+
+  <!-- 관리자 -->
+  <circle cx="90" cy="1072" r="19" fill="#fce4ec" stroke="#e53935" stroke-width="2.2"/>
+  <line x1="90" y1="1091" x2="90" y2="1136" stroke="#e53935" stroke-width="2.2"/>
+  <line x1="62" y1="1110" x2="118" y2="1110" stroke="#e53935" stroke-width="2.2"/>
+  <line x1="90" y1="1136" x2="72" y2="1162" stroke="#e53935" stroke-width="2.2"/>
+  <line x1="90" y1="1136" x2="108" y2="1162" stroke="#e53935" stroke-width="2.2"/>
+  <text x="90" y="1180" text-anchor="middle" font-size="14" font-weight="bold" fill="#b71c1c">관리자</text>
+
+  <!-- ===================================================== -->
+  <!--  시스템 경계                                           -->
+  <!-- ===================================================== -->
+  <rect x="200" y="80" width="1070" height="1350" fill="white" stroke="#4a90d9" stroke-width="2" stroke-dasharray="9,4" rx="10"/>
+  <text x="735" y="102" text-anchor="middle" font-size="15" font-weight="bold" fill="#4a90d9">카페 키오스크 시스템</text>
+
+  <!-- ===================================================== -->
+  <!--  SECTION 1 : 비회원 / 회원 공통 기능                  -->
+  <!-- ===================================================== -->
+  <rect x="218" y="112" width="1034" height="320" fill="#fff8e1" stroke="#f9a825" stroke-width="1.5" rx="8"/>
+  <text x="232" y="134" font-size="13" font-weight="bold" fill="#e65100">비회원 / 회원 공통 기능</text>
+
+  <!--  UC 배치  (cx 간격 200, 2행)  -->
+  <!--  행1 y=195  :  UC1 380  UC2 580  UC3 780  UC4 980  -->
+  <!--  행2 y=330  :  UC5 430  UC6 700                    -->
+
+  <ellipse cx="380" cy="195" rx="78" ry="26" fill="#fff3e0" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="380" y="191" text-anchor="middle" font-size="11" fill="#222">카테고리별</text>
+  <text x="380" y="205" text-anchor="middle" font-size="11" fill="#222">메뉴 조회</text>
+
+  <ellipse cx="580" cy="195" rx="78" ry="26" fill="#fff3e0" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="580" y="191" text-anchor="middle" font-size="11" fill="#222">추천 메뉴 조회</text>
+  <text x="580" y="205" text-anchor="middle" font-size="11" fill="#222">(인기/신규)</text>
+
+  <ellipse cx="780" cy="195" rx="78" ry="26" fill="#fff3e0" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="780" y="191" text-anchor="middle" font-size="11" fill="#222">장바구니</text>
+  <text x="780" y="205" text-anchor="middle" font-size="11" fill="#222">조회 / 관리</text>
+
+  <ellipse cx="980" cy="195" rx="78" ry="26" fill="#fff3e0" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="980" y="191" text-anchor="middle" font-size="11" fill="#222">메뉴 옵션 선택</text>
+  <text x="980" y="205" text-anchor="middle" font-size="11" fill="#222">및 주문 / 결제</text>
+
+  <ellipse cx="430" cy="340" rx="78" ry="26" fill="#fff3e0" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="430" y="344" text-anchor="middle" font-size="11" fill="#222">신제품 메뉴 조회</text>
+
+  <ellipse cx="700" cy="340" rx="78" ry="26" fill="#fff3e0" stroke="#f9a825" stroke-width="1.5"/>
+  <text x="700" y="344" text-anchor="middle" font-size="11" fill="#222">회원가입</text>
+
+  <!-- ===================================================== -->
+  <!--  SECTION 2 : 회원 전용 기능                           -->
+  <!-- ===================================================== -->
+  <rect x="218" y="460" width="1034" height="340" fill="#e8f5e9" stroke="#43a047" stroke-width="1.5" rx="8"/>
+  <text x="232" y="482" font-size="13" font-weight="bold" fill="#1b5e20">회원 전용 기능</text>
+
+  <!--  행1 y=530  -->
+  <ellipse cx="380" cy="530" rx="78" ry="26" fill="#f1f8e9" stroke="#43a047" stroke-width="1.5"/>
+  <text x="380" y="534" text-anchor="middle" font-size="11" fill="#222">로그인 / 로그아웃</text>
+
+  <ellipse cx="580" cy="530" rx="78" ry="26" fill="#f1f8e9" stroke="#43a047" stroke-width="1.5"/>
+  <text x="580" y="526" text-anchor="middle" font-size="11" fill="#222">회원 정보 조회</text>
+  <text x="580" y="540" text-anchor="middle" font-size="11" fill="#222">/ 수정 (MY)</text>
+
+  <ellipse cx="780" cy="530" rx="78" ry="26" fill="#f1f8e9" stroke="#43a047" stroke-width="1.5"/>
+  <text x="780" y="526" text-anchor="middle" font-size="11" fill="#222">포인트 적립</text>
+  <text x="780" y="540" text-anchor="middle" font-size="11" fill="#222">및 사용</text>
+
+  <ellipse cx="980" cy="530" rx="78" ry="26" fill="#f1f8e9" stroke="#43a047" stroke-width="1.5"/>
+  <text x="980" y="526" text-anchor="middle" font-size="11" fill="#222">관심 상품</text>
+  <text x="980" y="540" text-anchor="middle" font-size="11" fill="#222">조회 / 관리</text>
+
+  <!--  행2 y=660  -->
+  <ellipse cx="380" cy="660" rx="78" ry="26" fill="#f1f8e9" stroke="#43a047" stroke-width="1.5"/>
+  <text x="380" y="656" text-anchor="middle" font-size="11" fill="#222">주문 이력 기반</text>
+  <text x="380" y="670" text-anchor="middle" font-size="11" fill="#222">맞춤 메뉴 추천</text>
+
+  <ellipse cx="580" cy="660" rx="78" ry="26" fill="#f1f8e9" stroke="#43a047" stroke-width="1.5"/>
+  <text x="580" y="656" text-anchor="middle" font-size="11" fill="#222">최근 주문 기반</text>
+  <text x="580" y="670" text-anchor="middle" font-size="11" fill="#222">퀵오더</text>
+
+  <ellipse cx="780" cy="660" rx="78" ry="26" fill="#f1f8e9" stroke="#43a047" stroke-width="1.5"/>
+  <text x="780" y="656" text-anchor="middle" font-size="11" fill="#222">주문 이력 조회</text>
+  <text x="780" y="670" text-anchor="middle" font-size="11" fill="#222">(전자 영수증)</text>
+
+  <ellipse cx="980" cy="660" rx="78" ry="26" fill="#f1f8e9" stroke="#43a047" stroke-width="1.5"/>
+  <text x="980" y="656" text-anchor="middle" font-size="11" fill="#222">주문 추가</text>
+  <text x="980" y="670" text-anchor="middle" font-size="11" fill="#222">(기존 주문 불변)</text>
+
+  <!-- 회원 안내 -->
+  <rect x="228" y="808" width="1014" height="72" fill="#f9fbe7" stroke="#c5e1a5" rx="6"/>
+  <text x="244" y="828" font-size="11" fill="#558b2f">※ 회원은 포인트 사용 시 결제 금액에서 포인트만큼 차감됩니다.</text>
+  <text x="244" y="846" font-size="11" fill="#558b2f">※ 이미 완료된 주문 내역은 수정 불가 → 주문 추가만 가능 / 회원가입 시 전화번호(ID) + 비밀번호만 입력합니다.</text>
+  <text x="244" y="864" font-size="11" fill="#c62828">※ 주문 내역 삭제 기능 없음 (피드백 반영)</text>
+
+  <!-- ===================================================== -->
+  <!--  SECTION 3 : 관리자 전용 기능                         -->
+  <!-- ===================================================== -->
+  <rect x="218" y="900" width="1034" height="490" fill="#fce4ec" stroke="#e53935" stroke-width="1.5" rx="8"/>
+  <text x="232" y="922" font-size="13" font-weight="bold" fill="#b71c1c">관리자 전용 기능</text>
+
+  <!--  행1 y=975  -->
+  <ellipse cx="380" cy="975" rx="78" ry="26" fill="#fff0f0" stroke="#e53935" stroke-width="1.5"/>
+  <text x="380" y="971" text-anchor="middle" font-size="11" fill="#222">메뉴 등록 /</text>
+  <text x="380" y="985" text-anchor="middle" font-size="11" fill="#222">수정 / 삭제</text>
+
+  <ellipse cx="580" cy="975" rx="78" ry="26" fill="#fff0f0" stroke="#e53935" stroke-width="1.5"/>
+  <text x="580" y="971" text-anchor="middle" font-size="11" fill="#222">다중 옵션 관리</text>
+  <text x="580" y="985" text-anchor="middle" font-size="11" fill="#222">(사이즈/온도/카페인)</text>
+
+  <ellipse cx="780" cy="975" rx="78" ry="26" fill="#fff0f0" stroke="#e53935" stroke-width="1.5"/>
+  <text x="780" y="971" text-anchor="middle" font-size="11" fill="#222">기간별 매출 조회</text>
+  <text x="780" y="985" text-anchor="middle" font-size="11" fill="#222">(일 / 주 / 월)</text>
+
+  <ellipse cx="980" cy="975" rx="78" ry="26" fill="#fff0f0" stroke="#e53935" stroke-width="1.5"/>
+  <text x="980" y="971" text-anchor="middle" font-size="11" fill="#222">메뉴별/카테고리별</text>
+  <text x="980" y="985" text-anchor="middle" font-size="11" fill="#222">판매량 조회</text>
+
+  <!--  행2 y=1100  -->
+  <ellipse cx="380" cy="1100" rx="78" ry="26" fill="#fff0f0" stroke="#e53935" stroke-width="1.5"/>
+  <text x="380" y="1096" text-anchor="middle" font-size="11" fill="#222">주문 내용</text>
+  <text x="380" y="1110" text-anchor="middle" font-size="11" fill="#222">조회 / 관리</text>
+
+  <ellipse cx="580" cy="1100" rx="78" ry="26" fill="#fff0f0" stroke="#e53935" stroke-width="1.5"/>
+  <text x="580" y="1104" text-anchor="middle" font-size="11" fill="#222">주문 취소</text>
+
+  <ellipse cx="780" cy="1100" rx="78" ry="26" fill="#fff0f0" stroke="#e53935" stroke-width="1.5"/>
+  <text x="780" y="1096" text-anchor="middle" font-size="11" fill="#222">회원 목록</text>
+  <text x="780" y="1110" text-anchor="middle" font-size="11" fill="#222">조회</text>
+
+  <ellipse cx="980" cy="1100" rx="78" ry="26" fill="#fff0f0" stroke="#e53935" stroke-width="1.5"/>
+  <text x="980" y="1104" text-anchor="middle" font-size="11" fill="#222">회원 정보 조회</text>
+
+  <!--  행3 y=1240  -->
+  <ellipse cx="480" cy="1240" rx="88" ry="26" fill="#fff0f0" stroke="#e53935" stroke-width="1.5"/>
+  <text x="480" y="1236" text-anchor="middle" font-size="11" fill="#222">판매 내역 통계 관리</text>
+  <text x="480" y="1250" text-anchor="middle" font-size="11" fill="#222">(카테고리/메뉴별 금액)</text>
+
+  <ellipse cx="800" cy="1240" rx="88" ry="26" fill="#fff0f0" stroke="#e53935" stroke-width="1.5"/>
+  <text x="800" y="1236" text-anchor="middle" font-size="11" fill="#222">관리자 계정 등록</text>
+  <text x="800" y="1250" text-anchor="middle" font-size="11" fill="#222">(운영자 등록)</text>
+
+  <!-- 재고 제외 안내 -->
+  <rect x="228" y="1292" width="1014" height="82" fill="#fff9c4" stroke="#f9a825" rx="5"/>
+  <text x="244" y="1314" font-size="11" fill="#e65100" font-weight="bold">⚠ 제외 기능 안내</text>
+  <text x="244" y="1332" font-size="11" fill="#555">• 재고 관리(품절) 기능은 피드백 반영으로 제외되었습니다.</text>
+  <text x="244" y="1350" font-size="11" fill="#555">• 관리자만 주문 취소가 가능합니다.</text>
+  <text x="244" y="1368" font-size="11" fill="#555">• 메뉴 종류는 카테고리별 최대 5개입니다.</text>
+
+  <!-- ============================================================= -->
+  <!--  꺾은선 연결 — 전략                                           -->
+  <!--                                                               -->
+  <!--  각 UC 타원의 왼쪽 엣지(left = cx-rx = cx-78)에               -->
+  <!--  액터별로 서로 다른 y offset을 주어 연결점 분리               -->
+  <!--                                                               -->
+  <!--  비회원  → 공통UC  : offset -8   (타원 위쪽)                  -->
+  <!--  회원    → 공통UC  : offset +8   (타원 아래쪽, 점선)          -->
+  <!--  회원    → 전용UC  : offset  0   (타원 중앙)                  -->
+  <!--  관리자  → 전용UC  : offset  0   (타원 중앙)                  -->
+  <!--                                                               -->
+  <!--  trunk 수직선 x 좌표:                                         -->
+  <!--    비회원  공통 : x=148                                        -->
+  <!--    회원    공통 : x=162  (점선)                               -->
+  <!--    회원    전용 : x=176                                        -->
+  <!--    관리자       : x=190                                        -->
+  <!-- ============================================================= -->
+
+  <!-- ──────────────────────────────────────── -->
+  <!--  비회원 → 공통 UC  (주황 실선, x=148)   -->
+  <!-- ──────────────────────────────────────── -->
+  <!-- actor(90,255) → (148,255) 수평 -->
+  <line x1="109" y1="255" x2="148" y2="255" stroke="#f9a825" stroke-width="1.8"/>
+  <!-- 수직 trunk: 148, y 169~354 -->
+  <line x1="148" y1="169" x2="148" y2="354" stroke="#f9a825" stroke-width="1.8"/>
+
+  <!-- UC1 (380,195) left=302, offset y=-8 → 연결y=187 -->
+  <line x1="148" y1="187" x2="302" y2="187" stroke="#f9a825" stroke-width="1.8"/>
+  <!-- UC1 타원 왼쪽 끝(302,187) 수직 보정 → (302,195) -->
+  <line x1="302" y1="187" x2="302" y2="195" stroke="#f9a825" stroke-width="1.8"/>
+
+  <!-- UC2 (580,195) left=502, offset y=-8 → 연결y=187 -->
+  <line x1="148" y1="187" x2="502" y2="187" stroke="#f9a825" stroke-width="1.8"/>
+  <line x1="502" y1="187" x2="502" y2="195" stroke="#f9a825" stroke-width="1.8"/>
+
+  <!-- UC3 (780,195) left=702, offset y=-8 -->
+  <line x1="148" y1="187" x2="702" y2="187" stroke="#f9a825" stroke-width="1.8"/>
+  <line x1="702" y1="187" x2="702" y2="195" stroke="#f9a825" stroke-width="1.8"/>
+
+  <!-- UC4 (980,195) left=902, offset y=-8 -->
+  <line x1="148" y1="187" x2="902" y2="187" stroke="#f9a825" stroke-width="1.8"/>
+  <line x1="902" y1="187" x2="902" y2="195" stroke="#f9a825" stroke-width="1.8"/>
+
+  <!-- UC5 (430,340) left=352, offset y=-8 → 연결y=332 -->
+  <line x1="148" y1="332" x2="352" y2="332" stroke="#f9a825" stroke-width="1.8"/>
+  <line x1="352" y1="332" x2="352" y2="340" stroke="#f9a825" stroke-width="1.8"/>
+
+  <!-- UC6 (700,340) left=622, offset y=-8 → 연결y=332 -->
+  <line x1="148" y1="332" x2="622" y2="332" stroke="#f9a825" stroke-width="1.8"/>
+  <line x1="622" y1="332" x2="622" y2="340" stroke="#f9a825" stroke-width="1.8"/>
+
+  <!-- ──────────────────────────────────────────── -->
+  <!--  회원 → 공통 UC  (초록 점선, x=162)         -->
+  <!-- ──────────────────────────────────────────── -->
+  <line x1="109" y1="590" x2="162" y2="590" stroke="#43a047" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <!-- 수직 trunk: y 169~354 -->
+  <line x1="162" y1="169" x2="162" y2="354" stroke="#43a047" stroke-width="1.5" stroke-dasharray="6,3"/>
+
+  <!-- UC1 offset +8 → 연결y=203 -->
+  <line x1="162" y1="203" x2="302" y2="203" stroke="#43a047" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <line x1="302" y1="203" x2="302" y2="195" stroke="#43a047" stroke-width="1.5" stroke-dasharray="6,3"/>
+
+  <!-- UC2 offset +8 → 연결y=203 -->
+  <line x1="162" y1="203" x2="502" y2="203" stroke="#43a047" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <line x1="502" y1="203" x2="502" y2="195" stroke="#43a047" stroke-width="1.5" stroke-dasharray="6,3"/>
+
+  <!-- UC3 offset +8 -->
+  <line x1="162" y1="203" x2="702" y2="203" stroke="#43a047" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <line x1="702" y1="203" x2="702" y2="195" stroke="#43a047" stroke-width="1.5" stroke-dasharray="6,3"/>
+
+  <!-- UC4 offset +8 -->
+  <line x1="162" y1="203" x2="902" y2="203" stroke="#43a047" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <line x1="902" y1="203" x2="902" y2="195" stroke="#43a047" stroke-width="1.5" stroke-dasharray="6,3"/>
+
+  <!-- UC5 offset +8 → 연결y=348 -->
+  <line x1="162" y1="348" x2="352" y2="348" stroke="#43a047" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <line x1="352" y1="348" x2="352" y2="340" stroke="#43a047" stroke-width="1.5" stroke-dasharray="6,3"/>
+
+  <!-- UC6 offset +8 → 연결y=348 -->
+  <line x1="162" y1="348" x2="622" y2="348" stroke="#43a047" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <line x1="622" y1="348" x2="622" y2="340" stroke="#43a047" stroke-width="1.5" stroke-dasharray="6,3"/>
+
+  <!-- ──────────────────────────────────────────── -->
+  <!--  회원 → 회원 전용 UC  (초록 실선, x=176)    -->
+  <!-- ──────────────────────────────────────────── -->
+  <line x1="109" y1="610" x2="176" y2="610" stroke="#43a047" stroke-width="1.8"/>
+  <!-- 수직 trunk: y 504~686 -->
+  <line x1="176" y1="504" x2="176" y2="686" stroke="#43a047" stroke-width="1.8"/>
+
+  <!-- UC7 (380,530) left=302 -->
+  <line x1="176" y1="530" x2="302" y2="530" stroke="#43a047" stroke-width="1.8"/>
+  <!-- UC8 (580,530) left=502 -->
+  <line x1="176" y1="530" x2="502" y2="530" stroke="#43a047" stroke-width="1.8"/>
+  <!-- UC9 (780,530) left=702 -->
+  <line x1="176" y1="530" x2="702" y2="530" stroke="#43a047" stroke-width="1.8"/>
+  <!-- UC10 (980,530) left=902 -->
+  <line x1="176" y1="530" x2="902" y2="530" stroke="#43a047" stroke-width="1.8"/>
+  <!-- UC11 (380,660) left=302 -->
+  <line x1="176" y1="660" x2="302" y2="660" stroke="#43a047" stroke-width="1.8"/>
+  <!-- UC12 (580,660) left=502 -->
+  <line x1="176" y1="660" x2="502" y2="660" stroke="#43a047" stroke-width="1.8"/>
+  <!-- UC13 (780,660) left=702 -->
+  <line x1="176" y1="660" x2="702" y2="660" stroke="#43a047" stroke-width="1.8"/>
+  <!-- UC14 (980,660) left=902 -->
+  <line x1="176" y1="660" x2="902" y2="660" stroke="#43a047" stroke-width="1.8"/>
+
+  <!-- ──────────────────────────────────────────── -->
+  <!--  관리자 → 관리자 전용 UC  (빨강 실선, x=190) -->
+  <!-- ──────────────────────────────────────────── -->
+  <line x1="109" y1="1100" x2="190" y2="1100" stroke="#e53935" stroke-width="1.8"/>
+  <!-- 수직 trunk: y 949~1266 -->
+  <line x1="190" y1="949" x2="190" y2="1266" stroke="#e53935" stroke-width="1.8"/>
+
+  <!-- 행1 y=975: UC left=302 -->
+  <line x1="190" y1="975" x2="302" y2="975" stroke="#e53935" stroke-width="1.8"/>
+  <line x1="190" y1="975" x2="502" y2="975" stroke="#e53935" stroke-width="1.8"/>
+  <line x1="190" y1="975" x2="702" y2="975" stroke="#e53935" stroke-width="1.8"/>
+  <line x1="190" y1="975" x2="902" y2="975" stroke="#e53935" stroke-width="1.8"/>
+
+  <!-- 행2 y=1100 -->
+  <line x1="190" y1="1100" x2="302" y2="1100" stroke="#e53935" stroke-width="1.8"/>
+  <line x1="190" y1="1100" x2="502" y2="1100" stroke="#e53935" stroke-width="1.8"/>
+  <line x1="190" y1="1100" x2="702" y2="1100" stroke="#e53935" stroke-width="1.8"/>
+  <line x1="190" y1="1100" x2="902" y2="1100" stroke="#e53935" stroke-width="1.8"/>
+
+  <!-- 행3 y=1240 -->
+  <line x1="190" y1="1240" x2="392" y2="1240" stroke="#e53935" stroke-width="1.8"/>
+  <line x1="190" y1="1240" x2="712" y2="1240" stroke="#e53935" stroke-width="1.8"/>
+
+  <!-- ============================== -->
+  <!--  Legend                        -->
+  <!-- ============================== -->
+  <rect x="220" y="1400" width="860" height="60" fill="white" stroke="#ddd" rx="8"/>
+  <text x="240" y="1420" font-size="12" font-weight="bold" fill="#444">범례</text>
+
+  <!-- 비회원 -->
+  <polyline points="240,1450 240,1438 268,1438" fill="none" stroke="#f9a825" stroke-width="2.2"/>
+  <text x="274" y="1448" font-size="12" fill="#555">비회원 연결</text>
+
+  <!-- 회원 실선 -->
+  <polyline points="390,1450 390,1438 418,1438" fill="none" stroke="#43a047" stroke-width="2.2"/>
+  <text x="424" y="1448" font-size="12" fill="#555">회원 전용 연결</text>
+
+  <!-- 회원 점선 -->
+  <polyline points="570,1450 570,1438 598,1438" fill="none" stroke="#43a047" stroke-width="1.8" stroke-dasharray="6,3"/>
+  <text x="604" y="1448" font-size="12" fill="#555">회원 공통 기능 포함 (점선)</text>
+
+  <!-- 관리자 -->
+  <polyline points="850,1450 850,1438 878,1438" fill="none" stroke="#e53935" stroke-width="2.2"/>
+  <text x="884" y="1448" font-size="12" fill="#555">관리자 연결</text>
+
+</svg>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>HTML5에 추가된 폼요소 속성들</h2>
+    <form action="" novalidate>
+      <input type="date" min="2025-07-28" max="2025-10-15" /><br />
+      <input type="text" placeholder="이름입력" required /> <br />
+      <input type="email" required placeholder="이메일입력" /><br />
+      <input type="number" name="age" />
+
+      <!-- 화면에 나타나지 않지만 개발자 입장에서 어떤 정보를 서버에 전송하고 싶다.-->
+      <input type="hidden" name="state" value="yes" />
+      <input type="hidden" name="info" value="테스트중..." />
+      <br />
+
+      <!-- 반드시 form 속성으로 method="post" enctype="multipart/form-data" 필수 -->
+      <input type="file" name="file" /><br />
+
+      <!-- 전송 기능 -->
+      <input type="image" src="img/cat.gif" />
+
+      <button>등록</button>
+    </form>
+  </body>
+</html>

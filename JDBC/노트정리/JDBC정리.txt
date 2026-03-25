@@ -1,0 +1,122 @@
+JDBC(Java Database Connectivity) API
+
+JDBC (Java Database Connectivity)란?
+→ 자바에서 데이터베이스에 접근하기 위한 표준 API.
+→ 다양한 DBMS(MySQL, Oracle, PostgreSQL 등)와 독립적으로 동작할 수 있게 해줌.
+
+JDBC는 드라이버 매니저(DriverManager)를 통해 데이터베이스 벤더가 제공하는 드라이버를 로드하고, SQL 실행을 가능하게 함.
+
+
+JDBC 아키텍처
+
+1) JDBC API
+   : DriverManager, Connection, Statement, ResultSet 등의 인터페이스 제공
+
+2) JDBC Driver
+   : DB 벤더(예: MySQL, Oracle)가 제공하는 실제 구현체
+
+3) 드라이버 종류
+   Type 1: JDBC-ODBC Bridge (거의 사용 X)
+   Type 2: Native API Driver
+   Type 3: Network Protocol Driver
+   Type 4: Thin Driver (순수 자바 기반, 가장 많이 사용)
+
+
+
+- import java.sql.*;
+
+DB연동 순서
+1)로드 - 접속하려는 데이터베이스 제품 선택 (이때 각 DB에 따른 Driver ~.jar 찾는다)
+
+2)연결 - 데이터베이스의 계정으로 접속하는 것.(url , user, password 필요)
+
+3)실행 -  CRUD 문장 실행(DDL,DML)
+
+
+4)닫기  -사용된 객체를 반납( close한다)
+-------------------------------------------------------------------------
+ 1) 로드
+   Class.forName("연결하려는드라이버명");
+    : 드라이버명이 오류이거나 ~.jar 가 없으면  ClassNotFonudExecption발생
+
+    Oracle : oracle.jdbc.driver.OracleDriver 
+    Ms_Sql : sun.jdbc.odbc.JdbcOdbcDriver 
+    My_Sql : com.mysql.cj.jdbc.Driver
+
+
+2) 연결
+    Connection con = DriverManager.getConnection(String url, String user  , String pass);
+
+       --url종류 
+    jdbc:oracle:thin:@localhost:1521:SID
+    jdbc:odbc:odbc설정을통해만든db원본명 
+    jdbc:mysql://localhost:3306/db명 
+
+      # MY_SQL
+     jdbc:mysql://localhost:3306/cloud_db?serverTimezone=UTC
+    jdbc:mysql://localhost:3306/cloud_db?serverTimezone=Asia/Seoul
+
+
+
+3)  실행  - CRUD작업 
+    1. Statement방식
+
+    2. PreparedStatement방식 - 권장 ( Statement를 상속) ,  보안
+
+    1의 경우 - Statement방식
+        Statement st = con.createStatement( );
+         *DDL , DML 인경우
+          int result = st.executeUpdate(String sql);
+           -결과 result가 0이면 실패, 1이상이면 성공  / 제약조건위배, 길이제한, 쿼리오류이면 SQLExeception 발생
+
+          * select전용
+           ResultSet rs = st.executeQuery(String sql);
+           ex)  ResultSet rs = st.executeQuery("select empno, ename, hiredate from emp");
+              
+               // boolean b = rs.next();//커서를 한행 앞으로 이동 
+                
+                List<Emp> list = new ArrayList<>();
+                while( rs.next() ){//앞으로 커서가 이동한다면 
+                      //열을 이동하면서 데이터 조회 - getType(컬럼명) , getType(컬럼index)
+                     int empno =  rs.getInt("empno"); //1
+                    String ename = rs.getString("ename");//2
+                    String hiredate = rs.getString(3);//3
+                     Emp emp = new Emp(empno, enam, sal);
+                    list.add(emp);
+               }
+
+
+      2.의 경우 - PreparedStatement방식
+       PreparedStatement ps = con.prepareStatement(String sql);
+        ex)  String sql ="insert into emp(empno, ename, job, sal, hiredate) values(?,?,?,?,now())";
+          PreparedStatement ps = con.prepareStatement(sql);
+          //?의 개수만큼 순서대로  ps.setType(index , value) 설정이 필요하다.
+          ps.setInt(1, emp.getEmpNo() );
+          ps.setString(2, emp.getEname() );
+          ps.setString(3, emp.getJob() );
+          ps.setInt(4, emp.getSal() );
+
+          int result = ps.executeUpdate( );
+
+         //select인경우
+        ex)  String sql ="select * from emp";
+          PreparedStatement ps = con.prepareStatement(sql);
+          ResultSet rs = ps.executeQuery();
+   
+
+ 4) 닫기 
+      사용한 객체를 닫는다.
+         ex) Connection , Statement(PreparedStatement) , ResultSet 
+
+               ~.close(); 사용
+
+
+
+
+
+
+
+
+
+
+
