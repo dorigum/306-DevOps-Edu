@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>변수에 대해서 알아보자 - var / let / const</h1>
+    <script>
+      /*
+        변수 선언 - 선언할 때 var 생략도 가능
+        var 변수이름;
+        var 변수이름 = 값;
+      */
+      var a;
+      var b = 20;
+      c = 3.14;
+
+      document.write("<h4>");
+      document.write("a = " + a + ", " + typeof a + "<br>");
+      document.write("b = " + b + ", " + typeof b + "<br>");
+      document.write("c = " + c + ", " + typeof c + "<hr>");
+
+      // 값 변경
+      a = "안녕하세요";
+      b = new Array(1, "hi", 3.14, true);
+      c = false;
+
+      document.write("a = " + a + ", " + typeof a + "<br>");
+      document.write("b = " + b + ", " + typeof b + "<br>");
+      document.write("c = " + c + ", " + typeof c + "<hr>");
+
+      /*
+        1. 동일한 이름의 변수 또는 함수를 또 선언한다면? -> OK
+
+        2. 변수 or 함수를 선언 전에 사용한다면? -> OK
+      */
+
+      var a = "졸지 말아요~~";
+      document.write("a = " + a + ", " + typeof a + "<br>");
+
+      document.write("age = " + age + ", " + typeof a + "<br>");
+      document.write("</h4>");
+
+      var age = 20;
+      document.write("age = " + age + ", " + typeof a + "<br>");
+
+      // 함수를 호출해보자
+      test();
+
+      // 함수에 대해서 알아보자
+      function test() {
+        alert("test() 호출...1");
+      }
+
+      function test() {
+        alert("test() 호출...2");
+      }
+    </script>
+  </body>
+</html>

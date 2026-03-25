@@ -1,0 +1,28 @@
+/* 1. 공통 초기화: Border-Box 적용 */
+* {
+  box-sizing: border-box; /* 패딩과 테두리를 포함해서 크기를 계산 */
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. 공통 태그 스타일 */
+a {
+  text-decoration: none; /* a 태그 링크 기능을 표시하는 밑줄 제거 */
+  color: black;
+}
+
+ul {
+  list-style: none; /* 리스트(li) 앞에 붙는 점 제거 */
+}
+
+/* 3. 배너 영역 */
+#banner {
+  display: flex;
+  justify-content: center; /* 가로 기준 가운데 정렬 */
+  align-items: center; /* 세로 기준 가운데 정렬 */
+  padding: 40px 20px; /* 상하 여백을 넉넉히 주어 공간을 확보 */
+  background-color: plum;
+  color: white;
+  font-size: 28px; /* 글자를 크게 설정 */
+  font-weight: bold;
+}
