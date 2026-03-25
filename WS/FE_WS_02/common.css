@@ -1,0 +1,16 @@
+header {
+  grid-area: header;
+  background-color: lightcoral;
+}
+nav {
+  grid-area: nav;
+  background-color: lightblue;
+}
+main {
+  grid-area: main;
+  background-color: lightgreen;
+}
+footer {
+  grid-area: footer;
+  background-color: lightgray;
+}

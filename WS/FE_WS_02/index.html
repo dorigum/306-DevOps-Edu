@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <header>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0" />
+    <title>ex0323_인덱스 페이지</title>
+
+    <!-- <link rel="stylesheet" href="/WS/FE_WS_02/common.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Karma"
+    /> -->
+    <!-- <style>
+      @import url("/WS/FE_WS_02/common.css");
+    </style> -->
+    <style>
+      nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: lightblue;
+        grid-template-areas: "로고 개인 기업 로그인 회원가입";
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      banner {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px 30px;
+        margin-top: 5px;
+        background-color: blueviolet;
+        color: white;
+        font-size: 20px;
+      }
+
+      .main {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+        grid-area: main1 main2 main3;
+      }
+    </style>
+  </header>
+  <body>
+    <h1>index.html</h1>
+    <container>
+      <!-- navbar 영역: 5개 메뉴 생성 -->
+      <nav>
+        <a href="#"><img src="logo.jpg" alt="로고" /></a>
+        <a href="personal.html" alt="개인">개인</a>
+        <a href="business.html" alt="기업">기업</a>
+        <a href="login.html" alt="로그인">로그인</a>
+        <a href="register.html" alt="회원가입">회원가입</a>
+      </nav>
+
+      <banner> 지금 당신의 행복! IT's KB Life! </banner>
+
+      <main>
+        <!-- 3개의 서브 영역 만들기 -->
+        <article>
+          <section>
+            <img src="https://picsum.photos/id/1/200" alt="main1" />
+            <h2>main-item 1</h2>
+            메인 아이템 1번 입니다!!!<br /><br />
+            <button>button 1</button>
+          </section>
+
+          <section>
+            <img src="https://picsum.photos/id/2/200" alt="main2" />
+            <h2>main-item 2</h2>
+            메인 아이템 2번 입니다!!!<br /><br />
+            <button>button 2</button>
+          </section>
+
+          <section>
+            <img src="https://picsum.photos/id/3/200" alt="main3" />
+            <h2>main-item 3</h2>
+            메인 아이템 3번 입니다!!!<br /><br />
+            <button>button 3</button>
+
+            <footer>
+              <ul>
+                <li>12345 address 1 address 2 address 3</li>
+                <li>02-0000-0000</li>
+              </ul>
+            </footer>
+          </section>
+        </article>
+      </main>
+    </container>
+  </body>
+</html>

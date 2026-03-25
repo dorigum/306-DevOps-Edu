@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main {
+        width: 500px;
+        height: 400px;
+        background-color: lightgray;
+        position: relative;
+      }
+
+      div div {
+        width: 80px;
+        height: 80px;
+      }
+
+      .a {
+        background-color: red;
+        position: relative;
+        top: 30px;
+        left: 25px;
+        z-index: 3;
+      }
+
+      /*
+      position: relative; 설정하면 그 다음에 놓이는 요소는 어디에 놓일까?
+      relative를 설정한 요소가 원래 놓여야 할 위치를 계산하고 그 뒤에 놓인다.
+
+      position: absolute; 설정하면 그 다음에 놓이는 요소는 어디에 놓일까?
+      position: absolute; 를 설정한 요소를 전혀 신경쓰지 않고 그 다음에 놓이는 요소는 원래 놓여야 할 위치에 놓인다.
+      
+      z-index는 position이 설정된 요소들이 겹쳐 있을 때, 요소들의 레이어 순서를 결정한다.
+      기본 값은 0이고 숫자가 클수록 맨 위에 위치한다.
+      */
+
+      .b {
+        background-color: green;
+        left: 20px;
+        top: 20px;
+        /* position: absolute; */ /* 가장 가까운 부모 요소(position이 있는 경우) 의 위치를 기준으로부터 이동 */
+        position: relative; /* 원래 놓여야 할 위치를 기준으로부터 이동 */
+        z-index: 1;
+      }
+
+      .c {
+        background-color: blue;
+        position: relative;
+        z-index: 0;
+      }
+
+      .todayView {
+        width: 150px;
+        height: 200px;
+        border: inset 3px skyblue;
+        box-sizing: border-box;
+        position: fixed;
+        right: 20px;
+        top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="a">1</div>
+      <div class="b">2</div>
+      <div class="c">3</div>
+    </div>
+
+    <div class="todayView">
+      <h4>오늘 본 상품</h4>
+    </div>
+
+    <h4>오늘도 수고 많으셨어요.</h4>
+    <h4>오늘도 수고 많으셨어요.</h4>
+    <h4>오늘도 수고 많으셨어요.</h4>
+    <h4>오늘도 수고 많으셨어요.</h4>
+    <h4>오늘도 수고 많으셨어요.</h4>
+    <h4>오늘도 수고 많으셨어요.</h4>
+    <h4>오늘도 수고 많으셨어요.</h4>
+    <h4>오늘도 수고 많으셨어요.</h4>
+    <h4>오늘도 수고 많으셨어요.</h4>
+    <h4>오늘도 수고 많으셨어요.</h4>
+  </body>
+</html>

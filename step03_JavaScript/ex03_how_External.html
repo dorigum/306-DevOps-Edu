@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 외부의 js 파일 연결하기 -->
+    <script src="./js/basic.js"></script>
+      <!-- 여기에 작성된 코드는 무시된다! -->
+       alert("나오나요?");
+    </script>
+
+    <script>
+      alert("여기에 출력됩니다!!");
+    </script>
+  </head>
+  <body>
+    <!-- 태그의 속성으로 이벤트 등록 -->
+    <h2 onclick="test(this)" id="h2">JavaScript 시작하기</h2>
+    <h2 onclick="test(this)">졸립다~</h2>
+    <h3 id="h3">오늘은 수요일</h3>
+
+    <script>
+      // h3 태그에 CSS 적용 - 문서가 열릴 때
+      document.getElementById("h3").style.border = "lightgreen";
+    </script>
+  </body>
+</html>
