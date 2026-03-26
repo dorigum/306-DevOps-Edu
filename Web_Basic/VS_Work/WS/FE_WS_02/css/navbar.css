@@ -1,0 +1,19 @@
+#navbar ul {
+  display: flex; /* 리스트 항목들을 가로로 한 줄 배치 */
+  justify-content: center; /* 가로 기준으로 가운데 정렬 */
+  align-items: center; /* 세로 기준으로도 가운데 정렬 */
+  gap: 50px; /* 각 메뉴 사이 간격 */
+  padding: 20px 0; /* 위아래 여백 */
+  background-color: #f4f6f9;
+}
+
+/* 로고 원본 이미지가 너무 크면 레이아웃이 깨지므로 크기 제한 설정 */
+.logo img {
+  height: 40px;
+}
+
+/* 메뉴 항목들에 마우스를 올렸을 때의 효과 */
+.nav-item a:hover {
+  color: plum;
+  font-weight: bold;
+}

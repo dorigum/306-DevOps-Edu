@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>callback 함수 알아보기</h2>
+    <script>
+      // 두 수를 전달 받아서 더하기 하는 함수
+      const add = (a, b) => {
+        return a + b;
+      };
+
+      // 두 수를 전달 받아서 빼기 하는 함수
+      const minus = (a, b) => a - b;
+
+      // 연산 결과를 출력하는 함수
+      const print = (a, b, operator) => {
+        let result;
+        if (operator === "+") {
+          result = add(a, b);
+        } else if (operator === "-") {
+          result = minus(a, b);
+        }
+
+        // 출력
+        console.log(`${a} ${operator} ${b} = ${result}`);
+      };
+
+      // 함수를 호출해보자
+      print(5, 3, "+");
+      print(5, 3, "-");
+
+      // ----------------------------------------------------------
+      // callback 함수를 이용해서 각 연산 함수를 호출해보자
+      const print2 = (a, b, operator) => {
+        // operator에 함수가 전달
+        let result = operator(a, b);
+
+        console.log(`${a}, ${b} = ${result}`);
+      };
+
+      // 함수를 호출해보자
+      print2(5, 3, add);
+      print2(5, 3, minus);
+      print2(5, 3, (a, b) => a * b);
+    </script>
+  </body>
+</html>

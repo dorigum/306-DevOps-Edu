@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>변수에 대해서 알아보자 - (var - ES5 이전) vs (let / const - ES6)</h1>
+    <script>
+      /*
+          변수 선언 - 중복 선언 X, 선언 전에 사용할 수 없다. scope는 블록 단위
+          let 변수이름;
+          let 변수이름 = 값;
+        */
+
+      let a;
+      let b = 20;
+      c = 3.14;
+
+      document.write("<h4>");
+      document.write("a = " + a + ", " + typeof a + "<br>");
+      document.write("b = " + b + ", " + typeof b + "<br>");
+      document.write("c = " + c + ", " + typeof c + "<hr>");
+
+      // 값 변경
+      a = "안녕하세요";
+      b = new Array(1, "hi", 3.14, true);
+      c = false;
+
+      document.write("a = " + a + ", " + typeof a + "<br>");
+      document.write("b = " + b + ", " + typeof b + "<br>");
+      document.write("c = " + c + ", " + typeof c + "<hr>");
+
+      /*
+          1. var - 동일한 이름의 변수 또는 함수를 또 선언한다면? -> OK
+          2. var - 변수 or 함수를 선언 전에 사용한다면? -> OK
+        */
+
+      // var a = "졸지 말아요~~";
+      document.write("a = " + a + ", " + typeof a + "<br>");
+
+      // Uncaught ReferenceError: Cannot access 'age' before initializaion
+      // document.write("age = " + age + ", " + typeof a + "<br>");
+      document.write("</h4>");
+
+      let age = 20;
+      document.write("age = " + age + ", " + typeof a + "<br>");
+
+      // 함수를 호출해보자
+      // test();
+
+      // 함수에 대해서 알아보자
+      function test() {
+        alert("test() 호출...1");
+      }
+
+      function test() {
+        alert("test() 호출...2");
+      }
+
+      // ----------------------------------------------------------------
+      document.write("<h1> 변수의 Scope에 대해 알아보자!</h1>");
+      // JavaScript에서 변수의 Scope에 대해 알아보자!
+      let i = 10; // 전역 변수
+      function test2() {
+        let i = 5; // 지역 변수
+        let j = 20; // 지역 변수
+        let k = 50; // 함수 안에서 선언되는 변수에 var를 생략하면 전역 변수
+
+        console.log("i = " + i);
+        console.log("this.i = " + this.i);
+        console.log("j = " + j);
+        console.log("k = " + k);
+      }
+
+      function test3() {
+        console.log("i = " + i);
+        console.log("this.i = " + this.i);
+        // console.log("j = " + j);
+        console.log("k = " + k);
+
+        // 자바스크립트 변수의 scope은 선언된 위치의 함수 단위
+        // { } 블록 단위가 아니다.
+        console.log("전 : index = " + index);
+
+        for (let index = 0; index <= 10; index++) {}
+      }
+
+      // console.log("전 : nickName = " + nickName);
+      {
+        let nickName = "도연";
+      }
+
+      // console.log("후 : index = " + index);
+      // console.log("후 : nickName = " + nickName);
+
+      test2(); // 함수 호출
+      test3();
+
+      // ----------------------------------------------------------------
+      // 선언적 함수 스타일이 아닌, 표현식으로 선언(변수에 저장)을 하면
+      // 중복되는 함수 이름을 사용할 수 없다!
+      let test04 = function () {
+        alert("출력되나요?");
+      };
+
+      // 호출
+      test04();
+
+      // 함수나 배열, 객체는 let 대신에 const를 사용한다.
+      const test05 = function () {
+        console.log("test05 call");
+      };
+
+      test05();
+
+      // ----------------------------------------------------------------
+      // const: 상수
+      let addr;
+      addr = "분당";
+
+      // 'const' declarations must be initialized.
+      const message = "뭐 먹지?";
+
+      // Uncaught TypeError: Assignment to constant variable.
+      // message = "값 변경되니?";
+
+      // 자바스크립트에서는 객체를 어떻게 만들지?
+      const person = {
+        name: "도연",
+        age: 20,
+      };
+
+      // 접근
+      console.log(person.name);
+      console.log(person.age);
+      person.name = "나연";
+
+      /*
+        let의 선언한 변수를 또 선언할 수 있는지? - x
+        선언 전에 사용할 수 있는지? - x
+        Uncaught ReferenceError: Cannot access 'd' before initialization
+        let 변수도 호이스팅이 되지만 값을 할당하기 전에는 사용 불가하다.
+        TDZ(Temporal Dead Zone) 이라고 한다. - 변수의 선언과 변수의 초기화 사이의 변수에 접근할 수 없는 지점
+        즉, 초기화되지 않은 변수가 있는 곳을 Temporal Dead Zone 이라고 한다.
+
+        let 변수의 scope 블럭 레벨 scope이 된다!!
+
+        함수를 선언할 때 선언적 함수가 아닌 함수표현식으로 작성하게되면
+        동일한 이름의 함수를 단 한 개만 만들 수 있다!
+        함수표현식으로 작성한 함수는 선언 전에 호출할 수 없다!!
+
+        const는 상수로 반드시 선언과 동시에 값을 할당해야하고, 한번 초기화 되고 나면
+        값 변경이 불가하다. - const는 주로 함수 , 객체들을 const에 저장을 한다.
+      */
+    </script>
+  </body>
+</html>

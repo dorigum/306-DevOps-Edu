@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>함수 선언 방법</h1>
+    <script>
+      /*
+        함수 선언 방법
+        1) 선언적 함수
+            function 함수이름() { 기능; }
+
+        2) 함수 표현식
+            const 함수이름 = function() { 기능; }
+            
+        3) 화살표 함수(arrow 함수)
+            () => { 기능 }
+            (a, b) => { 기능 }
+            () => 기능 // 기능이 한 문장일 경우, {} 생략 가능
+
+            () => 기능; // 함수가 return이 있는 함수이면서, 한 문장일 때
+                       // {} 를 생략하는 그 한 문장이 리턴된다.
+
+            () => return 값; // ※에러 발생※
+            () => {return 값;} // OK
+
+        4) 콜백 함수(callback)
+            : 함수의 매개변수 값으로 함수가 전달되는 것!
+    */
+
+      // -----------------------------------------------------------
+      // 3) arrow 함수
+      const test01 = () => {
+        console.log("arrow 함수 01");
+      };
+
+      //   const test02 = (a, b) => {
+      //     console.log(`${a} + ${b} = ${a + b}`);
+      //     return a + b;
+      //   };
+
+      const test02 = (a, b) => a + b;
+
+      // 함수를 호출해보자
+      test01();
+      let result = test02(10, 2);
+      console.log(`result = ${result}`);
+    </script>
+  </body>
+</html>

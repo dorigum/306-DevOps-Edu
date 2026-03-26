@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>연산자를 알아보자!</h1>
+    <script>
+      let i = 10;
+      let j = "10";
+
+      document.write("<h3>");
+      document.write("i = " + i + ", type = " + typeof i + "<br>");
+
+      // 템플릿 문자열을 이용해서 출력 - `(백틱)
+      document.write(`j = ${j}, type = ${typeof j}<br>`);
+
+      // 비교(같다 == vs ===    != vs !==)
+      document.write(`${i} == ${j} => ${i == j}<br>`); // 값 비교 -> true
+      document.write(`${i} === ${j} => ${i === j}<br>`); // 타입 비교 -> false
+
+      // 형 변환
+      /*
+        1) parseInt() - 값 안에 문자가 나오기 전까지 숫자를 추출
+        2) Number() - 값 안에 문자가 포함되어 있으면 NaN 결과 출력(Not a Number)
+        3) isNaN() - is Not a Number? (숫자가 아니면 true, 숫자면 false)
+      */
+      let data1 = "100";
+      let data2 = "100a";
+      let data3 = "a100";
+
+      console.log(data1 + 10); // 10010
+      console.log(data1 - 10); // 90
+      console.log(data1 * 10); // 1000
+      console.log(parseInt(data1) + 10); // 110
+      console.log(Number(data1) + 10); // 110
+
+      console.log("-----------------------------------------------");
+      console.log(parseInt(data2)); // 100
+      console.log(Number(data2)); // NaN
+
+      console.log("-----------------------------------------------");
+      console.log(parseInt(data3)); // NaN
+      console.log(Number(data3)); // NaN
+
+      console.log("-----------------------------------------------");
+      if (window.isNaN(data1)) {
+        // window는 생략 가능
+        console.log("숫자가 아니다");
+      } else {
+        console.log("숫자이다");
+      }
+
+      // ------------------------------------------------------------
+      // Window 객체 안에 있는 주요 함수
+      // 1. 메시지 출력
+      // alert("메시지를 출력합니다.");
+
+      // 2. 의사를 물어볼 때
+      //   let result = confirm("삭제하실래요?");
+      //   console.log("result = " + result);
+
+      // 3. 입력 값을 받을 때
+      let name = prompt("이름은?", "도연");
+      console.log("name = " + name);
+
+      document.write("</h3>");
+    </script>
+  </body>
+</html>

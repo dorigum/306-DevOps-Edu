@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>변수에 대해서 알아보자 - (var - ES5 이전) vs (let / const - ES6)</h1>
+    <script>
+      /*
+        변수 선언 - 선언할 때 var 생략도 가능
+        var 변수이름;
+        var 변수이름 = 값;
+      */
+      var a;
+      var b = 20;
+      c = 3.14;
+
+      document.write("<h4>");
+      document.write("a = " + a + ", " + typeof a + "<br>");
+      document.write("b = " + b + ", " + typeof b + "<br>");
+      document.write("c = " + c + ", " + typeof c + "<hr>");
+
+      // 값 변경
+      a = "안녕하세요";
+      b = new Array(1, "hi", 3.14, true);
+      c = false;
+
+      document.write("a = " + a + ", " + typeof a + "<br>");
+      document.write("b = " + b + ", " + typeof b + "<br>");
+      document.write("c = " + c + ", " + typeof c + "<hr>");
+
+      /*
+        1. var - 동일한 이름의 변수 또는 함수를 또 선언한다면? -> OK
+        2. var - 변수 or 함수를 선언 전에 사용한다면? -> OK
+      */
+
+      var a = "졸지 말아요~~";
+      document.write("a = " + a + ", " + typeof a + "<br>");
+
+      document.write("age = " + age + ", " + typeof a + "<br>");
+      document.write("</h4>");
+
+      var age = 20; // ★★★★★호이스팅: 미리 최상위로 올려서, 실행할 때 인식할 수 있게 됨
+      // 최상위에서 age 변수 존재는 인식하지만 값도 같이 인식되진 않음
+      document.write("age = " + age + ", " + typeof a + "<br>");
+
+      // 함수를 호출해보자
+      // test();
+
+      // 함수에 대해서 알아보자
+      function test() {
+        alert("test() 호출...1");
+      }
+
+      function test() {
+        alert("test() 호출...2");
+      }
+
+      // ----------------------------------------------------------------
+      document.write("<h1> 변수의 Scope에 대해 알아보자!</h1>");
+      // JavaScript에서 변수의 Scope에 대해 알아보자!
+      var i = 10; // 전역 변수
+      function test2() {
+        var i = 5; // 지역 변수
+        var j = 20; // 지역 변수
+        k = 50; // 함수 안에서 선언되는 변수에 var를 생략하면 전역 변수
+
+        console.log("i = " + i);
+        console.log("this.i = " + this.i);
+        console.log("j = " + j);
+        console.log("k = " + k);
+      }
+
+      function test3() {
+        console.log("i = " + i);
+        console.log("this.i = " + this.i);
+        // console.log("j = " + j);
+        console.log("k = " + k);
+
+        // 자바스크립트 변수의 scope은 선언된 위치의 함수 단위
+        // { } 블록 단위가 아니다.
+        console.log("전 : index = " + index);
+        for (var index = 0; index <= 10; index++) {}
+      }
+
+      console.log("전 : nickName = " + nickName);
+      {
+        var nickName = "도연";
+      }
+
+      console.log("후 : index = " + index);
+      console.log("후 : nickName = " + nickName);
+
+      test2(); // 함수 호출
+      test3();
+    </script>
+  </body>
+</html>

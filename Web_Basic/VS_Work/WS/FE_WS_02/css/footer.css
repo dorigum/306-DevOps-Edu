@@ -1,0 +1,13 @@
+footer {
+  background-color: grey;
+  color: #ffffff;
+  padding: 40px 20px;
+  margin-top: 50px;
+}
+
+footer ul {
+  display: flex;
+  flex-direction: column; /* 항목들을 가로가 아닌 세로로 두 줄 배치 */
+  align-items: center; /* 가운데 정렬 */
+  gap: 10px; /* 주소와 전화번호 사이의 간격 */
+}
