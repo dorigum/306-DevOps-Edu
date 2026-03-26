@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex0326_구구단화면</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        margin: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid lightseagreen;
+        padding: 10px;
+        text-align: center;
+      }
+
+      th {
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>반복문으로 구구단 테이블 만들기</h1>
+
+    <div id="gugudan"></div>
+
+    <script>
+      // 1. 표의 시작 태그를 문자열 변수에 담기
+      let tableHTML = "<table>";
+
+      // 2. 바깥쪽 for문 (2단부터 9단 행 만들기)
+      for (let i = 2; i <= 9; i++) {
+        tableHTML += "<tr>"; // 행 시작
+
+        // 3. 안쪽 for문 (1부터 9까지 곱하는 열 만들기)
+        for (let j = 1; j <= 9; j++) {
+          tableHTML += "<td>" + i + " * " + j + " = " + i * j + "</td>";
+        }
+
+        tableHTML += "</tr>"; // 한 행 끝
+      }
+
+      // 4. 반복문이 끝나면 테이블의 닫는 태그 붙이기
+      tableHTML += "</table>";
+
+      document.getElementById("gugudan").innerHTML = tableHTML;
+    </script>
+  </body>
+</html>

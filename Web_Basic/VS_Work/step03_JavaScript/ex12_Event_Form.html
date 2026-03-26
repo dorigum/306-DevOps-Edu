@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Event Form</title>
+    <style type="text/css">
+      tr th {
+        background-color: pink;
+      }
+
+      td,
+      th {
+        padding: 3px;
+      }
+
+      div {
+        width: 200px;
+        height: 100px;
+        border: 1px lightcoral solid;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>[ 이벤트 등록 + DOM 접근 ]</h1>
+    <form name="member" action="http://google.com">
+      <table>
+        <tr>
+          <th>ID</th>
+          <td>
+            <input type="text" name="id" />
+          </td>
+        </tr>
+        <tr>
+          <th>결과</th>
+          <td><input type="text" name="result" /></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit" value="전송" /></td>
+        </tr>
+      </table>
+    </form>
+
+    <hr />
+    <div id="result"></div>
+
+    <script>
+      // 이벤트 등록 - 전송(submit) 될 때 사용하는 이벤트는 submit이다.
+      // 이벤트를 form에 등록
+      document.querySelector("form").onsubmit = function () {
+        // 전송 기능을 막는다.
+        event.preventDefault();
+        // console.log("되니?");
+
+        // id 박스에 값이 있는지 체크
+        // document.querySelector("[name = id]").value = "되니?";
+        let idEle = document.querySelector("[name = id]");
+        if (idEle.value === "") {
+          alert("ID에 값을 입력해주세요.");
+          idEle.focus(); // element에 커서 놓기
+        } else {
+          // 박스에 결과 값 넣기
+          /*
+            1) form 요소에 값 넣기 - value
+            2) form 요소를 제외한 p, a, td, div, span 태그
+              - innerHTML: 마크업을 사용한 경우
+              - innerText: 마크업없이 문자열(text) 인 경우
+          */
+          document.querySelector("[name = result]").value = idEle.value;
+
+          // document.querySelector("#result").innerText = "<h5>" + idEle.value + "</h5>";
+          document.querySelector("#result").innerHTML +=
+            "<h5>" + idEle.value + "</h5>";
+
+          // id 박스 text 지우기
+          idEle.value = "";
+
+          // 커서 놓기
+          idEle.focus();
+        }
+      };
+    </script>
+  </body>
+</html>
