@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ex0326_계산화면</title>
+
+    <style>
+      #result-box {
+        width: 200px;
+        height: 150px;
+        border: 1px solid palevioletred;
+        margin-top: 10px;
+        padding: 10px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>계산해보자!</h1>
+    <button onclick="startCalc()">계산</button><br />
+    <div id="result-box"></div>
+
+    <script>
+      function startCalc() {
+        // 1. 데이터 입력받기
+        let num1 = prompt("첫 번째 숫자를 입력하세요.");
+        let op = prompt("연산 기호를 입력하세요(+, -, *, /)");
+        let num2 = prompt("두 번째 숫자를 입력하세요.");
+
+        // 2. 유효성 검사(숫자인지, 연산 기호가 맞는지 확인)
+        // isNaN: 숫자가 아니라면 true 반환
+        let isInvalidNum =
+          isNaN(num1) || isNaN(num2) || num1 === "" || num2 === "";
+        let isInvalidOp = !["+", "-", "*", "/"].includes(op);
+
+        if (isInvalidNum || isInvalidOp) {
+          // 값을 잘못 입력한 경우
+          if (
+            confirm(
+              "숫자가 아니거나, 연산 기호가 잘못 입력되었어요. 다시 입력하실래요?",
+            )
+          ) {
+            startCalc(); // 함수 다시 호출(재귀)
+          }
+        } else {
+          // 3. 값이 제대로 입력되었다면 계산하기
+          let n1 = Number(num1);
+          let n2 = Number(num2);
+          let res = 0;
+
+          if (op === "+") res = n1 + n2;
+          else if (op === "-") res = n1 - n2;
+          else if (op === "*") res = n1 * n2;
+          else if (op === "/") res = n1 / n2;
+
+          // 4. 출력하기
+          document.getElementById("result-box").innerHTML =
+            n1 + op + n2 + " = " + res;
+        }
+      }
+    </script>
+  </body>
+</html>
