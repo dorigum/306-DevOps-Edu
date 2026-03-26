@@ -23,7 +23,7 @@
     </style>
   </head>
   <body>
-    <h1>반복문으로 구구단 테이블 만들기</h1>
+    <h1 style="text-align: center">반복문으로 구구단 테이블 만들기</h1>
 
     <div id="gugudan"></div>
 
@@ -31,19 +31,26 @@
       // 1. 표의 시작 태그를 문자열 변수에 담기
       let tableHTML = "<table>";
 
-      // 2. 바깥쪽 for문 (2단부터 9단 행 만들기)
+      // 2. 테이블 헤더
+      tableHTML += "<tr>";
       for (let i = 2; i <= 9; i++) {
+        tableHTML += "<th>" + i + "단</th>";
+      }
+      tableHTML += "</tr>";
+
+      // 3. 바깥쪽 for문 (1부터 9까지 곱하는 열 만들기)
+      for (let i = 1; i <= 9; i++) {
         tableHTML += "<tr>"; // 행 시작
 
-        // 3. 안쪽 for문 (1부터 9까지 곱하는 열 만들기)
-        for (let j = 1; j <= 9; j++) {
-          tableHTML += "<td>" + i + " * " + j + " = " + i * j + "</td>";
+        // 4. 안쪽 for문 (2단부터 9단 행 만들기)
+        for (let j = 2; j <= 9; j++) {
+          tableHTML += "<td>" + j + " * " + i + " = " + i * j + "</td>";
         }
 
         tableHTML += "</tr>"; // 한 행 끝
       }
 
-      // 4. 반복문이 끝나면 테이블의 닫는 태그 붙이기
+      // 5. 반복문이 끝나면 테이블의 닫는 태그 붙이기
       tableHTML += "</table>";
 
       document.getElementById("gugudan").innerHTML = tableHTML;

@@ -7,27 +7,76 @@
     <style>
       table {
         border-collapse: collapse;
-        margin: 20px;
+        margin: 20px auto;
+        border: 3px double #d32f2f;
       }
 
       th,
       td {
         border: 1px solid lightseagreen;
-        padding: 10px;
+        padding: 10px 20px;
         text-align: center;
       }
 
-      /* th {
-        background-color: aquamarine;
-      } */
+      th {
+        background-color: lightgoldenrodyellow;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
-    <h2>성적표-1</h2>
+    <h2 style="text-align: center">성적표-1</h2>
+
+    <div id="report-card"></div>
+
     <script>
-      let inputScore = prompt(); // 이름 국어 영어 수학 총점 평균 등급
-      // ~100: 수 / ~90: 우 / ~80: 미 / ~70: 양 / 60 이하: 가
-      alert(inputScore);
+      // 1. prompt를 통해 데이터 입력받기
+      let name = prompt("이름을 입력하세요.");
+      let kor = Number(prompt("국어 점수를 입력하세요.", "0"));
+      let eng = Number(prompt("영어 점수를 입력하세요.", "0"));
+      let math = Number(prompt("수학 점수를 입력하세요.", "0"));
+
+      // 2. 총점, 평균, 등급 구하기
+      let total = kor + eng + math;
+      let avg = (total / 3).toFixed(2); // .toFixed(2): 소수점 2자리까지 표시
+      let grade = "";
+
+      // 3. 등급
+      if (avg >= 90) {
+        grade = "수";
+      } else if (avg >= 80) {
+        grade = "우";
+      } else if (avg >= 70) {
+        grade = "미";
+      } else if (avg >= 60) {
+        grade = "양";
+      } else {
+        grade = "가";
+      }
+
+      // 4. 테이블 만들기
+      let tableHTML = "<table>";
+
+      // 헤더 부분
+      tableHTML += "<tr>";
+      tableHTML +=
+        "<th>이름</th><th>국어</th><th>수학</th><th>영어</th><th>총점</th><th>평균</th><th>등급</th>";
+
+      // 데이터 부분
+      tableHTML += "<tr>";
+      tableHTML += "<td>" + name + "</td>";
+      tableHTML += "<td>" + kor + "</td>";
+      tableHTML += "<td>" + eng + "</td>";
+      tableHTML += "<td>" + math + "</td>";
+      tableHTML += "<td>" + total + "</td>";
+      tableHTML += "<td>" + avg + "</td>";
+      tableHTML += "<td>" + grade + "</td>";
+      tableHTML += "</tr>";
+
+      tableHTML += "</table>";
+
+      // 5. 화면에 출력하기
+      document.getElementById("report-card").innerHTML = tableHTML;
     </script>
   </body>
 </html>
