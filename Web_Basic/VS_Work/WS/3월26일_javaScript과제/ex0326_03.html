@@ -45,8 +45,8 @@
           }
         } else {
           // 3. 값이 제대로 입력되었다면 계산하기
-          let n1 = Number(num1);
-          let n2 = Number(num2);
+          let n1 = Number(num1); // Number(): a10 --> NaN / 10a --> NaN
+          let n2 = Number(num2); // parseInt(): 10a --> 10 / a10 --> NaN
           let res = 0;
 
           if (op === "+") res = n1 + n2;

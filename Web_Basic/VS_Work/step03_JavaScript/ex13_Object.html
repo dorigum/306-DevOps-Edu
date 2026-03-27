@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Object key와 value</h1>
+
+    <script>
+      const person = {
+        name: "도연",
+        age: 20,
+        print: function () {
+          return this.name + "님의 나이는 " + this.age + "살 입니다.";
+        },
+      };
+
+      console.log(person);
+      console.log(person.name);
+      console.log(person["age"]);
+      console.log(person.print());
+
+      console.log("-------------------------------------------------");
+      // -----------------------------------------------------------------
+      // Object의 key와 value의 정보를 출력하기
+      let keys = Object.keys(person);
+      console.log(keys);
+
+      let values = Object.values(person);
+      console.log(values);
+
+      // Object의 key와 value를 한 쌍으로 조회하기
+      for (let key in keys) {
+        console.log(key + " = " + person[key]); // ★★★person[key](person 객체의 key 키에 해당하는 값을 가져와서 출력) --> person.key 사용 불가 XXX
+      }
+    </script>
+  </body>
+</html>
