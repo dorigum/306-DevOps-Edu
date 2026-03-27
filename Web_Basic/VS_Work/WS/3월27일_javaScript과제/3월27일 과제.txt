@@ -1,0 +1,7 @@
+1. JavaScript_Array관련함수정리.pdf 안에  7page 실습 02  완성하기!! - products
+
+2. shoes 자바스크립트 부분 소스 코드 분석해보기
+   그리고 나서 정렬하기 완성해보세요. - 01_shoe_sort.html 정렬부분 완성하기
+
+3. WS_03 완성하기 
+
