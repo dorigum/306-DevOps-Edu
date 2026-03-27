@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+  #result{width: 200px; height: 150px; border: 1px red solid;}
+</style>
+<script type="text/javascript">
+	let cal=()=>{
+		 let no1 = parseInt(prompt("첫번째 수?",5)); // a10 --> NaN     // 10a
+		 let no2 = parseInt(prompt("두번째 수?",5)); //
+		 
+		 let oper = prompt("연산기호(+,-,*,/)?","+");
+	 
+		 if(isNaN(no1) || isNaN(no2)){//숫자가 아니니?
+			 alert("숫자만 입력하세요^^");
+		     confirm("다시할래?") ?  cal() : alert("다음에 이용해주세요.");
+		 
+		 }else{
+			 let divEle = document.getElementById("result");
+		  
+			switch (oper) {
+				case "+" : case "-" :case "*" :case "/" :
+				let result = eval(no1 +oper+ no2);	//보안에 취약
+
+				divEle.innerHTML = `<h4>${no1}  ${oper}  ${no2} = ${result}</h4>`;
+				break;
+			   default:
+				alert("연산기호를 잘못입력했어요^^");
+			    confirm("다시 할래요?") ? cal() : alert("잘가요~"); 
+			}
+			 
+			// 출력 
+			
+		 }//else끝
+	   
+ 	}
+
+  onload = function(){
+	  //이벤트 등록
+	  document.querySelector("button").onclick = cal;
+  }
+
+</script>
+</head>
+<body>
+<h2>계산해보자 - eval() 함수</h2>
+<button>계산</button>
+<div id="result"></div>
+</body>
+</html>

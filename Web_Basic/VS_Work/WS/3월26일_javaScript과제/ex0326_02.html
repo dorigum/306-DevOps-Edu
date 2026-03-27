@@ -32,9 +32,9 @@
     <script>
       // 1. prompt를 통해 데이터 입력받기
       let name = prompt("이름을 입력하세요.");
-      let kor = Number(prompt("국어 점수를 입력하세요.", "0"));
-      let eng = Number(prompt("영어 점수를 입력하세요.", "0"));
-      let math = Number(prompt("수학 점수를 입력하세요.", "0"));
+      let kor = parseInt(prompt("국어 점수를 입력하세요.", "0"));
+      let eng = parseInt(prompt("영어 점수를 입력하세요.", "0"));
+      let math = parseInt(prompt("수학 점수를 입력하세요.", "0"));
 
       // 2. 총점, 평균, 등급 구하기
       let total = kor + eng + math;

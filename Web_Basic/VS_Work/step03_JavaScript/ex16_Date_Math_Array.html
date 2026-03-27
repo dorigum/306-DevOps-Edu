@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Date, Math, Array 객체 알아보기</h2>
+    <script>
+      // 날짜 생성
+      // const today = new Date();
+      // const today = new Date(2025, 9, 3); // 10월
+      const today = new Date(2025, 9, 3, 14, 2, 30);
+
+      console.log(today);
+      console.log(today.getFullYear());
+      console.log(today.getMonth());
+      console.log(today.toLocaleDateString());
+
+      // -------------------------------------------------
+      let no = parseInt(Math.random() * 5 + 1); // 0.0 ~ 0.9999
+      console.log(no);
+
+      // -------------------------------------------------
+      const arr1 = [];
+      const arr2 = new Array(1, true, "졸립다");
+      const arr3 = [2, 4, 6, 8, true]; // 제일 많이 쓰는 방법
+      // JavaScript에서 []: 배열, (): 함수, {}: 객체
+
+      const arr4 = [
+        [1, 2, 3],
+        [3, 6, 9, 12],
+        ["A", "B"],
+        [true, false, 3.14],
+      ];
+
+      const arr5 = [
+        { name: "도연", age: 20 },
+        { name: "나영", age: 24 },
+        { name: "미미", age: 23 },
+      ];
+
+      console.log("-------------------------");
+      console.log(arr1);
+      console.log(arr2);
+      console.log(arr3);
+      console.log(arr4);
+      console.log(arr5);
+
+      console.log("-------------------------");
+      console.log(arr1.length);
+      console.log(arr2.length);
+      console.log(arr3.length);
+      console.log(arr4.length);
+      console.log(arr5.length);
+    </script>
+  </body>
+</html>

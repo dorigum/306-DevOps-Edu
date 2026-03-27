@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+  #result{width: 200px; height: 150px; border: 1px red solid;}
+</style>
+<script type="text/javascript">
+	let cal=()=>{
+		 let no1 = parseInt(prompt("첫번째 수?",5)); // a10 --> NaN     // 10a
+		 let no2 = parseInt(prompt("두번째 수?",5)); //
+		 
+		 let oper = prompt("연산기호(+,-,*,/)?","+");
+	 
+		 if(isNaN(no1) || isNaN(no2)){//숫자가 아니니?
+			 alert("숫자만 입력하세요^^");
+		     confirm("다시할래?") ?  cal() : alert("다음에 이용해주세요.");
+		 
+		 }else{
+			 let divEle = document.getElementById("result");
+		   /*
+		      런타임에 받은 문자열을 사용해 함수를 만들 수 있다. 
+			      - 동적으로 코드를 실행하고 싶을때 사용한다.(주로 수식 계산기)
+              함수 표현식과 함수 선언문은 개발자가 직접 스크립트를 작성해야만 함수를 만들 수 있지만,
+              new Function이라는 문법을 사용하면 어떤 문자열도 함수로 바꿀 수 있다.
+
+			  ex) const f = new Function('a', 'b', 'return a + b');
+                  첫 번째 ~ (n-1)번째 매개변수 : 함수의 인자 이름들
+				  마지막 인자 : 함수 본문 (문자열)
+                
+		   */
+			switch (oper) {
+				case "+" : case "-" :case "*" :case "/" :
+				let result = new Function("return "+ (no1 +oper+ no2) )();//선언과 동시에 즉시실행	
+
+				divEle.innerHTML = `<h4>${no1}  ${oper}  ${no2} = ${result}</h4>`;
+				break;
+			   default:
+				alert("연산기호를 잘못입력했어요^^");
+			    confirm("다시 할래요?") ? cal() : alert("잘가요~"); 
+			}
+			 
+			// 출력 
+			
+		 }//else끝
+	   
+ 	}
+
+  onload = function(){
+	  //이벤트 등록
+	  document.querySelector("button").onclick = cal;
+  }
+
+</script>
+</head>
+<body>
+<h2>계산해보자 - new Function()()</h2>
+<button>계산</button>
+<div id="result"></div>
+</body>
+</html>
