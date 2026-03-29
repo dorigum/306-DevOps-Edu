@@ -618,7 +618,6 @@
           msg.className = "text-center";
           msg.textContent = "조건에 맞는 신발이 없습니다.";
           shoeList.appendChild(msg);
-
         } else {
           shoes.forEach((shoe) => {
             const shoeItem = document.createElement("div");
@@ -637,11 +636,25 @@
         } // else end
       }; // funcation end
 
-      // 정렬 기능 - 이름 순
+      // 1. 정렬 기능 - 이름 순 (가나다/ABC 순)
+      document.getElementById("sortName").addEventListener("click", () => {
+        // 원본 배열을 유지하고 싶다면 [...shoeData]를 사용
+        // 여기서는 요구사항에 맞춰 원본을 정렬
+        shoeData.sort((a, b) => a.title.localeCompare(b.title));
+        displayShoes(shoeData);
+      });
 
-      // 정렬 기능 - 닞은 가격 순
+      // 2. 정렬 기능 - 낮은 가격 순
+      document.getElementById("sortPriceLow").addEventListener("click", () => {
+        shoeData.sort((a, b) => a.price - b.price);
+        displayShoes(shoeData);
+      });
 
-      // 정렬 기능 - 높은 가격 순
+      // 3. 정렬 기능 - 높은 가격 순
+      document.getElementById("sortPriceHigh").addEventListener("click", () => {
+        shoeData.sort((a, b) => b.price - a.price);
+        displayShoes(shoeData);
+      });
 
       // 로딩
       displayShoes(shoeData);
