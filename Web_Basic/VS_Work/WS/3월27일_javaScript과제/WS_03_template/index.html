@@ -30,7 +30,7 @@
   <body>
     <header>
       <nav>
-        <!-- 5개의 메뉴생성 -->
+        <!-- 5개의 메뉴 생성 -->
         <ul>
           <li class="logo">
             <a href="index.html"
@@ -45,46 +45,40 @@
       </nav>
     </header>
 
-    <script src="js/banner.js">
-      <div id="banner">지금 당신의 행복! IT's KOSTA Life!</div>
-      // 1. banner의 텍스트를 주기적으로 변경한다. (5초마다)
-      let bannerList = ["국민의 은행이 되겠습니다.", "5060 웰컴패키지, 최대 7만원의 혜택을 드립니다.", "타행이체, 자동이체 수수료 면제", "저녁 6시까지 영업합니다."];
+    <div
+      id="banner"
+      style="
+        text-align: center;
+        font-size: 20px;
+        margin: 20px;
+        font-weight: bold;
+        color: #333;
+      "
+    >
+      지금 당신의 행복! IT's KOSTA Life!
+    </div>
 
-      // 2. main의 main-item class에 data-main-item-id를 추가하고
-      // 각 버튼에 main-item-btn class를 추가한다.
-      // 각 버튼을 클릭하면 data-main-item-id의 값을 console.log()로 출력한다.
-      let mainItems = document.querySelectorAll("main article section");
-      mainItems.forEach(function (item, index) {
-        item.setAttribute("data-main-item-id", index);
-        item.querySelector("button").classList.add("main-item-btn");
-        item.querySelector("button").addEventListener("click", function () {
-          console.log(item.getAttribute("data-main-item-id"));
-        });
-      });
-
-    </script>
     <main>
       <article>
-        <!-- 총 3개의 서브영역 -->
-        <section>
+        <section class="main-item" data-main-item-id="10">
           <img src="https://picsum.photos/id/1/200" alt="" />
           <h2>제목1 : main-item 1</h2>
           <p>내용1</p>
-          <button id = "10">button 1</button>
+          <button class="main-item-btn" id="10">button 1</button>
         </section>
 
-        <section>
+        <section class="main-item" data-main-item-id="20">
           <img src="https://picsum.photos/id/2/200" alt="" />
           <h2>제목2 : main-item 2</h2>
           <p>내용2</p>
-          <button id = "20">button 2</button>
+          <button class="main-item-btn" id="20">button 2</button>
         </section>
 
-        <section>
+        <section class="main-item" data-main-item-id="30">
           <img src="https://picsum.photos/id/3/200" alt="" />
           <h2>제목3 : main-item 3</h2>
-          <p>내용3.</p>
-          <button id = "30">button 3</button>
+          <p>내용3</p>
+          <button class="main-item-btn" id="30">button 3</button>
         </section>
       </article>
     </main>
@@ -95,5 +89,37 @@
         <li>02-0000-0000</li>
       </ul>
     </footer>
+
+    <script>
+      // 1. 배너 텍스트 5초마다 변경
+      let bannerList = [
+        "국민의 은행이 되겠습니다.",
+        "5060 웰컴패키지, 최대 7만원의 혜택을 드립니다.",
+        "타행이체, 자동이체 수수료 면제",
+        "저녁 6시까지 영업합니다.",
+      ];
+
+      let bannerIndex = 0;
+      const bannerEle = document.querySelector("#banner");
+
+      setInterval(() => {
+        bannerIndex = (bannerIndex + 1) % bannerList.length;
+        if (bannerEle) bannerEle.innerText = bannerList[bannerIndex];
+      }, 5000);
+
+      // 2. main-item 버튼 클릭 이벤트
+      const mainBtns = document.querySelectorAll(".main-item-btn");
+
+      mainBtns.forEach((btn) => {
+        btn.addEventListener("click", function (event) {
+          // 💡 수정 3: 변수 이름을 mainItem으로 통일했습니다.
+          const mainItem = event.target.closest(".main-item");
+
+          if (mainItem) {
+            console.log(mainItem.getAttribute("data-main-item-id"));
+          }
+        });
+      });
+    </script>
   </body>
 </html>
