@@ -1,16 +1,18 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="EUC-KR" />
+    <meta charset="UTF-8"/>
     <title>Insert title here</title>
     <style type="text/css">
       table {
         width: 400px;
-        border: 1px red solid;
+        border: 1px solid cornflowerblue;
+        border-collapse: collapse;
       }
-      td,
-      th {
-        border: 1px gray solid;
+      td, th {
+        border: 1px solid gray;
+        text-align: center;
+        padding: 5px;
       }
       a {
         text-decoration: none;
@@ -27,23 +29,36 @@
         <th>나이</th>
         <th>삭제하기</th>
       </tr>
-
-      <!-- 동적으로 tr 추가 또는 제거 -->
-      <script>
-        // 동적 이벤트로 테이블의 tr 추가하기
-        document.body.addEventListener("click", function () {
-            if (event.target.matches("#add")) {
-              let tr = document.createElement("tr"); // tr 요소 생성
-              tr.innerHTML =
-                "<td>홍길동</td><td>20</td><td><a href='#' class='del'>삭제하기</a></td>"; // tr 요소의 내부 HTML 설정
-              document.querySelector("#table").appendChild(tr); // table 요소에 tr 추가
-            } else if (event.target.matches(".del")) {
-                // 삭제하기 버튼 클릭 시
-                let tr = event.target.parentElement.parentElement; // a -> td -> tr
-                tr.parentElement.removeChild(tr); // tr의 부모 요소인 table에서 tr 제거
-            }
-          }, false);
-      </script>
     </table>
+
+    <!-- 동적으로 tr 추가 또는 제거 -->
+    <script>
+      let age = 20; // 나이 초기값
+      
+      // 동적 이벤트로 테이블의 tr 추가하기
+      document.body.addEventListener("click", function (event) {
+        
+        // 1. 추가 버튼 클릭 시
+        if (event.target.matches("#add")) {
+          event.preventDefault(); // 화면 튕김(새로고침)을 막아주는 코드!
+
+          let tb = document.getElementById("table");
+
+          // insertRow: 테이블의 맨 끝(tb.rows.length)에 <tr>을 추가
+          let row = tb.insertRow(tb.rows.length);
+          
+          // insertCell: <tr> 안에 <td>를 0, 1, 2...추가하기
+          row.insertCell(0).innerHTML = "도연";
+          row.insertCell(1).innerHTML = age++;
+          row.insertCell(2).innerHTML = "<button type='button' class='del'>삭제</button>";
+
+          // 2. 삭제하기 버튼 클릭 시
+        } else if (event.target.matches(".del")) {
+          // ★parentElement를 두 번 쓰지 않고 closest("tr")을 쓰면 가장 가까운 부모 tr을 한 번에 찾을 수 있다!
+          let tr = event.target.closest("tr"); // button -> td -> tr
+          tr.remove(); // tr의 부모 요소인 table에서 tr 제거
+        }
+      });
+    </script>
   </body>
 </html>
