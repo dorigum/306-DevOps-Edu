@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      onload = function () {
+        var sel = document.getElementById("zipcode");
+        sel.onchange = function () {
+          var value = sel.value;
+          if (value != "0") {
+            var arr = value.split(" ");
+            var zip = arr[0];
+            var addr = arr[1] + " " + arr[2] + " " + arr[3];
+            alert("우편번호 : " + zip + "\n주소 : " + addr);
+          }
+        };
+      };
+    </script>
+
+    <form name="f">
+      우편번호
+      <select id="zipcode">
+        <option value="0">-- 주소 선택 --</option>
+        <option value="123-333 서울시 구로구 구로1동">
+          123-333 서울시 구로구 구로1동
+        </option>
+        <option value="222-222 서울시 청담동 청담3동">
+          222-222 서울시 청담동 청담3동
+        </option>
+        <option value="444-444 부산시 대구동 대로2동">
+          444-444 부산시 대구동 대로2동
+        </option>
+        <option value="555-221 경기도 성남시 분당구 분당1동">
+          555-221 경기도 성남시 분당구 분당1동
+        </option>
+      </select>
+
+      <script>
+        // select에 있는 주소 중에서 하나를 선택하면, 우편번호와 주소를 opener 창의 text에 value 추가
+        document.querySelector("#zipcode").addEventListener("change", (e) => {
+          console.log(e.target.value);
+          let v = EventTarget.value;
+
+          opener.document.querySelector("[name = zip1]").value = v.substring(0, 3);
+          opener.document.querySelector("[name = zip2]").value = v.substring(4, 7);
+          opener.document.querySelector("[name = addr]").value = v.substring(8);
+
+          // 현재 창 닫기
+          self.close();
+        });
+      </script>
+    </form>
+  </body>
+</html>

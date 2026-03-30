@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>취미선택</legend>
+        <input type = "checkbox" name = "all" value = "all"/>
+        <span id = "span">전체선택</span>
+        <p>
+          <input type = "checkbox" name = "hobby" value = "등산"/>등산
+          <input type = "checkbox" name = "hobby" value = "수영"/>수영
+          <input type = "checkbox" name = "hobby" value = "낚시"/>낚시
+          <input type = "checkbox" name = "hobby" value = "놀기"/>놀기
+          <input type = "checkbox" name = "hobby" value = "먹기"/>먹기
+          <input type = "button" value = "클릭" />
+        </p>
+      </fieldset>
+    </form>
+
+    <div id = "result"></div>
+
+	<script>
+		document.querySelector("[value = 클릭]").addEventListener("click", function(){
+			// 선택된 취미의 value를 div 영역에 넣는다.
+			let data = "선택된 취미는 ";
+			/* document.querySelectorAll("[name = hobby]").forEach((ckEle, index) => {
+				// console.log(ckEle + " = " + index);
+				if(ckEle.checked) {
+					data += ckEle.value + " | ";
+				}
+			}); */
+
+			document.querySelectorAll("[name = hobby]:checked").forEach((ckEle, index) => { // .forEach(a, b) -> a: 요소, b: index
+				data += ckEle.value + " | "; // 체크된 요소만 조회해서 value 추가
+			});
+
+			// alert(data);
+			document.querySelector("#result").innerHTML = "<h4>" + data + "</h4>";
+		}, false);
+
+		// ----------------------------------------------------------------------
+		// 전체선택 or 전체해제
+		document.querySelector("[name = all]").addEventListener("click", function() {
+			// 전체선택이 되면 모든 취미 선택, 전체선택이 해제되면 모든 취미 해제
+			// let allChecked = event.target.checked; // 전체선택 체크 여부
+			
+			document.querySelectorAll("[name = hobby]").forEach((ckEle, index) => {
+				ckEle.checked = event.target.checked; // 전체선택 체크 여부에 따라, 모든 취미 체크 여부 변경
+			});
+
+			// span 태그의 content 내용을 전체선택 or 전체해제로 변경
+			let span = document.querySelector("#span");
+			event.target.checked ? span.innerText = "전체해제" : span.innerText = "전체선택";
+		}, false);
+	</script>
+  </body>
+</html>
