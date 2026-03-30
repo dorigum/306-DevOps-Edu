@@ -42,17 +42,18 @@
       console.log("문제05:", prod05);
 
       // 6. 모든 상품들의 총 금액 구하기 - reduce(), price 누적
-      // 맨 끝의 '0'은 누적값의 시작을 0으로 하겠다는 뜻!
+      // 맨 끝의 '0'은 누적값의 시작을 0으로 하겠다는 뜻!(초기 값)
       const prod06 = products.reduce((sum, product) => sum + product.price, 0);
       console.log("문제06:", prod06);
 
       // 7. 상품 가격 기준으로 오름차순 정렬된 배열 생성, 원본 배열도 같이 변경 - sort()(원본 데이터 같이 변경됨)
       // a.price에서 b.price를 뺐을 때 음수가 나오면 a를 앞으로 보내고,
       // 양수가 나오면 b를 앞으로 보낸다.
-      products.sort((a, b) => a.price - b.price);
+      products.sort((a, b) => a.price - b.price); // 내림차순: b.rpice - a.price
       console.log("문제07:", products);
 
-      // 8. 상품 이름을 기준으로 알파벳 순 정렬, 원본 배열은 그대로 유지 - toSorted()(원본 데이터 변경되지 않음), localeCompare()로 문자열 비교
+      // 8. 상품 이름을 기준으로 알파벳 순 정렬, 원본 배열은 그대로 유지
+      // - toSorted()(원본 데이터 변경되지 않음), localeCompare()로 문자열을 사전 순(ex: 1, 10, 2, 3...) 기준으로 비교
       const prod08 = products.toSorted((a, b) => a.name.localeCompare(b.name));
       console.log("문제08:", prod08);
 
@@ -60,7 +61,8 @@
       const prod09 = products.slice(0, 3);
       console.log("문제09:", prod09);
 
-      // 10. 상품 배열에서 id가 3인 상품을 찾아 배열에서 제거 - findIndex(), splice()
+      // 10. 상품 배열에서 id가 3인 상품을 찾아 배열에서 제거
+      // - findIndex(): 삭제할 요소의 위치 찾기, splice(): 해당 위치에서 요소 제거
       const targetIndex = products.findIndex((product) => product.id === 3);
       if (targetIndex !== -1) { // 만약 찾았다면(-1이 아니라면)
         products.splice(targetIndex, 1); // 그 위치에서 1개 자르기

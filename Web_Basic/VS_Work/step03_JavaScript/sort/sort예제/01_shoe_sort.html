@@ -618,6 +618,7 @@
           msg.className = "text-center";
           msg.textContent = "조건에 맞는 신발이 없습니다.";
           shoeList.appendChild(msg);
+
         } else {
           shoes.forEach((shoe) => {
             const shoeItem = document.createElement("div");
@@ -630,7 +631,7 @@
             <p>브랜드: ${shoe.brand}</p>
             <p>타입: ${shoe.type}</p>
             `;
-
+            
             shoeList.appendChild(shoeItem);
           }); // for end
         } // else end
