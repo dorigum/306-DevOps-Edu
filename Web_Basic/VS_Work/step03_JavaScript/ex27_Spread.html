@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spread 연산자</title>
+  </head>
+  <body>
+    <h1>Spread 연산자</h1>
+
+    <!-- 배열이나 객체를 펼쳐서 복사하거나 병합할 때 사용하는 문법 -->
+
+    <script>
+      {
+        // 배열
+        const arr1 = [1, 2, 3];
+
+        // 배열 복사
+        const arr2 = arr1;
+
+        console.log(arr1.toString);
+        console.log(arr2);
+        console.log(arr1 === arr2);
+
+        // 추가
+        console.log("--- 추가 ---");
+        arr2.push(4);
+
+        console.log(arr1);
+        console.log(arr2);
+      }
+
+      console.log("--- Spread 연산자 ---");
+      {
+        const arr1 = [1, 2, 3];
+        const arr2 = [...arr1];
+        console.log(arr1);
+        console.log(arr2);
+        console.log(arr1 === arr2);
+
+        console.log("--- 추가 ---");
+        arr2.push(4);
+
+        console.log(arr1);
+        console.log(arr2);
+      }
+
+      // -------------------------------------------------
+      // 객체 배열
+      console.log("--- 객체 배열 복사 ---");
+      {
+        const arr1 = [
+          { name: "koo", age: 20 },
+          { name: "kim", age: 30 },
+        ];
+        const arr2 = [...arr1]; // 복사
+
+        console.log(arr1);
+        console.log(arr2);
+        console.log(arr1 == arr2);
+
+        console.log("--- 값 변경 ---");
+        // 값 변경
+        arr2.push({ name: "lee", age: 40 });
+        console.log(arr1);
+        console.log(arr2);
+
+        // 깊은 복사 - 객체 배열의 요소인 객체까지 복사하기 -> 주소는 다르지만 같은 곳을 참조
+        // 두 배열의 값이 모두 변경
+        console.log("--- name 변경 ---");
+        arr2[1].name = "얼짱";
+        console.log(arr1);
+        console.log(arr2);
+      }
+
+      console.log("--- 객체 Spread ---");
+      {
+        // 주소를 참조하지 않고 값만 복사하기
+        const obj1 = { name: "do", age: 20 };
+        const obj2 = { ...obj1 }; // 복사
+        console.log(obj1);
+        console.log(obj2);
+
+        obj1.name = "바보";
+
+        console.log(obj1);
+        console.log(obj2);
+      }
+
+      console.log("--- 배열 합치기 ---");
+      {
+        const arr1 = [1, 2, 3];
+        const arr2 = [10, 20, ...arr1, 40, 50]; // 복사 + 추가
+        console.log(arr1);
+        console.log(arr2);
+
+        const arr3 = [...arr1, ...arr2];
+        console.log(arr3);
+
+        // 배열의 일부분만 합치기
+        const arr4 = [0, 1, 2, ...arr3.slice(2, 7)];
+        console.log(arr4);
+      }
+    </script>
+  </body>
+</html>

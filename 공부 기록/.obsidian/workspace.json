@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "8416fea0d77998a5",
+        "id": "6cc90f079be42e26",
         "type": "tabs",
         "children": [
           {
-            "id": "ea14573a3010cef6",
+            "id": "a7ad3963900a75f0",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "캡처/Pasted image 20260326122109.png"
+                "file": "공부 기록/2026-03-31.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260326122109"
+              "icon": "lucide-file",
+              "title": "2026-03-31"
             }
           }
         ]
@@ -76,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "21f751e21521c464",
@@ -181,19 +184,29 @@
       "bases:새 베이스 생성하기": false
     }
   },
-  "active": "ea14573a3010cef6",
+  "active": "a7ad3963900a75f0",
   "lastOpenFiles": [
+    "Pasted image 20260331151637.png",
+    "공부 기록/2026-02-10.md",
+    "캡처/Pasted image 20260331120622.png",
+    "공부 기록/2026-03-31.md",
+    "공부 기록/2026-03-30.md",
+    "공부 기록/2026-03-27.md",
+    "Pasted image 20260327103706.png",
+    "Pasted image 20260327103547.png",
+    "Pasted image 20260327103541.png",
+    "Pasted image 20260327103234.png",
+    "캡처/20260211_163545.jpg",
+    "캡처/Pasted image 20260326122109.png",
     "공부 기록/무제.canvas",
     "공부 기록/260213_예외 처리 실습 구조.canvas",
     "기타/공부 기록.md",
     "기타/무제.base",
     "기타/무제2.base",
     "공부 기록/2026-03-26.md",
-    "캡처/Pasted image 20260326122109.png",
     "캡처/Pasted image 20260325155753.png",
     "캡처/JavaScript_자료형.png",
     "캡처/FK01.png",
-    "캡처/Pasted image 20260206161423.png",
     "공부 기록/2026-02-26.md",
     "무제.md",
     "공부 기록/2026-03-25.md",
@@ -202,12 +215,7 @@
     "무제 1.base",
     "무제 2.base",
     "공부 기록/2026-03-23.md",
-    "캡처/Pasted image 20260323092231.png",
-    "캡처/Pasted image 20260323122215.png",
     "공부 기록/2026-03-11.md",
-    "캡처/회원관리.png",
-    "캡처/테이블관계.png",
-    "캡처/Pasted image 20260306170226.png",
     "Project_Specification.md",
     "Cafe_kiosk",
     "공부 기록/2026-03-06.md",
@@ -222,10 +230,6 @@
     "2026-02-26.md",
     "공부 기록/2026-02-25.md",
     "팀플/미니 프로젝트-1.md",
-    "프로젝트 계획서-1.md",
-    "팀플/260213 팀 발표.md",
-    "공부 기록/2026-02-23.md",
-    "공부 기록/2026-02-19.md",
     "팀플",
     "새 폴더",
     "캡처",

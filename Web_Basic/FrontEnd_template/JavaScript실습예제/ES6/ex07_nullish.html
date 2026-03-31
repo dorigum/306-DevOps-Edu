@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!--
+      The ?? operator returns the first argument 
+      if it is not nullish (null or undefined).
+
+      : ??는 왼쪽 피연산자가 null 또는 undefined일 경우에만 만 오른쪽 값을 반환
+      “null이거나 undefined면 대체값을 사용해라는 뜻”
+
+      언제쓰면 좋은가?
+      ||을 쓰면 "", 0, false도 다 무시되기 때문에,
+       "진짜 값이 없을 때만" 대체값을 주고 싶을 때 ??가  필요하다.
+    -->
+   <h2> Nullish - ?? </h2>  
+   <script>
+      // 조건문에서 비교할대 false인경우 값
+      // : false, 0, null , undefined, NaN, '' , 
+    {
+       const name="hee";
+       const userName = name || "Guest";
+       console.log("당신은 " + userName);
+    }  
+    {
+       const name="";
+       const userName = name || "Guest";
+       console.log("당신은 " + userName);
+    } 
+    {
+       const name=null;
+       const userName = name || "Guest";
+       console.log("당신은 " + userName);
+    } 
+    {
+       const name=0;
+       const userName = name || "Guest";
+       console.log("당신은 " + userName);
+    } 
+
+     console.log("---- nullish (null or undefined).------");
+     {
+       const name=0;
+       const userName = name ?? "Guest";
+       console.log("당신은 " + userName);//name
+    }
+
+    {
+       const name="";
+       const userName = name ??  "Guest";
+       console.log("당신은 " + userName); //name
+    }
+
+    {
+       const name=null;
+       const userName = name ??  "Guest";
+       console.log("당신은 " + userName);
+    }
+
+    {
+       const name=undefined;
+       const userName = name ??  "Guest";
+       console.log("당신은 " + userName);
+    }
+   </script>
+</body>
+</html>

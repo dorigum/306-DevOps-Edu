@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+     Closure : 클로저는 내부함수에서 외부함수의 범위에 대한 접근을 뜻하낟.
+            : 함수가 생성될 당시의 외부 변수(상위 스코프)를 기억하는 함수
+              즉, 내부 함수가 외부 함수의 변수에 접근할 수 있고,
+              외부 함수가 종료된 후에도 그 변수를 “기억”하고 사용하는 것이 바로 클로저
+
+             클로저는 함수가 만들어질 때, 자기가 속한 외부 환경(렉시컬 환경)을 기억하고,
+             그 함수가 살아 있는 한 외부 변수도 함께 살아 있다.
+
+    * 렉시컬 환경(Lexical Environment) 이란?
+      렉시컬 환경은 자바스크립트 코드가 작성된 위치(문맥)에 따라 
+      변수와 함수의 유효 범위를 구성하는 내부 구조이다.
+    -->
+
+   <h3> Closure : 클로저는 내부함수에서 외부함수의 범위에 대한 접근</h3> 
+   <script>
+    function outer(x){
+       console.log(x);
+
+       return function(y){
+           return x+y;
+       }
+    }
+
+    console.log("-----------");
+    const re1 = outer(5);
+    const re2 = outer(6);
+    const re3 = outer(7);
+
+    console.log( re1(10) )
+    console.log( re2(20) )
+    console.log( re3(30) )
+    
+   </script>
+</body>
+</html>

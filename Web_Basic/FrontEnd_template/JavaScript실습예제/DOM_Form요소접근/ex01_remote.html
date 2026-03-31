@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+</head>
+<body>
+ <a href="#" data-url="naver.com">네이버</a> <p>
+ <a href="#" data-url="daum.net">다음</a> <p>
+ <a href="#" data-url="kosta.or.kr">코스타</a> <p>
+    
+<script>
+    document.querySelectorAll("a").forEach((aEle)=>{
+        aEle.addEventListener("click" , (e)=>{
+             //메인창의 url주소를 변경해보자.
+             //location.href="https://www.naver.com"; //현재창의 url변경
+
+             opener.location.href="http://" + e.target.getAttribute("data-url");
+        });
+    });
+</script>
+</body>
+</html>

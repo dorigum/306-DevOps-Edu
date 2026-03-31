@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  
+  <title>Document</title>
+   
+ </head>
+ <body>
+ <form>
+   <fieldset>
+      <legend>취미선택</legend>
+	  <input type="checkbox" name="all" value="all" >
+	   <span id="span">전체선택</span>
+	  <p>
+
+	  <input type="checkbox" name="hobby" value="등산">등산
+      <input type="checkbox" name="hobby" value="수영">수영
+	  <input type="checkbox" name="hobby" value="낚시">낚시
+	  <input type="checkbox" name="hobby" value="놀기">놀기
+	  <input type="checkbox" name="hobby" value="먹기">먹기
+
+	  <input type="button" value="클릭" >
+
+   </fieldset>
+ </form>
+ 
+ <div id="result"></div>
+
+ <script>
+     document.querySelector("[name=all]").addEventListener("click", (e)=>{
+         //현재 체크박스가 선택되었으면 모든 hobby를 선택(chceked=true)
+		 //아니면 해지 (chceked=fase)
+         //alert(e.target.checked)
+
+		 document.querySelectorAll("[name=hobby]").forEach((item, index)=>{
+            //console.log(item +" , " + index)
+			item.checked = e.target.checked;
+		 });
+
+	 });
+
+	 document.querySelector("[value=클릭]").addEventListener("click", ()=>{
+		 //hobby에 선택된 체크박스의 value를 모아서 div영역에 넣기 
+		 let hobbyStr="취미는 ";
+		 document.querySelectorAll("[name=hobby]:checked").forEach((item, index)=>{
+				hobbyStr += item.value +" |  "
+			
+		 });
+ 
+		 document.getElementById("result").innerHTML  = hobbyStr;
+		 
+	 })
+
+ </script>
+  
+ </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE HTML >
+<html>
+ <head>
+  <title> New Document </title>
+  <meta charset="utf-8">
+  
+   <style>
+	 img{position:absolute;}
+   </style>
+
+   <script>
+    onload = ()=>{
+    	let i=0;
+        let state = true;//증가또는 감소해야하는 상황인지를 판별하는 변수(true=증가,false=감소)
+        let btnClickState = true; //레이어움직이기 버튼 클릭전 true, 클릭중 false
+        
+         //레이어움직이기 시작할지 여부를 판별하는 함수 필요함
+		 const imgMoveState = function(){
+       	  if(btnClickState){
+       	  	st = setInterval(imgMove, 10)//0.001
+       	    btnClickState = false;
+       	  }else{
+       	  	alert("이미 실행중입니다.^^")
+       	  }	
+        }
+
+
+   	  let imgMove = function () {
+		if (i < 0) {//음수
+   			state = true;
+   			document.getElementById("img").src = "img/lion.gif";
+   		} else if (i > 300) {
+   			state = false;
+   			document.getElementById("img").src = "img/monkey.gif";
+   		}
+   		 
+   		if (state)i++;
+   		else i--;
+
+   	    console.log(state+" = " + i)
+   		document.getElementById("img").style.left = i  + "px";
+   		
+     }//함수끝
+   	
+   		
+   let= imgStopState = ()=>{
+   		clearInterval(st);
+   		btnClickState = true;
+   	}
+   	
+   	 document.getElementById("move").addEventListener("click", imgMoveState);
+   	 document.getElementById("stop").addEventListener("click",imgStopState);	
+   	
+  }//loadEnd   
+   
+     
+
+   </script>
+
+ </head>
+
+ <body>
+  <form>
+     <input type="button" value="레이어움직이기"  id="move"/>
+	 <input type="button" value="레이어멈추기" id="stop"/>
+  </form>
+   <p>
+  <img src="img/dog.gif" id="img"/>
+ </body>
+</html>
+
+

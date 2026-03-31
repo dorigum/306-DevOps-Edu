@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Closure 개념</h1>
+    <!-- Closure는 내부 함수에서 외부 함수의 변수를 기억했다가
+         외부에서 사용할 수 있도록 하는 것 -->
+
+    <script>
+      let outer = function (x) {
+        console.log(x);
+
+        return function (y) {
+          return x + y;
+        };
+      };
+
+      console.log("--------------------------");
+      // x로 값을 전달
+      const re1 = outer(5); // x값을 기억: 렉시컬 스코프
+      const re2 = outer(10);
+      const re3 = outer(15);
+
+      console.log("--------------------------");
+      console.log(re1(1)); // y로 값을 전달
+      console.log(re2(2));
+      console.log(re3(3));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" content="EditPlus">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script type="text/javascript">
+      //각 매장마다 버거의 종류를 준비
+      let kfc =["징거버거","타워버거","불고기버거"];
+      let lotte=["라이스버거","데리버거","새우버거","한우버거","치즈버거"];
+      let king=["불고기와퍼","치즈와퍼","쥬니어와퍼","쉬림프버거","스테이크버거","감자칩"];
+      let mac=["1997버거","맥모닝","빅맥","베이컨버거","치킨버거"];
+      
+      onload=()=>{
+         document.querySelector("[name=majang]").addEventListener("change", function(e){
+              //alert(kfc)
+              //alert(e.target.value) //kfc
+
+             let menu = new Function("return "+ e.target.value)();
+             //alert(menu)
+             	 
+    		 let subSelect = document.querySelector("[name=menu]");
+    		 
+             //추가전에 기존 option 제거 
+             while(subSelect.length > 1){
+              subSelect.options[1] = null;
+             }
+
+             menu.forEach((item, index)=>{
+                subSelect.options[subSelect.length] = new Option(item, item);
+             });
+
+         });
+      }
+    
+  </script>
+ </head>
+
+ <body>
+ <h2> 대/ 소 분류</h2>
+ <form name="f">
+   <select name="majang">
+       <option value="0">--매장 선택 --</option>
+	   <option value="kfc">KFC</option>
+	   <option value="lotte">롯데리아</option>
+	   <option value="king">버거킹</option>
+	   <option value="mac">맥도널드</option>
+   </select>
+   <select name="menu">
+       <option value="0">--선택 --</option>
+   </select>
+ </form>
+  
+ </body>
+</html>

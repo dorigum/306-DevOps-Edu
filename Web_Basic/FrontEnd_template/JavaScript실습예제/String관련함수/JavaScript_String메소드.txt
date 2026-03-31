@@ -1,0 +1,37 @@
+  
+  /*
+    charAt(index) : index에 해당하는 문자를 리턴(index는 0부터시작)
+                    해당하는 index에 문자가 없으면 공백 리턴
+  */
+
+  /*
+     indexOf(문자열) : 문자열의 위치 index를 리턴 ,왼쪽에서 부터 찾기 
+     
+     indexOf(문자열, 시작위치) : 문자열을 시작위치에서부터 찾기  
+     
+       -문자열이 없으면 -1 리턴
+  */
+
+  /*
+  lastIndexOf(문자열) : 문자열의 위치 index를 리턴 ,오른쪽에서 부터 찾기 
+  
+  lastIndexOf(문자열, 시작위치) : 문자열을 시작위치에서부터 찾기  
+  
+    -문자열이 없으면 -1 리턴
+*/
+
+/*
+   문자열 일부분 추출하기
+    1) substring(index1 , index2)
+       : index1부터 index2까지 문자열 리턴(항상 index2는 index1보다 커야한다.) 
+       : index1만 있으면 index1부터 끝까지 문자열 리턴
+       
+    2) substr(index, length)
+       : index부터 length만큼 문자열 리턴 
+       : index만 있으면 index부터 끝까지 문자열 리턴
+ 
+ */
+
+ /*
+   split("문자열") : 문자열을 기준으로 분리해서 배열로 리턴.
+ */

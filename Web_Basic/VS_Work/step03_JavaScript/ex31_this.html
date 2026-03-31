@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>this: 호출한 주체에 의해 this가 결정된다!</h1>
+    <button id="btn1">클릭1</button>
+    <button id="btn2">클릭2</button>
+    <button id="btn3">클릭3</button>
+    <button id="btn4">클릭4</button>
+
+    <script>
+      console.log(this);
+
+      const student = {
+        name: "koo",
+        print: function () {
+          console.log(this); // ★this: student
+          console.log(this.name);
+        },
+      };
+
+      // print 호출
+      student.print();
+
+      console.log("2. --------------------");
+      const myPrint = student.print;
+      myPrint(); // ★this: window
+
+      // -------------------------------------------------------------
+      console.log("3. --------------------");
+      document.getElementById("btn1").addEventListener("click", student.print); // btn1이 호출
+      document.getElementById("btn2").addEventListener("click", myPrint); // btm2이 호출
+
+      document.getElementById("btn3").addEventListener("click", function (e) {
+        console.log("--------------------------");
+        console.log(this); // ★this: btn3
+        console.log(event.target); // ★this: btn3
+        console.log(e.target); // ★this: btn3
+        console.log("--------------------------");
+      });
+      
+      document.getElementById("btn4").addEventListener("click", (e) => {
+        console.log("--------------------------");
+        console.log(this); // btn3
+        console.log(event.target); // btn4
+        console.log(e.target); // btn4
+        console.log("--------------------------");
+      });
+    </script>
+  </body>
+</html>
