@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>New Web Project</title>
+	<style type="text/css">
+		tr th{background-color:pink}
+		td,th{padding:3px}
+	</style>
+	<script>
+     onload = ()=>{
+		 document.querySelector("[value=IDCheck]").addEventListener("click", ()=>{
+             window.open("ex07_idCheck.html","win","width=400,height=300"); //새창열기
+		 });
+
+		 document.querySelector("[value=우편번호검색]").addEventListener("click", ()=>{
+             window.open("ex07_zipCheck.html","win","width=500,height=400"); //새창열기
+		 });
+	 }
+
+	</script>
+	
+	
+	</head>
+	<body>
+		<h1>[ 회원 가입 ]</h1>
+		<form name="member">
+		<table>
+			<tr>
+				<th>ID</th>
+				<td>
+					<input type="text" name="id" />
+					<input type="button" value="IDCheck"  />
+				</td>
+			</tr>
+			<tr>
+				<th>우편번호</th>
+				<td>
+				  <input type="text" name="zip1" size="3" /> - 
+				  <input type="text" name="zip2" size="3" />	
+				  <input type="button" value="우편번호검색"  />
+				</td>
+			</tr>
+			<tr>
+				<th>주소</th>
+				<td><input type="text" size="30" name="addr" /></td>
+			</tr>				
+		</table>
+	</form>
+	</body>
+</html>
+

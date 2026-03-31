@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Nullish 문법 = 값1 ?? 값2</h1>
+    <!-- null 또는 undefined 일 때만 대체 값을 변환하는 연산자 -->
+    <script>
+      {
+        const name = "doyeon";
+        const userName = name || "Guest";
+
+        console.log("이름은 " + userName);
+      }
+
+      {
+        const name = null;
+        const userName = name || "Guest";
+
+        console.log("이름은 " + userName);
+      }
+
+      {
+        const name = 0;
+        const userName = name || "Guest";
+
+        console.log("이름은 " + userName);
+      }
+
+      {
+        const name = undefined;
+        const userName = name || "Guest";
+
+        console.log("이름은 " + userName);
+      }
+
+      // ----------------------------------------------------------------
+      console.log("--- null or undefined 인 경우에만 false 반환 ---");
+
+      {
+        const name = "doyeon";
+        const userName = name ?? "Guest";
+
+        console.log("이름은 " + userName);
+      }
+
+      {
+        const name = null;
+        const userName = name ?? "Guest";
+
+        console.log("이름은 " + userName);
+      }
+
+      {
+        const name = 0;
+        const userName = name ?? "Guest";
+
+        console.log("이름은 " + userName);
+      }
+
+      {
+        const name = undefined;
+        const userName = name ?? "Guest";
+
+        console.log("이름은 " + userName);
+      }
+
+      {
+        const name = false;
+        const userName = name ?? "Guest";
+
+        console.log("이름은 " + userName);
+      }
+    </script>
+  </body>
+</html>

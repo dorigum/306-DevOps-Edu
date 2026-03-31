@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+ div{width:300px; height:100px ; border: 1px red solid;}
+</style>
+</head>
+<body>
+<h1> sessionStorage Test  - 브라우져 시작 ~ 종료 될때까지 유지 </h1>
+<form>
+  key : <input type="text" name="s_key" id="s_key"/>
+  value : <input type="text" name="s_value" id="s_value"/>
+  
+ <input type="button"  value="저장하기"  id="btnSave"/>
+ <button type="button" id="btnClear">정보 지우기 </button>
+ <hr>
+ <div id="result"></div>
+</form>
+
+<a href="ex01_sessionResult.html">session정보 확인하러 가자</a>
+
+<script>
+ 
+    // 저장 버튼 클릭 이벤트
+    document.getElementById("btnSave").addEventListener("click", function () {
+      let key = document.getElementById("s_key").value;
+      let value = document.getElementById("s_value").value;
+  
+      if (!key && !value) {
+        alert("key와 value를 넣어주세요.");
+        return;
+      }
+  
+      // 저장
+      sessionStorage.setItem(key, value);
+  
+      // 입력 필드 초기화
+      document.getElementById("s_key").value = "";
+      document.getElementById("s_value").value = "";
+  
+      // 조회
+      getInfo();
+    });
+  
+    // 삭제 버튼 클릭 이벤트
+    document.getElementById("btnClear").addEventListener("click", function () {
+      let key = prompt("삭제할 key?");
+      if (key) {
+        sessionStorage.removeItem(key);
+        getInfo();
+      }
+    });
+  
+    // sessionStorage에 있는 정보 조회하기
+    function getInfo() {
+      let len = sessionStorage.length;
+      let str = "저장된 개수 : " + len + "<br>";
+      for (let i = 0; i < len; i++) {
+        let key = sessionStorage.key(i);
+        let value = sessionStorage.getItem(key);
+        str += key + " : " + value + "<br>";
+      }
+  
+      // div 영역에 메시지 출력
+      document.getElementById("result").innerHTML = str;
+    }
+  
+    // 페이지 로딩 시 조회
+    getInfo();
+
+  </script>
+  
+
+</body>
+</html>
+
+
+
+
+
+

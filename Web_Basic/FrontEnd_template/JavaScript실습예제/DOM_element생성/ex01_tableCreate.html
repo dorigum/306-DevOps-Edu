@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+  table{width: 400px;border: 1px red solid;}
+  td,th{border:1px gray solid;}
+  a{text-decoration: none;}
+</style>
+<script type="text/javascript">
+   onload = function(){
+	   let age=0;
+	   //추가 클릭
+	    document.getElementById("add").addEventListener("click", function(){
+	    	let tb = document.getElementById("table"); //<table
+	
+	    	 //행생성
+		   	 let row = tb.insertRow(tb.rows.length);//<tr>
+		   	
+		   	 //행에 td 추가 
+		   	 row.insertCell(0).innerHTML="<input type='text' name='name' value='장희정'/>"
+		   	 row.insertCell(1).innerHTML=`<input type='text' value='${age++}'/>`
+		   	// row.insertCell(2).innerHTML="<input type='button' value='삭제' onclick='del()'/>";
+			
+			  row.insertCell(2).innerHTML="<input type='button' value='삭제' />";
+		   
+	    }); //추가 End
+	       
+	
+		 /////동적으로 만들어진 element(삭제버튼)에 이벤트 등록////////////////////////////////////////
+		/* document.querySelector("[value=삭제]").addEventListener("click", function(){
+               console.log("되니???");
+         });*/
+
+
+		 ///////동적으로 생성된 element 삭제에 이벤트 등록하기  //////////////////////////////////////  
+	 document.body.addEventListener('click', function(event) {
+        if (event.target.matches('[value=삭제]')) {
+            let tr = event.target.parentNode.parentNode; //button->td->tr  
+           //tr삭제
+            tr.parentNode.removeChild(tr) ; // 부모노드.removeChild(자식)
+        }
+    });
+}//loadEnd
+   ////////////////////////////////////////////////
+ 
+       //삭제 클릭
+ 	/*let del = function(){//버튼객체.. 
+	   	 let tr = event.target.parentNode.parentNode; //button->td->tr	 
+	   	 //tr삭제
+	   	 tr.parentNode.removeChild(tr) ; // 부모노드.removeChild(자식)
+	  }	*/ 
+ 
+</script>
+
+</head>
+<body >
+<h1>테이블 동적으로 생성하기 </h1>
+<a href="#" id="add" >추가하기</a>
+
+<table id="table">
+ <tr>
+   <th>이름</th>
+   <th>나이</th>
+   <th>삭제하기</th>
+ </tr>
+  <!-- 동적으로 tr 추가 또는 제거  -->
+</table>
+
+</body>
+</html>
+
+
+
+
+

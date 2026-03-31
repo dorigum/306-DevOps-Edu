@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Optional Chanining - ?. </h3>
+    <!-- 
+       중첩된 객체에서 존재하지 않는 특정 속성=property를 조회할대
+       오류없이 undefined 반환하고 그냥 넘어 갈수 있도록 하는것
+       : ?.은 ?.'앞’의 평가 대상이 undefined나 null이면 평가를 멈추고 undefined 리턴
+     -->
+
+     <script>
+        const person1={
+            name :"hee",
+            job :{
+                 title: "teacher",
+                 manager : {
+                     name:"kim"
+                 }
+            }
+        };
+
+        const person2={
+            name:"jang"
+        };
+
+        const print = function(person){
+             //person의 manager의 이름을 알고싶다!!
+             //console.log( person.job.manager.name );
+             /*if(person){
+                if(person.job){
+                    if(person.job.manager){
+                        console.log( person.job.manager.name );
+                    }
+                }
+             }*/ //if문끝
+
+             //&& or || 특징 이용방법
+            // let re = person && person.job && person.job.manager && person.job.manager.name;
+             
+            //Optional Chanining - ?. 
+           let re =  person?.job?.manager?.name;
+           
+            console.log(re);
+        }
+        
+        //함수호출
+        print(person1);
+        console.log("--------");
+        print(person2);
+
+   
+     </script>
+</body>
+</html>
