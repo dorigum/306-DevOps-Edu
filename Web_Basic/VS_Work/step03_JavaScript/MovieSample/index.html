@@ -17,50 +17,6 @@
         font-size: 24px;
       }
     </style>
-
-    <script>
-      // tbody 요소 참조
-      // const content = document.querySelector("#content");
-
-      // 찜하기 버튼을 누르면 localStrorage에 저장되는 동적 이벤트 생성
-      document.body
-        .querySelector("data-info") // 여기 코드 수정해야됨!!!!!!!!
-        .addEventListener("click", function (cartinsert) {
-          // 영화 정보: data-info
-          // "쿵푸팬더, img/movie_image2.jpg, 3000"
-          // split(",") 사용
-
-          if (cartinsert.target.value == "cartinsert") {
-            let movieData = document.querySelector("data-info").value;
-            let data = movieData.split(",");
-            let movieName = data[0];
-            let moviePoster = data[1];
-            let moviePrice = data[2];
-
-            // ex25_tableCreate 참고용
-            let tb = document.getElementById("table");
-
-            // insertRow: 테이블의 맨 끝                                                                    (tb.rows.length)에 <tr>을 추가
-            let row = tb.insertRow(tb.rows.length);
-
-            // insertCell: <tr> 안에 <td>를 0, 1, 2...추가하기
-            row.insertCell(0).innerHTML = movieName;
-            row.insertCell(1).innerHTML = moviePoster;
-            row.insertCell(2).innerHTML = moviePrice;
-
-            // 저장하기
-            getInfo();
-          } else if (cartinsert.target.matches()) {
-            let tr = cartinsert.target.closest("tr");
-            tr.remove();
-          }
-        });
-      //   let movieData = document.querySelector("data-info").value;
-      //   let data = movieData.split(",");
-      //   let movieName = data[0];
-      //   let moviePoster = data[1];
-      //   let moviePrice = data[2];
-    </script>
   </head>
   <body>
     <header>
@@ -80,12 +36,9 @@
       <p>
         KOSTA 힐링 영화관은 새로운 개념의 영화 장르의 한가지를 말하는 것입니다.
         지친 영혼을 위한 휴식을 주는 영화나, 마음을 정화시키고 치유하는 힘을
-        가진 영화들 ... .
+        가진 영화들....
       </p>
     </section>
-
-    <!-- video 재생하기 -->
-    <!-- button name이 vplay인 미리보기 버튼을 누르면 media/ 에 들어 있는 data-media-src를 실행하도록 작성 -->
 
     <div id="content">
       <article class="blogPost">
@@ -141,7 +94,7 @@
                 <p />
                 <img class="poster" src="img/BigBuck.jpg" />
                 <p />
-                <button name="vplay" data-media-src="media/BigBuck.theora.ogv">
+                <button name="vplay" data-media-src="media/BigBuck.theora.mp4">
                   미리 보기
                 </button>
                 <button
@@ -182,5 +135,27 @@
         </section>
       </div>
     </footer>
+
+    <script>
+      document.body.addEventListener("click", function (e) {
+        // 1. 찜하기 버튼을 누르면 localStrorage에 저장되는 동적 이벤트 생성
+        if (e.target.matches("button[name=vplay]")) {
+          let video = document.getElementById("video");
+
+          video.src = e.target.dataset.mediaSrc;
+          video.load();
+          video.play();
+
+          // 2. button name이 vplay인 미리보기 버튼을 누르면 data-media-src를 실행하도록 작성
+        } else if (e.target.matches("button[name=cartinsert]")) {
+          let movieId = e.target.id; // 1001
+          let movieInfo = e.target.dataset.info; // 쿵푸팬더, img/movie_image2.jpg, 3000
+
+          localStorage.setItem(movieId, movieInfo);
+
+          alert("찜 리스트에 추가되었습니다!🍿🍿");
+        }
+      });
+    </script>
   </body>
 </html>
