@@ -138,15 +138,16 @@
 
     <script>
       document.body.addEventListener("click", function (e) {
-        // 1. 찜하기 버튼을 누르면 localStrorage에 저장되는 동적 이벤트 생성
+        // 1. button name이 vplay인 미리보기 버튼을 누르면 data-media-src를 실행하도록 작성
         if (e.target.matches("button[name=vplay]")) {
           let video = document.getElementById("video");
 
+          // video.src = e.target.getAttribute("data-media-src");
           video.src = e.target.dataset.mediaSrc;
           video.load();
           video.play();
 
-          // 2. button name이 vplay인 미리보기 버튼을 누르면 data-media-src를 실행하도록 작성
+          // 2. 찜하기 버튼을 누르면 localStrorage에 저장되는 동적 이벤트 생성
         } else if (e.target.matches("button[name=cartinsert]")) {
           let movieId = e.target.id; // 1001
           let movieInfo = e.target.dataset.info; // 쿵푸팬더, img/movie_image2.jpg, 3000
