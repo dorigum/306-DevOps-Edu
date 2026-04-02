@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> Destructuring : 구조분해할당 </h3>
+    <script>
+      const emp = {empno:100, ename:"hee", job:"teacher"};
+
+      //emp에 있는 각 속성의 값을 변수에 담고 싶다.
+
+      /*let empno = emp.empno;
+      let ename = emp.ename;
+      let job = emp.job;*/
+
+      //새로운 문법
+      let {empno,  job, ename:name} = emp; 
+      console.log(empno , name, job)
+     //////////////////////////////////////////////////
+     //배열에서 사용해보자
+     const jobs = ["학생","강사"];
+     /*let first = jobs[0];
+     let second = jobs[1];
+     */
+
+     let [first , second] = jobs;    
+     console.log(first , second)
+
+
+    </script>
+</body>
+</html>
