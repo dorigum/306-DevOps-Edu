@@ -11,10 +11,14 @@
             "id": "f8a1159fff71c053",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "공부 기록/2026-03-31.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "새 탭"
+              "title": "2026-03-31"
             }
           }
         ]
@@ -74,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "21f751e21521c464",
@@ -179,8 +184,9 @@
       "bases:새 베이스 생성하기": false
     }
   },
-  "active": "615633c92c957c9b",
+  "active": "f8a1159fff71c053",
   "lastOpenFiles": [
+    "공부 기록/2026-03-30.md",
     "2026-04-01.md",
     "공부 기록/2026-03-31.md",
     "공부 기록/2026-04-01.md",
@@ -188,7 +194,6 @@
     "캡처/Pasted image 20260331151637.png",
     "공부 기록/2026-02-10.md",
     "캡처/Pasted image 20260331120622.png",
-    "공부 기록/2026-03-30.md",
     "공부 기록/2026-03-27.md",
     "Pasted image 20260327103706.png",
     "Pasted image 20260327103547.png",
