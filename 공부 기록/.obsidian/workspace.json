@@ -11,14 +11,12 @@
             "id": "fc7989bca6eabb45",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "공부 기록/2026-04-03.md",
-                "mode": "source",
-                "source": false
+                "file": "캡처/Pasted image 20260403105146.png"
               },
-              "icon": "lucide-file",
-              "title": "2026-04-03"
+              "icon": "lucide-image",
+              "title": "Pasted image 20260403105146"
             }
           }
         ]
@@ -78,8 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "21f751e21521c464",
@@ -184,12 +181,12 @@
       "bases:새 베이스 생성하기": false
     }
   },
-  "active": "fc7989bca6eabb45",
+  "active": "615633c92c957c9b",
   "lastOpenFiles": [
-    "Pasted image 20260403105146.png",
-    "Pasted image 20260403100336.png",
-    "공부 기록/2026-04-01.md",
+    "캡처/Pasted image 20260403100336.png",
+    "캡처/Pasted image 20260403105146.png",
     "공부 기록/2026-04-03.md",
+    "공부 기록/2026-04-01.md",
     "공부 기록/2026-03-31.md",
     "공부 기록/2026-03-30.md",
     "공부 기록/2026-02-09.md",
@@ -209,7 +206,6 @@
     "기타/무제.base",
     "기타/무제2.base",
     "공부 기록/2026-03-26.md",
-    "캡처/Pasted image 20260325155753.png",
     "공부 기록/2026-02-26.md",
     "무제.md",
     "공부 기록/2026-03-25.md",
