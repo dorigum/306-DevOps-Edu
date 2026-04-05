@@ -1,0 +1,26 @@
+/* reset */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 상품 */
+#product {
+  width: 1000px;
+  height: 830px;
+  margin: 0 auto;
+  border: 2px solid #666;
+}
+
+#product > h3 {
+  font-size: 20px;
+  color: green;
+  text-align: center;
+}
+
+#product > p {
+  font-size: 15px;
+  color: #000;
+  text-align: center;
+  margin: 20px;
+}
