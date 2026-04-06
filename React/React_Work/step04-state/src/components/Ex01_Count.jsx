@@ -4,6 +4,7 @@ import { useState } from "react";
 let i = 0;
 function Ex01_Count() {
   // useState의 리턴은 배열이 [초기값, 변경 함수]
+  
   const [no, setNo] = useState(0);
 
   console.log(no);

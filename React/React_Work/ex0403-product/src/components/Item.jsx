@@ -11,4 +11,7 @@ export const Item = (props) => {
   );
 };
 
+/*
+const Item + {{img}}
+*/
 export default Item;
