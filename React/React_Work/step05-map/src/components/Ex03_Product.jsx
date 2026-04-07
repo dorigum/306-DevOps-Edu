@@ -19,25 +19,26 @@ export const Ex03_Product = () => {
 
   let no = 10;
   const test = {
-    seq: [{good:1}, {good:2}, {good:3}],
-    no // no: no의 축약형
+    seq: [{ good: 1 }, { good: 2 }, { good: 3 }],
+    no, // no: no의 축약형
   };
 
   return (
     <div id="product">
       <h3>오늘의 상품</h3>
       <p>새로운 상품을 만나보세요!</p>
-      {/* {items.map((item) => (
-        <Item
-          key={item.id}
-          imgName={item.imgName}
-          text={item.text}
-          price={item.price}
-        />
-      ))} */}
+
+      {items.map((item) => (item) => item.text + " = " + item.price + <br />)}
+
+      <hr />
+      {items.map((item, i) => (
+        <h6 key={i}>
+          {item.text} / {item.price}
+        </h6>
+      ))}
 
       {items.map((item) => (
-        <Item key={item.id} {...item} {...test}/>
+        <Item key={item.id} {...item} {...test} />
       ))}
     </div>
   );

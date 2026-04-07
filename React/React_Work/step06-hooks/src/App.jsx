@@ -5,6 +5,10 @@ import Ex03_Memo from "./components/Ex03_Memo";
 import Ex04_Ref from "./components/Ex04_Ref";
 import Ex05_Ref from "./components/Ex05_Ref";
 import Ex06_Ref from "./components/Ex06_Ref";
+import Ex07_Child01 from "./components/Ex07_Child01";
+import Ex07_Child02 from "./components/Ex07_Child02";
+import Ex07_Child03 from "./components/Ex07_Child03";
+import Ex07_Context from "./components/Ex07_Context";
 
 function App() {
   return (
@@ -26,9 +30,14 @@ function App() {
       {/* <Ex05_Ref/> */}
 
       {/* 6. useRef vs let 차이 */}
-      <Ex06_Ref/>
+      {/* <Ex06_Ref/>
       <h3>--------------Ex06_Ref 위 아래 두 번 등록--------------</h3>
-      <Ex06_Ref/>
+      <Ex06_Ref/> */}
+
+      {/* 7. 총 rerendering된 횟수 구하기() */}
+      {/* <Ex06_Ref/> */}
+
+      <Ex07_Context/>
     </>
   );
 }
