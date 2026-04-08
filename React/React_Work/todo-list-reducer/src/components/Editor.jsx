@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import "./Editor.css";
 import { useRef } from "react";
@@ -11,6 +11,11 @@ const Editor = () => {
   const contentRef = useRef(); // input DOM 요소에 접근하기 위한 Ref
 
   const { onCreate } = useContext(TodoDispatchContext);
+
+  // 마운트 되었을 때 커서 놓기
+  useEffect(() => {
+    contentRef.current.focus();
+  }, []);
 
   // 추가 버튼 클릭
   const onSubmit = () => {
