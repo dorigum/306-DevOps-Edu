@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>callback hell이란?</h1>
+    <script>
+      /* console.log("1. 시작하기");
+      // 비동기 함수
+      setTimeout(() => {
+        console.log("하나");
+      }, 2000); // 콜백 함수를 전달 받음
+
+      setTimeout(() => {
+        console.log("둘");
+      }, 1000);
+
+      setTimeout(() => {
+        console.log("셋");
+      }, 1500);
+
+      console.log("2. 끝"); */
+
+      // --------------------------------------------------------
+      // 위 코드를 비동기 작업 안에서 동기(순차적으로) 처리(하나-둘-셋)
+      console.log("1. 시작하기");
+      setTimeout(() => {
+        console.log("하나");
+
+        setTimeout(() => {
+          console.log("둘");
+
+          setTimeout(() => {
+            console.log("셋");
+          }, 1000);
+        }, 1500);
+      }, 2000);
+      
+      console.log("2. 끝");
+    </script>
+  </body>
+</html>

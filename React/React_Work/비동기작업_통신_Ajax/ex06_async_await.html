@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>async-await 사용하기(하나-둘-셋)</h1>
+    <script>
+      const taskA = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("하나");
+          }, 2000);
+        });
+      };
+
+      const taskB = (param) => {
+        console.log("taskA의 결과를 taskB에서 " + param);
+
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("둘");
+            // reject("실패했어요ㅠㅠ😥");
+            // reject(new Error("문제가 발생했어요😥"));
+          }, 1000);
+        });
+      };
+
+      const taskC = (param) => {
+        console.log("taskB의 결과를 taskC에서 " + param);
+
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            resolve("셋");
+          }, 2500);
+        });
+      };
+
+      const test = async () => {
+        try {
+          let resultA = await taskA(); // 호출
+          console.log(resultA);
+
+          let resultB = await taskB(resultA); // 호출
+          console.log(resultB);
+
+          let resultC = await taskC(resultB); // 호출
+          console.log(resultC);
+
+        } catch (err) {
+          console.log(err);
+          
+        } finally {
+          console.log("finally는 무조건 실행돼요!");
+        }
+      };
+
+      // 함수 호출
+      const t = test();
+      console.log(t);
+      console.log("---끝---");
+    </script>
+  </body>
+</html>

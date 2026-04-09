@@ -1,0 +1,41 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Hello React"
+    },
+    {
+      "id": "2",
+      "title": "Axios Test"
+    },
+    {
+      "title": "집에 갑시다~~",
+      "id": "uuuvHN5QLaA"
+    },
+    {
+      "title": "집에 갑시다~~",
+      "id": "BNc95g7pr00"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "도연",
+      "email": "koo@google.com",
+      "age": 20
+    },
+    {
+      "id": "2",
+      "name": "도연2",
+      "email": "koo2@google.com",
+      "age": 25
+    },
+    {
+      "id": "3",
+      "name": "도연3",
+      "email": "koo3@google.com",
+      "age": 30
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

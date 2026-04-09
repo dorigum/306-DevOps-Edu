@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>fetch() 함수 - 외부와 통신하기</h1>
+    <script>
+      fetch("https://jsonplaceholder.typicode.com/users")
+        .then((result) => {
+          console.log(result);
+          console.log(result.ok);
+          console.log(result.status);
+          console.log("----------------------------------");
+          //   console.log(result.json());
+
+          return result.json();
+        })
+        .then((jsonResult) => {
+          console.log(jsonResult);
+
+          jsonResult.forEach((user, index) => {
+            console.log(
+              index + " = " + user.id + " | " + user.name + " | " + user.email,
+            );
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    </script>
+  </body>
+</html>
