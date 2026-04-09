@@ -9,7 +9,7 @@ function App() {
   // fetch 함수로 비동기 통신
   const selectAll = async () => {
     try {
-      const res = await fetch(serverIp+ "/users");
+      const res = await fetch(serverIp + "/users");
       console.log(res);
 
       const jsonResult = await res.json();
