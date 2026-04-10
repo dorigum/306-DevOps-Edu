@@ -35,6 +35,10 @@
     {
       "title": "집에 갑시다~~",
       "id": "4GkHvOQVXJo"
+    },
+    {
+      "title": "집에 갑시다~~",
+      "id": "iXnev6h2T6g"
     }
   ],
   "users": [
@@ -47,8 +51,14 @@
     {
       "id": "2",
       "name": "도연2",
-      "email": "koo2@google.com",
-      "age": 25
+      "email": "koo3@google.com",
+      "age": 30
+    },
+    {
+      "id": "ls71LHPLwQ0",
+      "name": "도연3",
+      "email": "koo4@google.com",
+      "age": 30
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
