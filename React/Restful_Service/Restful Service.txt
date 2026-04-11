@@ -1,0 +1,63 @@
+ - Rest API  - 요청방식을 통해 행위를 결정, url주소 동사x , url주소 resource자원 표현
+    (CRUD작업 :  Insert , select, update, delete) --> 영속성=DB-> table (member, product, board,....) 
+
+-하나의 도메인(resource자원)에 해당하는 crud  ex)user
+  - 검색
+method:get     http://domain/users
+
+  -조건검색(pk대상)
+method:get     http://domain/users/pk값
+
+  -조건검색(일반속성 조건)
+method:get     http://domain/users?일반속성=value&.....
+
+  -등록
+method:post     http://domain/users
+
+  -수정
+method:put     http://domain/users/pk값
+ - 모든속성 수정할때 
+
+method:patch     http://domain/users/pk값
+ - 일부분 속성만 수정할때
+
+  -삭제
+method:delete     http://domain/users/pk값
+=========================================
+Rest service -> Restful 서비스  + 비동기통신 = Ajax  + SPA
+
+board 도메인
+검색 get      http://ip:port/boards
+수정 put      http://ip:port/boards/2
+삭제 delete  http://ip:port/boards/2
+등록 post    http://ip:port/boards/
+부분검색 get http://ip:port/boards/2
+
+검색 get      http://ip:port/boards/2/reply/1
+
+user 도메인
+검색 get      http://ip:port/users
+수정 put      http://ip:port/users/2
+삭제 delete  http://ip:port/users/2
+등록 post    http://ip:port/users/
+부분검색 get http://ip:port/users/2
+
+검색 get      http://ip:port/boards
+수정 put      http://ip:port/boards/2
+삭제 delete  http://ip:port/boards/2
+등록 post    http://ip:port/boards/
+부분검색 get http://ip:port/boards/2
+
+---------------------------------------------
+Spring에서....
+@RequestMaping("/boards")
+class BoardController{
+
+   @GetMapping()
+
+
+   @PostMapping()
+  
+   @PutMapping("/{id}")
+
+  @DeleteMapping("/{id}")
