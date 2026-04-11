@@ -1,58 +1,61 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-import "./Editor.css";
-import { useRef } from "react";
-import { TodoDispatchContext } from "./components/TodoContext";
-import { use } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "./redux/store";
+import "./Editor.css";
 
-// step17-Order 역할: 새로운 할 일을 입력받아 추가 버튼을 누르면
-// dispatch(addTodo())를 실행
 const Editor = () => {
   const [content, setContent] = useState("");
   const contentRef = useRef();
-
-  const { onCreate } = use(TodoDispatchContext); // version 19
+  const dispatch = useDispatch();
 
   // 마운트 되었을 때 커서 놓기
   useEffect(() => {
     contentRef.current.focus();
   }, []);
 
-  // 추가 버튼 클릭
+  // 입력값 변경 시 호출
+  const onChangeContent = (e) => {
+    setContent(e.target.value);
+  };
+
+  // 추가 버튼 클릭 시 호출
   const onSubmit = () => {
     if (content === "") {
       contentRef.current.focus();
       return;
     }
 
-    // 추가 기능 함수 호출(App.jsx 파일에 있는 함수가 호출된다!)
-    onCreate(content);
+    // 새로운 Todo 객체 생성
+    const newTodo = {
+      id: Date.now(), // 고유 ID 생성 (간편하게 현재 시간 사용)
+      isDone: false,
+      content: content,
+      date: new Date().getTime(),
+    };
+    
+    // Redux store에 추가 요청
+    dispatch(addTodo(newTodo));
+
+    // 입력창 초기화
     setContent("");
   };
 
-  // 엔터를 입력했을 때 onSubmit 호출
-  const onkeydown = (e) => {
+  // 엔터 키 입력 시 추가
+  const onKeyDown = (e) => {
     if (e.keyCode === 13) {
-      // 13: Enter를 상징하는 고유 번호(Key Code)
-      // if (e.key === "Enter") { // 최근에 많이 쓰는 방식
       onSubmit();
     }
   };
 
-  let dispatch = useDispatch();
-  // let idRef = useRef(4);
-  
   return (
     <div className="Editor">
       <input
         type="text"
         placeholder="새로운 Todo"
         value={content}
-        onChange={() => dispatch(addTodo(contentRef))}
+        onChange={onChangeContent} // 글자 입력 시 상태만 업데이트하도록 수정
         ref={contentRef}
-        onKeyDown={onkeydown}
+        onKeyDown={onKeyDown}
       />
       <button onClick={onSubmit}>추가</button>
     </div>
