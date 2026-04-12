@@ -1,24 +1,12 @@
 import React, { memo } from "react";
 import "./TodoItem.css";
-import { useContext } from "react";
-// import { TodoContext } from "../App";
-// import { TodoDispatchContext } from "../App";
-import { TodoDispatchContext } from "../components/TodoContext";
 
-// const TodoItem = ({ id, isDone, content, date, onUpdate, onDelete }) => {
-const TodoItem = ({ id, isDone, content, date }) => {
-  // const { onUpdate, onDelete } = useContext(TodoContext);
-  const { onUpdate, onDelete } = useContext(TodoDispatchContext);
-  
-  // console.log(id + "-> 렌더링")
+const TodoItem = ({ id, isDone, content, date, onUpdate, onDelete }) => {
+  console.log("TodoItem call");
+
   const onChangeCheckbox = () => {
     // 수정하기(checkbox 상태 변경)
     onUpdate(id);
-  };
-
-  // 삭제를 클릭했을 때
-  const onClickDeleteButton = () => {
-    onDelete(id);
   };
 
   return (
@@ -36,7 +24,7 @@ const TodoItem = ({ id, isDone, content, date }) => {
 // ⚠직접 비교하는 커스텀마이징 필요
 // export default memo(TodoItem, (prevProps, nextProps) => {
 //   // 리턴 값에 Props가 바뀌었는지 판단
-//   // true: Props 변경 X -> 리렌더링 x
+//   // true: Props 변경 X -> 리렌더링 X
 //   // false: Props 변경 O -> 리렌더링 O
 
 //   if (prevProps.id !== nextProps.id) return false;

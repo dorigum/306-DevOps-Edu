@@ -4,6 +4,7 @@ import "./Editor.css";
 import { useRef } from "react";
 import { TodoDispatchContext } from "../components/TodoContext";
 import { use } from "react";
+import { useContext } from "react";
 
 const Editor = () => {
   const [content, setContent] = useState("");
@@ -26,15 +27,12 @@ const Editor = () => {
     // 추가 기능 함수 호출(App.jsx 파일에 있는 함수가 호출된다!)
     onCreate(content);
     setContent("");
+    contentRef.current.focus();
   };
 
   // 엔터를 입력했을 때 onSubmit 호출
   const onkeydown = (e) => {
-    if (e.keyCode === 13) {
-      // 13: Enter를 상징하는 고유 번호(Key Code)
-      // if (e.key === "Enter") { // 최근에 많이 쓰는 방식
-      onSubmit();
-    }
+    if (e.keyCode === 13) onSubmit();
   };
 
   return (

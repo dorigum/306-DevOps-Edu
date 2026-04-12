@@ -10,12 +10,6 @@ const List = () => {
   const [search, setSearch] = useState("");
   const todos = use(TodoStateContext);
 
-  // 검색어를 입력했을 때, 검색어를 포함한 todo 정보 조회
-  const onChangeSearch = (e) => {
-    setSearch(e.target.value);
-  };
-
-  // onChange={(e) => setSearch(e.target.value)
   const getFilterData = () => {
     if (search === "") return todos;
 
@@ -28,7 +22,7 @@ const List = () => {
   const filteredTodos = getFilterData();
 
   const { totalCount, doneCount, notDoneCount } = useMemo(() => {
-    console.log("getAnalyzedData Call");
+    console.log("useMemo Call");
 
     const totalCount = todos.length;
     const doneCount = todos.filter((todo) => todo.isDone).length;

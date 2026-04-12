@@ -2,10 +2,9 @@ import "./App.css";
 import Header from "./components/Header";
 import Editor from "./components/Editor";
 import List from "./components/List";
-import { useReducer } from "react";
-import { useRef } from "react";
+import { useReducer, useState, useRef } from "react";
 import { useCallback } from "react";
-import { TodoContext } from "./components/TodoContext";
+import { createContext } from "react";
 
 const mockData = [
   { id: 0, isDone: false, content: "React Study", date: new Date().getTime() },
@@ -38,13 +37,10 @@ function App() {
   // const [todos, setTodos] = useState(mockData);
   const [todos, dispatch] = useReducer(reducer, mockData);
 
-  // id의 값은 내부적으로 값을 유지하기 위한 용도이므로 Ref 사용
   const idRef = useRef(3);
 
   // 추가하기(useCallback() 최적화 적용)
-  // const onCreate = (content) => {
   const onCreate = useCallback((content) => {
-    // console.log("onCreate content = " + content);
     dispatch({
       type: "CREATE",
       data: {
@@ -57,19 +53,12 @@ function App() {
   }, []);
 
   // 수정하기(useCallback() 최적화 적용)
-  // const onUpdate = (targetId) => {
   const onUpdate = useCallback((targetId) => {
-    // console.log("onUpdate targetId = " + targetId);
-
-    // TodoItem에서 호출할 때 전달한 id
-    // todo state의 값들 중에서 targetId와 일치하는 todoitem의 isDone 변경
     dispatch({ type: "UPDATE", targetId });
   }, []);
 
   // 삭제하기(useCallback() 최적화 적용)
-  // const onDelete = (targetId) => {
   const onDelete = useCallback((targetId) => {
-    // console.log("onDelete targetId = " + targetId);
     dispatch({ type: "DELETE", targetId: targetId });
   }, []);
 

@@ -5,6 +5,7 @@ import List from "./components/List";
 import { useState } from "react";
 import { useRef } from "react";
 
+// 렌더링이 될 때 다시 실행되지 않아도 되기 때문에, 함수 밖에 선언한다.
 const mockData = [
   { id: 0, isDone: false, content: "React Study", date: new Date().getTime() },
   { id: 1, isDone: false, content: "친구 만나기", date: new Date().getTime() },
@@ -28,20 +29,6 @@ function App() {
   };
 
   // 수정하기
-  // const onUpdate = (targetId) => {
-  //   // TodoItem에서 호출할 때 전달한 id
-  //   // todo state의 값들 중에서 targetId와 일치하는 todoitem의 isDone 변경
-  //   const updateTodos = todos.map((todo) => {
-  //     if (todo.id === targetId) {
-  //       return { ...todo, isDone: !todo.isDone };
-  //     } else {
-  //       return todo;
-  //     }
-  //   });
-
-  //   setTodos(updateTodos);
-
-  // ----------------------------------------------------
   // 위 코드를 삼항연산자로 변경!!!!!!
   const onUpdate = (targetId) => {
     setTodos(

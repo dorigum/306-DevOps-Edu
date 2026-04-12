@@ -1,7 +1,7 @@
-import React, { memo } from "react";
+import React from "react";
 import "./Header.css";
 
-const Header = () => {
+function Header() {
   return (
     <div className="Header">
       <h3>오늘의 Plan🌼📝</h3>
@@ -10,5 +10,4 @@ const Header = () => {
   );
 };
 
-// React.memo() 적용
-export default memo(Header);
+export default Header;

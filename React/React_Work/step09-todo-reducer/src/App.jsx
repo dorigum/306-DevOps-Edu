@@ -2,13 +2,9 @@ import "./App.css";
 import Header from "./components/Header";
 import Editor from "./components/Editor";
 import List from "./components/List";
-import { useReducer } from "react";
-import { useRef } from "react";
-import {
-  TodoDispatchContext,
-  TodoStateContext,
-} from "./components/TodoContext";
+import { useReducer, useRef, useState } from "react";
 
+// 렌더링이 될 때 다시 실행되지 않아도 되기 때문에, 함수 밖에 선언한다.
 const mockData = [
   { id: 0, isDone: false, content: "React Study", date: new Date().getTime() },
   { id: 1, isDone: false, content: "친구 만나기", date: new Date().getTime() },
@@ -34,12 +30,8 @@ const reducer = (state, action) => {
 };
 
 function App() {
-  const [todos, dispatch] = useReducer(reducer, mockData);
-  // id의 값은 내부적으로 값을 유지하기 위한 용도이므로 Ref 사용
-  const idRef = useRef(3);
-
-  // --------------------------------------------------------------------------------
-  // onCreate, onUpdate, onDelete 함수를 Reducer 이용해서 수정하기
+  const [todos, setTodos] = useReducer(reducer, mockData);
+  const idRef = useRef(3); // 재렌더링이 되어도 내부적으로 값을 유지할 수 있도록 Ref 사용
 
   // 추가하기
   const onCreate = (content) => {
@@ -56,25 +48,25 @@ function App() {
 
   // 수정하기
   const onUpdate = (targetId) => {
-    // TodoItem에서 호출할 때 전달한 id
-    // todo state의 값들 중에서 targetId와 일치하는 todoitem의 isDone 변경
-    dispatch({ type: "UPDATE", targetId });
+    dispatch({
+      type: "UPDATE",
+      targetId,
+    });
   };
 
   // 삭제하기
   const onDelete = (targetId) => {
-    dispatch({ type: "DELETE", targetId: targetId });
+    dispatch({
+      type: "DELETE",
+      targetId,
+    });
   };
 
-  // --------------------------------------------------------------------------------
   return (
     <div className="App">
       <Header />
-      {/* <TodoContext.Provider value={{todos, onCreate, onUpdate, onDelete}}> */}
       <Editor onCreate={onCreate} />
       <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
-      <Editor />
-      <List />
     </div>
   );
 }

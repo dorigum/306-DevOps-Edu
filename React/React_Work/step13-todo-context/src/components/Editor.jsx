@@ -2,13 +2,13 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import "./Editor.css";
 import { useRef } from "react";
-import { TodoDispatchContext } from "../components/TodoContext";
+import { useContext } from "react";
 import { use } from "react";
 import { TodoContext } from "../App";
 
 const Editor = () => {
   const [content, setContent] = useState("");
-  const contentRef = useRef(); // input DOM 요소에 접근하기 위한 Ref
+  const contentRef = useRef();
 
   // const { onCreate } = useContext(TodoContext); // version 18
   const { onCreate } = use(TodoContext); // version 19
@@ -16,6 +16,7 @@ const Editor = () => {
   // 마운트 되었을 때 커서 놓기
   useEffect(() => {
     contentRef.current.focus();
+    return;
   }, []);
 
   // 추가 버튼 클릭
@@ -28,15 +29,12 @@ const Editor = () => {
     // 추가 기능 함수 호출(App.jsx 파일에 있는 함수가 호출된다!)
     onCreate(content);
     setContent("");
+    contentRef.current.focus();
   };
 
   // 엔터를 입력했을 때 onSubmit 호출
   const onkeydown = (e) => {
-    if (e.keyCode === 13) {
-      // 13: Enter를 상징하는 고유 번호(Key Code)
-      // if (e.key === "Enter") { // 최근에 많이 쓰는 방식
-      onSubmit();
-    }
+    if (e.keyCode === 13) onSubmit();
   };
 
   return (

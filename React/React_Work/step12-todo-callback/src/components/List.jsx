@@ -3,30 +3,21 @@ import { useState } from "react";
 import "./List.css";
 import TodoItem from "./TodoItem";
 import { useMemo } from "react";
-import { useContext } from "react";
-// import { TodoContext } from "../App";
-// import { TodoStateContext } from "../App";
-import { TodoStateContext } from "../components/TodoContext";
 
-// const List = ({ todos, onUpdate, onDelete }) => {
-const List = () => {
-  // const {todos} = useContext(TodoContext);
-  const todos = useContext(TodoStateContext);
+const List = ({ todos, onUpdate, onDelete }) => {
   const [search, setSearch] = useState("");
 
-  // 검색어를 입력했을 때, 검색어를 포함한 todo 정보 조회
-  const onChangeSearch = (e) => {
-    setSearch(e.target.value);
-  };
-
-  // onChange={(e) => setSearch(e.target.value)
   const getFilterData = () => {
+    //console.log(1)
     if (search === "") return todos;
 
     return todos.filter((todo) =>
       todo.content.toLowerCase().includes(search.toLowerCase()),
     );
   };
+
+  // 컴포넌트가 리렌더링 될 때마다 호출
+  const filteredTodos = getFilterData();
 
   // 교안자료: 08_TodoList_Project_CRUD(p22)
   // ❌코드 문제점: getAnalyzedData() 함수가 불필요하게 리렌더링이 될 때마다 같은 작업을 반복
@@ -41,13 +32,10 @@ const List = () => {
   //   return { totalCount, doneCount, notDoneCount };
   // };
   // const { totalCount, doneCount, notDoneCount } = getAnalyzedData();
-
   // ----------------------------------------------------------------
-  // 컴포넌트가 리렌더링 될 때마다 호출
-  const filteredTodos = getFilterData();
 
   const { totalCount, doneCount, notDoneCount } = useMemo(() => {
-    console.log("getAnalyzedData Call");
+    console.log("useMemo Call");
 
     const totalCount = todos.length;
     const doneCount = todos.filter((todo) => todo.isDone).length;
@@ -69,16 +57,20 @@ const List = () => {
         type="text"
         placeholder="검색어를 입력해주세요."
         value={search}
-        onChange={onChangeSearch}
+        onChange={(e) => setSearch(e.target.value)}
       />
 
       <div className="todos_wrapper">
         {/* {filteredTodos.map((todo) => { */}
         {filteredTodos.map((todo) => {
-          // return (
-          return <TodoItem key={todo.id} {...todo} />;
-          // onUpdate={onUpdate}
-          // onDelete={onDelete}
+          return (
+            <TodoItem
+              key={todo.id}
+              {...todo}
+              onDelete={onDelete}
+              onUpdate={onUpdate}
+            />
+          );
         })}
       </div>
     </div>

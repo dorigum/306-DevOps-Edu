@@ -1,5 +1,5 @@
 import React from "react";
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 
 const reducer = (state, action) => {
   // 현재 상태 값, action

@@ -2,12 +2,11 @@ import React, { memo } from "react";
 import "./TodoItem.css";
 import { use } from "react";
 import { TodoDispatchContext } from "../components/TodoContext";
+import { useContext } from "react";
 
-// const TodoItem = ({ id, isDone, content, date, onUpdate, onDelete }) => {
 const TodoItem = ({ id, isDone, content, date }) => {
   const { onUpdate, onDelete } = use(TodoDispatchContext);
 
-  // console.log(id + "-> 렌더링")
   const onChangeCheckbox = () => {
     // 수정하기(checkbox 상태 변경)
     onUpdate(id);
