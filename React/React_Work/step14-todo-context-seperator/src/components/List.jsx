@@ -3,12 +3,12 @@ import { useState } from "react";
 import "./List.css";
 import TodoItem from "./TodoItem";
 import { useMemo } from "react";
-import { use } from "react";
 import { TodoStateContext } from "../components/TodoContext";
+import { useContext } from "react";
 
 const List = () => {
   const [search, setSearch] = useState("");
-  const todos = use(TodoStateContext);
+  const todos = useContext(TodoStateContext);
 
   const getFilterData = () => {
     if (search === "") return todos;
@@ -44,7 +44,7 @@ const List = () => {
         type="text"
         placeholder="검색어를 입력해주세요."
         value={search}
-        onChange={onChangeSearch}
+        onChange={(e) => setSearch(e.target.value)}
       />
 
       <div className="todos_wrapper">

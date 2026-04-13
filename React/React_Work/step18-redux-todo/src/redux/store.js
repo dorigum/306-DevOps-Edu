@@ -29,12 +29,16 @@ const todoSlice = createSlice({
   reducers: {
     // 2. 새로운 Todo 추가 (전달받은 payload를 상태 배열에 추가)
     addTodo(state, action) {
-      state.push(action.payload);
+      // state.push(action.payload); // 끝에 추가
+      state.unshift(action.payload); // 앞에 추가
     },
 
     deleteTodo(state, action) {
       // id가 일치하지 않는 것들만 남기기
-      return state.filter((item) => item.id !== action.payload);
+      const index = state.findIndex((item) => item.id === action.payload);
+      // return state.filter((item) => item.id !== action.payload);
+
+      state.splice(index, 1); // 두번째 인자 1은 삭제할 요소의 개수
     },
 
     updateTodo(state, action) {

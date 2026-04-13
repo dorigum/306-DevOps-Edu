@@ -2,7 +2,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Editor from "./components/Editor";
 import List from "./components/List";
-import { useReducer, useState, useMemo, useRef } from "react";
+import { useReducer, useMemo, useRef } from "react";
 
 const mockData = [
   { id: 0, isDone: false, content: "React Study", date: new Date().getTime() },
@@ -29,8 +29,8 @@ const reducer = (state, action) => {
 };
 
 // ★★★context 사용하기
-export const TodoStateContext = createContext();
-export const TodoDispatchContext = createContext();
+// export const TodoStateContext = createContext();
+// export const TodoDispatchContext = createContext();
 
 function App() {
   // const [todos, setTodos] = useState(mockData);

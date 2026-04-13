@@ -1,31 +1,35 @@
-# 컴파일된 결과물 (Binary)
+# 컴파?�된 결과�?(Binary)
 *.class
 bin/
 build/
 target/
 
-# 이클립스 특정 설정 파일
+# ?�클립스 ?�정 ?�정 ?�일
 .settings/
 .metadata/
 .classpath
 .project
 .factorypath
 
-# 로그 파일 및 임시 파일
+# 로그 ?�일 �??�시 ?�일
 *.log
 tmp/
 
-# OS 및 기타 설정
+# OS �?기�? ?�정
 .DS_Store
 Thumbs.db
 
-# 환경변수 (보안이 필요한 정보가 담긴 경우)
+# ?�경변??(보안???�요???�보가 ?�긴 경우)
 .env
 
-# 업로드 안 할 폴더
+# ?�로???????�더
 Git/
 SW/
 
 vscode/
-공유받은 자료(커밋XXX)/
+공유받�? ?�료(커밋XXX)/
 node_modules/
+Restful_Service/
+비동기작???�신_Ajax/
+
+*.pem

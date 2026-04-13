@@ -4,7 +4,6 @@ import "./Editor.css";
 import { useRef } from "react";
 import { TodoDispatchContext } from "../components/TodoContext";
 import { use } from "react";
-import { useContext } from "react";
 
 const Editor = () => {
   const [content, setContent] = useState("");
