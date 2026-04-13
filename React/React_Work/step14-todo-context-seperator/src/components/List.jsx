@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./List.css";
 import TodoItem from "./TodoItem";
 import { useMemo } from "react";
-import { TodoStateContext } from "../components/TodoContext";
+import { TodoStateContext, TodoDispatchContext } from "./components/TodoContext";
 import { useContext } from "react";
 
 const List = () => {
@@ -35,7 +35,7 @@ const List = () => {
     <div className="List">
       <h4>Todo List🌱</h4>
       <div>
-        <div>total: {totalCount}</div>
+        <div>totalCount: {totalCount}</div>
         <div>doneCount: {doneCount}</div>
         <div>notDoneCount: {notDoneCount}</div>
       </div>

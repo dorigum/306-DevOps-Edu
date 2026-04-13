@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Editor from "./components/Editor";
 import List from "./components/List";
 import { useReducer, useMemo, useRef } from "react";
+import { TodoStateContext, TodoDispatchContext } from "./components/TodoContext";
 
 const mockData = [
   { id: 0, isDone: false, content: "React Study", date: new Date().getTime() },
@@ -59,7 +60,7 @@ function App() {
 
   // 삭제하기(useCallback() 최적화 적용)
   const onDelete = (targetId) => {
-    dispatch({ type: "DELETE", targetId: targetId });
+    dispatch({ type: "DELETE", targetId });
   };
 
   // 💡 Dispatch 함수들을 묶어서 최적화(컴포넌트 리렌더링 방지)

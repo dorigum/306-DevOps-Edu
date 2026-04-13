@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import "./Editor.css";
 import { useRef } from "react";
-import { TodoDispatchContext } from "../components/TodoContext";
+import { TodoStateContext, TodoDispatchContext } from "./components/TodoContext";
 import { use } from "react";
 
 const Editor = () => {
@@ -30,7 +30,7 @@ const Editor = () => {
   };
 
   // 엔터를 입력했을 때 onSubmit 호출
-  const onkeydown = (e) => {
+  const onKeyDown = (e) => {
     if (e.keyCode === 13) onSubmit();
   };
 
@@ -42,7 +42,7 @@ const Editor = () => {
         value={content}
         onChange={(e) => setContent(e.target.value)}
         ref={contentRef}
-        onKeyDown={onkeydown}
+        onKeyDown={onKeyDown}
       />
       <button onClick={onSubmit}>추가</button>
     </div>
