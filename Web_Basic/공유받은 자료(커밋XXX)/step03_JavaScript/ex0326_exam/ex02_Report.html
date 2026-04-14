@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+  <style type="text/css">
+    table {width: 600px; height:120px ; border: double red 5px;border-collapse: collapse; }
+    th, td{border: 1px gray solid;}
+    td{text-align: center;}
+  </style>
+</head>
+<body>
+<script type="text/javascript">
+  //이름, 국, 영, 수 점수를 입력받아 table에서 성적표 출력하기 
+   let name = prompt("이름은?","장희정"); 
+  
+   let kor = parseInt( prompt("국어점수는?",80)) ;
+   let eng = parseInt( prompt("영어점수는?",80));
+   let math = parseInt(prompt("수학점수는?",80));
+   
+   
+   //총점구하기
+   let sum = kor + eng + math;
+   
+   //평균구하기
+   let avg = sum/3; // 
+   
+   //등급구하기 (90 ~100 수, 80 ~ 89 우, 70~79 미 , 60 ~ 69 양 , 60미만 가 ) - if문
+   let grade;//
+   console.log("grade = " + grade);//undefined
+   
+   if(avg>=90)grade='수';
+   else if(avg >=80) grade="우";
+   else if(avg >=70) grade="미";
+   else if(avg >=60) grade="양";
+   else grade="가";
+   
+   console.log("전 : " + avg);
+   //소수점 2자리까지
+   avg = parseInt(avg*100) / 100;
+   console.log("후 : " + avg);
+   /*
+   테이블에 출력한다.
+      1) javaScript에서 테이블 출력
+      
+      2) table을 html에서 출력 하고 값만 js에서 출력
+   
+   */
+   
+   //1) javaScript에서 테이블 출력
+   document.write(`<table>`);
+   document.write(`<caption><h3>성적표-1</h3></caption>`);
+   document.write(`<tr>`);
+   document.write(`<th>이름</th><th>국어</th><th>영어</th><th>수학</th>`);
+   document.write(`<th>총점</th><th>평균</th><th>등급</th>`);
+   document.write(`</tr>`);
+   document.write(`<tr>`);
+   document.write(`<td>${name}</td>`);
+   document.write(`<td>${kor}</td>`);
+   document.write(`<td>${eng}</td>`);
+   document.write(`<td>${math}</td>`);
+   document.write(`<td>${sum}</td>`);
+   document.write(`<td>${avg}</td>`);
+   document.write(`<td>${grade}</td>`);
+   document.write(`</tr>`);
+   document.write(`</table>`);
+</script>
+
+<hr color="blue">
+<table>
+  <caption><h3>성적표-2</h3></caption>
+  <tr>
+   <th>이름</th>
+   <th>국어</th>
+   <th>영어</th>
+   <th>수학</th>
+   <th>총점</th>
+   <th>평균</th>
+   <th>등급</th>
+  </tr>
+  <tr>
+    <td><script>document.write(name);</script></td>
+    <td><script>document.write(kor);</script></td>
+    <td><script>document.write(eng);</script></td>
+    <td><script>document.write(math);</script></td>
+    <td><script>document.write(sum);</script></td>
+    <td><script>document.write(avg);</script></td>
+    <td><script>document.write(grade);</script></td>
+  </tr>
+</table>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

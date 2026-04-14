@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>  callback함수 사용하기 </h1>
+    <script>
+       function add(a, b){
+         return a+b;
+       }
+
+       function minus(a, b){
+         return a-b;
+       }
+
+       function print(a, b, cb){
+          let result = cb(a,b); //함수호출
+          console.log("result = " + result);
+       }
+
+       
+       //함수를 호출해보자 
+       print(5,3, add);
+       print(5,3, minus);
+       print(5,3, (a,b)=>{return a*b});
+        print(5,3,(a,b)=> a/b);
+    </script>
+</body>
+</html>

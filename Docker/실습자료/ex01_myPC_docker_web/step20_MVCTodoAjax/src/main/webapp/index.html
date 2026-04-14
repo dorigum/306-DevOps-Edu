@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <link rel="stylesheet" type="text/css" href="./css/App.css">
+    <link rel="stylesheet" type="text/css" href="./css/Header.css">
+    <link rel="stylesheet" type="text/css" href="./css/List.css">
+    <link rel="stylesheet" type="text/css" href="./css/TodoItem.css">
+    <link rel="stylesheet" type="text/css" href="./css/Editor.css">
+
+    
+</head>
+<body> 
+ <div class="App">
+    <div class="Header">
+        <h3>오늘의 Plan😊</h3>
+        <h1>2025-10-20</h1>
+    </div>
+  <form>
+    <div class="Editor">
+            <input type="text" placeholder='새로운 todo'  id="input" />
+            <button>추가</button> 
+    </div>
+  </form>   
+
+    <div class="List">
+        <h4>Todo List 🌱</h4> <!--widow + .-->
+        <input type="text" placeholder='검색어를 입력해주세요.' id="keyword" />
+
+       
+            <div class="todos_wrapper">
+                <!--여기에 화면 출력-->
+            </div>
+       
+    </div>  
+   
+</div>
+
+<script>
+   
+      let day =["일","월","화","수","목","금","토"];
+      onload = ()=>{
+          initData();
+          
+          const today = new Date();
+          document.querySelector(".Header > h1").innerHTML=
+          `${today.getFullYear()}년 ${today.getMonth()+1}월 ${today.getDate()}일  ${day[today.getDay()]}요일`;
+
+      }
+
+      new URLSearchParams({ // 폼데이터를 서버에 전송할때 URLSearchParams는 key=todoList&methodName=selectAll 형태로 만들어줌(서버가 전통적인 방식으로 파라미터 받을 때 사용)
+          key: "todoList",
+          methodName: "selectAll"
+      })
+      async function initData (word){
+    	
+    	  body = new URLSearchParams({ // 폼데이터를 서버에 전송할때 URLSearchParams는 key=todoList&methodName=selectAll 형태로 만들어줌(서버가 전통적인 방식으로 파라미터 받을 때 사용)
+             key: "todoList",
+             methodName : word ? "selectIncludesbyWord" : "selectAll",
+             word : word
+         });
+    	 
+    	 try{
+    	  const response = await fetch("ajax", {
+              method: "POST",
+              body : body
+          });
+
+    	  if (!response.ok) {
+              throw new Error("서버 응답 에러: " + response.status);
+          }
+    	  
+    	  const result = await response.json();
+    	  
+    	  
+          let todosWrapper = document.querySelector(".todos_wrapper");
+       
+          let str="";
+          result.forEach((todo, index)=>{
+          
+          str+='<div class="TodoItem">';
+          str+=`<input type="checkbox"  onChange="onUpdate(this , ${todo.id} )" ${todo.done ? "checked" :"" }/>`;
+          str+='<div class="content">'+todo.content+'</div>';
+          str+=`<div class="date">${todo.date}</div>`;
+          str+=`<button name="${todo.id}" onclick="todoDel(this)">삭제</button>`;
+          str+='</div>';
+          })
+
+          todosWrapper.innerHTML=str;
+          
+    	 } catch (err) {
+    	        alert("에러 발생했어요: " + err);
+    	    }
+         
+      }
+
+       // 추가 클릭
+    
+       document.querySelector(".Editor > button").onclick = async () =>{
+        event.preventDefault();
+        
+          let inputEle = document.querySelector("#input");
+         
+          try{
+        	  const response = await fetch("ajax", {
+                  method: "POST",
+                  body : new URLSearchParams({ // 폼데이터를 서버에 전송할때 URLSearchParams는 key=todoList&methodName=selectAll 형태로 만들어줌(서버가 전통적인 방식으로 파라미터 받을 때 사용)
+                      key: "todoList",
+                      methodName: "insert",
+                      content:inputEle.value
+                  })
+              });
+
+        	  if (!response.ok) {
+                  throw new Error("서버 응답 에러: " + response.status);
+              }
+        	  
+        	  const result = await response.json();
+        	  console.log(result);
+        	  
+          }catch (err) {
+  	        alert("등록에 문제가 생겻어요.: " + err);
+  	      }
+          
+          
+          document.querySelector("#input").value="";
+          initData();
+
+         // return false;
+      }
+      /////////////////////////////////////////
+       //수정
+       const onUpdate = async (th , id)=>{ //TodoItem에서 호출할때 전달한 id
+            console.log(th.checked);
+            let done = th.checked ? "1" : "0";
+           try{
+        	  const response = await fetch("ajax", {
+                  method: "POST",
+                  body : new URLSearchParams({ // 폼데이터를 서버에 전송할때 URLSearchParams는 key=todoList&methodName=selectAll 형태로 만들어줌(서버가 전통적인 방식으로 파라미터 받을 때 사용)
+                      key: "todoList",
+                      methodName: "update",
+                      done,
+                      id
+                  })
+              });
+
+        	  if (!response.ok) {
+                  throw new Error("서버 응답 에러: " + response.status);
+              }
+        	  
+        	  const result = await response.json();
+        	  console.log(result);
+        	  
+          }catch (err) {
+  	        alert("수정에 문제가 생겻어요.: " + err);
+  	      }
+          
+          
+          initData();
+
+       }
+     
+     ////////////////////////////////////////////////////
+      // 삭제
+      const todoDel = async (th)=>{
+   
+          let targetId =th.getAttribute("name");
+          
+          try{
+        	  const response = await fetch("ajax", {
+                  method: "POST",
+                  body : new URLSearchParams({ // 폼데이터를 서버에 전송할때 URLSearchParams는 key=todoList&methodName=selectAll 형태로 만들어줌(서버가 전통적인 방식으로 파라미터 받을 때 사용)
+                      key: "todoList",
+                      methodName: "delete",
+                      targetId
+                  })
+              });
+
+        	  if (!response.ok) {
+                  throw new Error("서버 응답 에러: " + response.status);
+              }
+        	  
+        	  const result = await response.json();
+        	  console.log(result);
+        	  
+          }catch (err) {
+  	        alert("삭제에 문제가 생겻어요.: " + err);
+  	      }
+        
+
+          initData();
+     }
+     ////////////////////////////////////////////
+
+     //검색
+     document.querySelector("#keyword").onkeyup = async (e)=>{
+           let word = e.target.value;
+         /*  try{
+        	  const response = await fetch("ajax", {
+                  method: "POST",
+                  body : new URLSearchParams({ // 폼데이터를 서버에 전송할때 URLSearchParams는 key=todoList&methodName=selectAll 형태로 만들어줌(서버가 전통적인 방식으로 파라미터 받을 때 사용)
+                      key: "todoList",
+                      methodName: "selectIncludesbyWord",
+                      word
+                  })
+              });
+
+        	  if (!response.ok) {
+                  throw new Error("서버 응답 에러: " + response.status);
+              }
+        	  
+        	  const result = await response.json();
+        	  console.log(result);
+        	  
+          }catch (err) {
+  	        alert("검색어 에 문제가 생겻어요.: " + err);
+  	      } */
+          
+          
+          initData(word);
+    } 
+
+  </script>
+
+</body>
+</html>

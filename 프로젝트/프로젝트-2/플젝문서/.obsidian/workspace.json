@@ -1,24 +1,20 @@
 {
   "main": {
-    "id": "ecd008d524b46cc3",
+    "id": "8e050dbee1f7eb19",
     "type": "split",
     "children": [
       {
-        "id": "b85dc1d67c45f393",
+        "id": "7421de3a62cb9626",
         "type": "tabs",
         "children": [
           {
-            "id": "2f7dca2f71f23eaf",
+            "id": "932e3e19e4f2d14f",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "공부 기록/2026-04-14.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2026-04-14"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "그래프 뷰"
             }
           }
         ]
@@ -27,28 +23,28 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "b503e8129ddc1438",
+    "id": "67959030e9b86ddc",
     "type": "split",
     "children": [
       {
-        "id": "d6a737af2450b4ce",
+        "id": "d534a1cd0b3341ed",
         "type": "tabs",
         "children": [
           {
-            "id": "615633c92c957c9b",
+            "id": "33b49127d3a70bd0",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byCreatedTime",
-                "autoReveal": true
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "파일 탐색기"
             }
           },
           {
-            "id": "d7fbaba2ed2d421e",
+            "id": "51be70b7b292c2fe",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -65,7 +61,7 @@
             }
           },
           {
-            "id": "191886b258b1f6d0",
+            "id": "c116440345a9f812",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -78,24 +74,22 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 300
   },
   "right": {
-    "id": "21f751e21521c464",
+    "id": "60813b8c6c48e264",
     "type": "split",
     "children": [
       {
-        "id": "5cf7126439a18981",
+        "id": "ab7f1e18bf0dddd6",
         "type": "tabs",
         "children": [
           {
-            "id": "9d913787482c0364",
+            "id": "6a04ee68acff223f",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "260213 팀 발표.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,25 +99,24 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "260213 팀 발표 의 백링크"
+              "title": "백링크"
             }
           },
           {
-            "id": "f0f8b9cec85e149e",
+            "id": "23e9a0cc52faf339",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "260213 팀 발표.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "260213 팀 발표 의 나가는 링크"
+              "title": "나가는 링크"
             }
           },
           {
-            "id": "6c1f43295692d5ea",
+            "id": "5a4d9bcabab90318",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -138,7 +131,7 @@
             }
           },
           {
-            "id": "57b72865695e2cb6",
+            "id": "9961151f5db7e022",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -152,18 +145,18 @@
             }
           },
           {
-            "id": "2d03b702b7c98483",
+            "id": "e3fde9c607ed5922",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "260213 팀 발표.md",
+                "file": "환영합니다!.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "260213 팀 발표 의 개요"
+              "title": "환영합니다! 의 개요"
             }
           }
         ]
@@ -175,63 +168,17 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "daily-notes:오늘의 일일 노트 열기": false,
-      "canvas:새 캔버스 만들기": false,
       "switcher:빠른 전환기 열기": false,
-      "command-palette:명령어 팔레트 열기": false,
       "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
       "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
       "bases:새 베이스 생성하기": false
     }
   },
-  "active": "2f7dca2f71f23eaf",
+  "active": "33b49127d3a70bd0",
   "lastOpenFiles": [
-    "프로젝트 기획 끄적끄적.......md",
-    "공부 기록/2026-03-30.md",
-    "캡처/Pasted image 20260414100221.png",
-    "공부 기록/2026-04-14.md",
-    "캡처/Pasted image 20260414100013.png",
-    "캡처/Pasted image 20260414095954.png",
-    "캡처/Pasted image 20260414095353.png",
-    "캡처/Pasted image 20260414095022.png",
-    "캡처/Pasted image 20260414095001.png",
-    "캡처/Pasted image 20260414094931.png",
-    "공부 기록/2026-04-13.md",
-    "공부 기록/2026-04-10.md",
-    "공부 기록/2026-04-13.md",
-    "공부 기록/2026-04-07.md",
-    "공부 기록/2026-04-08.md",
-    "공부 기록/2026-04-09.md",
-    "캡처/Pasted image 20260409115259.png",
-    "캡처/Pasted image 20260409092020.png",
-    "캡처/Pasted image 20260409091909.png",
-    "공부 기록/2026-04-06.md",
-    "공부 기록/2026-03-11.md",
-    "공부 기록/260213_예외 처리 실습 구조.canvas",
-    "공부 기록/2026-04-03.md",
-    "공부 기록/무제.canvas",
-    "공부 기록/2026-04-01.md",
-    "공부 기록/2026-03-31.md",
-    "공부 기록/2026-02-09.md",
-    "공부 기록/2026-02-10.md",
-    "공부 기록/2026-03-27.md",
-    "기타/공부 기록.md",
-    "기타/무제.base",
-    "기타/무제2.base",
-    "공부 기록/2026-03-26.md",
-    "공부 기록/2026-02-26.md",
-    "공부 기록/2026-03-25.md",
-    "공부 기록/2026-03-24.md",
-    "무제.base",
-    "무제 1.base",
-    "무제 2.base",
-    "공부 기록/2026-03-23.md",
-    "Project_Specification.md",
-    "Cafe_kiosk",
-    "공부 기록/2026-03-06.md",
-    "팀플",
-    "새 폴더",
-    "캡처",
-    "공부 기록"
+    "환영합니다!.md"
   ]
 }

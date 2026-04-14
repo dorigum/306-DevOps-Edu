@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Array 함수 </h2>
+    <script>
+    const students =[ 
+        {name:"A", age:20 , state:true , score:80}, 
+        {name:"B", age:29 , state:true , score:85}, 
+        {name:"C", age:22 , state:false , score:90}, 
+        {name:"D", age:21 , state:true , score:45}, 
+        {name:"E", age:28 , state:false , score:95}, 
+    ]; 
+ 
+//1. 점수가 90점인 학생 정보 - find() 
+/*let re = students.find((student)=>{
+    console.log(student);
+    return student.score === 90;
+});
+
+console.log(re);*/
+
+let re = students.find((student)=>student.score===90);
+//console.log(re);
+
+//2. 점수가 90점인 이상인 모든 학생  - filter() ==> 결과 새로운 배열(true인 )
+re = students.filter((student)=> student.score>=90);
+//console.log(re);
+
+//3. 수강중(state-true) 학생들만 골라서 배열로 만들기. - filter() 
+re = students.filter((student)=> student.state);
+//console.log(re);
+
+//4.학생 배열에서 점수만 뽑아서 배열로 만들기 - map() => 결과 새로운 배열  
+re = students.map((student)=> student.score);
+console.log(re);
+
+//5.학생 들중에 점수가 50점 보다 낮은 친구 있는지 없는지 체크하기-some() 
+re = students.some((student)=> student.score <50);
+console.log(re);
+
+//6. 모든 학생들의 점수가 80이상인지 체크 -every() 
+re = students.every((student)=> student.score >=80);
+//console.log(re);
+
+//7.학생들의 평균점수를 구하기 - reduce()   => 점수를 모아서 모두 합하고 인원수 나눈다.
+console.log("------reduce()------------")
+/*students.reduce((prev, currv)=>{
+    console.log(prev)
+    console.log(currv)
+
+    console.log("-----------------------")
+    return prev + currv.score;
+} ,0);*/
+
+re = students.reduce((prev, currv)=> prev+currv.score , 0);
+console.log("re = " + re)
+console.log(re/students.length)
+
+
+
+//8. 학생들의 모든 점수를 구해서 하나의  string으로 변환(map , join) 
+re = students.map((s)=>s.score).join(" | ");
+//console.log(re);
+
+//9.학생들의 모든 점수를 배열로 만들어서 50점 이상인 학생들만 뽑아서 하나의 string으로 변환 (map, filter, join) 
+re = students.map((s)=>s.score).filter((score)=>score>=50).join(" / ");
+//console.log(re);
+
+//10.학생들의 점수를 정렬하기. - sort()
+//re = students.sort((s1, s2)=> s1.score - s2.score);
+re = students.toSorted((s1, s2)=> s1.score - s2.score);
+
+console.log(re);//
+console.log("--------------------")
+console.log(students)
+    </script>
+</body>
+</html>

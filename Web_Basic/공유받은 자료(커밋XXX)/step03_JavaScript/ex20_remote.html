@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+</head>
+<body>
+ <a href="#" data-url="naver.com">네이버</a> <p>
+ <a href="#" data-url="daum.net">다음</a> <p>
+ <a href="#" data-url="kosta.or.kr">코스타</a> <p>
+    
+<script>
+    document.querySelectorAll("a").forEach((aEle)=>{
+          //페이지 이동
+          aEle.addEventListener("click", function(){
+             //location.href="https://www.google.com"; //현재창 (self. 생략)
+               opener.location.href= "http://www." + this.dataset.url
+            } ,false);
+    })
+</script>
+</body>
+</html>

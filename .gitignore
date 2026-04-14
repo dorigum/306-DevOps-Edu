@@ -31,3 +31,6 @@ vscode/
 node_modules/
 
 *.pem
+
+# 임시로 잠깐 커밋 스탑
+프로젝트/

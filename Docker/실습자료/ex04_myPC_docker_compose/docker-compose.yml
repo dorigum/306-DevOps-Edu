@@ -1,0 +1,35 @@
+version: '3.8'  # Docker Compose 파일의 버전
+
+services:  # 여러 컨테이너(서비스)를 정의하는 영역
+  mysql:  # MySQL 데이터베이스 서비스 정의
+    image: mysql:8.4  # 사용할 MySQL 이미지와 버전
+    container_name: my_sql  # 생성될 컨테이너의 이름
+    environment:  # 환경변수 설정
+      MYSQL_ROOT_PASSWORD: 1234 # root 계정 비밀번호 설정
+      MYSQL_DATABASE: "web_basic"  # 초기 생성할 데이터베이스 이름
+      TZ: "Asia/Seoul"  # 컨테이너의 시간대를 서울로 설정
+    volumes:  # 볼륨 설정 (데이터 유지 및 초기화용)
+      - mysql_vol:/var/lib/mysql  # DB 데이터를 영속적으로 저장
+      - ./db-init:/docker-entrypoint-initdb.d  # SQL 스크립트를 자동 실행할 폴더 마운트
+      - /etc/localtime:/etc/localtime:ro  # 호스트의 시간 설정을 컨테이너에 반영 (읽기 전용)
+    ports:
+      - 3306:3306  # 호스트의 3306 포트를 컨테이너의 3306 포트에 연결
+    networks:
+      - web_net  # web_net 네트워크에 연결
+
+  tomcat:  # 톰캣 웹 서버 서비스 정의
+    build: .  # 현재 디렉토리에 있는 Dockerfile을 사용하여 이미지 빌드
+    #image: my_tomcat:latest  # ← 내가 원하는 이미지 이름으로 지정
+    container_name: my_tomcat  # 생성될 톰캣 컨테이너의 이름
+    ports:
+      - 80:8080  # 호스트의 80포트를 컨테이너의 8080포트에 연결
+    networks:
+      - web_net  # web_net 네트워크에 연결
+    depends_on:
+      - mysql  # mysql 컨테이너가 먼저 실행되어야 tomcat 실행됨
+
+volumes:  # 데이터 저장소 정의 (컨테이너 재시작 시 데이터 유지)
+  mysql_vol:  # MySQL 데이터 볼륨
+
+networks:  # 사용자 정의 네트워크 정의
+  web_net:  # mysql과 tomcat이 통신할 내부 네트워크
