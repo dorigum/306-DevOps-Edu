@@ -19,7 +19,7 @@ docker run --name my_sql -e MYSQL_ROOT_PASSWORD=1234 -e MYSQL_DATABASE=web_basic
 
 
 # tomcat pull + create + start
-docker run --name my_tomcat -p 80:8080 -d   -v mytomcat_vol:/usr/local/tomcat/webapps --net web_net tomcat:10
+docker run --name my_tomcat -p 80:8080 -d -v mytomcat_vol:/usr/local/tomcat/webapps --net web_net tomcat:10
 
 # 프로젝트 ROOT.war 준비하기  - context.xml 설정변경(url, password확인)
 /*

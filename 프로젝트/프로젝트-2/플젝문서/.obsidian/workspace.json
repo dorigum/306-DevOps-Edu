@@ -11,10 +11,14 @@
             "id": "932e3e19e4f2d14f",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "그래프 뷰"
+              "type": "markdown",
+              "state": {
+                "file": "프로젝트 기획 끄적끄적.......md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "프로젝트 기획 끄적끄적......"
             }
           }
         ]
@@ -74,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "60813b8c6c48e264",
@@ -177,8 +182,20 @@
       "bases:새 베이스 생성하기": false
     }
   },
-  "active": "33b49127d3a70bd0",
+  "active": "932e3e19e4f2d14f",
   "lastOpenFiles": [
+    "Pasted image 20260415181033.png",
+    "Pasted image 20260415180328.png",
+    "Pasted image 20260415175443.png",
+    "Pasted image 20260415174513.png",
+    "프로젝트 기획 끄적끄적.......md",
+    "Pasted image 20260415174412.png",
+    "Pasted image 20260415174252.png",
+    "Pasted image 20260415174219.png",
+    "Pasted image 20260415174116.png",
+    "Pasted image 20260415173708.png",
+    "Pasted image 20260415173655 1.png",
+    "Pasted image 20260415173655.png",
     "환영합니다!.md"
   ]
 }
