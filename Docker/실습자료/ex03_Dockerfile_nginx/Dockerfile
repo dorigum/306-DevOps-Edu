@@ -2,7 +2,7 @@
 FROM nginx 
 
 # 작업 디렉토리를 nginx의 기본 html 루트로 설정
-WORKDIR /usr/share/nginx/html 
+WORKDIR /usr/share/nginx/html
 
 # images라는 서브 디렉토리를 생성 (/usr/share/nginx/html/images 디렉토리 생성)
 RUN mkdir images 
