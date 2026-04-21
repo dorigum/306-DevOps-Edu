@@ -23,10 +23,10 @@ const BoardList = () => {
     }
   };
 
-  const filteredPosts = posts.filter(post => 
-    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    post.author.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredPosts = Array.isArray(posts) ? posts.filter(post => 
+    (post.title?.toLowerCase() || '').includes(searchTerm.toLowerCase()) ||
+    (post.author?.toLowerCase() || '').includes(searchTerm.toLowerCase())
+  ) : [];
 
   return (
     <div className="board-list-page">
@@ -46,17 +46,21 @@ const BoardList = () => {
         <div className="loading-state">Loading premium vibes...</div>
       ) : (
         <div className="post-grid">
-          {filteredPosts.map(post => (
-            <div key={post.id} className="post-card glass-panel fade-in">
-              <div className="post-id">#{post.id}</div>
-              <h2 className="post-title">{post.title}</h2>
-              <p className="post-excerpt">{post.content.substring(0, 100)}...</p>
-              <div className="post-footer">
-                <span className="post-author">{post.author}</span>
-                <span className="post-date">{new Date(post.created_at).toLocaleDateString()}</span>
+          {filteredPosts.length > 0 ? (
+            filteredPosts.map(post => (
+              <div key={post.id} className="post-card glass-panel fade-in">
+                <div className="post-id">#{post.id}</div>
+                <h2 className="post-title">{post.title}</h2>
+                <p className="post-excerpt">{post.content?.substring(0, 100)}...</p>
+                <div className="post-footer">
+                  <span className="post-author">{post.author}</span>
+                  <span className="post-date">{post.created_at ? new Date(post.created_at).toLocaleDateString() : 'Unknown Date'}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          ) : (
+            <div className="empty-state">No vibes found. Be the first to post!</div>
+          )}
         </div>
       )}
     </div>
