@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Edu/VibeCoding/Antigravity_Work//**)",
+      "Read(//c/Edu/VibeCoding//**)"
+    ]
+  }
+}
