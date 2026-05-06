@@ -45,4 +45,8 @@ public class BookVo {
 		this.date = date;
 	}
 
+	@Override
+	public String toString() {
+		return "BookVo [subject=" + subject + ", writer=" + writer + ", price=" + price + ", date=" + date + "]";
+	}
 }

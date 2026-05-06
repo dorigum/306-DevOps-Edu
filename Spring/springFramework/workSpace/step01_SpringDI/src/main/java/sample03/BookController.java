@@ -1,19 +1,20 @@
 package sample03;
 
 public class BookController {
-	private BookDAOImpl bookDaoImpl;
+	private BookDAO bookDao;
 	private BookVo bookVo;
 	
 	public BookController() {
 		System.out.println("BookController");
 	}
 	
-	public BookController(BookDAOImpl bookDaoImpl, BookVo bookvo) {
-		this.bookDaoImpl = bookDaoImpl;
+	public BookController(BookDAO bookDao, BookVo bookvo) {
+		this.bookDao = bookDao;
 		this.bookVo = bookvo;
 	}
+
 	public void bookInsert() {
 		System.out.println("BookController bookInsert call");
-		bookDaoImpl.insert(bookVo);
+		bookDao.insert(bookVo);
 	}
 }

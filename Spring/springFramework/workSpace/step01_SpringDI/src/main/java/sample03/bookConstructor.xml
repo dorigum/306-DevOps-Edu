@@ -3,6 +3,18 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean class="sample03.BookController" id = "controller"/>
+	<bean class="sample03.BookDAOImpl" id="bookDao" />
+
+	<bean class="sample03.BookVo" id="book">
+		<constructor-arg value="Spring DI" />
+		<constructor-arg value="Koo" />
+		<constructor-arg value="30000" type="int" />
+		<constructor-arg value="2026-05-07" />
+	</bean>
+
+	<bean class="sample03.BookController" id="controller">
+		<constructor-arg ref="bookDao" />
+		<constructor-arg ref="book" />
+	</bean>
 	
 </beans>
