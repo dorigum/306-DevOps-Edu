@@ -1,0 +1,15 @@
+~spring maven기반의  webMVC directory구조
+
+src/main/java => controller, service, dao, dto ...
+src/main/resources => mapper , config
+src/main/test
+
+src/main/webapp/ => root영역(Webcontent와 동일 = app)
+src/main/webapp/resources => css, js, img
+
+src/main/webapp/WEB-INF/spring =>root-context.xml, spring-contex.xml
+src/main/webapp/WEB-INF/views => ~.jsp문서
+src/main/webapp/WEB-INF/ => web.xml문서
+
+
+

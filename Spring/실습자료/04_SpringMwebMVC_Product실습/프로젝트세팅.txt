@@ -1,0 +1,15 @@
+1. spring mvc legacyProject 생성
+2. pom.xml에 수정
+     java version 11 , spring version 5.3.39
+
+    추가적인 lib dependency를 추가한다.
+      ex) lombok 
+
+3. project에서 오른쪽 버튼 클릭해서 -> 빌드패스에서 수정(jre, javaversion , tomcat 체크)
+
+4. web.xml 열어서 확인
+    listener , filter , servlet 
+
+5. springbean설정문서를 확인!!
+----------------------------------------------
+step11_MVCPorduct 프로젝트를 완성
