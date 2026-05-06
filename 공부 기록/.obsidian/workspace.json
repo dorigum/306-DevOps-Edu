@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "b85dc1d67c45f393",
+        "id": "ca08043633b669f9",
         "type": "tabs",
         "children": [
           {
-            "id": "2f7dca2f71f23eaf",
+            "id": "871af86a07ebaa34",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "2026-04-17.md",
-                "mode": "source",
-                "source": false
+                "file": "캡처/Pasted image 20260506103503.png"
               },
-              "icon": "lucide-file",
-              "title": "2026-04-17"
+              "icon": "lucide-image",
+              "title": "Pasted image 20260506103503"
             }
           }
         ]
@@ -183,10 +181,18 @@
       "bases:새 베이스 생성하기": false
     }
   },
-  "active": "2f7dca2f71f23eaf",
+  "active": "615633c92c957c9b",
   "lastOpenFiles": [
-    "공부 기록/2026-04-16.md",
+    "캡처/Pasted image 20260506100851.png",
+    "캡처/Pasted image 20260506103503.png",
+    "공부 기록/2026-05-06.md",
+    "캡처/Pasted image 20260506103123.png",
+    "캡처/Pasted image 20260506103116.png",
+    "공부 기록/2026-04-21.md",
+    "공부 기록/2026-04-20.md",
+    "공부 기록/2026-04-17.md",
     "2026-04-17.md",
+    "공부 기록/2026-04-16.md",
     "공부 기록/공부 기록 - 바로 가기.lnk",
     "공부 기록/2026-04-06.md",
     "공부 기록/2026-03-31.md",
@@ -200,16 +206,12 @@
     "캡처/Pasted image 20260414095353.png",
     "캡처/Pasted image 20260414095022.png",
     "캡처/Pasted image 20260414095001.png",
-    "캡처/Pasted image 20260414094931.png",
     "공부 기록/2026-04-13.md",
     "공부 기록/2026-04-10.md",
     "공부 기록/2026-04-13.md",
     "공부 기록/2026-04-07.md",
     "공부 기록/2026-04-08.md",
     "공부 기록/2026-04-09.md",
-    "캡처/Pasted image 20260409115259.png",
-    "캡처/Pasted image 20260409092020.png",
-    "캡처/Pasted image 20260409091909.png",
     "공부 기록/2026-03-11.md",
     "공부 기록/260213_예외 처리 실습 구조.canvas",
     "공부 기록/2026-04-03.md",
@@ -221,14 +223,9 @@
     "기타/공부 기록.md",
     "기타/무제.base",
     "기타/무제2.base",
-    "공부 기록/2026-03-26.md",
-    "공부 기록/2026-02-26.md",
-    "공부 기록/2026-03-25.md",
-    "공부 기록/2026-03-24.md",
     "무제.base",
     "무제 1.base",
     "무제 2.base",
-    "공부 기록/2026-03-23.md",
     "Cafe_kiosk",
     "팀플",
     "새 폴더",
