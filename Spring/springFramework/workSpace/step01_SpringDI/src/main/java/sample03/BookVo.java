@@ -7,6 +7,8 @@ public class BookVo {
 	private String date;
 
 	public BookVo(String subject, String writer, int price, String date) {
+		System.out.println("---BookVo 인수 4개 생성자---");
+
 		this.subject = subject;
 		this.writer = writer;
 		this.price = price;

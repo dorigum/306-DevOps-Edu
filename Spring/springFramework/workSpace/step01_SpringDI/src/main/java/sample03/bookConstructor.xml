@@ -5,16 +5,17 @@
 
 	<bean class="sample03.BookDAOImpl" id="bookDao" />
 
-	<bean class="sample03.BookVo" id="book">
+	<!-- 인수 4개를 받는 생성자 호출 -->
+	<bean class="sample03.BookVo" id="bookVo">
 		<constructor-arg value="Spring DI" />
 		<constructor-arg value="Koo" />
-		<constructor-arg value="30000" type="int" />
+		<constructor-arg value="30000" />
 		<constructor-arg value="2026-05-07" />
 	</bean>
 
 	<bean class="sample03.BookController" id="controller">
 		<constructor-arg ref="bookDao" />
-		<constructor-arg ref="book" />
+		<constructor-arg ref="bookVo" />
 	</bean>
-	
+
 </beans>

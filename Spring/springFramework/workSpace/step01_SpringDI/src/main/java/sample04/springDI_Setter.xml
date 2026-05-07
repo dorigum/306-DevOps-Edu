@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- 외부의 properties 파일의 위치를 설정 -->
+	<!-- <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+		<property name="locations"> <array> <value>classpath:info.properties</value> 
+		<value>classpath:db.properties</value> </array> </property> </bean> -->
+
+	<!-- context:xxx는 컨테이너와 관련된 설정을 간소화해주는 역할을 한다. 애플리케이션의 Bean들을 자동으로 스캔하고, 
+		Bean으로 등록하는 작업을 손쉽게 해주는 역할을 한다. -->
+	<!-- <context:property-placeholder location="classpath:info.properties, 
+		db.properties"/> -->
+
+	<!-- *는 ant style 적용 -->
+	<context:property-placeholder
+		location="classpath:*.properties" />
+
+	<!-- 외부의 properties 파일의 key를 참조하는 방법: ${key} -->
+	<bean class="sample04.Student" id="st1">
+		<property name="no" value="${student.no}" /><!-- setNo 호출 -->
+		<property name="name" value="${driverName}" />
+		<property name="addr" value="${student.addr}" />
+		<property name="phone" value="${student.phone}" />
+	</bean>
+	
+	<bean class="sample04.StudentDAOImpl" id="studentDao"/>
+	
+	<bean class="sample04.StudentServiceImpl" id="service">
+		<property name="studentDAO" ref="studentDao"/>
+	</bean>
+	
+	<bean class="sample04.StudentController" id="controller">
+		<property name="student" ref="st1"/>
+		<property name="studentService" ref="service"/>
+	</bean>
+</beans>
