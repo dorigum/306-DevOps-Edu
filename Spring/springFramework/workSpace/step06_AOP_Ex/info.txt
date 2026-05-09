@@ -1,0 +1,9 @@
+start호출 / 인수 개수 : 1 / 리턴 값: null / 총 실행 시간 : 0ms
+pause호출 / 인수 개수 : 0 / 리턴 값: TvImpl 리턴값!! / 총 실행 시간 : 0ms
+stop호출 / 인수 개수 : 0 / 리턴 값: null / 총 실행 시간 : 1ms
+start호출 / 인수 개수 : 1 / 리턴 값: null / 총 실행 시간 : 0ms
+pause호출 / 인수 개수 : 0 / 리턴 값: AudioImpl 리턴값!! / 총 실행 시간 : 0ms
+stop호출 / 인수 개수 : 0 / 리턴 값: null / 총 실행 시간 : 0ms
+start호출 / 인수 개수 : 1 / 리턴 값: null / 총 실행 시간 : 0ms
+pause호출 / 인수 개수 : 0 / 리턴 값: VideoImpl 리턴값!! / 총 실행 시간 : 0ms
+stop호출 / 인수 개수 : 0 / 리턴 값: null / 총 실행 시간 : 0ms
