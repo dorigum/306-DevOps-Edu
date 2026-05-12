@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>step08_Servlet</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 서블릿 등록=생성 + 매핑 
+      
+      test03Servlet = new Test03Servlet();/ 동일
+  -->
+  <servlet>
+    <servlet-name>test03Servlet</servlet-name>
+    <servlet-class>kosta.web.controller.Test03Servlet</servlet-class>
+    <load-on-startup>1</load-on-startup> <!-- 서버가 start될때 사전초기화 -->
+  </servlet>
+  
+  <!-- 브라우져에서 어떻게 요청하면 어떤 서블릿을 실행할지 설정 -->
+  <servlet-mapping>
+    <servlet-name>test03Servlet</servlet-name>
+    <url-pattern>/test03</url-pattern>
+  </servlet-mapping>
+  
+  
+</web-app>
+
+
+
+
+
+
