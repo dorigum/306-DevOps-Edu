@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+ <!-- 생성 + 주입에 해당하는 자바기반의 @annotation활성화 -->
+ <context:component-scan base-package="sample08"/>
+ 
+ <!-- Book정보 초기치 데이터 생성 -->
+ <bean class="sample08.BookDTO" id="b1">
+  <property name="date" value="2026-05-11"/>
+  <property name="price" value="2500"/>
+  <property name="subject" value="Java실습"/>
+  <property name="writer" value="봉순이"/>
+ </bean>
+ 
+ <bean class="sample08.BookDTO" id="b2" p:date="2026-05-07" p:price="35000" p:writer="미미" p:subject="HTML"/>
+
+</beans>

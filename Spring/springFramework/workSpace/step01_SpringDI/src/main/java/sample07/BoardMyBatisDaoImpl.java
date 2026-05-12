@@ -9,7 +9,6 @@ public class BoardMyBatisDaoImpl implements BoardDAO {
 		System.out.println("BoardMyBatisDaoImpl 생성자 호출");
 	}
 
-	@Override
 	public void select() {
 		System.out.println("BoardMyBatisDaoImpl select 호출");
 	}

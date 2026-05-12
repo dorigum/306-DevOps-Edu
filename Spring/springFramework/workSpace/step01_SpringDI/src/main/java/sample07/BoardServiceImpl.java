@@ -24,7 +24,6 @@ public class BoardServiceImpl implements BoardService {
 		System.out.println("boardOracleDaoImpl = " + boardOracleDaoImpl);
 	}
 
-	@Override
 	public void select() {
 		System.out.println("BoardServiceImpl select call");
 

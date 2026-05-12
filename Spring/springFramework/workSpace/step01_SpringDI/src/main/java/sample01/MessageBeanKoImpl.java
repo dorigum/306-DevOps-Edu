@@ -6,7 +6,6 @@ public class MessageBeanKoImpl implements MessageBean {
 		System.out.println("MessageBeanKoImpl 생성자 호출");
 	}
 
-	@Override
 	public void sayHello(String name) {
 		System.out.println(name + "님 반가워요:D");
 	}

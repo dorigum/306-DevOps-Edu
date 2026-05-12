@@ -13,7 +13,6 @@ public class OrderMessageImpl implements OrderMessage {
 //		System.out.println("setUserBean(UserBean userBean) call");
 //	}
 
-	@Override
 	public void getOrderMessage() {
 		System.out.println("orderId: " + orderId);
 		

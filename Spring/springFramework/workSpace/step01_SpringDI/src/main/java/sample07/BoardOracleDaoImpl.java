@@ -9,7 +9,6 @@ public class BoardOracleDaoImpl implements BoardDAO {
 		System.out.println("BoardOracleDaoImpl 생성자 호출");
 	}
 
-	@Override
 	public void select() {
 		System.out.println("BoardOracleDaoImpl select 호출");
 	}

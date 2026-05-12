@@ -13,7 +13,6 @@ public class StudentServiceImpl implements StudentService {
 		System.out.println("setStudentDAO(StudentDAO studentDAO) call = " + studentDAO);
 	}
 
-	@Override
 	public void insert(Student student) {
 		studentDAO.insert(student);
 	}
