@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- Enable Java annotation based creation and injection. -->
+	<context:component-scan base-package="sample08_2" />
+
+	<!-- Initial Book data. -->
+	<bean class="sample08_2.BookDTO" id="b1">
+		<property name="date" value="2026-05-11" />
+		<property name="price" value="2500" />
+		<property name="subject" value="Java practice" />
+		<property name="writer" value="writer1" />
+	</bean>
+
+	<bean class="sample08_2.BookDTO" id="b2" p:date="2026-05-07"
+		p:price="35000" p:writer="writer2" p:subject="HTML" />
+
+</beans>
