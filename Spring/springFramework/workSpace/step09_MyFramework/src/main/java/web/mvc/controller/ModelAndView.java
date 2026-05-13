@@ -1,12 +1,10 @@
 package web.mvc.controller;
 
 public class ModelAndView {
-	private String viewName;
-	private boolean isRedirect; // true = redirect 规侥, false = forward规侥
-
-	public ModelAndView() {
-	}
-
+   private String viewName;
+   private boolean isRedirect; //true = redirect规侥, false = forward规侥
+   
+   public ModelAndView() {}
 	public ModelAndView(String viewName, boolean isRedirect) {
 		super();
 		this.viewName = viewName;
@@ -28,4 +26,7 @@ public class ModelAndView {
 	public void setRedirect(boolean isRedirect) {
 		this.isRedirect = isRedirect;
 	}
+	
+	
+   
 }

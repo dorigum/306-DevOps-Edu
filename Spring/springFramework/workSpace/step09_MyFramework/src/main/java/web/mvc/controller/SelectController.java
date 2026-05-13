@@ -11,14 +11,15 @@ public class SelectController implements Controller {
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("SelectController 실행입니다.");
-
-		request.setAttribute("message", "select의 결과입니다."); // forward 방식으로 가야 한다.
-
+		System.out.println("SelectController 실행 입니다.....");
+		
+		request.setAttribute("message", "select의 결과 입니다.");//forward방식으로 가야한다.
+		
 		ModelAndView mv = new ModelAndView();
-
-		mv.setViewName("selectResult.jsp"); // redirect를 변경하지 않았기 때문에 forward 방식으로 이동
-
+		
+		mv.setViewName("selectResult.jsp"); //redirect변경안했기때문에 forward방식 이동
+		
 		return mv;
 	}
+
 }

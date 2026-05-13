@@ -11,9 +11,9 @@ public class DeleteController implements Controller {
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		System.out.println("DeleteController 입니다.");
-
-		return new ModelAndView("index.jsp", true); // redirect방식 이동
+		System.out.println("DeleteController 입니다....");
+		
+		return new ModelAndView("index.jsp", true);//redirect방식 이동
 	}
+
 }

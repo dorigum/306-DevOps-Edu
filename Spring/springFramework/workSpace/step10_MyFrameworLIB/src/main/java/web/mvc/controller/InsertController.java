@@ -14,10 +14,10 @@ public class InsertController implements Controller {
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		// 등록하기
+		//등록하기
 		System.out.println("InsertController 입니다. ");
-
-		return new ModelAndView("index");// prefix + 뷰 이름 + suffix 조합 이동
+		
+		return new ModelAndView("index");// prefix + 뷰이름 + suffix 조합 이동 
 	}
+
 }
