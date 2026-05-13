@@ -14,6 +14,11 @@ public class MyErrorException extends RuntimeException {
 
 	private final ErrorCode errorCode;
 
+	public Object getMsg() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
 /*
  * INVALID_PRODUCT_CODE(600, "상품코드가 잘못되었습니다."), DUPLICATE_PRODUCT_CODE(601,

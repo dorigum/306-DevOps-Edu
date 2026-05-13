@@ -5,7 +5,6 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +15,6 @@ import web.mvc.exception.MyErrorException;
 @Repository
 @RequiredArgsConstructor
 @Slf4j
-@ControllerAdvice
 public class ProductDAOImpl implements ProductDAO {
 	private final List<ProductDTO> list; // 영속성 = DB 역할(CRUD 작업)
 	

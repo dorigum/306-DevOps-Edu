@@ -14,15 +14,15 @@ public class GlobalExceptionAdvice {
 
 	@ExceptionHandler(MyErrorException.class)
 	public ModelAndView error(MyErrorException e) {
-		log.info("global error msg: {}", e.getMessage());
+		log.info("global error Msg: {}", e.getErrorCode().getMsg());
 		
 		// 예외가 발생했을 때 해야할 일(catch 영역)
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("error/error"); // WEB-INF/views/error/error.jsp
+		mv.setViewName("error"); // WEB-INF/views/error.jsp
 		
-		mv.addObject("errCode", e.getMessage());
-		mv.addObject("errCodeDuplicate", e.getMessage());
-		mv.addObject("errPrice", e.getMessage());
+		mv.addObject("errCode", e.getErrorCode().getMsg());
+		mv.addObject("errCodeDuplicate", e.getErrorCode().getMsg());
+		mv.addObject("errPrice", e.getErrorCode().getMsg());
 		mv.addObject("statusUpdate", HttpStatus.BAD_REQUEST);
 		
 		return mv;

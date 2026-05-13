@@ -3,7 +3,6 @@ package web.mvc.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.ControllerAdvice;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +14,6 @@ import web.mvc.exception.MyErrorException;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-@ControllerAdvice
 public class ProductServiceImpl implements ProductService {
 
 //	@ExceptionHandler(value = {DuplicateRequestException.class})
