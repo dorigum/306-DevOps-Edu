@@ -38,6 +38,31 @@ sts3.9.17/
 *.csv
 
 # 임시로 잠깐 커밋 스탑
-프로젝트/* * / n o d e _ m o d u l e s /  
- * * / . e n v  
+프로젝트/* */node_modules/* * /.env
+
+------
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
  
