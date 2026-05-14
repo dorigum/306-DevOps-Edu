@@ -13,7 +13,6 @@
   a{text-decoration: none;}
 </style>
 
-
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/jquery-3.6.1.min.js"></script>
 
 <script type="text/javascript">
@@ -21,18 +20,14 @@
 	  $("input[value=삭제]").click(function(){
 		  if(confirm("정말 삭제할래요?")){
 			  let code = $(this).attr("id");
-			  location.href="${pageContext.request.contextPath}/del/"+code; //<-->del?code=value
+			  location.href="${pageContext.request.contextPath}/del/"+code; // <-->del?code=value
 		  }
-		     
 	  });
   })
 </script>
 
-
 </head>
 <body>
-
-
 <table>
 <caption>
   <h1>[ Product List Page ]</h1>
@@ -57,15 +52,8 @@
     </tr>
   </c:forEach>
   <tr>
-    <th colspan="6"><a href="${pageContext.request.contextPath}/insertForm">상품등록하기</a></th>
+    <th colspan="6"><a href="${pageContext.request.contextPath}/insertForm">상품 등록하기</a></th>
    </tr>
- 
 </table>
-
-
 </body>
-
-
-
-
 </html>

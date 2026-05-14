@@ -12,6 +12,5 @@
 	<a href="${pageContext.request.contextPath}/">이동하기</a>
 	&nbsp;&nbsp;&nbsp;&nbsp;
 	<a href="javascript:history.back()">뒤로가기</a>
-
 </body>
 </html>

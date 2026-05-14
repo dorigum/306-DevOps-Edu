@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>상품상세보기</h3>
+	<h3>상품 상세보기</h3>
 	<table border="1">
 		<tr>
 			<th>상품코드</th>
@@ -36,7 +36,3 @@
 	</table>
 </body>
 </html>
-
-
-
-

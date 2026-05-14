@@ -21,36 +21,66 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public List<ProductDTO> select() {
-		log.info("select = {}", select());
-		
-		return productDAO.select(); // 수정하기?
+		List<ProductDTO> list = productDAO.select();
+
+		log.info("select = {}", list);
+
+		return list;
 	}
 
 	@Override
 	public int insert(ProductDTO productDTO) throws MyErrorException {
-		if(productDTO.getPrice() > 10000 || productDTO.getPrice() < 1000)
+		if (productDTO.getPrice() > 10000 || productDTO.getPrice() < 1000)
 			throw new MyErrorException(ErrorCode.INVALID_PRICE);
-		return 0;
+
+		return productDAO.insert(productDTO);
 	}
 
 	@Override
 	public int delete(String code) throws MyErrorException {
-//		if(code.)
-		return 0;
-	}
+		ProductDTO product = productDAO.selectByCode(code);
 
-	@Override
-	public ProductDTO selectByCode(String code) throws MyErrorException {
-		if(!code.equals(code))
+		if (product == null) {
 			throw new MyErrorException(ErrorCode.INVALID_PRODUCT_CODE);
-		return null;
+		}
+
+		return productDAO.delete(code);
 	}
 
 	@Override
-	public int updateByCode(ProductDTO productDTO) throws MyErrorException {
-//		if( != productDTO.getCode())
-//			throw new MyErrorException(ErrorCode.FAILD_UPDATE);
-		return 0;
+	// 상품 상세 보기
+	public ProductDTO selectByCode(String code) throws MyErrorException {
+		ProductDTO product = productDAO.selectByCode(code);
+
+		if (product == null) {
+			throw new MyErrorException(ErrorCode.INVALID_PRODUCT_CODE);
+		}
+
+		return product;
 	}
 
+	@Override
+	// 상품 수정하기
+	// 1. 가격 범위를 벗어났을 경우
+	public int updateByCode(ProductDTO productDTO) throws MyErrorException {
+		if (productDTO.getPrice() > 10000 || productDTO.getPrice() < 1000) {
+			throw new MyErrorException(ErrorCode.INVALID_PRICE);
+		}
+
+		ProductDTO dbProduct = productDAO.selectByCode(productDTO.getCode());
+
+		// 2. 상품 코드가 잘못 되었을 경우
+		if (dbProduct == null) {
+			throw new MyErrorException(ErrorCode.INVALID_PRODUCT_CODE);
+		}
+
+		int result = productDAO.updateByCode(productDTO);
+
+		// 3. 결과 값이 없는 경우
+		if (result == 0) {
+			throw new MyErrorException(ErrorCode.FAILD_UPDATE);
+		}
+
+		return result;
+	}
 }
