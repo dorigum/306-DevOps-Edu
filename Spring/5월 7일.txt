@@ -1,0 +1,27 @@
+ 1.  Spring의 전략 삼각형을 그리고 각 항목의 특징을 작성하세요.
+
+ 2.  Spring IoC Container의  interface 2개 작성하세요.
+     BeanFactory <----- ApplicationContext
+                                  = new ClasspathXmlApplicationContext("경로");
+
+
+       Spring IoC Container의 역할은 bean들을 등록, 생성, 소멸 전체
+      라이프사이클을 관리 / 객체와 객체간의 연결(주입 = DI)
+       사전초기화의 개념으로 scope="singleton" 관리되어진다.
+       지연초기화 - 필요할때 마다 새롭게 생성하고 싶다. scope="prototype"
+
+ 3. DI의 문법 2가지 종류는? 
+     1) 생성자 주입
+             - value
+             - ref
+     2) setter 주입
+             - value
+             - ref
+
+ 4. Spring에서 bean의 의미는?
+     Spring IoC Container가 관리하는 객체를 bean이라고 부른다.
+     관리되고 있는 객체를 검색(가져오기 ) -> getBean("id이름", 타입)
+  
+
+  
+ 

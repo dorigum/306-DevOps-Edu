@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ca08043633b669f9",
+        "id": "052ca5ea6d6a7a18",
         "type": "tabs",
         "children": [
           {
-            "id": "871af86a07ebaa34",
+            "id": "b98fee25d9789bec",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "캡처/Pasted image 20260506103503.png"
+                "file": "공부 기록/2026-05-14.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20260506103503"
+              "icon": "lucide-file",
+              "title": "2026-05-14"
             }
           }
         ]
@@ -39,7 +41,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "byCreatedTime",
-                "autoReveal": true
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "파일 탐색기"
@@ -76,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "21f751e21521c464",
@@ -181,13 +184,30 @@
       "bases:새 베이스 생성하기": false
     }
   },
-  "active": "615633c92c957c9b",
+  "active": "b98fee25d9789bec",
   "lastOpenFiles": [
-    "캡처/Pasted image 20260506100851.png",
-    "캡처/Pasted image 20260506103503.png",
+    "AGENTS.md",
+    "2026-05-14.md",
+    "공부 기록/2026-05-14.md",
+    "공부 기록/2026-05-13.md",
+    "공부 기록/step12_MVC_Product.md",
+    "step12_MVC_Product.md",
+    "공부 기록/2026-05-12.md",
+    "2026-05-12.md",
+    "캡처/Pasted image 20260512091547.png",
+    "캡처/Pasted image 20260512091533.png",
+    "캡처/Pasted image 20260512091419.png",
+    "캡처/Pasted image 20260512091417.png",
+    "캡처/20260512_093710.jpg",
+    "20260512_093710.jpg",
+    "Pasted image 20260512091547.png",
+    "Pasted image 20260512091533.png",
+    "Pasted image 20260512091419.png",
+    "Pasted image 20260512091417.png",
+    "공부 기록/2026-05-08.md",
+    "공부 기록/2026-05-07.md",
+    "2026-05-08.md",
     "공부 기록/2026-05-06.md",
-    "캡처/Pasted image 20260506103123.png",
-    "캡처/Pasted image 20260506103116.png",
     "공부 기록/2026-04-21.md",
     "공부 기록/2026-04-20.md",
     "공부 기록/2026-04-17.md",
@@ -196,31 +216,15 @@
     "공부 기록/공부 기록 - 바로 가기.lnk",
     "공부 기록/2026-04-06.md",
     "공부 기록/2026-03-31.md",
-    "무제.md",
     "공부 기록/2026-04-14.md",
     "프로젝트 기획 끄적끄적.......md",
     "공부 기록/2026-03-30.md",
-    "캡처/Pasted image 20260414100221.png",
-    "캡처/Pasted image 20260414100013.png",
-    "캡처/Pasted image 20260414095954.png",
-    "캡처/Pasted image 20260414095353.png",
-    "캡처/Pasted image 20260414095022.png",
-    "캡처/Pasted image 20260414095001.png",
     "공부 기록/2026-04-13.md",
     "공부 기록/2026-04-10.md",
     "공부 기록/2026-04-13.md",
     "공부 기록/2026-04-07.md",
-    "공부 기록/2026-04-08.md",
-    "공부 기록/2026-04-09.md",
-    "공부 기록/2026-03-11.md",
     "공부 기록/260213_예외 처리 실습 구조.canvas",
-    "공부 기록/2026-04-03.md",
     "공부 기록/무제.canvas",
-    "공부 기록/2026-04-01.md",
-    "공부 기록/2026-02-09.md",
-    "공부 기록/2026-02-10.md",
-    "공부 기록/2026-03-27.md",
-    "기타/공부 기록.md",
     "기타/무제.base",
     "기타/무제2.base",
     "무제.base",
