@@ -31,11 +31,21 @@ public class ProductController {
 		return "productList";
 	}
 
+	/*
+	 * 전체 검색
+	 */
 	@ResponseBody
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
 	public List<ProductDTO> selectAllAjax() {
 		return productService.select();
 	}
+	
+	/*
+	 * GetMapping
+	 * public ResponseEntity<?> selectAll() {
+	 * 	log.info("전체 검색 call");
+	 * 
+	 */
 
 	@ResponseBody
 	@RequestMapping(value = "/products/{code}", method = RequestMethod.GET)
@@ -43,6 +53,9 @@ public class ProductController {
 		return productService.selectByCode(code);
 	}
 
+	/*
+	 * 상품 등록
+	 */
 	@ResponseBody
 	@RequestMapping(value = "/products", method = RequestMethod.POST)
 	public ResponseEntity<String> insert(HttpServletRequest request) {
@@ -52,13 +65,19 @@ public class ProductController {
 		return new ResponseEntity<>("insert success", HttpStatus.CREATED);
 	}
 
-	@ResponseBody
+	/*
+	 * 상품 삭제
+	 */
+	@ResponseBody // ResponseBody 삭제하고 DeleteMapping으로 변경하기
 	@RequestMapping(value = "/products/{code}", method = RequestMethod.DELETE)
 	public String deleteAjax(@PathVariable("code") String code) {
 		productService.delete(code);
 		return "delete success";
 	}
 
+	/*
+	 * 상품 수정
+	 */
 	@ResponseBody
 	@RequestMapping(value = "/products/{code}", method = RequestMethod.PUT)
 	public String updateAjax(@PathVariable("code") String code, @RequestBody ProductDTO productDTO) {

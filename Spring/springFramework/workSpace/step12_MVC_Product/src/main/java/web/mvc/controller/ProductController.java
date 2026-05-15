@@ -50,6 +50,8 @@ public class ProductController {
 	@RequestMapping(value = "/products", method = RequestMethod.POST) // insertForm.jsp가 POST /products 요청을 받아서
 	public String insert(ProductDTO productDTO) { // Service의 insert()를 호출한 뒤, 목록 페이지로 다시 보냄
 		log.info("상품 등록 call = {}", productDTO);
+		
+		productDTO.setDetail(productDTO.getDetail().replace("<", "&lt;")); // 악의적인 스크립트가 실행되지 않도록 태그를 문자로 변경
 
 		productService.insert(productDTO);
 

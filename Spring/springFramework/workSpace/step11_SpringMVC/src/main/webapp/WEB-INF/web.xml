@@ -5,12 +5,18 @@
 
 	<!-- The definition of the Root Spring Container shared by all Servlets 
 		and Filters -->
-	<!-- <context-param> <param-name>contextConfigLocation</param-name> <param-value>/WEB-INF/spring/root-context.xml</param-value> 
-		</context-param> -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/spring/root-context.xml</param-value>
+	</context-param>
 
-	<!-- Creates the Spring Container shared by all Servlets and Filters -->
-	<!-- <listener> <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class> 
-		</listener> -->
+	<!-- Creates the Spring Container shared by all Servlets and Filters : RootWebApplicationContext를 
+		초기화하면서 /WEB-INF/applicationContext.xml을 찾는다.(bean 설정) : 만약, 위치와 이름을 변경하고 
+		싶다면 context-param 이라는 contextConfigLocation 이름에 해당하는 value를 설정하면 된다! -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
 
 	<!-- post 방식 한글 인코딩 처리 -->
 	<filter>
@@ -37,8 +43,8 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
-			/WEB-INF/spring/appServlet/servlet-context.xml
-			/WEB-INF/spring/appServlet/productInit-context.xml
+				/WEB-INF/spring/appServlet/servlet-context.xml
+				/WEB-INF/spring/appServlet/productInit-context.xml
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
@@ -49,5 +55,23 @@
 		<url-pattern>*.do</url-pattern>
 		<url-pattern>/blog/*</url-pattern>
 	</servlet-mapping>
-	
+
+	<!-- 관리자 전용 진입점 Controller(DispatchServlet 등록) -->
+	<servlet>
+		<servlet-name>adminServlet</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>
+				/WEB-INF/spring/appServlet/admin-context.xml
+			</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>adminServlet</servlet-name>
+		<url-pattern>*.admin</url-pattern>
+	</servlet-mapping>
 </web-app>

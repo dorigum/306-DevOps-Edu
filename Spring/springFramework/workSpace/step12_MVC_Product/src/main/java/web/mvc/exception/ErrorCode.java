@@ -12,9 +12,9 @@ public enum ErrorCode { // enum은 'Enumeration' 의 약자로 열거, 목록이라는 뜻
 
 	INVALID_PRODUCT_CODE(600, "상품 코드가 잘못되었습니다."),
 
-	DUPLICATE_PRODUCT_CODE(601, "상품코드 중복입니다."),
+	DUPLICATE_PRODUCT_CODE(601, "상품 코드 중복입니다."),
 
-	INVALID_PRICE(602, "가격은 1000~ 10000원 사이만 가능합니다."),
+	INVALID_PRICE(602, "가격은 1000~10000원 사이만 가능합니다."),
 
 	FAILD_UPDATE(603, "수정되지 않았습니다.");
 

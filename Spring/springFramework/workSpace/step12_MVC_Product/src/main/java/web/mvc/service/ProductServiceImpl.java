@@ -18,6 +18,9 @@ public class ProductServiceImpl implements ProductService {
 
 //	@ExceptionHandler(value = {DuplicateRequestException.class})
 	private final ProductDAO productDAO;
+	
+//	private final static int MIN_PRICE = 1000;
+//	private final static int MAX_PRICE = 10000;
 
 	@Override
 	public List<ProductDTO> select() {
@@ -69,14 +72,14 @@ public class ProductServiceImpl implements ProductService {
 
 		ProductDTO dbProduct = productDAO.selectByCode(productDTO.getCode());
 
-		// 2. 상품 코드가 잘못 되었을 경우
+		// 2. 상품 코드가 없는 경우
 		if (dbProduct == null) {
 			throw new MyErrorException(ErrorCode.INVALID_PRODUCT_CODE);
 		}
 
 		int result = productDAO.updateByCode(productDTO);
 
-		// 3. 결과 값이 없는 경우
+		// 3. 결과 값이 0인 경우
 		if (result == 0) {
 			throw new MyErrorException(ErrorCode.FAILD_UPDATE);
 		}
