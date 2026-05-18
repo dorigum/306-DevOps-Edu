@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+ <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"> 
+  
+  
+  <!-- 
+  persistence-unit: JPA 설정의 기본 단위
+  name="JPAProject": 이 persistence unit의 이름을 "JPAProject"로 지정
+                     EntityManagerFactory를 생성할 때 이 이름을 기준으로 설정을 불러옴
+
+     즉, 코드에서 아래와 같이 사용할 때 Persistence.createEntityManagerFactory("JPAProject"); 이 설정 블록을 참조하게 됨
+     
+     
+     하나의 프로젝트에 여러 데이터베이스나 설정이 필요한 경우, 
+     persistence-unit을 여러 개 정의하고 각각 이름을 다르게 지정하여 구분할 수 있다.
+-->
+  <persistence-unit name="JPAProject"> 
+
+	  <properties>
+	  
+	  <!-- MySQL용 설정 -->
+	<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/><!-- 데이터베이스 드라이버 클래스 설정: MySQL 연결을 위한 드라이버 클래스 지정 -->
+	<property name="javax.persistence.jdbc.user" value="jang"/><!-- 데이터베이스 사용자 이름 -->
+	<property name="javax.persistence.jdbc.password" value="jang1234"/><!-- 데이터베이스 비밀번호 -->
+	
+	
+	
+	<!--
+	  데이터베이스 연결 URL 
+	  localhost:3307의 MySQL 서버에 접속하며, 'jpa'라는 데이터베이스를 사용
+	  serverTimezone=Asia/Seoul 설정으로 시간대 문제 방지
+	  XML에서는 & → &amp; 로 변환 필요(xml에서는 & 기호처럼 특수문자는  &amp;로 변경 )
+	
+	-->
+	<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3307/jpa?serverTimezone=Asia/Seoul"/>
+	
+	
+	<!--
+	  하이버네이트에서 사용할 방언(Dialect) 설정
+	  MySQL 8.x 버전에 맞춘 SQL 문법을 사용하도록 지정
+	-->
+	<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+	   
+	   
+	<!-- 옵션 --> 
+	  <property name="hibernate.show_sql" value="true" /> <!-- 실행되는 SQL 문장을 콘솔에 출력 개발 중 SQL 확인용 (운영 환경에서는 보통 false) -->
+	  <property name="hibernate.format_sql" value="true" /><!-- SQL 문을 보기 좋게 정렬하여 출력 (show_sql이 true일 때 사용하면 좋음) -->
+	  <property name="hibernate.use_sql_comments" value="false" /><!-- SQL에 주석을 추가하여 JPQL 실행 위치 등 디버깅에 도움 성능에 영향을 줄 수 있어 보통 false -->
+	  <property name="hibernate.id.new_generator_mappings" value="true" /><!-- 새로운 JPA의 ID 생성 전략을 사용할지 여부  true로 설정하면 JPA 2.0 이후 방식 사용 (기본값 true) -->
+	  
+	  
+	  <!-- 
+	  테이블 자동 생성 및 갱신 설정
+	  - create: 애플리케이션 시작 시 테이블을 새로 생성 (기존 데이터 삭제)
+	  - create-drop: 시작 시 생성, 종료 시 삭제
+	  - update: 기존 테이블에 맞게 컬럼 추가/갱신 (데이터 유지)
+	  - none: 아무 작업도 하지 않음 (운영 환경 권장)
+	-->
+	  <property name="hibernate.hbm2ddl.auto" value="update" /> <!--create | create-drop | update | none  -->
+	 
+	 </properties> 
+ 
+ </persistence-unit> 
+ </persistence>
