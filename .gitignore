@@ -1,44 +1,44 @@
-# �����ϵ� ����� (Binary)
+# 컴파일된 결과물 (Binary)
 *.class
 bin/
 build/
 target/
 
-# ��Ŭ���� Ư�� ���� ����
+# 이클립스 특정 설정 파일
 .settings/
 .metadata/
 .classpath
 .project
 .factorypath
 
-# �α� ���� �� �ӽ� ����
+# 로그 파일 및 임시 파일
 *.log
 tmp/
 
-# OS �� ��Ÿ ����
+# OS 및 기타 설정
 .DS_Store
 Thumbs.db
 
-# ȯ�溯�� (������ �ʿ��� ������ ��� ���)
+# 환경변수 (보안이 필요한 정보가 담긴 경우)
 .env
 
-# ���ε� �� �� ����
+# 업로드 안 할 폴더
 Git/
 SW/
 
 vscode/
-�������� �ڷ�(Ŀ��XXX)/
+공유받은 자료(커밋XXX)/
 node_modules/
 apache-tomcat-9.0.88/
 openjdk-11.0.0.1_windows-x64_bin/
 sts3.9.17/
-ȯ�漼���ڷ�/
+환경세팅자료/
 
 *.pem
 *.csv
 
-# �ӽ÷� ��� Ŀ�� ��ž
-������Ʈ/* */node_modules/* * /.env
+# 임시로 잠깐 커밋 스탑
+프로젝트/* */node_modules/* * /.env
 
 ------
 # Logs
@@ -65,4 +65,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
- 
+
+# 용량이 너무 커서 제외시킨 파일
+Spring/교안자료/토비의 스프링3.pdf
+Spring/환경세팅자료/
