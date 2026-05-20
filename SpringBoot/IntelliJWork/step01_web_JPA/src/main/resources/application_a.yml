@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: step01
+
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+server:
+  port: 9000
