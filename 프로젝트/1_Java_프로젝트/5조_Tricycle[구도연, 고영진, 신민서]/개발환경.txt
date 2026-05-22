@@ -1,0 +1,8 @@
+- 개발환경
+운영체제 : Window 10
+Language : Java Programming
+DataBase : Docker, AWS EC2
+Tool : Eclipse, VS_Code, MySQL-Workbench, ERD_Cloud
+아키텍처 : MVC 패턴
+형상관리 : GitHub
+협업Tool : Notion, DBdiagram

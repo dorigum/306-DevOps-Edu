@@ -8,6 +8,6 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ResponseErrorDTO {
-    private  int status;
-    private  String msg;
+    private int status;
+    private String msg;
 }

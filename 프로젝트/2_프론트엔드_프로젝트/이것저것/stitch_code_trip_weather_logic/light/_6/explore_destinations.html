@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d8dadc",
+                        "background": "#f8f9fb",
+                        "on-background": "#191c1e",
+                        "primary-fixed-dim": "#49d7f4",
+                        "on-surface-variant": "#3c494c",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#920021",
+                        "surface-bright": "#f8f9fb",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#5a5f65",
+                        "outline": "#6c797d",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "surface-tint": "#006879",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-primary-container": "#00444f",
+                        "on-tertiary-fixed": "#400009",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#bbc9cd",
+                        "primary": "#006879",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary": "#b62034",
+                        "on-primary-fixed": "#001f26",
+                        "tertiary-fixed-dim": "#ffb3b3",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary-container": "#5e6369",
+                        "on-secondary-fixed": "#171c21",
+                        "secondary-fixed": "#dee3e9",
+                        "surface-container-low": "#f2f4f6",
+                        "on-surface": "#191c1e",
+                        "tertiary-fixed": "#ffdad9",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#80001b",
+                        "primary-fixed": "#a8edff",
+                        "primary-container": "#00b8d4",
+                        "surface": "#f8f9fb",
+                        "on-primary-fixed-variant": "#004e5b",
+                        "inverse-primary": "#49d7f4",
+                        "surface-container": "#eceef0",
+                        "tertiary-container": "#ff8285",
+                        "secondary-fixed-dim": "#c2c7cd",
+                        "secondary-container": "#dce0e7",
+                        "on-secondary-fixed-variant": "#42474d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .syntax-string { color: #006879; }
+        .syntax-comment { color: #5e6369; opacity: 0.7; }
+        .syntax-keyword { color: #b62034; font-weight: 600; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-fixed selection:text-on-primary-fixed-variant">
+<!-- TopNavBar Implementation -->
+<nav class="flex items-center justify-between px-6 w-full h-16 sticky top-0 z-50 bg-[#F8F9FB] dark:bg-[#0D1117]">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-[#191C1E] dark:text-[#F8F9FB] font-headline tracking-tight">Code Trip</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="font-headline text-sm text-[#006879] dark:text-[#00B8D4] border-b-2 border-[#006879] cursor-pointer" href="#">Docs</a>
+<a class="font-headline text-sm text-[#5E6369] dark:text-[#8B949E] hover:text-[#00B8D4] transition-colors cursor-pointer" href="#">API</a>
+<a class="font-headline text-sm text-[#5E6369] dark:text-[#8B949E] hover:text-[#00B8D4] transition-colors cursor-pointer" href="#">Changelog</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:block relative">
+<input class="bg-surface-container-high border-none rounded px-4 py-1.5 text-xs font-label w-64 focus:ring-1 focus:ring-primary focus:bg-surface-container-lowest transition-all outline-none" placeholder="search_destinations..." type="text"/>
+</div>
+<span class="material-symbols-outlined text-[#5E6369] cursor-pointer">notifications</span>
+<span class="material-symbols-outlined text-[#5E6369] cursor-pointer">account_circle</span>
+</div>
+</nav>
+<div class="flex min-h-[calc(100vh-4rem)]">
+<!-- SideNavBar / Filter Logic -->
+<aside class="hidden md:flex flex-col py-8 gap-2 h-full sticky left-0 w-64 bg-[#F2F4F6] dark:bg-[#161B22] font-label text-sm border-r border-outline-variant/10">
+<div class="px-6 mb-8">
+<h2 class="text-lg font-bold text-[#191C1E] font-headline tracking-tight">The Solar Compiler</h2>
+<p class="text-[10px] text-secondary opacity-60">v1.0.4-stable</p>
+</div>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-6 py-2 text-[#5E6369] dark:text-[#8B949E] hover:bg-[#E6E8EA] dark:hover:bg-[#21262D] transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-lg">home</span>
+<span>// home</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-2 text-[#006879] dark:text-[#00B8D4] font-bold bg-[#FFFFFF] dark:bg-[#0D1117] rounded-l-none rounded-r-lg transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-lg">explore</span>
+<span>// explore</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-2 text-[#5E6369] dark:text-[#8B949E] hover:bg-[#E6E8EA] dark:hover:bg-[#21262D] transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-lg">bookmark</span>
+<span>// bookmarks</span>
+</a>
+<a class="flex items-center gap-3 px-6 py-2 text-[#5E6369] dark:text-[#8B949E] hover:bg-[#E6E8EA] dark:hover:bg-[#21262D] transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-lg">settings</span>
+<span>// settings</span>
+</a>
+</div>
+<div class="mt-12 px-6">
+<span class="syntax-comment block mb-4 text-[10px] uppercase tracking-widest font-bold">Filters.config</span>
+<div class="space-y-4">
+<div>
+<label class="text-[11px] text-on-surface-variant font-medium">region_selector:</label>
+<div class="mt-2 space-y-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="rounded-sm border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-xs syntax-string">'south_korea'</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="rounded-sm border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-xs text-secondary">'japan'</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="rounded-sm border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-xs text-secondary">'singapore'</span>
+</label>
+</div>
+</div>
+<div>
+<label class="text-[11px] text-on-surface-variant font-medium">tags = [</label>
+<div class="flex flex-wrap gap-2 mt-2">
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded text-[10px] font-label cursor-pointer hover:bg-primary-fixed transition-colors">'city'</span>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded text-[10px] font-label cursor-pointer hover:bg-primary-fixed transition-colors">'nature'</span>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded text-[10px] font-label cursor-pointer hover:bg-primary-fixed transition-colors">'temple'</span>
+</div>
+<label class="text-[11px] text-on-surface-variant font-medium">]</label>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 p-8 lg:p-12 overflow-y-auto">
+<header class="mb-12 max-w-4xl">
+<span class="syntax-comment font-label text-xs tracking-wider mb-2 block">/* active_query: "South Korea" */</span>
+<h1 class="font-headline text-5xl font-extrabold text-on-surface tracking-tighter mb-4">Explore Destinations</h1>
+<p class="font-body text-secondary max-w-xl text-sm leading-relaxed">
+                    Compiling the best traversal points across the Korean peninsula. High-performance urban hubs and serene natural landscapes optimized for developer retreats.
+                </p>
+</header>
+<!-- Destination Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Main Feature Card (Seoul) -->
+<div class="lg:col-span-8 group relative overflow-hidden bg-surface-container-lowest rounded-xl">
+<div class="aspect-[16/9] w-full relative">
+<img alt="Seoul Cityscape" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Futuristic neon-lit Seoul city street at night with high-speed traffic light trails and towering skyscrapers, sharp photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkkEljUyFq7T8x0-zQ76-DY_nKJURx0asv1jtx4Vase2n6NVP7Tzvk9vPxppS-juMcuaY2hW9DuwFUAeX2dopkVzkS4BsKfeDEXMrJBKAC-ykxsRa1qrguw5OWE9shRBf6CNwRmCsQrMtVBR7Ly_fmeNZj4StoMzdcL_L45D4mfJR9upTzTA1QHXu1aU1BBN-h_2NJgM0xlzKYGE77n7ZKntwE5dh3zXmyOlcQd5DHA12M_08jQ6hyHqKCuC0cu-YdWhIBWVpSQ1bx"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<div class="flex justify-between items-end">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-primary-container text-on-primary-container text-[10px] font-bold px-2 py-0.5 rounded uppercase">Featured</span>
+<span class="syntax-comment text-[10px] font-label">// id: "sel-001"</span>
+</div>
+<h3 class="font-headline text-3xl font-bold text-background mb-1">Seoul Metro</h3>
+<p class="text-surface-container-high text-xs font-body max-w-md">Ultra-fast connectivity, 24/7 nodes, and the peak of urban engineering.</p>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded font-label text-sm font-bold flex items-center gap-2 hover:brightness-110 active:opacity-80 transition-all">
+                                    execute_visit()
+                                    <span class="material-symbols-outlined text-lg">terminal</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Metadata Gutter -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<div class="bg-surface-container-low p-6 rounded-lg flex-1">
+<span class="syntax-comment block mb-4 text-xs font-label">status_check.sh</span>
+<div class="space-y-4">
+<div class="flex justify-between items-center border-b border-outline-variant/20 pb-2">
+<span class="text-xs font-label text-secondary">Local Time</span>
+<span class="text-xs font-label font-bold text-on-surface">GMT+9</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant/20 pb-2">
+<span class="text-xs font-label text-secondary">Latency</span>
+<span class="text-xs font-label font-bold text-primary">12ms</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant/20 pb-2">
+<span class="text-xs font-label text-secondary">Connectivity</span>
+<span class="text-xs font-label font-bold text-on-surface">99.9%</span>
+</div>
+<div class="mt-6">
+<p class="text-[11px] syntax-comment leading-relaxed">
+                                    /* The Seoul cluster represents a highly available environment with multiple redundant coffee-shop instances and high-speed transit protocols. */
+                                </p>
+</div>
+</div>
+</div>
+<div class="bg-primary p-6 rounded-lg text-background relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-headline text-xl font-bold mb-2">Build Your Trip</h4>
+<p class="text-xs opacity-80 mb-4">Compile multiple locations into a single itinerary deployment.</p>
+<button class="w-full bg-background text-primary py-2 rounded font-label text-xs font-bold hover:bg-surface-container-lowest transition-colors">
+                                init_builder()
+                            </button>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-[100px]" style="font-variation-settings: 'FILL' 1;">package_2</span>
+</div>
+</div>
+</div>
+<!-- Jeju Card -->
+<div class="lg:col-span-4 group relative overflow-hidden bg-surface-container-lowest rounded-xl shadow-sm">
+<div class="aspect-square relative">
+<img alt="Jeju Island" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Volcanic coastline of Jeju Island with turquoise water, dark basalt rocks, and lush green cliffs under bright daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBubVzASxRWBQjnSunxNzq5O_W6H_Z0DVkjgtGYmy54fybAPQrN7Wmn0Spe-LAMUDRhlp_5yVI0It7gZXisGv2EfkCvREIb9TKpMg9cflnSv_SiFra7AbCc1Qxp7fikO271_qN9fv5u1aPy4e0T7EFviw8AyjqFGwphUqIPAlJeWevvCG-YcF8Q0M0dJN48rE4YYqHib_1OCIBp9UTqbhFAosl_vH3_XAZfI0dQpV-QjfZ_fxi-TVmTC67txVnXsgqNyCGuZTdkKrS-"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="syntax-comment text-[10px] font-label text-surface-container-highest block mb-1">dest: "Jeju"</span>
+<h3 class="font-headline text-xl font-bold text-background mb-3">Jeju Archipelago</h3>
+<button class="w-full py-2 bg-background/10 hover:bg-background/20 backdrop-blur-sm border border-background/20 text-background rounded font-label text-xs transition-all">
+                                execute_visit()
+                            </button>
+</div>
+</div>
+</div>
+<!-- Gyeongju Card -->
+<div class="lg:col-span-4 group relative overflow-hidden bg-surface-container-lowest rounded-xl shadow-sm">
+<div class="aspect-square relative">
+<img alt="Gyeongju" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Traditional Korean Hanok palace architecture in Gyeongju at sunset with warm glowing lights and intricate roof details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ1Zdl7ft74n-sRb20ZAhI_QOH29OBcufHsinVPx29VhwVdfDqQli0WNkah7i4zzFbJePuU0f_wBttR8Z6XAqhuakbryl6OPm-MvnKruxmrWui8YvkXMQbigxkc-cfFHyClNSkPOK-BQPN-LPqwI_DT7LnHdeg_y76yHGITVPHeRwnaO_pI2pt6m6pckfdXJtuPjcqiMc9-zjOL57I8UubNAM9lev74LhlcJDwOK9YrlaehQkjj7Rbb1EoecY6hoKx40Mu5RxsVm_o"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="syntax-comment text-[10px] font-label text-surface-container-highest block mb-1">dest: "Gyeongju"</span>
+<h3 class="font-headline text-xl font-bold text-background mb-3">Legacy Node</h3>
+<button class="w-full py-2 bg-background/10 hover:bg-background/20 backdrop-blur-sm border border-background/20 text-background rounded font-label text-xs transition-all">
+                                execute_visit()
+                            </button>
+</div>
+</div>
+</div>
+<!-- Busan Card -->
+<div class="lg:col-span-4 group relative overflow-hidden bg-surface-container-lowest rounded-xl shadow-sm">
+<div class="aspect-square relative">
+<img alt="Busan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Busan coastal city skyline with the Diamond Bridge over the ocean at blue hour with city lights reflecting on the water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZP9f5FEOvk0by3xiWhyUShZLWhLtKeuGSymoDjTXYkmO1t0K1-ecUpIRHUPa6A_ZpGwp-r1q29NE6kvE42qKGb1I3nQ__PlG-xi17tjFZFDCuevJykDGHC8BHbOqTE-c9zoPLMvlbDjcyTzaj-zgNxwTfSDfWOlXKiwB6Nbr1Jiq8DbzjTX8NfM7ge9pLkhepLud5o7oSLDbk4dhmZgqcq4FmJwPek9arX3-1sx1NQQh-nK-vudXTbDVxst0tMyxDOhkNwpb11vrw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="syntax-comment text-[10px] font-label text-surface-container-highest block mb-1">dest: "Busan"</span>
+<h3 class="font-headline text-xl font-bold text-background mb-3">Port Protocol</h3>
+<button class="w-full py-2 bg-background/10 hover:bg-background/20 backdrop-blur-sm border border-background/20 text-background rounded font-label text-xs transition-all">
+                                execute_visit()
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer Implementation -->
+<footer class="flex justify-between px-10 w-full py-4 bg-[#F8F9FB] dark:bg-[#0D1117] border-t border-[#BBC9CD]/15">
+<span class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#5E6369]">/* © 2024 Code Trip - System Status: Optimal */</span>
+<div class="flex gap-6">
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#5E6369] hover:underline opacity-70 hover:opacity-100 transition-all" href="#">Privacy</a>
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#5E6369] hover:underline opacity-70 hover:opacity-100 transition-all" href="#">Security</a>
+<a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest text-[#5E6369] hover:underline opacity-70 hover:opacity-100 transition-all" href="#">Terms</a>
+</div>
+</footer>
+<!-- FAB for Global Search / Console -->
+<div class="fixed bottom-8 right-8">
+<button class="bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</button>
+</div>
+</body></html>

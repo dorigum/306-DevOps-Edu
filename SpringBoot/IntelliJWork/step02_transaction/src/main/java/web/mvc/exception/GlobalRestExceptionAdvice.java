@@ -10,16 +10,15 @@ import web.mvc.dto.ResponseErrorDTO;
 @RestControllerAdvice
 @Slf4j
 public class GlobalRestExceptionAdvice {
-	@ExceptionHandler(BasicException.class)
-	public ResponseEntity<?> error(BasicException e) {
-      log.error("Error Message error {} " , e.getErrorCode().getMsg() );
+    @ExceptionHandler(BasicException.class)
+    public ResponseEntity<?> error(BasicException e) {
+        log.error("Error Message error {} ", e.getErrorCode().getMsg());
 
-		return ResponseEntity
-				.status(e.getErrorCode().getStatus())
-				.body(ResponseErrorDTO.builder()
-						.msg(e.getErrorCode().getMsg())
-						.status(e.getErrorCode().getStatus())
-						.build());
-	}
-
+        return ResponseEntity
+                .status(e.getErrorCode().getStatus())
+                .body(ResponseErrorDTO.builder()
+                        .msg(e.getErrorCode().getMsg())
+                        .status(e.getErrorCode().getStatus())
+                        .build());
+    }
 }

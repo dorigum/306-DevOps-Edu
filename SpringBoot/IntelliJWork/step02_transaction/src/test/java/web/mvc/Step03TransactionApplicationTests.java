@@ -15,8 +15,8 @@ import web.mvc.repository.BankRepository;
 @SpringBootTest // 통합 테스트 + 자동 커밋
 @Slf4j
 class Step03TransactionApplicationTests {
-  @Autowired
-  private BankRepository bankRepository;
+    @Autowired
+    private BankRepository bankRepository;
 
     @Test
     @DisplayName("계좌 등록")
@@ -24,7 +24,7 @@ class Step03TransactionApplicationTests {
     @Rollback(false)
     void bankInsert() {
         log.info("bankInsert cal...");
-        
+
         bankRepository.save(Bank.builder().account("A01").balance(1000).build());
         bankRepository.save(Bank.builder().account("A02").balance(500).build());
 

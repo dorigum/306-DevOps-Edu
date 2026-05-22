@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#353535",
+                        "secondary-fixed": "#b8f642",
+                        "background": "#131313",
+                        "on-surface-variant": "#bac9cc",
+                        "on-primary-container": "#00626e",
+                        "primary": "#c3f5ff",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "error": "#ffb4ab",
+                        "tertiary": "#f4e8ff",
+                        "primary-fixed": "#9cf0ff",
+                        "on-secondary-fixed": "#131f00",
+                        "secondary-container": "#8ec703",
+                        "primary-fixed-dim": "#00daf3",
+                        "on-secondary-container": "#364f00",
+                        "tertiary-fixed": "#ebdcff",
+                        "on-tertiary-container": "#6b3db8",
+                        "surface": "#131313",
+                        "on-error-container": "#ffdad6",
+                        "on-background": "#e5e2e1",
+                        "outline": "#849396",
+                        "on-primary-fixed": "#001f24",
+                        "error-container": "#93000a",
+                        "surface-tint": "#00daf3",
+                        "tertiary-container": "#dcc7ff",
+                        "surface-container": "#202020",
+                        "on-primary-fixed-variant": "#004f58",
+                        "outline-variant": "#3b494c",
+                        "on-tertiary-fixed": "#260058",
+                        "on-tertiary-fixed-variant": "#5827a5",
+                        "primary-container": "#00e5ff",
+                        "tertiary-fixed-dim": "#d4bbff",
+                        "on-error": "#690005",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-low": "#1b1b1c",
+                        "on-tertiary": "#40008c",
+                        "surface-dim": "#131313",
+                        "on-primary": "#00363d",
+                        "inverse-on-surface": "#303030",
+                        "on-secondary": "#243600",
+                        "inverse-primary": "#006875",
+                        "secondary-fixed-dim": "#9dd823",
+                        "surface-bright": "#393939",
+                        "secondary": "#a8e430",
+                        "on-secondary-fixed-variant": "#354e00",
+                        "inverse-surface": "#e5e2e1",
+                        "surface-variant": "#353535"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-code { font-family: 'Space Grotesk', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl flex justify-between items-center px-6 py-4 max-w-full shadow-2xl shadow-black/40 bg-gradient-to-b from-[#202020] to-transparent">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-[#c3f5ff] font-['Space_Grotesk'] tracking-tight">&lt;CodeTrip /&gt;</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-[#f4e8ff]/60 hover:text-[#f4e8ff] font-['Space_Grotesk'] tracking-tight transition-colors duration-300" href="#">root</a>
+<a class="text-[#c3f5ff] border-b-2 border-[#c3f5ff] pb-1 font-['Space_Grotesk'] tracking-tight transition-colors duration-300" href="#">travel</a>
+<a class="text-[#f4e8ff]/60 hover:text-[#f4e8ff] font-['Space_Grotesk'] tracking-tight transition-colors duration-300" href="#">wishlist</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#c3f5ff] hover:bg-[#353535] transition-colors duration-300 scale-95 active:opacity-80">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+</button>
+<button class="p-2 text-[#c3f5ff] hover:bg-[#353535] transition-colors duration-300 scale-95 active:opacity-80">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative w-full h-[614px] overflow-hidden">
+<img class="w-full h-full object-cover brightness-75" data-alt="Stunning cinematic panoramic view of Paris skyline at twilight with the Eiffel Tower glowing against a deep indigo sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQITMstOTPjUCb-5i9cnJNrRQvrzjlzCyN0AEUDDqfB6m8NNBtPExXJbABnoEb0w-iqmwLu5MoEXkxpSaaVTKpOv0ph_P9pAp-RfM99v9Is1yJZ8X_FZjDlsOg-IfqgaSomYuExwiGnYCrNwnJYjRkCrJQdIyYWaO7Wjj3QZjiLrrxp3XcvmTk7n0mhXymyRJtjaA9gYfa9zKy8gLmXBq8CE4nu_HcuCXSrYJKpTEJyko0cSmoNnmt4suXVoR11F8rTctdtUSxGo8c"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent"></div>
+<div class="absolute bottom-12 left-12">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-3 py-1 bg-surface-container-highest text-primary font-code text-xs rounded-lg">[ 48.8566° N, 2.3522° E ]</span>
+<span class="px-3 py-1 bg-surface-container-highest text-secondary font-code text-xs rounded-lg">&lt; active_destination /&gt;</span>
+</div>
+<h1 class="text-6xl font-bold font-headline tracking-tighter text-white">PARIS / FRANCE</h1>
+</div>
+</section>
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-12 mt-12 grid grid-cols-1 md:grid-cols-12 gap-12">
+<!-- Left Column: Map Integration -->
+<aside class="md:col-span-5 space-y-6">
+<div class="relative rounded-xl overflow-hidden aspect-square bg-surface-container border border-outline-variant/20 shadow-inner">
+<!-- Map Placeholder Representation -->
+<div class="absolute inset-0 opacity-40 bg-[radial-gradient(#353535_1px,transparent_1px)] [background-size:20px_20px]" data-location="Paris" style=""></div>
+<!-- Code-style markers -->
+<div class="absolute top-1/4 left-1/3 group cursor-pointer">
+<span class="material-symbols-outlined text-primary scale-150 drop-shadow-glow" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div class="absolute left-6 top-0 bg-surface-container-highest p-2 rounded-lg text-[10px] font-code opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-primary/20">
+                        const location = "Eiffel_Tower";
+                    </div>
+</div>
+<div class="absolute top-1/2 left-1/2 group cursor-pointer">
+<span class="material-symbols-outlined text-secondary scale-125" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div class="absolute left-6 top-0 bg-surface-container-highest p-2 rounded-lg text-[10px] font-code opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-secondary/20">
+                        const location = "Louvre_Museum";
+                    </div>
+</div>
+<div class="absolute bottom-1/4 right-1/4 group cursor-pointer">
+<span class="material-symbols-outlined text-tertiary scale-110" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div class="absolute left-6 top-0 bg-surface-container-highest p-2 rounded-lg text-[10px] font-code opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-tertiary/20">
+                        const location = "Notre_Dame";
+                    </div>
+</div>
+<!-- Map Overlay UI -->
+<div class="absolute top-4 right-4 flex flex-col gap-2">
+<button class="bg-surface-container-highest/80 backdrop-blur p-2 rounded-lg text-primary hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<button class="bg-surface-container-highest/80 backdrop-blur p-2 rounded-lg text-primary hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+</div>
+</div>
+<!-- Meta Data Block -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 font-code text-sm">
+<div class="flex items-center justify-between mb-4">
+<span class="text-outline text-xs uppercase tracking-widest">/* environment_metadata */</span>
+<span class="text-tertiary text-xs">compiled_successfully</span>
+</div>
+<div class="space-y-2 text-on-surface-variant">
+<p><span class="text-secondary">temp:</span> [ <span class="text-primary">18°C</span> ]</p>
+<p><span class="text-secondary">weather:</span> "partly_cloudy"</p>
+<p><span class="text-secondary">local_time:</span> "21:42_GMT+2"</p>
+<p><span class="text-secondary">currency:</span> "EUR"</p>
+<p><span class="text-secondary">status:</span> <span class="bg-on-secondary-container/30 text-secondary-fixed px-2 rounded-sm italic">"highly_recommended"</span></p>
+</div>
+</div>
+</aside>
+<!-- Right Column: Description & Insights -->
+<article class="md:col-span-7 space-y-8">
+<div class="space-y-4">
+<h2 class="text-2xl font-headline font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="data_object">data_object</span>
+                    destination_description.md
+                </h2>
+<div class="space-y-4 font-body text-on-surface-variant leading-relaxed">
+<p class="text-tertiary/60 font-code">/**</p>
+<p class="pl-6 border-l-2 border-outline-variant/30">
+                        // Paris is the global center for art, fashion, and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine.
+                    </p>
+<p class="pl-6 border-l-2 border-outline-variant/30">
+                        // Beyond landmarks like the Eiffel Tower and the 12th-century, Gothic Notre-Dame cathedral, the city is known for its cafe culture and designer boutiques along the Rue du Faubourg Saint-Honoré.
+                    </p>
+<p class="pl-6 border-l-2 border-outline-variant/30">
+                        // Recommended for rainy days: The Louvre or Musée d'Orsay offer perfect escape routes into centuries of human expression.
+                    </p>
+<p class="pl-6 border-l-2 border-outline-variant/30 text-secondary-fixed/80">
+                        // TODO: Walk through Le Marais at sunset for optimal lighting conditions.
+                    </p>
+<p class="pl-6 border-l-2 border-outline-variant/30">
+                        // Note: Prices may fluctuate based on cloud cover and seasonal peak tourist cycles.
+                    </p>
+<p class="text-tertiary/60 font-code">*/</p>
+</div>
+</div>
+<!-- Featured Highlights -->
+<div class="grid grid-cols-2 gap-4">
+<div class="group relative rounded-xl overflow-hidden h-48">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Close up architectural detail of a Parisian balcony with intricate ironwork at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD057NDmULyOY8Fr8FxK9Tf4mg1h9ra6OyL4fVAtxCSeYQzNWehOflLWgOv93sX2TCXpt9dwem4NUKa2HHZkzAU0SDTUDvQeLYpHPxU0un9MlMjnVcRrZTi4dIZAh21KZvfMUiOdeUYflRqcwbTSxh7oRQo3CjTIXhd56O53b0AKASMyZYJHmxTDr2SE5gNtqVVLnKe553D1J7tLzD9_dFzAvUbzgyw3KvV70GSVfmnIZZyf0lVMYV44bpaNPSz_ppahIvOBaQejG-7"/>
+<div class="absolute inset-0 bg-black/40 flex items-end p-4">
+<span class="font-code text-xs text-white bg-surface-container-highest/60 backdrop-blur px-2 py-1 rounded">// architecture.src</span>
+</div>
+</div>
+<div class="group relative rounded-xl overflow-hidden h-48">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="Cozy interior of a traditional Parisian cafe with warm lighting and wooden tables" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDafyDZHbfRzqwipaQJuCOzcCSbX8hCMSCuddiA401vOz4AfxJVu2rFPRHTwGLGt-Y8QCNP31znyEdy9KvL-Y8ziGmosDsMm-uVaOsrtXxmqNracFqkrm11-1DpGpj6m_uO-bGZpNvTlreu-tE2urtz9iZ9ZUBYOHn11uDzqL2EydB7ZCJW5YkDzdMLESZS0Zy9NM6jLQGqmXP3KgMrorMsFE-ntf5_mUzCDtA9EcV8V4xQ_MWp1DITT-J38-beWHMkmZL1vYxtDohj"/>
+<div class="absolute inset-0 bg-black/40 flex items-end p-4">
+<span class="font-code text-xs text-white bg-surface-container-highest/60 backdrop-blur px-2 py-1 rounded">// gastronomy.lib</span>
+</div>
+</div>
+</div>
+</article>
+</main>
+<!-- Floating Action Button -->
+<div class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed-variant px-8 py-4 rounded-full font-headline font-bold flex items-center gap-3 shadow-[0_20px_40px_rgba(0,0,0,0.4)] hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="playlist_add">playlist_add</span>
+            [ ADD TO TRIP LIST ]
+        </button>
+</div>
+<!-- Footer -->
+<footer class="w-full py-8 mt-auto border-t border-[#353535]/10 bg-[#0e0e0e] flex flex-col items-center gap-4 px-8">
+<div class="flex gap-6">
+<a class="font-['Space_Grotesk'] text-[10px] opacity-50 text-[#f4e8ff] hover:text-[#c3f5ff] transition-all duration-200" href="#">github</a>
+<a class="font-['Space_Grotesk'] text-[10px] opacity-50 text-[#f4e8ff] hover:text-[#c3f5ff] transition-all duration-200" href="#">docs</a>
+<a class="font-['Space_Grotesk'] text-[10px] opacity-50 text-[#f4e8ff] hover:text-[#c3f5ff] transition-all duration-200" href="#">api_status</a>
+</div>
+<p class="font-['Space_Grotesk'] text-[10px] opacity-50 text-[#f4e8ff]">/* © 2024 Terminal Nomad. All rights reserved. Compiled with passion. */</p>
+</footer>
+</body></html>

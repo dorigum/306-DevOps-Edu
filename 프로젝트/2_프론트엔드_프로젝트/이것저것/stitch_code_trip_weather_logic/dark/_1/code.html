@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#353535",
+                    "secondary-fixed": "#b8f642",
+                    "background": "#131313",
+                    "on-surface-variant": "#bac9cc",
+                    "on-primary-container": "#00626e",
+                    "primary": "#c3f5ff",
+                    "on-surface": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "error": "#ffb4ab",
+                    "tertiary": "#f4e8ff",
+                    "primary-fixed": "#9cf0ff",
+                    "on-secondary-fixed": "#131f00",
+                    "secondary-container": "#8ec703",
+                    "primary-fixed-dim": "#00daf3",
+                    "on-secondary-container": "#364f00",
+                    "tertiary-fixed": "#ebdcff",
+                    "on-tertiary-container": "#6b3db8",
+                    "surface": "#131313",
+                    "on-error-container": "#ffdad6",
+                    "on-background": "#e5e2e1",
+                    "outline": "#849396",
+                    "on-primary-fixed": "#001f24",
+                    "error-container": "#93000a",
+                    "surface-tint": "#00daf3",
+                    "tertiary-container": "#dcc7ff",
+                    "surface-container": "#202020",
+                    "on-primary-fixed-variant": "#004f58",
+                    "outline-variant": "#3b494c",
+                    "on-tertiary-fixed": "#260058",
+                    "on-tertiary-fixed-variant": "#5827a5",
+                    "primary-container": "#00e5ff",
+                    "tertiary-fixed-dim": "#d4bbff",
+                    "on-error": "#690005",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-container-low": "#1b1b1c",
+                    "on-tertiary": "#40008c",
+                    "surface-dim": "#131313",
+                    "on-primary": "#00363d",
+                    "inverse-on-surface": "#303030",
+                    "on-secondary": "#243600",
+                    "inverse-primary": "#006875",
+                    "secondary-fixed-dim": "#9dd823",
+                    "surface-bright": "#393939",
+                    "secondary": "#a8e430",
+                    "on-secondary-fixed-variant": "#354e00",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-variant": "#353535"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .syntax-glow {
+            text-shadow: 0 0 12px rgba(195, 245, 255, 0.4);
+        }
+        .glass-panel {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl bg-gradient-to-b from-[#202020] to-transparent shadow-2xl shadow-black/40">
+<div class="flex justify-between items-center px-6 py-4 max-w-full">
+<div class="text-xl font-bold text-[#c3f5ff] font-['Space_Grotesk'] tracking-tight">
+                &lt;CodeTrip /&gt;
+            </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-['Space_Grotesk'] tracking-tight text-[#c3f5ff] border-b-2 border-[#c3f5ff] pb-1" href="#">root</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-[#f4e8ff]/60 hover:text-[#f4e8ff] transition-colors duration-300" href="#">travel</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-[#f4e8ff]/60 hover:text-[#f4e8ff] transition-colors duration-300" href="#">wishlist</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-[#353535] transition-colors duration-300 rounded-lg text-[#c3f5ff]">
+<span class="material-symbols-outlined">terminal</span>
+</button>
+<button class="p-2 hover:bg-[#353535] transition-colors duration-300 rounded-lg text-[#c3f5ff]">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[870px] w-full overflow-hidden px-6 pb-6">
+<div class="relative h-full w-full rounded-full overflow-hidden group">
+<img alt="Scenic travel destination" class="absolute inset-0 w-full h-full object-cover grayscale-[20%] brightness-75 scale-105" data-alt="Distant snow-capped mountain peaks reflecting in a pristine glacial lake during twilight with deep moody blue and cyan lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLO17GJ8rt5NJL-bfMjUSpdiptMnWYZrV5tZ9tRlQUbq7NPQK9pBcex8UlNxYQe02XtEEimBDFWKqOX4fKR_c3gPA37KvjK67ANB-7XkN4o-ZR1mPbU1sxYgXAksu_4QGn8Dx1AoUsqWg8mv65eXmJA47DDwXBm6hG8mKqWUM1feUDg_Ja-yPLAJEqiMq4yeeegkIqGwByGBymsF--WmqWSP8QsSieIcz02_qq--JaiaD8tyr1XkUhWhrzxG9EfRTT-ckTlZCWbGBn"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<!-- Weather Widget Overlay -->
+<div class="absolute top-12 right-12 glass-panel bg-surface-container/40 p-6 rounded-xl border border-outline-variant/20">
+<div class="flex flex-col gap-1">
+<span class="font-label text-[10px] text-tertiary uppercase tracking-widest opacity-60">// env.weather</span>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">cloudy</span>
+<div>
+<div class="text-2xl font-headline font-bold text-on-surface">18°C</div>
+<div class="text-xs text-on-surface-variant font-label">CLOUDY</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Hero Content -->
+<div class="absolute bottom-24 left-12 max-w-4xl">
+<span class="font-label text-secondary mb-4 block syntax-glow tracking-[0.2em]">INITIATING_SEQUENCE_042</span>
+<h1 class="text-6xl md:text-8xl font-headline font-bold text-white tracking-tighter leading-[0.9]">
+                        KYOTO <br/>
+<span class="text-primary/90">TERMINAL</span>
+</h1>
+<div class="mt-10">
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed-variant px-8 py-4 rounded-md font-label font-bold text-lg hover:opacity-90 active:scale-95 transition-all shadow-xl shadow-primary/20">
+                            [ run random_trip ]
+                        </button>
+</div>
+</div>
+<!-- Subtle Code Accents -->
+<div class="absolute bottom-8 right-12 font-label text-[10px] text-on-surface-variant/40 text-right leading-relaxed hidden lg:block">
+                    /* <br/>
+                    * Location: 35.0116° N, 135.7681° E <br/>
+                    * Status: Spontaneous_Ready <br/>
+                    */
+                </div>
+</div>
+</section>
+<!-- Trending Themes -->
+<section class="px-6 py-16">
+<div class="flex items-end justify-between mb-12">
+<div>
+<h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight">Trending Themes</h2>
+<p class="font-label text-xs text-secondary mt-2">// filter: global_meta_tags</p>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+<button class="bg-surface-container hover:bg-surface-container-highest transition-colors py-8 px-4 rounded-xl flex flex-col items-center gap-3 border border-outline-variant/10 group">
+<span class="material-symbols-outlined text-secondary text-2xl group-hover:scale-110 transition-transform">bolt</span>
+<span class="font-label text-xs font-medium">// active</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-highest transition-colors py-8 px-4 rounded-xl flex flex-col items-center gap-3 border border-outline-variant/10 group">
+<span class="material-symbols-outlined text-primary text-2xl group-hover:scale-110 transition-transform">spa</span>
+<span class="font-label text-xs font-medium">// relaxation</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-highest transition-colors py-8 px-4 rounded-xl flex flex-col items-center gap-3 border border-outline-variant/10 group">
+<span class="material-symbols-outlined text-tertiary text-2xl group-hover:scale-110 transition-transform">terminal</span>
+<span class="font-label text-xs font-medium">// digital_nomad</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-highest transition-colors py-8 px-4 rounded-xl flex flex-col items-center gap-3 border border-outline-variant/10 group">
+<span class="material-symbols-outlined text-secondary text-2xl group-hover:scale-110 transition-transform">forest</span>
+<span class="font-label text-xs font-medium">// alpine</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-highest transition-colors py-8 px-4 rounded-xl flex flex-col items-center gap-3 border border-outline-variant/10 group">
+<span class="material-symbols-outlined text-primary text-2xl group-hover:scale-110 transition-transform">waves</span>
+<span class="font-label text-xs font-medium">// coastal</span>
+</button>
+<button class="bg-surface-container hover:bg-surface-container-highest transition-colors py-8 px-4 rounded-xl flex flex-col items-center gap-3 border border-outline-variant/10 group">
+<span class="material-symbols-outlined text-tertiary text-2xl group-hover:scale-110 transition-transform">fastfood</span>
+<span class="font-label text-xs font-medium">// culinary</span>
+</button>
+</div>
+</section>
+<!-- Recommended Destinations -->
+<section class="px-6 pb-24">
+<div class="mb-12">
+<h2 class="text-4xl font-headline font-bold text-on-surface tracking-tight">Today's Recommended Destinations</h2>
+<p class="font-label text-xs text-primary mt-2">/* Compiled from user preferences and real-time weather logs */</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Large Card 1 -->
+<div class="bg-surface-container-low rounded-full overflow-hidden flex flex-col md:flex-row group transition-all duration-500 hover:bg-surface-container">
+<div class="w-full md:w-1/2 h-64 md:h-auto relative overflow-hidden">
+<img alt="Vietnam Highlands" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Ancient tiered temple in Vietnam surrounded by lush tropical mist and deep green jungle foliage at sunrise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVLPUK8jY2Sz9s2VCgrxVG6Bidv7qObUOfCj0y9g461byzwBqJd7aCSgarU5C7N6ZWjAR_9n8ICymxrnWoB0ZEf07WOVvAM-jS6IAkYCQ8H_7iPy2Vgo97k0JT2W8JiyIXE63VzRzsGmuCwbVMJA9AUhFoTkWvPYBzNp1JZWGPNac53zrTwx-tgvPJWbnBCrPej34xvLTRu7ENMkwhMxNsmc8pGCYT-DwYVkEJt_J3B2iA64s5ERIJWXAm4NcH7yb13JdTN0Dgr3oc"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-surface-container-highest/80 glass-panel px-3 py-1 rounded text-[10px] font-label text-primary">[ 24°C ]</span>
+<span class="bg-surface-container-highest/80 glass-panel px-3 py-1 rounded text-[10px] font-label text-secondary">&lt; Low Latency /&gt;</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-3xl font-headline font-bold text-white tracking-tight">SAPA_LOG</h3>
+<span class="material-symbols-outlined text-primary/40">south_east</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                                Experience the cascading rice terraces and high-altitude mist of the northern highlands. Perfect for contemplative workflows.
+                            </p>
+<div class="bg-surface-container-lowest p-4 rounded-lg font-mono text-[11px] text-secondary/70 border-l-2 border-secondary">
+<span class="text-tertiary">fetch</span>(<span class="text-primary">'/api/v1/dest/sapa'</span>)<br/>
+                                .<span class="text-tertiary">then</span>(res =&gt; res.<span class="text-tertiary">book</span>())
+                            </div>
+</div>
+<div class="mt-8 flex items-center justify-between">
+<span class="font-headline font-bold text-primary text-xl">$1,240.00</span>
+<button class="text-on-surface hover:text-primary transition-colors font-label text-xs flex items-center gap-2">
+                                VIEW_ENTRY <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Large Card 2 -->
+<div class="bg-surface-container-low rounded-full overflow-hidden flex flex-col md:flex-row group transition-all duration-500 hover:bg-surface-container">
+<div class="w-full md:w-1/2 h-64 md:h-auto relative overflow-hidden">
+<img alt="Swiss Alps" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Vibrant lake in the Swiss Alps with turquoise water and a small wooden boat docked under dramatic jagged peaks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfIkIpmVNBbI9Gdv_221yB6_1Q2KVKrJHk0GNVDVatco-ZG77rFcTCc81aVNXHEDCMYUfxlLz5-J6TG5hd8iSdAPR4fKy71ozcC2zNNVGL8FbiBTFgyYA8LdW4lJgthG50tr3ARF8G8GVrVwxT91QrZOKMUa2ex67pYsor94hihaneiOKVPPRjdbjwvVbJ28RFOtGHMfrRnspzpmZlsl3fpd0v6Bt4ITXwUN0Nu4ZVhGPEqpW0jiJ_qxbDAvG5MkjrdG7MP2Ln3QIN"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-surface-container-highest/80 glass-panel px-3 py-1 rounded text-[10px] font-label text-primary">[ 12°C ]</span>
+<span class="bg-surface-container-highest/80 glass-panel px-3 py-1 rounded text-[10px] font-label text-secondary">&lt; Secure_Cloud /&gt;</span>
+</div>
+</div>
+<div class="w-full md:w-1/2 p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-3xl font-headline font-bold text-white tracking-tight">ALPS_NODE</h3>
+<span class="material-symbols-outlined text-primary/40">north_east</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-6">
+                                Crystal-clear glacial lakes and high-performance mountain retreats. A sanctuary for deep system architecture.
+                            </p>
+<div class="bg-surface-container-lowest p-4 rounded-lg font-mono text-[11px] text-primary/70 border-l-2 border-primary">
+<span class="text-secondary">while</span>(alive) { <br/>
+                                  <span class="text-tertiary">explore</span>(<span class="text-white">'alpine_lakes'</span>); <br/>
+                                }
+                            </div>
+</div>
+<div class="mt-8 flex items-center justify-between">
+<span class="font-headline font-bold text-primary text-xl">$2,890.00</span>
+<button class="text-on-surface hover:text-primary transition-colors font-label text-xs flex items-center gap-2">
+                                VIEW_ENTRY <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- SideNavBar -->
+<aside class="hidden xl:flex h-screen w-64 fixed left-0 top-0 border-r border-[#353535]/20 bg-[#0e0e0e] flex-col z-40">
+<div class="p-8 mt-16">
+<div class="flex items-center gap-3 mb-10">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary border border-outline-variant/20 overflow-hidden">
+<img alt="User Terminal Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a digital artist with cool neon lighting reflecting on their face, futuristic tech vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxHYN21rwz6sA6e-hK46aZrgBoHvwExRw7uITzJHkLVkOAhbPNWOQ99oAf5Xv4Jz1Yc_n5YUuWaq0Cff4-hWhod7lij0hMdNXDuylMoxXlfIJ8FZM2GggRccCmkA0CXRATFKYAPcFj9tDgk6RZ_4w9S8MJd6YE-mHwUfTs0Kc3ELKN7Mw6h6ondwHtYGBmC6-yXpa9EnJbmL9W2i0oxnyOhGnO_fhhTvXy5uZSOZQaLdLkg8sbigA0PTmCH9r7c7gUCQZb5jzUMVe4"/>
+</div>
+<div>
+<div class="text-[#c3f5ff] font-bold font-headline text-sm tracking-tight">nomad@terminal</div>
+<div class="text-[10px] text-secondary opacity-80 uppercase tracking-widest font-label">status: exploring</div>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<a class="text-[#a8e430] bg-[#202020] border-l-4 border-[#a8e430] py-3 px-4 flex items-center gap-3 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-sm">code</span>
+<span class="font-['Space_Grotesk'] uppercase text-xs tracking-widest">// home</span>
+</a>
+<a class="text-[#f4e8ff]/40 py-3 px-4 flex items-center gap-3 hover:bg-[#353535]/50 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-sm">explore</span>
+<span class="font-['Space_Grotesk'] uppercase text-xs tracking-widest">// explore</span>
+</a>
+<a class="text-[#f4e8ff]/40 py-3 px-4 flex items-center gap-3 hover:bg-[#353535]/50 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-sm">database</span>
+<span class="font-['Space_Grotesk'] uppercase text-xs tracking-widest">// bookmarks</span>
+</a>
+<a class="text-[#f4e8ff]/40 py-3 px-4 flex items-center gap-3 hover:bg-[#353535]/50 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-sm">settings_ethernet</span>
+<span class="font-['Space_Grotesk'] uppercase text-xs tracking-widest">// settings</span>
+</a>
+</div>
+<div class="mt-12">
+<button class="w-full py-4 px-2 border-2 border-secondary text-secondary font-label text-[10px] tracking-widest uppercase hover:bg-secondary hover:text-on-secondary transition-all">
+                    [ new_journey ]
+                </button>
+</div>
+</div>
+<div class="mt-auto p-8 border-t border-[#353535]/10">
+<a class="text-[#f4e8ff]/40 py-3 px-4 flex items-center gap-3 hover:text-primary transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-sm">power_settings_new</span>
+<span class="font-['Space_Grotesk'] uppercase text-xs tracking-widest">logout</span>
+</a>
+</div>
+</aside>
+<!-- Footer -->
+<footer class="w-full py-8 mt-auto bg-[#0e0e0e] border-t border-[#353535]/10 flex flex-col items-center gap-4 px-8">
+<div class="text-[#c3f5ff] font-headline font-bold text-lg">&lt;CodeTrip /&gt;</div>
+<div class="flex gap-8">
+<a class="font-['Space_Grotesk'] text-[10px] text-[#f4e8ff] opacity-50 hover:text-[#c3f5ff] hover:underline decoration-[#a8e430] transition-all" href="#">github</a>
+<a class="font-['Space_Grotesk'] text-[10px] text-[#f4e8ff] opacity-50 hover:text-[#c3f5ff] hover:underline decoration-[#a8e430] transition-all" href="#">docs</a>
+<a class="font-['Space_Grotesk'] text-[10px] text-[#f4e8ff] opacity-50 hover:text-[#c3f5ff] hover:underline decoration-[#a8e430] transition-all" href="#">api_status</a>
+</div>
+<div class="font-['Space_Grotesk'] text-[10px] text-[#f4e8ff] opacity-50">
+            /* © 2024 Terminal Nomad. All rights reserved. Compiled with passion. */
+        </div>
+</footer>
+</body></html>

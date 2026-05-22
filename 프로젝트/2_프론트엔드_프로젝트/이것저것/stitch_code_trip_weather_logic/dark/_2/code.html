@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CodeTrip // Explorer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#353535",
+                    "secondary-fixed": "#b8f642",
+                    "background": "#131313",
+                    "on-surface-variant": "#bac9cc",
+                    "on-primary-container": "#00626e",
+                    "primary": "#c3f5ff",
+                    "on-surface": "#e5e2e1",
+                    "surface-container-lowest": "#0e0e0e",
+                    "error": "#ffb4ab",
+                    "tertiary": "#f4e8ff",
+                    "primary-fixed": "#9cf0ff",
+                    "on-secondary-fixed": "#131f00",
+                    "secondary-container": "#8ec703",
+                    "primary-fixed-dim": "#00daf3",
+                    "on-secondary-container": "#364f00",
+                    "tertiary-fixed": "#ebdcff",
+                    "on-tertiary-container": "#6b3db8",
+                    "surface": "#131313",
+                    "on-error-container": "#ffdad6",
+                    "on-background": "#e5e2e1",
+                    "outline": "#849396",
+                    "on-primary-fixed": "#001f24",
+                    "error-container": "#93000a",
+                    "surface-tint": "#00daf3",
+                    "tertiary-container": "#dcc7ff",
+                    "surface-container": "#202020",
+                    "on-primary-fixed-variant": "#004f58",
+                    "outline-variant": "#3b494c",
+                    "on-tertiary-fixed": "#260058",
+                    "on-tertiary-fixed-variant": "#5827a5",
+                    "primary-container": "#00e5ff",
+                    "tertiary-fixed-dim": "#d4bbff",
+                    "on-error": "#690005",
+                    "surface-container-high": "#2a2a2a",
+                    "surface-container-low": "#1b1b1c",
+                    "on-tertiary": "#40008c",
+                    "surface-dim": "#131313",
+                    "on-primary": "#00363d",
+                    "inverse-on-surface": "#303030",
+                    "on-secondary": "#243600",
+                    "inverse-primary": "#006875",
+                    "secondary-fixed-dim": "#9dd823",
+                    "surface-bright": "#393939",
+                    "secondary": "#a8e430",
+                    "on-secondary-fixed-variant": "#354e00",
+                    "inverse-surface": "#e5e2e1",
+                    "surface-variant": "#353535"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .font-code { font-family: 'Space Grotesk', monospace; }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary-fixed">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-[#131313]/80 backdrop-blur-xl bg-gradient-to-b from-[#202020] to-transparent shadow-2xl shadow-black/40">
+<div class="flex justify-between items-center px-6 py-4 max-w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-[#c3f5ff] font-['Space_Grotesk'] tracking-tight">&lt;CodeTrip /&gt;</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-[#f4e8ff]/60 hover:text-[#f4e8ff] transition-colors duration-300 font-['Space_Grotesk'] tracking-tight" href="#">root</a>
+<a class="text-[#c3f5ff] border-b-2 border-[#c3f5ff] pb-1 font-['Space_Grotesk'] tracking-tight" href="#">travel</a>
+<a class="text-[#f4e8ff]/60 hover:text-[#f4e8ff] transition-colors duration-300 font-['Space_Grotesk'] tracking-tight" href="#">wishlist</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-surface-container-lowest px-4 py-1.5 rounded-lg border-b border-primary/20">
+<span class="material-symbols-outlined text-sm text-primary">search</span>
+<span class="text-xs text-primary/40 ml-2 font-code">find_dest();</span>
+</div>
+<span class="material-symbols-outlined text-[#c3f5ff] hover:bg-[#353535] p-2 transition-colors duration-300 cursor-pointer">terminal</span>
+<span class="material-symbols-outlined text-[#c3f5ff] hover:bg-[#353535] p-2 transition-colors duration-300 cursor-pointer">account_circle</span>
+</div>
+</div>
+</header>
+<!-- SideNavBar Shell -->
+<aside class="h-screen w-64 fixed left-0 top-0 pt-20 bg-[#0e0e0e] border-r border-[#353535]/20 hidden md:flex flex-col z-40">
+<div class="px-6 py-8">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-secondary/30">
+<img class="w-full h-full object-cover" data-alt="close-up portrait of a digital avatar with blue and lime neon lighting accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlO2PQmjH5V1CdUKPKUBreo09i-JRfPDEQNP5jJEziVRVAJkqJvdoIONdemd6jOLeQWtMO42IL4E7h62Z1oYVp0YWFwse22LFWJdSVNcKuW5KQa2QpxBL1PZvAY2Bw4NeQLd7OyVhVoqXmSnyfxplpPikjlmnTrZff_VprVDkoFgVnCBZ8K9GPGEq2U2Zpno72V5lfB-bYqRpF9OoMr7N6lwgINj6TCeQzyg5g8luj74fyEOvmOzJfLONSzxUfkxuRKkFlxDVdyKQp"/>
+</div>
+<div>
+<p class="text-[#c3f5ff] font-bold text-sm font-['Space_Grotesk'] tracking-tight">nomad@terminal</p>
+<p class="text-[#f4e8ff]/40 text-[10px] uppercase font-['Space_Grotesk'] tracking-widest">status: exploring</p>
+</div>
+</div>
+<nav class="flex flex-col gap-1">
+<div class="text-[#f4e8ff]/40 py-3 px-4 hover:bg-[#353535]/50 transition-all duration-200 cursor-pointer flex items-center gap-3">
+<span class="material-symbols-outlined text-lg">code</span>
+<span class="font-['Space_Grotesk'] uppercase text-xs tracking-wider">// home</span>
+</div>
+<div class="text-[#a8e430] bg-[#202020] border-l-4 border-[#a8e430] py-3 px-4 transition-all duration-200 cursor-pointer flex items-center gap-3">
+<span class="material-symbols-outlined text-lg">explore</span>
+<span class="font-['Space_Grotesk'] uppercase text-xs tracking-wider">// explore</span>
+</div>
+<div class="text-[#f4e8ff]/40 py-3 px-4 hover:bg-[#353535]/50 transition-all duration-200 cursor-pointer flex items-center gap-3">
+<span class="material-symbols-outlined text-lg">database</span>
+<span class="font-['Space_Grotesk'] uppercase text-xs tracking-wider">// bookmarks</span>
+</div>
+<div class="text-[#f4e8ff]/40 py-3 px-4 hover:bg-[#353535]/50 transition-all duration-200 cursor-pointer flex items-center gap-3">
+<span class="material-symbols-outlined text-lg">settings_ethernet</span>
+<span class="font-['Space_Grotesk'] uppercase text-xs tracking-wider">// settings</span>
+</div>
+</nav>
+<div class="mt-12">
+<p class="text-[10px] text-tertiary/30 uppercase tracking-[0.2em] font-code mb-4">_filter_by_region</p>
+<div class="flex flex-col gap-2">
+<button class="text-left text-xs font-code px-4 py-2 bg-surface-container-high border-l-2 border-primary text-primary">['seoul']</button>
+<button class="text-left text-xs font-code px-4 py-2 text-on-surface/40 hover:text-on-surface">['jeju']</button>
+<button class="text-left text-xs font-code px-4 py-2 text-on-surface/40 hover:text-on-surface">['busan']</button>
+</div>
+</div>
+<div class="mt-8">
+<p class="text-[10px] text-tertiary/30 uppercase tracking-[0.2em] font-code mb-4">_filter_by_theme</p>
+<div class="flex flex-wrap gap-2">
+<span class="text-[10px] font-code px-2 py-1 bg-surface-container border border-outline-variant/30 text-secondary">#nature</span>
+<span class="text-[10px] font-code px-2 py-1 bg-surface-container border border-outline-variant/30 text-primary">#urban</span>
+<span class="text-[10px] font-code px-2 py-1 bg-surface-container border border-outline-variant/30 text-tertiary">#food</span>
+</div>
+</div>
+</div>
+<div class="mt-auto px-6 py-6 flex flex-col gap-4">
+<button class="w-full bg-[#a8e430] text-[#131f00] py-3 text-[10px] font-bold uppercase tracking-widest font-['Space_Grotesk'] [ new_journey ] hover:opacity-90 transition-opacity">
+                [ new_journey ]
+            </button>
+<div class="text-[#f4e8ff]/40 py-3 px-4 hover:bg-[#353535]/50 transition-all duration-200 cursor-pointer flex items-center gap-3">
+<span class="material-symbols-outlined text-lg">power_settings_new</span>
+<span class="font-['Space_Grotesk'] uppercase text-xs tracking-wider">logout</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 pt-24 pb-12 px-6 lg:px-10 min-h-screen flex flex-col">
+<!-- Dashboard Header -->
+<header class="mb-12">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+<div>
+<p class="text-secondary font-code text-sm tracking-tight mb-2">/* query: get_destinations(region: 'KR') */</p>
+<h1 class="text-5xl md:text-6xl font-headline font-bold text-on-surface tracking-tighter leading-none">
+                        South <span class="text-primary">Korea</span>
+</h1>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-end">
+<span class="text-[10px] font-code text-tertiary opacity-40 uppercase tracking-widest">env: prod</span>
+<span class="text-2xl font-headline font-bold text-on-surface tracking-tighter">[ 12 destinations ]</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Bento Grid Travel Cards -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<article class="group bg-surface-container rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-2">
+<div class="h-64 overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10"></div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="vibrant neon lights of seoul at night with towering skyscrapers and busy traffic trails in futuristic mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBctJAQ1Hqf1EV-iYdkhBHWFYzFJkGYZlmB0hcMfOTq0LFkNFh1gZodcWaJ8pU3NmwnrLKR8a0GnOQAHZYdvn1nHCKK2Ae-gUmrxS1YyBMW4DN_jU6Tjr_okb3Q8pj6yp_q1OPzmxeix8tpR1pmaHR9FNvuxqVvtjBSmjWtT5ozXzWqm_p5QRUIoKX5Cw_IR9UiW8j6ihMM7QpaYNOGT53_437Hl1Uav-n6a6_ntpTa8PKlyF7FBZ-zn9R_rIE3nWoI0aYSvxn8m13T"/>
+<div class="absolute top-4 left-4 z-20 flex gap-2">
+<span class="bg-surface-container-highest/80 backdrop-blur-md px-2 py-1 text-[10px] font-code text-primary-fixed border border-primary/20 rounded">[ 37.5°N ]</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex items-start justify-between">
+<div>
+<p class="text-tertiary-fixed-dim font-code text-xs mb-1">const destination = 'Seoul'</p>
+<h3 class="text-2xl font-headline font-bold text-on-surface tracking-tight group-hover:text-primary transition-colors">Neo Metropolis</h3>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors cursor-pointer" style="font-variation-settings: 'FILL' 0;">bookmark</span>
+</div>
+<div class="flex flex-wrap gap-3">
+<span class="text-[11px] font-code text-secondary opacity-60">//urban</span>
+<span class="text-[11px] font-code text-secondary opacity-60">//tech</span>
+<span class="text-[11px] font-code text-secondary opacity-60">//nightlife</span>
+</div>
+<p class="text-sm text-on-surface-variant font-body leading-relaxed line-clamp-2">
+                        A hyper-connected urban landscape where traditional palaces meet massive digital infrastructure. Perfect for digital nomads.
+                    </p>
+<div class="mt-4 pt-4 border-t border-outline-variant/10 flex justify-between items-center">
+<span class="text-xs font-code text-primary tracking-tighter">execute_visit() -&gt;</span>
+<span class="text-xs font-code text-on-surface/40">v1.2.0</span>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group bg-surface-container rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-2">
+<div class="h-64 overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10"></div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="aerial shot of lush green volcanic island Jeju with turquoise ocean waves crashing on black basalt rocks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYmpLn8h50HptEy5cokSaqHuhQNza3Ay-uzPPPiEBmOCkhoo1JFizqE14xEd4M98W_Gzdh2-jNJD3IdvyzHSaqWxmPCepSeRPSuZsSPkoCe8UfZKT1nzcTJuudNtpBoNZh2vsMZ-KbYaEcBm3JinZ7N2HP8dWDjZ0TL1Gj7GmsXXXgbF_Z6Bwrytil6aweT_tAIdnxU-VUtEt_yRTqp430hj5dwAwJNBadeS2OS8qyns547nTnchG5iPAqTu-9tBZlV2d3OClbiDiA"/>
+<div class="absolute top-4 left-4 z-20 flex gap-2">
+<span class="bg-surface-container-highest/80 backdrop-blur-md px-2 py-1 text-[10px] font-code text-primary-fixed border border-primary/20 rounded">[ 33.5°N ]</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex items-start justify-between">
+<div>
+<p class="text-tertiary-fixed-dim font-code text-xs mb-1">const destination = 'Jeju'</p>
+<h3 class="text-2xl font-headline font-bold text-on-surface tracking-tight group-hover:text-primary transition-colors">Volcanic Haven</h3>
+</div>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</div>
+<div class="flex flex-wrap gap-3">
+<span class="text-[11px] font-code text-secondary opacity-60">//nature</span>
+<span class="text-[11px] font-code text-secondary opacity-60">//scenic</span>
+<span class="text-[11px] font-code text-secondary opacity-60">//volcano</span>
+</div>
+<p class="text-sm text-on-surface-variant font-body leading-relaxed line-clamp-2">
+                        Escape the syntax errors of city life on this pristine island. Hallasan mountain provides the ultimate logic reset.
+                    </p>
+<div class="mt-4 pt-4 border-t border-outline-variant/10 flex justify-between items-center">
+<span class="text-xs font-code text-primary tracking-tighter">execute_visit() -&gt;</span>
+<span class="text-xs font-code text-on-surface/40">v1.0.4</span>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group bg-surface-container rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:-translate-y-2">
+<div class="h-64 overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10"></div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="panoramic view of busan coastal city with colorful houses of gamcheon culture village and harbor at sunset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6AS3pXEDGhzSQwvuX1piTy_JOmPn6qoNp-dvEPbNZ45uj0JaIuVVxlus1jKRKvMIZ--Rl8Yydnn-MalAoqm1ApONsTjGo34_bfFgVoRMgay3yMn_mCmGLEFeH3CRXK6vL179DyaoITFzo1VnXOZ-S4lgN9jc9kpTDyz8SpaF-RSCuTk9tBk3GeZg9XgAnBXS-OE22DAhTqY4lt0keVauJDwjaX-n4VeYtwtNMEe_S5Fe395T-9PtGA4bdfU8whE9Qq9l0SCpUOraD"/>
+<div class="absolute top-4 left-4 z-20 flex gap-2">
+<span class="bg-surface-container-highest/80 backdrop-blur-md px-2 py-1 text-[10px] font-code text-primary-fixed border border-primary/20 rounded">[ 35.1°N ]</span>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-4">
+<div class="flex items-start justify-between">
+<div>
+<p class="text-tertiary-fixed-dim font-code text-xs mb-1">const destination = 'Busan'</p>
+<h3 class="text-2xl font-headline font-bold text-on-surface tracking-tight group-hover:text-primary transition-colors">Port of Logic</h3>
+</div>
+<span class="material-symbols-outlined text-outline-variant hover:text-secondary transition-colors cursor-pointer" style="font-variation-settings: 'FILL' 0;">bookmark</span>
+</div>
+<div class="flex flex-wrap gap-3">
+<span class="text-[11px] font-code text-secondary opacity-60">//ocean</span>
+<span class="text-[11px] font-code text-secondary opacity-60">//culture</span>
+<span class="text-[11px] font-code text-secondary opacity-60">//seafood</span>
+</div>
+<p class="text-sm text-on-surface-variant font-body leading-relaxed line-clamp-2">
+                        The intersection of marine beauty and vibrant neighborhoods. Where the tide meets the code.
+                    </p>
+<div class="mt-4 pt-4 border-t border-outline-variant/10 flex justify-between items-center">
+<span class="text-xs font-code text-primary tracking-tighter">execute_visit() -&gt;</span>
+<span class="text-xs font-code text-on-surface/40">v1.1.2</span>
+</div>
+</div>
+</article>
+<!-- Card 4 (Asymmetric / Featured) -->
+<article class="group md:col-span-2 xl:col-span-3 bg-surface-container rounded-xl overflow-hidden flex flex-col lg:flex-row transition-all duration-300 hover:shadow-2xl hover:shadow-primary/5">
+<div class="lg:w-1/2 h-80 lg:h-auto overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-r from-background/60 to-transparent z-10 hidden lg:block"></div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="majestic ancient korean palace architecture with intricate colorful patterns and calm reflection pool under soft dawn light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeSRsVW8F5cLsd1ZsDq9YHIjy7-u1oJ_2bTUz1aB9xTYHpSJb-NH7pAkyACkaawEkn_faIF-X6zLOBkFDg8vyXzySuPChiifgpv153CXHh5rtR7ytoIY7P94WRQdanIg3ub0ekX2Gaj7x_V9csP8JiWSTbJ0kQFtp-Dn2dBHDNcKJPzl4o5jMDd607A-SSkYLmVmP42AEE_sI-RC2p4DRAAm01flN5gzpMF0KJbYKxLwISd_nhcOadi_yjrniK_1uuwi6bjxXIEGn8"/>
+</div>
+<div class="lg:w-1/2 p-8 lg:p-12 flex flex-col justify-center gap-6">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary/10 border border-secondary/20 rounded-full mb-4">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="text-[10px] font-code text-secondary uppercase tracking-[0.2em]">Featured_Repository</span>
+</div>
+<p class="text-tertiary-fixed-dim font-code text-sm mb-2">class Destination extends Heritage {</p>
+<h2 class="text-4xl lg:text-5xl font-headline font-bold text-on-surface tracking-tighter">Gyeongju: The Repository of Kings</h2>
+</div>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed">
+                        Navigate through 1,000 years of history. A living museum where every temple and tomb is a preserved artifact of Silla's golden age. High-frequency cultural density.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<span class="text-xs font-code text-secondary">//history_api</span>
+<span class="text-xs font-code text-secondary">//architecture</span>
+<span class="text-xs font-code text-secondary">//temples</span>
+</div>
+<div class="mt-4 flex items-center gap-8">
+<button class="bg-primary text-on-primary-fixed-variant px-8 py-3 rounded text-xs font-bold font-headline uppercase tracking-widest hover:opacity-90 transition-opacity">
+                            clone_experience();
+                        </button>
+<span class="text-xs font-code text-on-surface/30">} // end of heritage</span>
+</div>
+</div>
+</article>
+</section>
+<!-- Footer Shell -->
+<footer class="w-full py-8 mt-24 border-t border-[#353535]/10 flex flex-col items-center gap-4 px-8">
+<div class="flex gap-8 mb-4">
+<a class="font-['Space_Grotesk'] text-[10px] opacity-50 text-[#f4e8ff] hover:text-[#c3f5ff] transition-all underline decoration-[#a8e430]" href="#">github</a>
+<a class="font-['Space_Grotesk'] text-[10px] opacity-50 text-[#f4e8ff] hover:text-[#c3f5ff] transition-all underline decoration-[#a8e430]" href="#">docs</a>
+<a class="font-['Space_Grotesk'] text-[10px] opacity-50 text-[#f4e8ff] hover:text-[#c3f5ff] transition-all underline decoration-[#a8e430]" href="#">api_status</a>
+</div>
+<div class="text-[#c3f5ff] font-headline font-bold text-lg tracking-widest">&lt;CodeTrip /&gt;</div>
+<p class="font-['Space_Grotesk'] text-[10px] opacity-50 text-[#f4e8ff]">/* © 2024 Terminal Nomad. All rights reserved. Compiled with passion. */</p>
+</footer>
+</main>
+<!-- FAB (Suppressed as per rules on Details/List if not main CTA, but here it acts as 'New Journey' for mobile) -->
+<div class="md:hidden fixed bottom-6 right-6 z-50">
+<button class="w-14 h-14 bg-secondary text-on-secondary rounded-full flex items-center justify-center shadow-2xl">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</body></html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Explore Destinations | Code Trip</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#4f4710",
+                    "background": "#f8f9ff",
+                    "on-error": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-primary-container": "#fefcff",
+                    "surface-tint": "#135eb1",
+                    "tertiary": "#005cab",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#00468b",
+                    "surface-container-high": "#dce9ff",
+                    "surface-container-low": "#eff4ff",
+                    "surface-variant": "#d5e3fc",
+                    "on-tertiary-fixed": "#001c3b",
+                    "primary-fixed-dim": "#a9c7ff",
+                    "on-tertiary": "#ffffff",
+                    "outline-variant": "#c2c6d3",
+                    "on-secondary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#201c00",
+                    "secondary": "#675f26",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface": "#f8f9ff",
+                    "secondary-container": "#f0e49d",
+                    "on-secondary-container": "#6d652c",
+                    "surface-container": "#e6eeff",
+                    "on-tertiary-fixed-variant": "#004786",
+                    "on-surface-variant": "#424752",
+                    "on-primary-fixed": "#001b3d",
+                    "surface-dim": "#ccdbf3",
+                    "inverse-primary": "#a9c7ff",
+                    "outline": "#727783",
+                    "surface-container-highest": "#d5e3fc",
+                    "on-background": "#0d1c2e",
+                    "tertiary-fixed-dim": "#a6c8ff",
+                    "tertiary-container": "#0075d7",
+                    "on-surface": "#0d1c2e",
+                    "on-tertiary-container": "#fefcff",
+                    "primary": "#0c5bae",
+                    "secondary-fixed-dim": "#d3c884",
+                    "tertiary-fixed": "#d5e3ff",
+                    "primary-container": "#3674c9",
+                    "primary-fixed": "#d6e3ff",
+                    "inverse-surface": "#233144",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#f0e49d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"],
+                    "mono": ["JetBrains Mono"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .syntax-string { color: #0c5bae; }
+        .syntax-keyword { color: #005cab; font-weight: 600; }
+        .syntax-comment { color: #727783; font-style: italic; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-md shadow-sm flex justify-between items-center px-8 h-16 max-w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-slate-900">Code Trip</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-slate-600 hover:text-blue-500 font-['Plus_Jakarta_Sans'] tracking-tight" href="#">Home</a>
+<a class="text-blue-600 font-semibold border-b-2 border-blue-600 font-['Plus_Jakarta_Sans'] tracking-tight" href="#">Explore</a>
+<a class="text-slate-600 hover:text-blue-500 font-['Plus_Jakarta_Sans'] tracking-tight" href="#">Wishlist</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="bg-surface-container-low border-none rounded-full pl-10 pr-4 py-2 text-sm w-64 focus:ring-2 focus:ring-primary/20" placeholder="Search Destinations..." type="text"/>
+</div>
+<button class="p-2 hover:bg-blue-50/50 rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">terminal</span>
+</button>
+<button class="p-2 hover:bg-blue-50/50 rounded-full transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+<img alt="User Developer Avatar" class="w-8 h-8 rounded-full object-cover ml-2 ring-2 ring-primary/10" data-alt="Professional headshot of a friendly young male developer with glasses in a bright modern workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1ye2DxnijUEp1KRM2M-dyvUhEMT7FGtcUqZ1yJadOTzYNytfshG1L-VAO0pPTvdjcufcpFW0-K9S-O9i_CScT0R23oCdvX6HIm6dRCftApwxNMSVlvR8qpySSWeZAAPIevDm5Fe2AbZ1l1NQ9v02Pu1QMFs9Be6a2_5KcIr6FDsNdwOFVuAuQWbpQpIqoIhdvy8ftzyhc-BPCgQHjd_AwyA58ocwZ1V6nOvURIR2ie5Yd9zKV2c218T_1JO25ejKnWg4C68jMx1y0"/>
+</div>
+</header>
+<main class="pt-24 pb-20 px-8 max-w-[1600px] mx-auto grid grid-cols-12 gap-8">
+<!-- Sidebar Filter: filters.config style -->
+<aside class="col-span-12 lg:col-span-3 xl:col-span-2">
+<div class="bg-surface-container-low rounded-xl p-6 font-mono text-sm sticky top-24">
+<div class="flex items-center gap-2 mb-6 border-b border-outline-variant/20 pb-4">
+<span class="material-symbols-outlined text-primary text-lg">settings_ethernet</span>
+<span class="font-bold text-on-surface">filters.config</span>
+</div>
+<div class="space-y-6">
+<!-- Region Section -->
+<section>
+<div class="flex items-center justify-between group cursor-pointer mb-2">
+<span class="syntax-keyword">Region</span>
+<span class="material-symbols-outlined text-xs text-outline group-hover:rotate-90 transition-transform">chevron_right</span>
+</div>
+<ul class="ml-4 space-y-2 border-l border-outline-variant/30 pl-4">
+<li class="flex items-center gap-2 group cursor-pointer">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim group-hover:bg-primary transition-colors"></span>
+<span class="text-on-surface-variant group-hover:text-primary">East Asia</span>
+</li>
+<li class="flex items-center gap-2 group cursor-pointer">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="text-primary font-medium">Korea, South</span>
+</li>
+<li class="flex items-center gap-2 group cursor-pointer">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim group-hover:bg-primary transition-colors"></span>
+<span class="text-on-surface-variant group-hover:text-primary">Western Europe</span>
+</li>
+<li class="flex items-center gap-2 group cursor-pointer">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed-dim group-hover:bg-primary transition-colors"></span>
+<span class="text-on-surface-variant group-hover:text-primary">North America</span>
+</li>
+</ul>
+</section>
+<!-- Theme Section -->
+<section>
+<div class="flex items-center justify-between group cursor-pointer mb-2">
+<span class="syntax-keyword">Theme</span>
+<span class="material-symbols-outlined text-xs text-outline">expand_more</span>
+</div>
+<div class="ml-4 space-y-3">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded-sm border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-on-surface-variant group-hover:text-on-surface transition-colors">#heritage</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-sm border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-on-surface-variant group-hover:text-on-surface transition-colors">#minimalist</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="rounded-sm border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-on-surface-variant group-hover:text-on-surface transition-colors">#high_tech</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="rounded-sm border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="text-on-surface-variant group-hover:text-on-surface transition-colors">#nature_debug</span>
+</label>
+</div>
+</section>
+<button class="w-full py-2 bg-primary text-on-primary rounded-lg font-sans text-xs font-bold hover:bg-primary-container transition-all">
+                        RUN_FILTER.SH
+                    </button>
+</div>
+</div>
+</aside>
+<!-- Main Content: Destination Grid -->
+<div class="col-span-12 lg:col-span-9 xl:col-span-7">
+<header class="mb-10">
+<div class="flex items-center gap-3 mb-2">
+<span class="px-2 py-0.5 bg-tertiary-container text-on-tertiary-container text-[10px] font-bold rounded uppercase tracking-wider">Branch: main</span>
+<span class="text-outline text-xs font-mono">/destinations/explore</span>
+</div>
+<h1 class="text-4xl font-extrabold tracking-tight text-on-surface">여행지 탐색 <span class="text-primary">.</span></h1>
+</header>
+<!-- Destination Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Card 1 -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+<div class="relative h-64 overflow-hidden">
+<img alt="Tokyo Nightscape" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Stunning aerial view of Tokyo city skyline at night with vibrant neon lights and glowing streets reflecting off modern skyscrapers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJGTJsDU21BPgbZ2Vs8-0ZFrKR6eChof19779a88ya0hMj4HuXSar-tvo855H98sWtrRdzCD68MQlHWBikh3lOqiWTILABCMbsj8oDn7huU258uy9j8f23mQC8Ccm_OQ7NNmQB_PDFgutDUjQ1EdCvP4FyOvNbUDQmsnlypJQc8mKh9ZuE78yqvdngQFCYpL2HIHyR35uAnM5kTxolh1ZnG2LgkT4rV1h7I5Y3NFhul05yLHnp24mhDcXa_lhVtg1Hi2s3gPPWgRVt"/>
+<div class="absolute top-4 right-4">
+<span class="px-3 py-1 bg-white/80 backdrop-blur-md rounded-full text-[10px] font-bold text-primary flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-xs">star</span> 4.9
+                            </span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold text-on-surface mb-1">도쿄, 시부야</h3>
+<div class="flex items-center gap-2 text-outline text-xs font-mono">
+<span class="material-symbols-outlined text-sm">location_on</span> 35.66N / 139.69E
+                                </div>
+</div>
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors">favorite</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-4 font-mono text-[11px] space-y-1">
+<p class="syntax-comment">// added: 2 days ago</p>
+<p><span class="syntax-keyword">category:</span> <span class="syntax-string">#high_tech</span></p>
+<p><span class="syntax-keyword">status:</span> <span class="syntax-string">"open_source_travel"</span></p>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<span class="text-lg font-bold text-primary">₩240,000<span class="text-xs text-outline font-normal"> /박</span></span>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-full text-xs font-bold hover:shadow-lg transition-all">예약하기</button>
+</div>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+<div class="relative h-64 overflow-hidden">
+<img alt="Seoul Palace" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Traditional Korean Gyeongbokgung palace during spring with cherry blossoms in the foreground and a clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtilL-73q-jmQAlJCPwGkwXmt9M4IP2Ovcf3DQ74Hh_dmBJfaNcgwGvXuyfA2Onn5OiFzbN9G5n0_7dOkytdnxy7UKBJY1CQD_RflbKkWDgGGLLi8-wXxYMz93jCXEruVbGYwuagElOAnCo--fT_qu3sJVrqJRpIwgzFvMX2EQCl-eZWTSsDIGZfxW2RnkW5oRhWDTP6PeY10uItGl2HJhRpSOBjeUjZiC4j7MKLRnevmiT7Y7BxMX8cV0spASEA6_zLVGXa3srsOO"/>
+<div class="absolute top-4 right-4">
+<span class="px-3 py-1 bg-white/80 backdrop-blur-md rounded-full text-[10px] font-bold text-primary flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-xs">star</span> 4.8
+                            </span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold text-on-surface mb-1">서울, 종로</h3>
+<div class="flex items-center gap-2 text-outline text-xs font-mono">
+<span class="material-symbols-outlined text-sm">location_on</span> 37.57N / 126.97E
+                                </div>
+</div>
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors">favorite</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-4 font-mono text-[11px] space-y-1">
+<p class="syntax-comment">// added: 5 hours ago</p>
+<p><span class="syntax-keyword">category:</span> <span class="syntax-string">#heritage</span></p>
+<p><span class="syntax-keyword">tags:</span> <span class="syntax-string">["culture", "palace"]</span></p>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<span class="text-lg font-bold text-primary">₩185,000<span class="text-xs text-outline font-normal"> /박</span></span>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-full text-xs font-bold hover:shadow-lg transition-all">예약하기</button>
+</div>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+<div class="relative h-64 overflow-hidden">
+<img alt="Kyoto Temple" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Scenic wooden temple in Kyoto surrounded by lush green forest and peaceful atmosphere during soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa9eP9xX-Qi0kJHXCWeb-92R-B3HZzHwerzgT92B4vqx5kRBCMPjDWndsSYJkTTpuw3dzQOfGWFi2C_dtTK1bPfrm-VlOaKz40dxCQJbt76OyUgA9lree3FuJuvGH6WlKkeYmn8uK0hqhFbd99ZK-tltgVcxeGb5ZYbKIlbFbTfAg5LheYP3u62AJGTIJXxbRnc__qCyfIQ_maIckuOGSfz5BF-n0lEnlNUOu6o11FC7j3N4T6XuBL4FuGOA1PzQz4KYRfS9vkLEmW"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold text-on-surface mb-1">교토, 히가시야마</h3>
+<div class="flex items-center gap-2 text-outline text-xs font-mono">
+<span class="material-symbols-outlined text-sm">location_on</span> 35.00N / 135.77E
+                                </div>
+</div>
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors">favorite</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-4 font-mono text-[11px] space-y-1">
+<p class="syntax-comment">// updated: 1 week ago</p>
+<p><span class="syntax-keyword">category:</span> <span class="syntax-string">#minimalist</span></p>
+<p><span class="syntax-keyword">env:</span> <span class="syntax-string">"zen_mode_stable"</span></p>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<span class="text-lg font-bold text-primary">₩210,000<span class="text-xs text-outline font-normal"> /박</span></span>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-full text-xs font-bold hover:shadow-lg transition-all">예약하기</button>
+</div>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+<div class="relative h-64 overflow-hidden">
+<img alt="Jeju Coast" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Beautiful coastline of Jeju Island with turquoise water, black volcanic rocks, and bright green vegetation under a sunny sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZflMhQ4zrKhMyJU_w8lET-T6kD-Em91RNKj5eVvCbjYWsOkZfNfVG6X-Z_XoxH_c39imifOYMO8mZYKMuuQLC0YjZN9YC-QFN3uExvK7K-hIL-Pc_R9zHlH1LXoQ6T1g6zPd9vwrYFQTrLgIx23Pk8MgCr-IzvhCtMHMF9LiKoMrqrH-aW-d4wPOcW_p3doqZFazxct8kCfCjL1gNUARasTkRsfs9conC4HdiVlKFBFe51goMLjBFvuZozhF58wa9I38NJ9f6JADU"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-xl font-bold text-on-surface mb-1">제주, 서귀포</h3>
+<div class="flex items-center gap-2 text-outline text-xs font-mono">
+<span class="material-symbols-outlined text-sm">location_on</span> 33.25N / 126.56E
+                                </div>
+</div>
+<span class="material-symbols-outlined text-outline hover:text-primary cursor-pointer transition-colors">favorite</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-4 font-mono text-[11px] space-y-1">
+<p class="syntax-comment">// added: 3 days ago</p>
+<p><span class="syntax-keyword">category:</span> <span class="syntax-string">#nature_debug</span></p>
+<p><span class="syntax-keyword">ref:</span> <span class="syntax-string">"ocean_view_final_v2"</span></p>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<span class="text-lg font-bold text-primary">₩150,000<span class="text-xs text-outline font-normal"> /박</span></span>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-full text-xs font-bold hover:shadow-lg transition-all">예약하기</button>
+</div>
+</div>
+</article>
+</div>
+</div>
+<!-- Right Side: Nearby Attractions & Metadata -->
+<aside class="hidden xl:col-span-3 xl:block">
+<div class="space-y-8 sticky top-24">
+<!-- Terminal Widget -->
+<div class="bg-inverse-surface text-surface-container-lowest p-6 rounded-xl font-mono text-[10px] leading-relaxed shadow-lg">
+<div class="flex items-center gap-2 border-b border-white/10 pb-3 mb-4">
+<div class="w-2.5 h-2.5 rounded-full bg-error"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-secondary-fixed"></div>
+<div class="w-2.5 h-2.5 rounded-full bg-tertiary-container"></div>
+<span class="ml-2 opacity-50">trip_metadata.log</span>
+</div>
+<p><span class="text-emerald-400">$</span> fetch weather_status --loc "Seoul"</p>
+<p class="text-blue-300">&gt;&gt; Success: Clear Sky, 22°C</p>
+<p><span class="text-emerald-400">$</span> get local_attractions --top 3</p>
+<p class="text-surface-dim mt-2">1. N Seoul Tower (2.4km)</p>
+<p class="text-surface-dim">2. Myeongdong Market (0.8km)</p>
+<p class="text-surface-dim">3. Bukchon Village (1.5km)</p>
+<div class="mt-4 pt-4 border-t border-white/10 flex justify-between">
+<span class="opacity-40">UTF-8</span>
+<span class="opacity-40">Line: 42</span>
+</div>
+</div>
+<!-- Recommended List -->
+<div class="bg-surface-container-low rounded-xl p-6">
+<h4 class="text-sm font-bold text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">auto_awesome</span>
+                        주변 인기 명소
+                    </h4>
+<div class="space-y-6">
+<div class="flex gap-4 items-center group cursor-pointer">
+<div class="w-16 h-16 rounded-lg bg-white overflow-hidden shadow-sm flex-shrink-0">
+<img alt="Busan Bridge" class="w-full h-full object-cover" data-alt="The Gwangan Bridge in Busan at twilight with purple and blue lights reflected on the ocean water" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBmP72R-kDouWGWrVSVmeaW0lk-9EozvLInOmx2yn5TVsSyY05Ee6v_i28x89VQKdMBrDuRMB4hQmJIzQBQyHfQF4spu9-iBHbONzhLE7b8FdO6m3hqakUb8F6UCBeoOfyhiVJKBcxI6BLmCE2EDVXY-YRVMhUvq1p2J5Zinn6aCrgU-EX9lkJXgyaHoy5NlNEo6TLXh0AAze10GbIc3JsjAsjdMZV4sW9vuqAVMlUlD6QMjzzGF0WgUbT0BTrLJrt72grke2pXe69"/>
+</div>
+<div>
+<h5 class="text-xs font-bold group-hover:text-primary transition-colors">광안대교 야경</h5>
+<p class="text-[10px] text-outline mt-1">#ocean #night_view</p>
+<span class="text-[10px] text-primary font-mono mt-1 block">dist: 5.2km</span>
+</div>
+</div>
+<div class="flex gap-4 items-center group cursor-pointer">
+<div class="w-16 h-16 rounded-lg bg-white overflow-hidden shadow-sm flex-shrink-0">
+<img alt="Gyeongju" class="w-full h-full object-cover" data-alt="Ancient burial mounds in Gyeongju with lush green grass and historical architecture under a soft morning mist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3b-GE3MdCzpHIbfVUxuHPae0SYn68GLvlaCuyWz9WwU72DmBdUIdFDZ-qG8lSKZtZKLVGuvhBEyQuV2XhBN37u29EPP8b5x1ZeHKt3_FTwm5X2oS5Eq_AwLgy7cI4Dxt0nbys0oTPulG_WlGWKddDzH5u8WDnZuKS2-8TJ5ZGU1ERcK66Uba-LgaCtNcuoJltxbS7ZDE92jTjGhF9L1iTqaYauu1lfJiS987KNlag23UtemLGYkeUslMAO1Xb1rBJHKnnFmAXtckj"/>
+</div>
+<div>
+<h5 class="text-xs font-bold group-hover:text-primary transition-colors">경주 대릉원</h5>
+<p class="text-[10px] text-outline mt-1">#history #nature</p>
+<span class="text-[10px] text-primary font-mono mt-1 block">dist: 12.8km</span>
+</div>
+</div>
+<div class="flex gap-4 items-center group cursor-pointer">
+<div class="w-16 h-16 rounded-lg bg-white overflow-hidden shadow-sm flex-shrink-0">
+<img alt="Jeju Hallasan" class="w-full h-full object-cover" data-alt="Majestic view of Hallasan mountain peak in Jeju with white clouds surrounding the volcanic crater" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw6I8ALPZ_TM9kFBZ4s0C-qe1TtebAnyjLtVv2WDGN4voSNs28omcpz35MDTsFpu2omBjcvMPcejyZil2qoFa6iGo8L96dXdptzpGC3W9FzsDHVDGTLWOvo0WMGm8GfAsvFs3P2I8-ZIkDMbMydZBfm0P_RinsdG5usU-B1oaQByMzQjvKeAOBSpAJ-KLJv-b_QMY1_-tfD9074TV6vv7hx-_6InrrHnhlWhycaiuOl8Wr-kfb80IdZT6fTYqi1KYYlgKGd0bU1YHc"/>
+</div>
+<div>
+<h5 class="text-xs font-bold group-hover:text-primary transition-colors">한라산 국립공원</h5>
+<p class="text-[10px] text-outline mt-1">#hiking #peak</p>
+<span class="text-[10px] text-primary font-mono mt-1 block">dist: 22.0km</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-slate-800 bg-slate-900 flex flex-col md:flex-row justify-between items-center p-12 gap-6">
+<div class="flex flex-col md:flex-row gap-8 items-center">
+<div class="font-mono text-xs uppercase tracking-widest text-emerald-400">
+                // STATUS: 200 OK | Built with Syntactic Voyager v1.0.4
+            </div>
+<nav class="flex gap-6">
+<a class="font-mono text-xs uppercase tracking-widest text-slate-500 hover:text-emerald-300 transition-all hover:underline underline-offset-4" href="#">Docs</a>
+<a class="font-mono text-xs uppercase tracking-widest text-slate-500 hover:text-emerald-300 transition-all hover:underline underline-offset-4" href="#">Commit History</a>
+<a class="font-mono text-xs uppercase tracking-widest text-slate-500 hover:text-emerald-300 transition-all hover:underline underline-offset-4" href="#">API Status</a>
+<a class="font-mono text-xs uppercase tracking-widest text-slate-500 hover:text-emerald-300 transition-all hover:underline underline-offset-4" href="#">Privacy.sh</a>
+</nav>
+</div>
+<div class="text-slate-600 text-[10px] font-mono">
+            © 2024 CODE_TRIP_INFRASTRUCTURE. All rights reserved.
+        </div>
+</footer>
+</body></html>

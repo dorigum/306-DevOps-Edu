@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d8dadc",
+                        "background": "#f8f9fb",
+                        "on-background": "#191c1e",
+                        "primary-fixed-dim": "#49d7f4",
+                        "on-surface-variant": "#3c494c",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#920021",
+                        "surface-bright": "#f8f9fb",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#5a5f65",
+                        "outline": "#6c797d",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "surface-tint": "#006879",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-primary-container": "#00444f",
+                        "on-tertiary-fixed": "#400009",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#bbc9cd",
+                        "primary": "#006879",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary": "#b62034",
+                        "on-primary-fixed": "#001f26",
+                        "tertiary-fixed-dim": "#ffb3b3",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary-container": "#5e6369",
+                        "on-secondary-fixed": "#171c21",
+                        "secondary-fixed": "#dee3e9",
+                        "surface-container-low": "#f2f4f6",
+                        "on-surface": "#191c1e",
+                        "tertiary-fixed": "#ffdad9",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#80001b",
+                        "primary-fixed": "#a8edff",
+                        "primary-container": "#00b8d4",
+                        "surface": "#f8f9fb",
+                        "on-primary-fixed-variant": "#004e5b",
+                        "inverse-primary": "#49d7f4",
+                        "surface-container": "#eceef0",
+                        "tertiary-container": "#ff8285",
+                        "secondary-fixed-dim": "#c2c7cd",
+                        "secondary-container": "#dce0e7",
+                        "on-secondary-fixed-variant": "#42474d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .code-block-syntax {
+            scrollbar-width: thin;
+            scrollbar-color: #bbc9cd transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
+<div class="flex min-h-screen">
+<!-- SideNavBar Component -->
+<aside class="hidden md:flex flex-col py-8 gap-2 h-full sticky left-0 bg-[#F2F4F6] dark:bg-[#161B22] w-64">
+<div class="px-6 mb-8">
+<h2 class="text-lg font-bold text-[#191C1E] font-headline">The Solar Compiler</h2>
+<p class="text-xs text-secondary font-label">v1.0.4-stable</p>
+</div>
+<nav class="flex-1">
+<a class="flex items-center gap-3 px-6 py-3 text-[#5E6369] hover:bg-[#E6E8EA] transition-all duration-200 font-label text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+                    // home
+                </a>
+<a class="flex items-center gap-3 px-6 py-3 text-[#006879] font-bold bg-[#FFFFFF] rounded-l-none rounded-r-lg transition-all duration-200 font-label text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+                    // explore
+                </a>
+<a class="flex items-center gap-3 px-6 py-3 text-[#5E6369] hover:bg-[#E6E8EA] transition-all duration-200 font-label text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+                    // bookmarks
+                </a>
+<a class="flex items-center gap-3 px-6 py-3 text-[#5E6369] hover:bg-[#E6E8EA] transition-all duration-200 font-label text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    // settings
+                </a>
+</nav>
+</aside>
+<main class="flex-1 flex flex-col min-w-0">
+<!-- TopNavBar Component -->
+<header class="flex items-center justify-between px-6 w-full h-16 sticky top-0 z-50 bg-[#F8F9FB] dark:bg-[#0D1117] font-['Space_Grotesk'] tracking-tight">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-[#191C1E] dark:text-[#F8F9FB]">Code Trip</span>
+<nav class="hidden lg:flex gap-6">
+<a class="text-[#5E6369] hover:text-[#00B8D4] transition-colors text-sm" href="#">Docs</a>
+<a class="text-[#5E6369] hover:text-[#00B8D4] transition-colors text-sm" href="#">API</a>
+<a class="text-[#5E6369] hover:text-[#00B8D4] transition-colors text-sm" href="#">Changelog</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:block">
+<div class="bg-surface-container-high px-3 py-1.5 rounded flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="search">search</span>
+<span class="text-xs text-outline">Quick search...</span>
+<span class="text-[10px] border border-outline/30 px-1 rounded opacity-50">CMD+K</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#006879] cursor-pointer active:opacity-80" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-[#006879] cursor-pointer active:opacity-80" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<div class="flex-1 overflow-y-auto">
+<!-- Hero Section with Intentional Asymmetry -->
+<section class="relative h-[614px] min-h-[400px] w-full bg-surface-container-high overflow-hidden">
+<img alt="Paris cityscape" class="w-full h-full object-cover" data-alt="Wide angle view of Paris architecture with the Eiffel Tower in the distance under a bright morning sky with soft warm sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALef97crIAR0C6u7kpm1AuozCyM1Iep4Xxv2EV4deRGFydEzGGJXrP5Ryaud4GzwhdRMurxXGY2zsKc2M32RQ4XW2UGwGARyfH9N3b1fMXqZN5KT1R9k5m2YwM0vGyDSNs11C2XBPngRlzuzq4xAdDgCeV-G5T5Z7MWLAgoT3oiP5EfEvf27iyOc0UEtafa-2hxAJS0rJoUF1ksoXeIRr3ytzkiWOtOUu8-oXqrb-v3HQPZCHbIfh0EItbVX0tvF-Q9YlkNNN9AMKU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="absolute bottom-12 left-12 max-w-2xl">
+<div class="flex items-center gap-2 mb-4">
+<span class="bg-primary/10 text-primary px-3 py-1 text-xs font-label uppercase tracking-widest rounded-full">Destination: 042</span>
+</div>
+<h1 class="text-6xl font-headline font-extrabold text-on-background tracking-tighter mb-4">Paris_France.env</h1>
+<p class="text-lg text-on-surface-variant font-medium leading-relaxed max-w-xl">
+                            The definitive environment for high-latency romanticism and low-level architectural elegance.
+                        </p>
+</div>
+</section>
+<!-- Content Grid (Asymmetric) -->
+<div class="px-12 py-16 grid grid-cols-12 gap-12 max-w-[1600px]">
+<!-- Main Narrative (Gutter Style) -->
+<div class="col-span-12 lg:col-span-8">
+<div class="flex flex-col gap-12">
+<!-- Code Block Description -->
+<div class="bg-surface-container-low p-1 rounded-lg">
+<div class="flex items-center justify-between px-4 py-2 border-b border-outline-variant/10">
+<div class="flex gap-1.5">
+<div class="w-3 h-3 rounded-full bg-error/40"></div>
+<div class="w-3 h-3 rounded-full bg-secondary/40"></div>
+<div class="w-3 h-3 rounded-full bg-primary-container/40"></div>
+</div>
+<span class="text-[10px] font-label text-outline uppercase tracking-widest">destination_description.md</span>
+</div>
+<div class="p-8 font-mono text-sm leading-relaxed overflow-x-auto code-block-syntax">
+<p class="text-primary font-bold mb-4"># Global Capital of Culture &amp; Logic</p>
+<p class="text-secondary italic mb-6">// Paris is not just a city; it's a runtime environment for the soul.</p>
+<p class="text-on-surface-variant mb-4">
+                                        The <span class="text-primary-container">"City of Light"</span> operates on a complex grid of 20 arrondissements. 
+                                        Each district provides unique library dependencies, from the historical patches of Le Marais to the 
+                                        cutting-edge modules of La Défense.
+                                    </p>
+<p class="text-secondary italic mb-2">// TODO: Optimize walking paths through the Tuileries Garden</p>
+<ul class="space-y-1 pl-4 border-l border-primary/20">
+<li><span class="text-tertiary">@priority</span>: High (Louvre Museum)</li>
+<li><span class="text-tertiary">@auth</span>: Visa required for non-EU developers</li>
+<li><span class="text-tertiary">@latency</span>: High during peak tourist season</li>
+</ul>
+</div>
+</div>
+<!-- Bento Gallery -->
+<div class="grid grid-cols-2 gap-4">
+<div class="h-64 rounded-xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up of a classic Parisian café with marble tables and wicker chairs on a cobblestone street in the morning sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1PUco-uxTxsgLUVyFwMJRmSpvVpmNKDK4fIM0j2q2zf2JxRYFgrJNLXJp992bZ9uYMytsp-om2pZglmv9QA0cmwbu3pP9QDhDg4LEg8LreisR_5NegWZCb_gH_yE0BRAc6CqlOiyTqQnPFnHCTJITOMZngZrhaR2dhhYGmZ9iglDH7DtdYHvbvsTK8uw554BRFOtH9Xs37HlWxRytvbM3mHJbI_BBcNFJ0PZ0c48VdYQbu46MrcR12FAfR49kJEM4HozTzztrTf5T"/>
+</div>
+<div class="grid grid-rows-2 gap-4">
+<div class="rounded-xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Interior view of a modern minimalist bookstore in Paris with floor-to-ceiling shelves and soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjGIACT0YWo7fp9XJqFOEZm5CLaE60IIj-EtnGd9lOfKVlqh4NOfRjZW3_F24UpFHWsFBxN0zkHDecWB5o35HgAE5viZaUj9I5FzoOHcaN0rDIfaWcwiVV9B-9jdgfo9cN7TvHI0ji9RjGbfw3bFb6LGuNSutDup784ZHOFUmZ25l9oIru_t4vGGuK0iLqp8cyp-s9cc0TwAkcJ-RjjIyJjmyodz00d9oJ5WMuqzcRRdKnwlahUII6ltxVviscd4xaJ8UhCQrjxCnU"/>
+</div>
+<div class="rounded-xl overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Evening view of the Seine river in Paris with the city lights reflecting on the water and a distant bridge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg8-gte1pYVRgw46dQbesH2RklqPuaoH42h6uk7Nq31FWUxw9eqguTZymuqAGd2eGrzZQD6lB6hE_M4BBucrh1Op1e2Wra_VlMOtrmd4UPXgKNR3QQ5HZM8qq4ImiSxF-EY_kN48l11vGI75QEqhY09ZNiUY8qm6RiAdmdcLm4Pim1gQiQI9dnBG6sLBtwutbDXeQQ9xU9-HoYKgMTLVY864bNUlkfW1xzjRF3BctEcUEyaZAhoIU03e6h2v4p7ytUXLx2XuH4Pjkw"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Metadata Gutter (Side Info) -->
+<div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<!-- Environment Metadata Card -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-[0_20px_40px_rgba(25,28,30,0.04)] border border-outline-variant/10">
+<h3 class="font-headline font-bold text-lg mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+                                system.env
+                            </h3>
+<div class="space-y-6">
+<div class="flex justify-between items-center group">
+<div>
+<p class="text-[10px] font-label text-outline uppercase tracking-wider">Local Time</p>
+<p class="text-xl font-headline font-medium text-on-surface">14:32 <span class="text-xs text-secondary">GMT+2</span></p>
+</div>
+<span class="material-symbols-outlined text-surface-dim group-hover:text-primary transition-colors" data-icon="schedule">schedule</span>
+</div>
+<div class="flex justify-between items-center group">
+<div>
+<p class="text-[10px] font-label text-outline uppercase tracking-wider">Weather Status</p>
+<p class="text-xl font-headline font-medium text-on-surface">22°C <span class="text-xs text-secondary">Clear Skies</span></p>
+</div>
+<span class="material-symbols-outlined text-surface-dim group-hover:text-primary-container transition-colors" data-icon="sunny">sunny</span>
+</div>
+<div class="flex justify-between items-center group">
+<div>
+<p class="text-[10px] font-label text-outline uppercase tracking-wider">Currency</p>
+<p class="text-xl font-headline font-medium text-on-surface">EUR <span class="text-xs text-secondary">(€)</span></p>
+</div>
+<span class="material-symbols-outlined text-surface-dim group-hover:text-primary transition-colors" data-icon="payments">payments</span>
+</div>
+<div class="pt-6 border-t border-outline-variant/10">
+<button class="w-full bg-primary-container text-on-primary-container py-3 rounded font-label font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm" data-icon="flight_takeoff">flight_takeoff</span>
+                                        INITIALIZE TRIP
+                                    </button>
+</div>
+</div>
+</div>
+<!-- Map Widget -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant/10 aspect-square">
+<div class="p-4 bg-surface-container-low flex items-center justify-between">
+<span class="text-[10px] font-label text-on-surface-variant font-bold">MAP_LOCATION: [48.8566° N, 2.3522° E]</span>
+<span class="material-symbols-outlined text-xs" data-icon="fullscreen">fullscreen</span>
+</div>
+<div class="relative h-full w-full bg-surface-dim/20">
+<img class="w-full h-full object-cover" data-alt="Stylized map view of Paris streets with custom teal and white colors highlighting major monuments and transit lines" data-location="Paris" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7WzPuLc3Kb2VUReNu3zEHJ3tamiax5_T7Q-nKy2FdHDF65t4urBzVdXv_6PXh2g5E4rIuufn3F5GISl3UrBcUgqF7xZHaM0w1fG3vbgRs_UaKhf159-OceIXX705WFgvdBkmwTdFjKrVv6krQtLX3UhqNuSemI6zVWkdE5GKhnWHT9VOme7DqxRRuKKabpOXI7n9tnKFf230CjppJzjzaTSTWZIw4TJ6DcBD5Ru8y_5OnL3vMpxPh4FJcLza11WZ0LKZRXyWAi5MX"/>
+<!-- Fake Markers -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="w-4 h-4 bg-primary-container rounded-full border-4 border-white shadow-lg animate-pulse"></div>
+</div>
+<div class="absolute top-[40%] left-[60%]">
+<div class="w-3 h-3 bg-tertiary rounded-full border-2 border-white shadow-md"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Component -->
+<footer class="flex justify-between px-10 w-full py-4 bg-[#F8F9FB] dark:bg-[#0D1117] border-t border-[#BBC9CD]/15 font-['Space_Grotesk'] text-xs uppercase tracking-widest mt-auto">
+<div class="text-[#006879] opacity-70">/* © 2024 Code Trip - System Status: Optimal */</div>
+<div class="flex gap-8">
+<a class="text-[#5E6369] hover:underline opacity-70 hover:opacity-100" href="#">Privacy</a>
+<a class="text-[#5E6369] hover:underline opacity-70 hover:opacity-100" href="#">Security</a>
+<a class="text-[#5E6369] hover:underline opacity-70 hover:opacity-100" href="#">Terms</a>
+</div>
+</footer>
+</main>
+</div>
+<!-- Mobile Navigation (BottomNavBar) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-surface-container-lowest border-t border-outline-variant/10 flex items-center justify-around z-50">
+<a class="flex flex-col items-center gap-1 text-secondary" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-label">HOME</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="text-[10px] font-label font-bold">EXPLORE</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-secondary" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="text-[10px] font-label">SAVED</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-secondary" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-[10px] font-label">OPTS</span>
+</a>
+</nav>
+</body></html>

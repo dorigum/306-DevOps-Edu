@@ -18,9 +18,9 @@ public class
 TransferRestController {
     private final BankService bankService;
 
-    /**
+    /*
      * 계좌이체
-     * */
+     */
     @PostMapping("/transfer")
     //public ResponseEntity<?> transfer(@RequestBody RequestTransferDTO requestTransferDTO){
     public ResponseEntity<?> transfer(@RequestBody RequestTransferDTO requestTransferDTO)
