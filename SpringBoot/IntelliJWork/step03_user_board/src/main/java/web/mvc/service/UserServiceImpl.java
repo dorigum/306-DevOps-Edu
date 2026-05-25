@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     /*
-     * user 안에 userId를 가져와서 해당 데이터가 DB에 객체 반환 없으면 null
+     * user안에 userId를 가져와서 해당 데이터가 DB에 객체 반환 없으면 null
      * null일 때 예외 발생
      */
     @Transactional(readOnly = true)
@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
     public User loginCheck(User user) throws BasicException {
         log.info("loginCheck userID={}, pwd={}", user.getUserId(), user.getPwd());
 
-        //아이디에 해당하는 정보 검색!!
+        // 아이디에 해당하는 정보 검색!!
 
 
         /*userRepository.findById(user.getUserId()).orElseThrow(new Supplier<BasicException>() {
@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
         User dbUser = userRepository.findById(user.getUserId()).orElseThrow(()
                 -> new BasicException(ErrorCode.NOTFOUND_ID));
 
-        //비번검증
+        // 비번 검증
         if (!dbUser.getPwd().equals(user.getPwd())) {
             throw new BasicException(ErrorCode.WRONG_PASS);
         }
