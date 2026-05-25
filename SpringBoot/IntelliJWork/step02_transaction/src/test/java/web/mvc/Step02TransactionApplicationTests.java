@@ -8,13 +8,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.transaction.annotation.Transactional;
 import web.mvc.domain.Bank;
-import web.mvc.exception.BasicException;
-import web.mvc.exception.ErrorCode;
 import web.mvc.repository.BankRepository;
 
 @SpringBootTest // 통합 테스트 + 자동 커밋
 @Slf4j
-class Step03TransactionApplicationTests {
+class Step02TransactionApplicationTests {
     @Autowired
     private BankRepository bankRepository;
 
