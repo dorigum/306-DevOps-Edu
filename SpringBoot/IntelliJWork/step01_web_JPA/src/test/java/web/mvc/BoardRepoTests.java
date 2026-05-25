@@ -95,7 +95,7 @@ public class BoardRepoTests {
 
     // PK를 대상으로 수정하기
     @Test
-    @DisplayName("PK 수정")
+    @DisplayName("PK 대상 수정")
     public void test5() {
         boardRepo.findById(20L).ifPresent(board -> {
             board.setTitle("제목 수정");
@@ -107,7 +107,7 @@ public class BoardRepoTests {
 
     // PK를 대상으로 삭제하기
     @Test
-    @DisplayName("PK 삭제")
+    @DisplayName("PK 대상 삭제")
     public void test6() {
         // boardRepo.deleteById(10L);
         boardRepo.findById(20L).ifPresent(board -> boardRepo.delete(board));

@@ -30,5 +30,4 @@ public class Board {
 
     @UpdateTimestamp
     private LocalDateTime updatedAt;
-
 }

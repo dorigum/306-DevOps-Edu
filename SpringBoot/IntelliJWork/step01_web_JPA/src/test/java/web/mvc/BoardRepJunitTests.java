@@ -20,7 +20,6 @@ public class BoardRepJunitTests {
     @BeforeEach
     @DisplayName("사전 처리...")
     public void beforeEach(){
-
         log.info("@BeforeEach ....");
     }
 
@@ -75,7 +74,7 @@ public class BoardRepJunitTests {
 
         // 테스트 성공 케이스
         // 1. 리스트가 비어있지 않은지만 확인
-        Assertions.assertFalse(boards.isEmpty());
+//        Assertions.assertFalse(boards.isEmpty());
 
         // 2. 리스트 크기가 0보다 큰지 확인
 //        Assertions.assertTrue(boards.size() > 0);

@@ -3,7 +3,6 @@ package web.mvc;
 import com.querydsl.core.BooleanBuilder;
 import com.querydsl.core.types.Projections;
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.DisplayName;
@@ -11,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
+import org.springframework.transaction.annotation.Transactional;
 import web.mvc.dto.BoardDTO;
 import web.mvc.entity.Board;
 import web.mvc.entity.QBoard;
@@ -18,8 +18,6 @@ import web.mvc.repository.BoardRepository;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
-import static web.mvc.entity.QBoard.board;
 
 @SpringBootTest // 통합 테스트
 @Slf4j
@@ -41,10 +39,10 @@ public class BoardQueryDSLTests {
     @Test
     @DisplayName("querydsl_검색")
     public void test1() {
-        QBoard qBoard = board;
+        QBoard board = QBoard.board;
 
         List<Board> list = jpaQueryFactory.selectFrom(board).fetch();
-        System.out.println("-------------------------------");
+        System.out.println("---------------");
         list.forEach(System.out::println);
     }
 
@@ -84,7 +82,7 @@ public class BoardQueryDSLTests {
     /*
      * 수정
      * jakarta.persistence.TransactionRequiredException: Executing an update/delete query
-     * jpaQueryFactory를 이용해서 DML작업 할때는 반드시 @Transaction을 처리 해야한다.
+     * jpaQueryFactory를 이용해서 DML작업 할 때는 반드시 @Transaction을 처리해야 한다.
      */
     @Test
     @DisplayName("querydsl_수정")
@@ -107,8 +105,8 @@ public class BoardQueryDSLTests {
     // QuerydslPredicateExecutor<> 사용하기
     /*
      * interface에 QuerydslPredicateExecutor<> 상속받는다.
-     *   - QuerydslPredicateExecutor안에서 제공하는 메소드를 사용해서 자바중심으로 조건(Predicate)을 만들수 있다.
-     *   -Spring Data JPA + QueryDSL을 접목한 형태로 Repository에서 바로 QueryDSL의 `Predicate`를 실행할 수 있도록 지원한다.
+     *   - QuerydslPredicateExecutor안에서 제공하는 메소드를 사용해서, 자바 중심으로 조건(Predicate)을 만들 수 있다.
+     *   - Spring Data JPA + QueryDSL을 접목한 형태로 Repository에서 바로 QueryDSL의 `Predicate`를 실행할 수 있도록 지원한다.
      *   - JPAQueryFactory 없이 간단하게 Predicate로 해결
      *   ex)  ~.findAll(Predicate p)
      *
@@ -146,7 +144,7 @@ public class BoardQueryDSLTests {
 
         Iterable<Board> it = boardRepository.findAll(builder);
 
-        // Iterable 를 List형태로 변환 하고 싶다.
+        // Iterable를 List 형태로 변환하고 싶다.
         List<Board> list = Lists.newArrayList(it);
 
         list.forEach(System.out::println);

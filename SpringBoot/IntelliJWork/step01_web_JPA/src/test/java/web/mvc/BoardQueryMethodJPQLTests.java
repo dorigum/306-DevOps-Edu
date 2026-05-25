@@ -34,6 +34,7 @@ public class BoardQueryMethodJPQLTests {
                 .forEach(System.out::println);
     }
 
+    // JPQL 문법--------------------------------------------------
     @Test
     @DisplayName("JPQL 문법 사용하기(1. 삭제하기)")
     public void test3() {
@@ -42,10 +43,11 @@ public class BoardQueryMethodJPQLTests {
     }
 
     @Test
-    @DisplayName("JPQL 문법 사용하기(2. 조건문 사용?)")
+    @DisplayName("JPQL 문법 사용하기(2. 검색하기)")
     public void test4() {
         boardRepository
-                .delGratebybno(10L);
+                .findBnoTitle(100L, "%제목2%")
+                .forEach(System.out::println);
     }
 
     @Test

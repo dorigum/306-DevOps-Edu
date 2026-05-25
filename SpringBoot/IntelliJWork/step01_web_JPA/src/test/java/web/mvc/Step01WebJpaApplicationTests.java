@@ -9,26 +9,26 @@ import web.mvc.repository.BoardRepository;
 
 @SpringBootTest // 통합 테스트(프로젝트 전체를 테스트)
 @Slf4j
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 class Step01WebJpaApplicationTests {
 
     @BeforeEach
     public void beforeEach() {
-        log.info("BeforeEach ...");
+        log.info("BeforeEach...");
     }
 
     @AfterEach
     public void afterEach() {
-        log.info("AfterEach ...");
+        log.info("AfterEach...");
     }
 
     // @Autowired
-    private BoardRepository boardRepo;
+//    private BoardRepository boardRepo;
 
     @Test
     @DisplayName("기본 test")
     void contextLoads() {
         log.info("기본 test입니다.");
-        log.info("boardRepo = " + boardRepo);
+//        log.info("boardRepo = " + boardRepo);
     }
 }
