@@ -1,3 +1,48 @@
+
+천천히 가면 돼요. 오늘 한 건 꽤 많은 편이에요. JSP 설정 잡고, JSTL 문제 넘기고, 게시판 목록/등록/상세/수정/삭제까지 연결했으니까 머릿속이 흐릿한 게 이상한 게 아니라 정상에 가까워요.
+
+일단 지금은 이렇게만 기억해도 충분해요:
+
+```text
+브라우저에서 주소 요청
+→ Controller가 받음
+→ Service가 실제 일을 함
+→ Repository가 DB에 다녀옴
+→ Controller가 JSP 이름을 반환
+→ JSP가 화면을 보여줌
+```
+
+게시글 목록이면:
+
+```text
+/board/list
+→ FreeBoardController
+→ FreeBoardServiceImpl
+→ FreeBoardRepository
+→ DB
+→ freeList
+→ board/list.jsp
+```
+
+게시글 작성이면:
+
+```text
+/board/write 화면
+→ submit
+→ /board/insert
+→ FreeBoardController.insert()
+→ FreeBoardServiceImpl.insert()
+→ FreeBoardRepository.save()
+→ DB 저장
+→ /board/list로 이동
+```
+
+처음부터 전체 구조를 완벽하게 그리려고 하면 너무 버거워요. 대신 “버튼 하나 누르면 어떤 URL로 가는지”부터 따라가면 됩니다. JSP의 `action`이나 `href`를 보고, 그 URL을 Controller에서 찾고, Controller가 Service의 어떤 메서드를 부르는지만 보면 돼요.
+
+오늘은 여기까지 온 것만으로도 충분히 잘 왔습니다. 내일은 `/board/list` 하나만 붙잡고 “이 화면은 어디서 데이터가 와서 어떻게 반복 출력되는가”를 따라가면 구조가 꽤 선명해질 거예요.
+
+
+---
 이 프로젝트가 복잡하게 느껴지는 이유는 **화면 하나를 띄우는 데도 여러 층이 같이 움직이기 때문**이에요. 크게 보면 아래 흐름 하나만 잡으면 됩니다.
 
 ```text

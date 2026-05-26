@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+ 
+  <display-name>step01_Servlet</display-name>
+  <welcome-file-list>
+    <welcome-file>test.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.xhtml</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.xhtml</welcome-file>
+  </welcome-file-list>
+  
+  <!--  서블릿 등록 
+      lifeCycle = new LifeCycleServlet(); 생성과 동일
+        *언제 생성할것인가? 
+           load-on-startup 태그를 설정하면 서버가 start될때 생성된다.
+           숫자값은 여러개의 서블릿이 있을때 우선순위결정(숫자가 낮을수록 먼저생성)
+           
+           load-on-startup 없으면 최초에 사용자 처음 요청될때 딱 한번 생성한다!
+  -->
+  <servlet>
+   <servlet-name>lifeCycle</servlet-name>
+   <servlet-class>ex0922.servlet.LifeCycleServlet</servlet-class>
+    <load-on-startup>1</load-on-startup> 
+  </servlet>
+  
+  <!-- 브라우져에서 http로 ~라고 요청하면 서블릿을 실행할지 연결해주는 mapping
+     ex) http://localhost:8080/step01_Servlet/life 요청하면 was가 lifeCycle이름에 해당하는
+        서블릿을  찾아 요청한다.
+   -->
+  <servlet-mapping>
+    <servlet-name>lifeCycle</servlet-name>
+    <url-pattern>/life</url-pattern>
+  </servlet-mapping>
+</web-app>
+
+
+
+
+
+

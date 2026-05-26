@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
@@ -27,10 +28,11 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @ToString(exclude = "repliesList")
+@DynamicUpdate // 필요한 부분만 업데이트
 public class FreeBoard {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "free_bno_seq")
-    @SequenceGenerator(name = "free_bno_seq", allocationSize = 1, sequenceName = "free_bno_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY/*, generator = "free_bno_seq"*/)
+    //@SequenceGenerator(name = "free_bno_seq", allocationSize = 1, sequenceName = "free_bno_seq")
     private Long bno;
 
     private String subject;
@@ -48,10 +50,11 @@ public class FreeBoard {
     @UpdateTimestamp
     private LocalDateTime updateDate;
 
-    @OneToMany(mappedBy = "freeBoard")
+    @OneToMany(mappedBy = "freeBoard") // 지연 로딩
     @Builder.Default
     private List<Reply> repliesList = new ArrayList<>();
 
+    // 댓글 insert 할 때 필요!
     public FreeBoard(Long bno) {
         this.bno = bno;
     }
