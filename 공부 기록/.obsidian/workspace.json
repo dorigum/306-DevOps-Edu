@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "052ca5ea6d6a7a18",
+        "id": "5f270781a71aacd2",
         "type": "tabs",
         "children": [
           {
-            "id": "6a777a925153c217",
+            "id": "c0704cc1cae8ae6a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "프로젝트 문서/플젝 주제 스케치2222.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "플젝 주제 스케치2222"
+              "title": "새 탭"
             }
           }
         ]
@@ -78,8 +74,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "21f751e21521c464",
@@ -181,31 +176,47 @@
       "command-palette:명령어 팔레트 열기": false,
       "graph:그래프 뷰 열기": false,
       "templates:템플릿 삽입": false,
-      "bases:새 베이스 생성하기": false
+      "bases:새 베이스 생성하기": false,
+      "chat-with-bard:New Gemini Chat": false
     }
   },
-  "active": "6a777a925153c217",
+  "active": "615633c92c957c9b",
   "lastOpenFiles": [
+    "프로젝트 문서/플젝 주제 및 기획 스케치.md",
+    "프로젝트 문서/임차인 안전 점수 산출 지표.md",
     "프로젝트 문서/플젝 주제 선정_도연.md",
-    "프로젝트 문서/파이널 플젝 주제 선정 끄적끄적.md",
+    "프로젝트 문서/주제 선정/플젝 주제 선정_도연.md",
     "프로젝트 문서/플젝 기획 정리.md",
-    "Spring Boot_step03_구조 이해하기.md",
+    "프로젝트 문서/주제 선정/플젝 기획 정리.md",
+    "프로젝트 문서/주제 선정/파이널 플젝 주제 선정 끄적끄적.md",
+    "프로젝트 문서/주제 메모.md",
+    "프로젝트 문서/주제 선정/주제 메모.md",
+    "프로젝트 문서/주제 선정/image.png",
+    "프로젝트 문서/image.png",
+    "프로젝트 문서/주제 선정",
+    "프로젝트 문서/새 폴더",
+    "프로젝트 문서/파이널 플젝 주제 선정 끄적끄적.md",
+    "캡처/Pasted image 20260527155023.png",
+    "캡처/Pasted image 20260527155157.png",
+    "캡처/Pasted image 20260527155212.png",
+    "Gemini Chats/New Chat.gemini",
+    "공부 기록/2026-05-27.md",
     "공부 기록/2026-05-26.md",
-    "무제.md",
+    "Spring Boot_Step03_프로세스 흐름, 구조 정리.md",
+    "Gemini Chats",
+    "공부 기록/2026-05-21.md",
+    "Spring Boot_step03_구조 이해하기.md",
+    "무제 1.md",
     "캡처/image.png",
     "AGENTS.md",
     "260520_DevOps 개발자의 보안 전략.md",
     "캡처/20260526_092935.jpg",
     "image 1.png",
     "공부 기록/2026-05-06.md",
-    "프로젝트 문서/플젝 주제 스케치2222.md",
     "프로젝트 문서/Pasted image 20260522163912.png",
     "프로젝트 문서/Pasted image 20260522163921.png",
     "공부 기록/2026-05-22.md",
-    "프로젝트 문서/주제 메모.md",
-    "프로젝트 문서/image.png",
     "공부 기록/2026-05-12.md",
-    "공부 기록/2026-05-21.md",
     "공부 기록/2026-05-18.md",
     "플젝 기획 정리.md",
     "새 폴더",
@@ -213,26 +224,11 @@
     "파이널 플젝 주제 선정 끄적끄적.md",
     "공부 기록/2026-05-19.md",
     "2026-05-21.md",
-    "Pasted image 20260520175042.png",
-    "2026-05-20.md",
-    "공부 기록/2026-05-20.md",
-    "캡처/Pasted image 20260520155342.png",
-    "공부 기록/2026-03-24.md",
-    "공부 기록/2026-05-08.md",
-    "공부 기록/2026-05-13.md",
-    "공부 기록/step12_MVC_Product.md",
-    "공부 기록/step12, 13_SpringMVC_Ajax.md",
-    "캡처/Pasted image 20260512091547.png",
-    "캡처/Pasted image 20260512091533.png",
     "공부 기록/공부 기록 - 바로 가기.lnk",
     "공부 기록/260213_예외 처리 실습 구조.canvas",
     "공부 기록/무제.canvas",
     "기타/무제.base",
     "기타/무제2.base",
-    "무제.base",
-    "무제 1.base",
-    "무제 2.base",
-    "Cafe_kiosk",
-    "팀플"
+    "무제.base"
   ]
 }
