@@ -15,12 +15,14 @@ class Step03RegisterApplicationTests {
     @Autowired
     private MemberRepository memberRepository;
 
-    @Test
-    void contextLoads() {
-    }
-
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    String id = "8253jang";
+    @Test
+    void contextLoads() {
+        log.info("passwordEncoder = {}", passwordEncoder);
+    }
 
     // 비밀번호 암호화 테스트
     @Test

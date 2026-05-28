@@ -49,6 +49,7 @@ public class AdminController {
 
         Member m = customMemberDetails.getMember();
         log.info("customMemberDetails =  {} ,{} ,{} " , m.getId(), m.getName(), m.getRole());
+        log.info("getMemberNo =  {} ,{} ,{} " , m.getMemberNo());
 
 
         Collection<? extends GrantedAuthority> authorities = customMemberDetails.getAuthorities();

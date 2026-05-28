@@ -1,18 +1,15 @@
-package com.web.spring.jwt;
+package web.mvc.jwt;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Date;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-
-import com.web.spring.domain.Member;
-
 import io.jsonwebtoken.Jwts;
 import lombok.extern.slf4j.Slf4j;
+import web.mvc.domain.Member;
 
 /*
  JWT 정보 검증및 생성
@@ -25,7 +22,6 @@ public class JWTUtil {
     
     //application.properties에 있는 미리 Base64로 Encode된 Secret key를 가져온다
     public JWTUtil(@Value("${spring.jwt.secret}")String secret) {
-   
         secretKey = new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), Jwts.SIG.HS256.key().build().getAlgorithm());
     }
     
@@ -41,6 +37,14 @@ public class JWTUtil {
         log.info("getId(String token)  call");
         String re = Jwts.parser().verifyWith(secretKey).build().parseSignedClaims(token).getPayload().get("id", String.class);
         log.info("getIds(String token)  re = {}" ,re);
+        return re;
+    }
+
+    //검증 memberNo
+    public Long getMemberNo(String token) {
+        log.info("getMemberNo(String token)  call");
+        Long re = Jwts.parser().verifyWith(secretKey).build().parseSignedClaims(token).getPayload().get("memberNo", Long.class);
+        log.info("getMemberNo(String token)  re = {}" ,re);
         return re;
     }
     
@@ -65,6 +69,7 @@ public class JWTUtil {
     public String createJwt(Member member, String role, Long expiredMs) {
         log.info("createJwt  call");
         return Jwts.builder()
+                .claim("memberNo", member.getMemberNo()) //이름
                 .claim("username", member.getName()) //이름
                 .claim("id", member.getId()) //아이디
                 .claim("role", role) //Role

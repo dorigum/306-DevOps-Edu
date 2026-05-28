@@ -3,6 +3,7 @@ package web.mvc.config;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -15,9 +16,10 @@ public class SecurityConfig {
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
         log.info("bCryptPasswordEncoder() 실행");
-        return new BCryptPasswordEncoder();
+        return new BCryptPasswordEncoder(); // passwordEncoder의 구현체 중 하나
     }
 
+    // 인증과 인가에 관련된 정책을 설정
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         log.info("SecurityFilterChain filterChain(HttpSecurity http) 실행");
@@ -35,6 +37,19 @@ public class SecurityConfig {
         // 경로별 인가 작업
         http.authorizeHttpRequests((auth) ->
                 auth.requestMatchers("/index", "/members", "/members/**", "/boards").permitAll()
+                        // 1. GET 요청: 누구나 접근 가능
+                        .requestMatchers(HttpMethod.GET, "/boards").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/boards/**").permitAll()
+
+                        // 2. POST 요청: 인증 필요
+                        .requestMatchers(HttpMethod.POST, "/boards").authenticated()
+
+                        // 3. PUT 요청: 인증 필요
+                        .requestMatchers(HttpMethod.PUT, "/boards").authenticated()
+
+                        // 4. DELETE 요청: 인증 필요
+                        .requestMatchers(HttpMethod.DELETE, "/boards").authenticated()
+
                         .requestMatchers("/admin").hasRole("ADMIN")
                         .anyRequest().authenticated());
 

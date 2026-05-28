@@ -11,10 +11,14 @@
             "id": "c0704cc1cae8ae6a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "공부 기록/2026-05-27.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "새 탭"
+              "title": "2026-05-27"
             }
           }
         ]
@@ -180,8 +184,10 @@
       "chat-with-bard:New Gemini Chat": false
     }
   },
-  "active": "615633c92c957c9b",
+  "active": "c0704cc1cae8ae6a",
   "lastOpenFiles": [
+    "2026-05-28.md",
+    "공부 기록/2026-05-27.md",
     "프로젝트 문서/플젝 주제 및 기획 스케치.md",
     "프로젝트 문서/임차인 안전 점수 산출 지표.md",
     "프로젝트 문서/플젝 주제 선정_도연.md",
@@ -200,7 +206,6 @@
     "캡처/Pasted image 20260527155157.png",
     "캡처/Pasted image 20260527155212.png",
     "Gemini Chats/New Chat.gemini",
-    "공부 기록/2026-05-27.md",
     "공부 기록/2026-05-26.md",
     "Spring Boot_Step03_프로세스 흐름, 구조 정리.md",
     "Gemini Chats",
@@ -223,7 +228,6 @@
     "프로젝트 문서",
     "파이널 플젝 주제 선정 끄적끄적.md",
     "공부 기록/2026-05-19.md",
-    "2026-05-21.md",
     "공부 기록/공부 기록 - 바로 가기.lnk",
     "공부 기록/260213_예외 처리 실습 구조.canvas",
     "공부 기록/무제.canvas",
