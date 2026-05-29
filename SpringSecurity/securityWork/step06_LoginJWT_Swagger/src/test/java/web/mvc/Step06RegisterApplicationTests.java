@@ -11,7 +11,7 @@ import web.mvc.repository.MemberRepository;
 
 @Slf4j
 @SpringBootTest
-class Step05RegisterApplicationTests {
+class Step06RegisterApplicationTests {
     @Autowired
     private MemberRepository memberRepository;
 

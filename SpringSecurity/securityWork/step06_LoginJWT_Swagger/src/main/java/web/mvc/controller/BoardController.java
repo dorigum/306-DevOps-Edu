@@ -1,10 +1,10 @@
 package web.mvc.controller;
 
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.coyote.BadRequestException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -20,7 +20,6 @@ import web.mvc.exception.DMLException;
 import web.mvc.exception.ErrorCode;
 import web.mvc.security.CustomMemberDetails;
 import web.mvc.service.BoardService;
-import web.mvc.service.BoardServiceImpl;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -30,21 +29,23 @@ import java.util.Objects;
 @RequiredArgsConstructor
 @RestController
 @Slf4j
+@Tag(name = "BoardController API", description = "Board 모든 게시물 조회하기")
 public class BoardController {
 	private final BoardService boardService;
 
-   /**
+   /*
 	* 전체 게시물 조회
-	* */
+	*/
 	@GetMapping("/boards")
+	@Operation(summary = "글 번호 조회", description = "글 번호에 해당하는 게시물 조회")
 	public ResponseEntity<?> findAll(){
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 		log.info("authentication = {}" , authentication);
 
-		//시큐리티에 저장된 정보 조회
-		String name = authentication.getName();//아이디
+		// 시큐리티에 저장된 정보 조회
+		String name = authentication.getName(); // 아이디
 		log.info("Authentication getName =  {} " , name);
-		log.info("Authentication  authentication.getPrincipal() =  {} " ,  authentication.getPrincipal());
+		log.info("Authentication  authentication.getPrincipal() =  {} ",  authentication.getPrincipal());
 		if(name!=null && !name.equals("anonymousUser")) {
 			CustomMemberDetails customMemberDetails = (CustomMemberDetails) authentication.getPrincipal();
 			Member m = customMemberDetails.getMember();
