@@ -37,3 +37,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+# application.properties or application.yml 무시
+application.*
+docker-compose.yml

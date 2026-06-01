@@ -1,0 +1,22 @@
+# 1. 패키지 업데이트 및 필수 패키지 설치
+sudo apt-get update && \
+sudo apt-get install -y ca-certificates curl gnupg lsb-release
+
+# 2. 새로운 표준 방식에 맞춰 GPG 키 보관 폴더 생성 및 키 다운로드
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# 3. 새로운 [signed-by] 옵션을 적용하여 안전하게 Docker 저장소 등록
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+# 4. 패키지 리스트 업데이트 및 Docker 최신 패키지 설치
+# (Docker Compose 역시 최신 플러그인 형태인 docker-compose-plugin으로 설치합니다)
+sudo apt-get update && \
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# 5. 현재 사용자(ubuntu)를 docker 그룹에 추가하여 sudo 없이 사용 가능하게 설정
+sudo usermod -aG docker ubuntu
