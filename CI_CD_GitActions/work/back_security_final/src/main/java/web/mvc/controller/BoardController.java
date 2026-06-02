@@ -64,9 +64,9 @@ public class BoardController {
 		return boardService.findAllBoard();
 	}
 
-	/**
-	 * 글번호에 해당하는 게시물 조회
-	 * */
+	/*
+	 * 글 번호에 해당하는 게시물 조회
+	 */
 	@GetMapping("/boards/{id}")
 	public ResponseEntity<?> findById(@PathVariable Long id){
 		Board board = boardService.findBoard(id);
