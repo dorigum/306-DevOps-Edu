@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "1.0",
+  "format": "html",
+  "metadata": {
+    "title": "Observability란 무엇인가",
+    "description": "초급자를 위한 Observability 입문 발표 슬라이드",
+    "author": ""
+  },
+  "canvas": {"width": 1920, "height": 1080},
+  "playlist": [
+    "01-cover.html",
+    "02-why-now.html",
+    "03-definition.html",
+    "04-monitoring-vs.html",
+    "05-three-signals.html",
+    "06-signals-examples.html",
+    "07-how-it-works.html",
+    "08-modern-arch.html",
+    "09-devops-sre.html",
+    "10-ai-observability.html",
+    "11-benefits.html",
+    "12-summary-qna.html"
+  ]
+}

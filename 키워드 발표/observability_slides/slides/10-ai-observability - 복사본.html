@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>AI & Observability</title>
+<link rel="stylesheet" href="../assets/chrome.css">
+</head>
+<body>
+<div class="slide-container" data-screen-label="10 AI x Observability" style="position:relative; width:1920px; height:1080px; overflow:hidden; background: var(--gray-50);">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:8px; z-index:1; background: linear-gradient(90deg, var(--navy-800), var(--blue-500));"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:80px; width:800px; z-index:10; color: var(--blue-500); font-size: 22px; font-weight:700; letter-spacing: 3px;">
+    09 · AI × OBSERVABILITY
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:130px; width:1680px; z-index:10; color: var(--navy-900); font-size: 72px; font-weight:800; line-height:1.1; letter-spacing:-1.5px;">
+    AI가 만나면 무엇이 달라지는가
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:260px; width:1680px; z-index:10; color: var(--gray-700); font-size:28px; line-height:1.5;">
+    AI/ML은 방대한 텔레메트리 속에서 <b>패턴·이상·인과관계</b>를 찾아내,<br>
+    “문제가 터지기 전”에 대응할 수 있게 해 줍니다.
+  </div>
+
+  <!-- 4 capability cards 2x2 -->
+  <!-- top-left: AIOps -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:430px; width:840px; height:260px; z-index:1; background: var(--white); border:1px solid var(--gray-300); border-radius:20px;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:160px; top:460px; width:70px; height:70px; z-index:10; background: var(--blue-500); color: var(--white); font-size:34px; border-radius:18px; text-align:center; line-height:70px;">🧠</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:250px; top:465px; width:680px; z-index:10; color: var(--navy-900); font-size:30px; font-weight:800;">AIOps · 이상 탐지</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:250px; top:510px; width:680px; z-index:10; color: var(--blue-500); font-size:20px; font-weight:600;">Signal vs Noise</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:160px; top:580px; width:760px; z-index:10; color: var(--gray-700); font-size:22px; line-height:1.55;">
+    ML 모델이 평소 패턴을 학습해, <b>의미 있는 신호</b>와 그렇지 않은<br>
+    소음을 구분합니다. “이상 징후”를 사람보다 빠르게 잡아냅니다.
+  </div>
+
+  <!-- top-right: Automated remediation -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:430px; width:840px; height:260px; z-index:1; background: var(--white); border:1px solid var(--gray-300); border-radius:20px;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:460px; width:70px; height:70px; z-index:10; background: var(--blue-500); color: var(--white); font-size:34px; border-radius:18px; text-align:center; line-height:70px;">⚙️</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1110px; top:465px; width:680px; z-index:10; color: var(--navy-900); font-size:30px; font-weight:800;">자동 복구 · Self-healing</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1110px; top:510px; width:680px; z-index:10; color: var(--blue-500); font-size:20px; font-weight:600;">Automated Remediation</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:580px; width:760px; z-index:10; color: var(--gray-700); font-size:22px; line-height:1.55;">
+    정해진 임계를 넘으면 <b>스크립트가 자동 실행</b>되고,<br>
+    해결되지 않은 건만 사람에게 티켓으로 올라옵니다.
+  </div>
+
+  <!-- bottom-left: LLM query -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:710px; width:840px; height:260px; z-index:1; background: var(--white); border:1px solid var(--gray-300); border-radius:20px;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:160px; top:740px; width:70px; height:70px; z-index:10; background: var(--cyan-400); color: var(--navy-900); font-size:34px; border-radius:18px; text-align:center; line-height:70px;">💬</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:250px; top:745px; width:680px; z-index:10; color: var(--navy-900); font-size:30px; font-weight:800;">LLM 기반 자연어 질의</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:250px; top:790px; width:680px; z-index:10; color: #0891B2; font-size:20px; font-weight:600;">Ask in Korean / English</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:160px; top:860px; width:760px; z-index:10; color: var(--gray-700); font-size:22px; line-height:1.55;">
+    “지난 30분간 결제 오류가 늘어난 이유는?”처럼 <b>사람의 말로<br>
+    질의</b>하고, 결과를 요약·해설받습니다.
+  </div>
+
+  <!-- bottom-right: Causal AI -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:710px; width:840px; height:260px; z-index:1; background: var(--white); border:1px solid var(--gray-300); border-radius:20px;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:740px; width:70px; height:70px; z-index:10; background: var(--emerald-400); color: var(--navy-900); font-size:34px; border-radius:18px; text-align:center; line-height:70px;">🔗</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1110px; top:745px; width:680px; z-index:10; color: var(--navy-900); font-size:30px; font-weight:800;">Causal AI · 근본 원인</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1110px; top:790px; width:680px; z-index:10; color: #047857; font-size:20px; font-weight:600;">Why, not just When</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:860px; width:760px; z-index:10; color: var(--gray-700); font-size:22px; line-height:1.55;">
+    단순 상관관계가 아닌 <b>인과관계</b>를 모델링해<br>
+    “언제/어디서”를 넘어 “왜 그 일이 벌어졌는지”까지 추적합니다.
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:1010px; width:1680px; z-index:10; color: var(--gray-500); font-size: 18px;">
+    출처: IBM — Observability(2024, AI-driven observability) · Microsoft Learn — Observability(AI opportunity)
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1700px; top:980px; width:120px; z-index:10; color: var(--gray-500); font-size: 20px; text-align:right; font-family: var(--font-mono);">
+    10 / 12
+  </div>
+
+</div>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

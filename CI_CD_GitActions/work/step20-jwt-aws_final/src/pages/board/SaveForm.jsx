@@ -43,7 +43,7 @@ const SaveForm =()=>{
       })
       .catch((err) => {
         if (err.response.status === 403) {
-          alert("로그인된 사용자만이 글을 등록 할 수 있어요.");
+          alert("로그인된 사용자만이 글을 등록할 수 있어요.");
           navigator("/");
         } else {
          alert(err.response.data.detail);

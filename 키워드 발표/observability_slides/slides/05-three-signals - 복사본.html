@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light" style=""><head>
+<meta charset="utf-8">
+<title>Three Signals</title>
+<link rel="stylesheet" href="../assets/chrome.css">
+</head>
+<body style="user-select: none;">
+<div class="slide-container" data-screen-label="05 Three Signals" style="position:relative; width:1920px; height:1080px; overflow:hidden; background: var(--gray-50);">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:8px; z-index:1; background: linear-gradient(90deg, var(--navy-800), var(--blue-500));"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:80px; width:600px; z-index:10; color: var(--blue-500); font-size: 22px; font-weight:700; letter-spacing: 3px;" id="fabric-obj-0-1780118380655">
+    04 · CORE SIGNALS
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:130px; width:1680px; z-index:10; color: var(--navy-900); font-size: 72px; font-weight:800; line-height:1.1; letter-spacing:-1.5px;" id="fabric-obj-1-1780118380656">
+    세 가지 핵심 신호 — Logs · Metrics · Traces
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:260px; width:1680px; z-index:10; color: var(--gray-700); font-size:28px; line-height:1.5;" id="fabric-obj-2-1780118380662">
+    OpenTelemetry가 표준으로 다루는 <b>세 가지 신호(signals)</b>가 있습니다. 셋 다 모이면 시스템이 <span style="color:var(--blue-500);">관측 가능</span>해집니다.
+  </div>
+
+  <!-- 3 vertical pillars -->
+  <!-- Logs -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:380px; width:540px; height:600px; z-index:1; background: var(--white); border:1px solid var(--gray-300); border-radius:24px; box-shadow: 0 10px 30px rgba(11,31,74,0.06);" id="fabric-obj-3-1780118380663"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:380px; width:540px; height:160px; z-index:1; background: linear-gradient(135deg, #14306B, #1E4490); border-radius:24px 24px 0 0;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:160px; top:415px; width:60px; height:60px; z-index:10; background:rgba(255,255,255,0.15); color: var(--white); font-size:32px; border-radius:14px; text-align:center; line-height:60px;" id="fabric-obj-4-1780118380668">📋</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:240px; top:410px; width:380px; z-index:10; color: var(--white); font-size:38px; font-weight:800;" id="fabric-obj-5-1780118380669">Logs</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:240px; top:470px; width:380px; z-index:10; color: var(--blue-300); font-size:22px;" id="fabric-obj-6-1780118380670">기록 — “무엇이 일어났는가”</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:160px; top:580px; width:460px; z-index:10; color: var(--gray-700); font-size:24px; line-height:1.6;" id="fabric-obj-7-1780118380676">
+    애플리케이션과 시스템이 남기는<br>
+    <b>시간이 찍힌 이벤트 기록</b>.<br><br>
+    구조화되어 있으면 검색·필터가<br>
+    훨씬 쉬워집니다.
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:160px; top:870px; width:460px; height:80px; z-index:1; background: var(--gray-50); border-radius:14px;" id="fabric-obj-8-1780118380676"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:180px; top:885px; width:420px; z-index:10; color: var(--navy-800); font-size:18px; font-family: var(--font-mono); line-height:1.4;" id="fabric-obj-9-1780118380679">
+    <b>예)</b> 2026-05-30 14:21:08<br>
+    ERROR /api/order timeout(5s)
+  </div>
+
+  <!-- Metrics -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:690px; top:380px; width:540px; height:600px; z-index:1; background: var(--white); border:1px solid var(--gray-300); border-radius:24px; box-shadow: 0 10px 30px rgba(11,31,74,0.06);" id="fabric-obj-10-1780118380679"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:690px; top:380px; width:540px; height:160px; z-index:1; background: linear-gradient(135deg, #1E4490, #3B82F6); border-radius:24px 24px 0 0;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:730px; top:415px; width:60px; height:60px; z-index:10; background:rgba(255,255,255,0.15); color: var(--white); font-size:32px; border-radius:14px; text-align:center; line-height:60px;" id="fabric-obj-11-1780118380680">📈</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:810px; top:410px; width:380px; z-index:10; color: var(--white); font-size:38px; font-weight:800;" id="fabric-obj-12-1780118380680">Metrics</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:810px; top:470px; width:380px; z-index:10; color: var(--blue-300); font-size:22px;" id="fabric-obj-13-1780118380683">측정 — “지금 얼마인가”</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:730px; top:580px; width:460px; z-index:10; color: var(--gray-700); font-size:24px; line-height:1.6;" id="fabric-obj-14-1780118380683">
+    일정 간격으로 측정되는 <b>숫자 값</b>.<br><br>
+    CPU 사용률·요청 수·응답 지연 등<br>
+    성능과 건강 상태를 한눈에 보여줍니다.
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:730px; top:870px; width:460px; height:80px; z-index:1; background: var(--gray-50); border-radius:14px;" id="fabric-obj-15-1780118380684"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:750px; top:885px; width:420px; z-index:10; color: var(--navy-800); font-size:18px; font-family: var(--font-mono); line-height:1.4;" id="fabric-obj-16-1780118380684">
+    <b>예)</b> http_requests_total = 1,243<br>
+    p99_latency_ms = 412
+  </div>
+
+  <!-- Traces -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1260px; top:380px; width:540px; height:600px; z-index:1; background: var(--white); border:1px solid var(--gray-300); border-radius:24px; box-shadow: 0 10px 30px rgba(11,31,74,0.06);" id="fabric-obj-17-1780118380685"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1260px; top:380px; width:540px; height:160px; z-index:1; background: linear-gradient(135deg, #3B82F6, #22D3EE); border-radius:24px 24px 0 0;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1300px; top:415px; width:60px; height:60px; z-index:10; background:rgba(255,255,255,0.15); color: var(--white); font-size:32px; border-radius:14px; text-align:center; line-height:60px;" id="fabric-obj-18-1780118380685">🛰️</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1380px; top:410px; width:380px; z-index:10; color: var(--white); font-size:38px; font-weight:800;" id="fabric-obj-19-1780118380686">Traces</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1380px; top:470px; width:380px; z-index:10; color: var(--blue-300); font-size:22px;" id="fabric-obj-20-1780118380688">경로 — “어디를 거쳐 갔는가”</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1300px; top:580px; width:460px; z-index:10; color: var(--gray-700); font-size:24px; line-height:1.6;" id="fabric-obj-21-1780118380688">
+    하나의 요청이 <b>여러 서비스를<br>
+    어떻게 흘러갔는지</b>를 끝까지 추적.<br><br>
+    분산 시스템 디버깅의 핵심입니다.
+  </div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1300px; top:870px; width:460px; height:80px; z-index:1; background: var(--gray-50); border-radius:14px;" id="fabric-obj-22-1780118380690"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1320px; top:885px; width:420px; z-index:10; color: var(--navy-800); font-size:18px; font-family: var(--font-mono); line-height:1.4;" id="fabric-obj-23-1780118380690">
+    <b>예)</b> Gateway → Auth → Order<br>
+    → Payment (총 612ms)
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:1010px; width:1680px; z-index:10; color: var(--gray-500); font-size: 18px;" id="fabric-obj-24-1780118380691">
+    출처: OpenTelemetry — Signals(Traces · Metrics · Logs · Baggage)
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1700px; top:980px; width:120px; z-index:10; color: var(--gray-500); font-size: 20px; text-align:right; font-family: var(--font-mono);" id="fabric-obj-25-1780118380692">
+    05 / 12
+  </div>
+
+</div>
+
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body></html>

@@ -72,13 +72,12 @@ public class BoardController {
 		Board board = boardService.findBoard(id);
 
 		//return new ResponseEntity<>(board ,HttpStatus.OK);
-		/////////////////////////////////////////////////////
 		BoardRes boardRes = new BoardRes(board);
 		return new ResponseEntity<>(boardRes ,HttpStatus.OK);
 	}
-    /**
+    /*
 	 * 게시물 등록
-	 * */
+	 */
 	@PostMapping("/boards/board")
 	public ResponseEntity<?> save(@RequestBody BoardReq board){
 		return new ResponseEntity<>(boardService.addBoard(board),HttpStatus.CREATED);//201
@@ -100,15 +99,11 @@ public class BoardController {
 				.id(updatedBoard.getId()).build();
 		return new ResponseEntity<>(br,HttpStatus.OK);
 	}
-	/**
-	 * 글번호에 해당하는 게시물 삭제
-	 * */
+	/*
+	 * 글 번호에 해당하는 게시물 삭제
+	 */
 	@DeleteMapping("/boards/{id}")
 	public ResponseEntity<?> delete(@PathVariable Long id){		
 		return new ResponseEntity<>(boardService.deleteBoard(id),HttpStatus.OK);
 	}
 }
-
-
-
-

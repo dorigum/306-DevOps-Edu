@@ -18,21 +18,21 @@ const JoinForm =()=>{
     address: "",
   });
 
- // 중복체크 결과 값을 저장 할 idCheckResult
+ // 중복 체크 결과 값을 저장 할 idCheckResult
  const [idCheckResult , setIdCheckResult] = useState(""); //중복입니다. or 사용가능합니다.
 
-// 아이디 중복여부에 따른 css 를 적용하기 위해 상태 변수
+// 아이디 중복 여부에 따른 css 를 적용하기 위해 상태 변수
  const [isCheckResult , setIsCheckResult] = useState(false); //true이면 중복, false이면 사용가능
 
 
-  //각 text 박스에 값이 변경되었을 때
+  // 각 text 박스에 값이 변경되었을 때
   const changeValue = (e) => {
     //console.log(e.target.name +" | " + e.target.value);
 
     setMember({ ...member, [e.target.name]: e.target.value });
 
     // console.log(member);
-    //id 입력박스에 값이 입력될때마다 axios를 이용해서 비동기통신 - 중복여부 체크
+    // id 입력박스에 값이 입력될 때마다 axios를 이용해서 비동기 통신 - 중복 여부 체크
     if (e.target.name === "id" && e.target.value !== "") {
       axios({
         method: "GET",

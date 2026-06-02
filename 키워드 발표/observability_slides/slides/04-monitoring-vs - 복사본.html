@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light" style=""><head>
+<meta charset="utf-8">
+<title>Monitoring vs Observability</title>
+<link rel="stylesheet" href="../assets/chrome.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Open%20Sans:wght@400&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Google%20Sans:wght@400&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&amp;display=swap" rel="stylesheet"></head>
+<body style="user-select: none;">
+<div class="slide-container" data-screen-label="04 Monitoring vs Observability" style="position:relative; width:1920px; height:1080px; overflow:hidden; background: var(--gray-50);">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:8px; z-index:1; background: linear-gradient(90deg, var(--navy-800), var(--blue-500));"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:80px; width:600px; z-index:10; color: var(--blue-500); font-size: 22px; font-weight:700; letter-spacing: 3px;" id="fabric-obj-0-1780118379345">
+    03 · COMPARE
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:130px; width:1680px; z-index:10; color: var(--navy-900); font-size: 72px; font-weight:800; line-height:1.1; letter-spacing:-1.5px;" id="fabric-obj-1-1780118379345">
+    모니터링·APM과 무엇이 다른가
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:260px; width:1680px; z-index:10; color: var(--gray-700); font-size:28px; line-height:1.5;" id="fabric-obj-2-1780118379354">
+    Observability는 <b>기존 모니터링/APM을 대체하는 것이 아니라</b>, <span style="color: var(--blue-500);">자연스러운 확장·진화</span>입니다.
+  </div>
+
+  <!-- left card: Monitoring/APM -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:380px; width:820px; height:600px; z-index:1; background: var(--white); border:1px solid var(--gray-300); border-radius:24px;" id="fabric-obj-3-1780118379355"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:380px; width:820px; height:80px; z-index:1; background: var(--gray-100); border-radius:24px 24px 0 0;" id="fabric-obj-4-1780118379357"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:160px; top:380px; width:740px; height:80px; z-index:10; color: var(--gray-900); font-size:30px; font-weight:700; line-height:80px;" id="fabric-obj-5-1780118379357">
+    📊  Monitoring / APM
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position: absolute; left: 160px; top: 504px; width: 740px; z-index: 10; color: var(--gray-500); font-size: 28px; letter-spacing: 1px; font-weight: 700; text-transform: uppercase; cursor: text; outline: none; caret-color: currentcolor; user-select: text;" id="fabric-obj-6-1780118379358" contenteditable="true">
+    이미 “알고 있는” 것을 본다 — Known unknowns
+  </div>
+
+  <!-- bullet list inside one textbox -->
+  <div data-object="true" data-object-type="textbox" style="position: absolute; left: 160px; top: 620.541px; width: 740px; z-index: 10; color: var(--gray-700); font-size: 24px; line-height: 2.5; height: 326.486px; transform: none !important;" id="fabric-obj-7-1780118379362">
+    • 미리 정해둔 KPI를 <b>주기적으로 샘플링</b><br>
+    • 임계값 초과 시 <b>알림</b> 발생<br>
+    • <b>모놀리식·전통 분산 앱</b>에 효과적<br>
+    • 대시보드 위주의 사후 보고에 강함<br>
+    • “무엇이 깨졌는가?”에 잘 답함
+  </div>
+
+  <!-- right card: Observability -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:380px; width:820px; height:600px; z-index:1; background: var(--navy-800); border-radius:24px;" id="fabric-obj-8-1780118379362"></div>
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:380px; width:820px; height:80px; z-index:1; background: var(--navy-700); border-radius:24px 24px 0 0;" id="fabric-obj-9-1780118379364"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:380px; width:740px; height:80px; z-index:10; color: var(--white); font-size:30px; font-weight:700; line-height:80px;" id="fabric-obj-10-1780118379364">
+    🔭  Observability
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position: absolute; left: 1020px; top: 480px; width: 740px; z-index: 10; color: var(--blue-300); font-size: 28px; letter-spacing: 1px; font-weight: 700; text-transform: uppercase;" id="fabric-obj-11-1780118379370">
+    아직 “모르는 것까지” 본다 — Unknown unknowns
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position: absolute; left: 1020px; top: 609.73px; width: 740px; z-index: 10; color: var(--gray-100); font-size: 24px; line-height: 2.5; height: 330.811px; transform: none !important;" id="fabric-obj-12-1780118379373">
+    • <b>고해상도·맥락 풍부한 텔레메트리</b> 상시 수집<br>
+    • 데이터를 <b>실시간 상관·분석</b><br>
+    • <b>마이크로서비스·컨테이너·서버리스</b>에 적합<br>
+    • 새로운 신호도 자동으로 발견<br>
+    • “왜 그런 일이 벌어졌는가?”까지 답함
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:1010px; width:1680px; z-index:10; color: var(--gray-500); font-size: 18px;" id="fabric-obj-13-1780118379378">
+    출처: IBM — Observability(2024) · Microsoft Learn — Observability(2024)
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1700px; top:980px; width:120px; z-index:10; color: var(--gray-500); font-size: 20px; text-align:right; font-family: var(--font-mono);" id="fabric-obj-14-1780118379378">
+    04 / 12
+  </div>
+
+</div>
+
+
+</body></html>

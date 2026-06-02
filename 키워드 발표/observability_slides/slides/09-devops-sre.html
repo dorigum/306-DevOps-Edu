@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="light" style=""><head>
+<meta charset="utf-8">
+<title>DevOps &amp; SRE</title>
+<link rel="stylesheet" href="../assets/chrome.css">
+</head>
+<body style="user-select: none;">
+<div class="slide-container" data-screen-label="09 DevOps &amp; SRE" style="position:relative; width:1920px; height:1080px; overflow:hidden; background: var(--gray-50);">
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:0; top:0; width:1920px; height:8px; z-index:1; background: linear-gradient(90deg, var(--navy-800), var(--blue-500));"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:80px; width:800px; z-index:10; color: var(--blue-500); font-size: 22px; font-weight:700; letter-spacing: 3px;" id="fabric-obj-0-1780134230968">
+    08 · DEVOPS &amp; SRE
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:130px; width:1680px; z-index:10; color: var(--navy-900); font-size: 72px; font-weight:800; line-height:1.1; letter-spacing:-1.5px;" id="fabric-obj-1-1780134230974">
+    DevOps와 SRE는 이것을 어떻게 쓰는가
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:260px; width:1680px; z-index:10; color: var(--gray-700); font-size:28px; line-height:1.5;" id="fabric-obj-2-1780134230976">
+    Google SRE 책은 사용자 관점에서 꼭 봐야 할 <b>네 가지 골든 시그널(Four Golden Signals)</b>을 제시합니다.
+  </div>
+
+  <!-- four golden signals row -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:380px; width:410px; height:280px; z-index:1; background: var(--white); border:1px solid var(--gray-300); border-radius:20px;" id="fabric-obj-3-1780134230977"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:160px; top:410px; width:60px; height:60px; z-index:10; background: var(--blue-50); color: var(--blue-500); font-size:32px; border-radius:14px; text-align:center; line-height:60px;" id="fabric-obj-4-1780134230978">⏱️</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:160px; top:490px; width:340px; z-index:10; color: var(--navy-900); font-size:32px; font-weight:800;" id="fabric-obj-5-1780134230979">Latency</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:160px; top:535px; width:340px; z-index:10; color: var(--blue-500); font-size:22px; font-weight:600;" id="fabric-obj-6-1780134230979">지연 시간</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:160px; top:580px; width:340px; z-index:10; color: var(--gray-700); font-size:21px; line-height:1.5;" id="fabric-obj-7-1780134230980">요청 하나를 처리하는 데<br>얼마나 걸리는가</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:550px; top:380px; width:410px; height:280px; z-index:1; background: var(--white); border:1px solid var(--gray-300); border-radius:20px;" id="fabric-obj-8-1780134230981"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:590px; top:410px; width:60px; height:60px; z-index:10; background: var(--blue-50); color: var(--blue-500); font-size:32px; border-radius:14px; text-align:center; line-height:60px;" id="fabric-obj-9-1780134230982">📊</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:590px; top:490px; width:340px; z-index:10; color: var(--navy-900); font-size:32px; font-weight:800;" id="fabric-obj-10-1780134230982">Traffic</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:590px; top:535px; width:340px; z-index:10; color: var(--blue-500); font-size:22px; font-weight:600;" id="fabric-obj-11-1780134230983">트래픽</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:590px; top:580px; width:340px; z-index:10; color: var(--gray-700); font-size:21px; line-height:1.5;" id="fabric-obj-12-1780134230983">시스템이 받고 있는<br>요청·부하의 양</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:980px; top:380px; width:410px; height:280px; z-index:1; background: var(--white); border:1px solid var(--gray-300); border-radius:20px;" id="fabric-obj-13-1780134230984"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:410px; width:60px; height:60px; z-index:10; background: #FEE2E2; color: var(--rose-400); font-size:32px; border-radius:14px; text-align:center; line-height:60px;" id="fabric-obj-14-1780134230985">⚠️</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:490px; width:340px; z-index:10; color: var(--navy-900); font-size:32px; font-weight:800;" id="fabric-obj-15-1780134230985">Errors</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:535px; width:340px; z-index:10; color: var(--rose-400); font-size:22px; font-weight:600;" id="fabric-obj-16-1780134230986">오류</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1020px; top:580px; width:340px; z-index:10; color: var(--gray-700); font-size:21px; line-height:1.5;" id="fabric-obj-17-1780134230986">실패하는 요청의 비율 ·<br>유형(명시·정책상)</div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:1410px; top:380px; width:410px; height:280px; z-index:1; background: var(--white); border:1px solid var(--gray-300); border-radius:20px;" id="fabric-obj-18-1780134230987"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1450px; top:410px; width:60px; height:60px; z-index:10; background: #FEF3C7; color: var(--amber-400); font-size:32px; border-radius:14px; text-align:center; line-height:60px;" id="fabric-obj-19-1780134230988">🛢️</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1450px; top:490px; width:340px; z-index:10; color: var(--navy-900); font-size:32px; font-weight:800;" id="fabric-obj-20-1780134230989">Saturation</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1450px; top:535px; width:340px; z-index:10; color: var(--amber-400); font-size:22px; font-weight:600;" id="fabric-obj-21-1780134230989">포화도</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1450px; top:580px; width:340px; z-index:10; color: var(--gray-700); font-size:21px; line-height:1.5;" id="fabric-obj-22-1780134230990">시스템이 “얼마나 차 있는가”<br>(CPU·메모리·I/O 등)</div>
+
+  <!-- bottom: outcomes -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:710px; width:1700px; height:280px; z-index:1; background: var(--navy-800); border-radius:24px;" id="fabric-obj-23-1780134230990"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:170px; top:745px; width:1600px; z-index:10; color: var(--blue-300); font-size:22px; font-weight:700; letter-spacing:2px;" id="fabric-obj-24-1780134230991">
+    DEVOPS · SRE 관점에서의 효과
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:170px; top:790px; width:1600px; z-index:10; color: var(--white); font-size:40px; font-weight:800; line-height:1.2;" id="fabric-obj-25-1780134230991">
+    SLO를 지키고, 장애 대응 속도를 끌어올린다
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position: absolute; left: 170px; top: 853px; width: 1600px; z-index: 10; color: var(--gray-300); font-size: 24px; line-height: 1.55;" id="fabric-obj-26-1780134230992">
+    ✔ <b>MTTR(평균 복구 시간) 단축</b> — 원인 위치를 빠르게 좁힘<br>
+    ✔ <b>알람의 신호 : 잡음 비율 개선</b> — 사용자 영향 중심으로 알림 설계<br>
+    ✔ <b>SLO/SLI 기반 운영</b> — 비즈니스 목표와 시스템 신호를 직접 연결
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:1010px; width:1680px; z-index:10; color: var(--gray-500); font-size: 18px;" id="fabric-obj-27-1780134230992">
+    출처: Google SRE Book — Monitoring Distributed Systems · IBM — Observability(2024)
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1700px; top:980px; width:120px; z-index:10; color: var(--gray-500); font-size: 20px; text-align:right; font-family: var(--font-mono);" id="fabric-obj-28-1780134230993">
+    09 / 12
+  </div>
+
+</div>
+
+
+</body></html>
