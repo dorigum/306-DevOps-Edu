@@ -16,10 +16,10 @@ import { createContext, useEffect, useState } from "react";
 export const LoginContext = createContext();
 
 function App() {
-  //로그인 여부를 판단하는 상태변수 (true이면 로그인, false 로그아웃)
+  // 로그인 여부를 판단하는 상태 변수 (true이면 로그인, false 로그아웃)
   const [isLogin, setIsLogin] = useState(false);
 
-  //컴포넌트가 mount or update 될때 로그인 여부에 따른 상태값 변경
+  //컴포넌트가 mount or update 될 때 로그인 여부에 따른 상태값 변경
   useEffect(() => {
     localStorage.getItem("id") != null ? setIsLogin(true) : setIsLogin(false);
 
