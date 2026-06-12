@@ -1,0 +1,7 @@
+GET http://localhost:8080/chat?
+    message=JVM 관련 시험문제를 객관식(4지선다형)으로 1문제 출제해주세요&
+    tone=friendly&
+    subject=JVM Memory Structure
+
+
+###

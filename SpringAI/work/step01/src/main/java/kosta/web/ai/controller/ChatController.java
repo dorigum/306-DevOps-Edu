@@ -1,7 +1,13 @@
 package kosta.web.ai.controller;
 
 import jakarta.annotation.PostConstruct;
+import org.springframework.ai.chat.messages.SystemMessage;
+import org.springframework.ai.chat.messages.UserMessage;
+import org.springframework.ai.chat.metadata.Usage;
 import org.springframework.ai.chat.model.ChatModel;
+import org.springframework.ai.chat.model.ChatResponse;
+import org.springframework.ai.chat.prompt.ChatOptions;
+import org.springframework.ai.chat.prompt.Prompt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -101,7 +107,7 @@ public class ChatController {
 //        return generation;
 //    }
 
-
+    // ------------------------------------------------------------------------------
     // AssistantMessage
 //    @GetMapping("/chat")
 //    public AssistantMessage chat(String message) {
@@ -145,29 +151,29 @@ public class ChatController {
 
     // ------------------------------------------------------------------------------
     // Usage
-//    @GetMapping("/chat")
-//    public String chat(String message) {
-//        SystemMessage systemMessage = SystemMessage.builder().text("당신은 Java 언어 및 JVM 아키첵처 전문가입니다.").build();
-//        UserMessage userMessage = UserMessage.builder().text(message).build();
-//        ChatOptions chatOptions = ChatOptions.builder().temperature(0.3).maxTokens(1000).build();
-//        Prompt prompt = Prompt.builder().messages(systemMessage, userMessage).chatOptions(chatOptions).build();
-//        ChatResponse chatResponse = chatModel.call(prompt);
-//
-//        // 1. 답변 텍스트 추출
-//        String content = chatResponse.getResult().getOutput().getText();
-//
-//        // 2. 토큰 사용량 확인 (비용 추적용)
-//        Usage usage = chatResponse.getMetadata().getUsage();
-//
-//        System.out.printf("질문 토큰: %d, 답변 토큰: %d%n", usage.getPromptTokens(), usage.getCompletionTokens());
-//
-//        // 3. 종료 사유 확인 (길이 제한으로 잘렸는지 등)
-//        String finishReason = chatResponse.getResult().getMetadata().getFinishReason();
-//
-//        System.out.println("종료 사유: " + finishReason);
-//
-//        return content;
-//    }
+    @GetMapping("/chat")
+    public String chat(String message) {
+        SystemMessage systemMessage = SystemMessage.builder().text("당신은 Java 언어 및 JVM 아키첵처 전문가입니다.").build();
+        UserMessage userMessage = UserMessage.builder().text(message).build();
+        ChatOptions chatOptions = ChatOptions.builder().temperature(0.3).maxTokens(1000).build();
+        Prompt prompt = Prompt.builder().messages(systemMessage, userMessage).chatOptions(chatOptions).build();
+        ChatResponse chatResponse = chatModel.call(prompt);
+
+        // 1. 답변 텍스트 추출
+        String content = chatResponse.getResult().getOutput().getText();
+
+        // 2. 토큰 사용량 확인 (비용 추적용)
+        Usage usage = chatResponse.getMetadata().getUsage();
+
+        System.out.printf("질문 토큰: %d, 답변 토큰: %d%n", usage.getPromptTokens(), usage.getCompletionTokens());
+
+        // 3. 종료 사유 확인 (길이 제한으로 잘렸는지 등)
+        String finishReason = chatResponse.getResult().getMetadata().getFinishReason();
+
+        System.out.println("종료 사유: " + finishReason);
+
+        return content;
+    }
 
     // 비동기 방식
     @GetMapping("/chat-async")
