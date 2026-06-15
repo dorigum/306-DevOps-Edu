@@ -1,0 +1,214 @@
+<!doctype html> 
+<html lang="ko"> 
+<head> 
+  <meta charset="utf-8" /> 
+  <title>Chat Memory 테스트(History)</title>
+  
+  <style> 
+    body { 
+      font-family: system-ui, "Noto Sans KR", sans-serif;
+      background:#f2f4f7;
+      padding:30px;
+    } 
+    .chat-container { 
+      width: 460px; margin:0 auto;
+      background:white;
+      padding:20px;
+      border-radius:10px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.08);
+    } 
+    h2 { margin-top:0; } 
+    #chatBox { 
+      height: 350px;
+      overflow-y:auto;
+      border:1px solid #ddd;
+      background:#fafafa;
+      padding:12px;
+      border-radius:6px;
+      white-space:pre-wrap;
+      margin-bottom:15px;
+    } 
+    .msg { 
+      margin-bottom:12px;
+      padding:10px 14px;
+      border-radius:10px;
+      max-width:80%;
+      line-height:1.4;
+      white-space:pre-wrap;
+    } 
+    .me { 
+      background:#dbeafe;
+      margin-left:auto;
+    } 
+    .ai { 
+      background:#e5e7eb;
+      margin-right:auto;
+    } 
+  
+    input, button { 
+      padding:10px; font-size:14px; border-radius:6px;
+    } 
+    input[type="text"] { 
+      width:100%;
+      border:1px solid #ccc;
+    } 
+    button { 
+      border:none;
+      background:#2563eb;
+      color:white;
+      cursor:pointer;
+      font-weight:600;
+      margin-top:8px;
+      width:100%;
+    } 
+  </style> 
+</head> 
+  
+<body> 
+  
+<div class="chat-container"> 
+  
+  <h2>Chat Memory 테스트(Stream)</h2> 
+ 
+  <label>사용자 아이디</label> 
+  <input id="userId" type="text" value="user01"> 
+ 
+  <div id="chatBox"></div> 
+ 
+  <label>메시지</label> 
+  <input id="message" type="text" placeholder="메시지를 입력하세요...">
+ 
+  <button id="sendBtn">보내기</button> 
+ 
+</div> 
+ 
+<script>
+  let es = null;              // SSE 연결 
+  let currentAiDiv = null;    // AI 메시지 div 
+  let isStreaming = false;    // SSE 중복 방지 
+ 
+  const chatBox = document.getElementById("chatBox");
+
+  // 채팅창에 메시지 추가 
+  function addMessage(text, who) {
+    const div = document.createElement("div");
+    div.className = "msg " + (who === "me" ? "me" : "ai");
+    div.textContent = text;
+    chatBox.appendChild(div);
+    chatBox.scrollTop = chatBox.scrollHeight;
+    return div;
+  }
+
+  // ✅ 기존 화면 초기화 후 메모리 렌더링
+  function renderHistory(items) {
+    chatBox.innerHTML = "";
+    for (const item of items) {
+      // role 매핑: (예) USER/ASSISTANT/SYSTEM
+      const role = (item.role || "").toUpperCase();
+
+      if (role.includes("USER")) addMessage(item.content, "me");
+      else if (role.includes("ASSISTANT")) addMessage(item.content, "ai");
+      // system은 표시하고 싶으면 ai로 표시하거나, 숨겨도 됨
+      else if (role.includes("SYSTEM")) {
+        // addMessage("[SYSTEM] " + item.content, "ai");
+      }
+    }
+  }
+
+  // ✅ 페이지 로드(또는 userId 변경) 시 서버 메모리 불러오기
+  async function loadHistory() {
+    const userId = document.getElementById("userId").value.trim();
+    if (!userId) return;
+
+    try {
+      const res = await fetch(`/chat/history?id=${encodeURIComponent(userId)}`);
+      if (!res.ok) return;
+      const data = await res.json();
+      renderHistory(data);
+    } catch (e) {
+      console.error(e);
+    }
+  }
+
+  // (선택) userId 변경하면 자동으로 history reload
+  document.getElementById("userId").addEventListener("change", loadHistory);
+
+  // ✅ 새로고침/첫 진입 시 로드
+  window.addEventListener("DOMContentLoaded", loadHistory);
+  
+  function createNewAiMessage() {
+    currentAiDiv = document.createElement("div");
+    currentAiDiv.className = "msg ai";
+    chatBox.appendChild(currentAiDiv);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  function updateAiMessage(text) {
+    if (!currentAiDiv) createNewAiMessage();
+    currentAiDiv.textContent = text;
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  function finalizeAiMessage(text) {
+    if (currentAiDiv) {
+      currentAiDiv.textContent = text;
+      currentAiDiv = null;
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+  }
+
+  async function startStreamChat() {
+    const userId = document.getElementById("userId").value.trim();
+    const msg = document.getElementById("message").value.trim();
+
+    if (!userId) { alert("아이디를 입력하세요"); return; }
+    if (!msg) return;
+    if (isStreaming) return;  // 중복 방지 
+ 
+    isStreaming = true;
+
+    // 이전 SSE 연결 닫기 
+    if (es) { es.close(); es = null; }
+
+    // 사용자 메시지 UI 출력 
+    addMessage(msg, "me");
+    document.getElementById("message").value = "";
+
+    let buffer = "";
+    currentAiDiv = null;
+
+    const url = `/chat/stream?id=${userId}&q=${encodeURIComponent(msg)}`;
+
+    es = new EventSource(url);
+
+    // 스트리밍 중 데이터 수신 
+    es.onmessage = (event) => {
+        if (event.data === "[[END]]") {
+            es.close();
+            es = null;
+            isStreaming = false;
+            return;
+        }
+      buffer += event.data;
+      updateAiMessage(buffer);
+    };
+
+    // 스트리밍 오류(또는 종료) 처리 
+    es.onerror = () => {
+      if (es.readyState === 2) {  // CLOSED 
+        es.close();
+        es = null;
+        isStreaming = false;      // 다음 메시지 허용 
+        finalizeAiMessage(buffer);
+      }
+    };
+  }
+
+  document.getElementById("sendBtn").onclick = startStreamChat;
+  document.getElementById("message").addEventListener("keydown", e => {
+    if (e.key === "Enter") startStreamChat();
+  });
+</script> 
+
+</body> 
+</html> 
