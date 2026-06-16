@@ -1,0 +1,6 @@
+다음 중 Java 25 버전의 Virtual Thread 기능에 대한 설명으로 옳은 것은 무엇인가?
+
+① Virtual Thread는 기존 스레드보다 메모리 사용량이 적고, 더 많은 수의 동시 실행을 지원한다.
+② Virtual Thread는 Java의 동기화 블록 내에서만 사용할 수 있다.
+③ Virtual Thread는 Java 25에서 추가된 새로운 API를 통해서만 사용할 수 있다.
+④ Virtual Thread는 블로킹 I/O 작업에서 성능 향상을 제공하지 않는다.

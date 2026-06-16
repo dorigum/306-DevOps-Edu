@@ -1,0 +1,6 @@
+문제: 다음 중 MySQL에서 AUTO_INCREMENT 속성을 가진 열의 특징으로 올바르지 않은 것은 무엇인가?
+
+① AUTO_INCREMENT는 반드시 INT 또는 BIGINT 데이터 타입이어야 한다.  
+② AUTO_INCREMENT 열은 기본 키가 아니어도 사용 가능하다.  
+③ AUTO_INCREMENT의 초기값은 1로 시작하며, 최대값은 제한이 없다.  
+④ AUTO_INCREMENT는 동시에 여러 트랜잭션에서 안전하게 사용할 수 있다.

@@ -1,0 +1,6 @@
+다음 중 Java 25에서 도입된 Virtual Thread의 주요 특징으로 옳지 않은 것은 무엇인가?
+
+① Virtual Thread는 경량 스레드로, 많은 수의 스레드를 동시에 실행할 수 있다.
+② Virtual Thread는 Blocked 상태에서 CPU 자원을 소모하지 않는다.
+③ Virtual Thread는 모든 기존 Java 스레드 기능을 완전히 대체한다.
+④ Virtual Thread는 비동기 프로그래밍 모델을 지원하여 개발자가 더욱 쉽게 비동기 코드를 작성할 수 있도록 한다.

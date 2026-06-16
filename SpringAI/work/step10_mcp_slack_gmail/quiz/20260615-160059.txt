@@ -1,0 +1,6 @@
+**문제:** 2023년 Spring Framework에서 새롭게 도입된 기능은 무엇인가?
+
+① 가상 스레드(Virtual Threads) 지원  
+② XML 기반 설정 필수  
+③ 모든 Java 버전에서만 작동  
+④ Spring Security와의 통합 제거  

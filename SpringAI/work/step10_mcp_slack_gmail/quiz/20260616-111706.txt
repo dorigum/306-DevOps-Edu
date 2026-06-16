@@ -1,0 +1,6 @@
+다음 중 Java 25에서 Virtual Threads의 주요 특징으로 올바른 것은 무엇인가?
+
+① Virtual Threads는 기존 스레드에 비해 약 1KB의 메모리만 사용하여 가벼운 스레드 생성을 가능하게 한다.  
+② Virtual Threads는 Java의 쓰레드 모델을 완전히 대체하며, 기존 스레드는 더 이상 사용되지 않는다.  
+③ Virtual Threads는 I/O 작업을 수행할 때 CPU 자원을 완전히 차지하여 성능 저하를 유발한다.  
+④ Virtual Threads는 Java 25에서 도입된 기능이 아니며, 이전 버전에서 이미 사용되고 있다.

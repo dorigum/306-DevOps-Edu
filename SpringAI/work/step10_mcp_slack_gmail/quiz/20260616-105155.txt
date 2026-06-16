@@ -1,0 +1,6 @@
+다음 중 Java 25에서 도입된 Virtual Thread의 주요 특징으로 옳지 않은 것은 무엇인가?
+
+① Virtual Thread는 경량 스레드로, 많은 수의 스레드를 생성하더라도 성능 저하가 적다.
+② Virtual Thread는 기존의 스레드와 동일한 API를 사용하여 쉽게 사용할 수 있다.
+③ Virtual Thread는 동기화 블록에서 항상 블로킹 I/O를 발생시킨다.
+④ Virtual Thread는 비동기 프로그래밍 모델을 간소화하는 데 기여한다.

@@ -1,0 +1,6 @@
+Java 25에서 도입된 Virtual Thread의 주요 특징 중 어떤 것이 맞는가?
+
+① Virtual Thread는 기존 스레드보다 메모리 사용량이 적고 성능이 향상되었다.
+② Virtual Thread는 모든 종류의 I/O 작업을 비동기적으로 처리할 수 있다.
+③ Virtual Thread는 동기화가 필요 없어 항상 안전하게 사용할 수 있다.
+④ Virtual Thread는 기존의 스레드와 동일한 방식으로 사용되지만, 스레드 풀을 필요로 하지 않는다.
