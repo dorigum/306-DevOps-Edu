@@ -1,0 +1,5 @@
+
+### candidate-details
+GET http://localhost:8081/api/candidates/1
+###
+GET http://localhost:8081/api/candidates/2

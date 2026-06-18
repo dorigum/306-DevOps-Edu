@@ -1,0 +1,8 @@
+### Find Jobs
+GET http://localhost:8083/api/career-advisor/find-jobs?candidateId=1
+
+### Compare Jobs
+GET http://localhost:8083/api/career-advisor/compare-jobs?candidateId=1&jobIds=1,2
+
+### Generate Resume
+GET http://localhost:8083/api/career-advisor/generate-resume?candidateId=1&jobId=1

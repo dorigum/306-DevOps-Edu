@@ -68,6 +68,8 @@ dist-ssr
 *.sln
 *.sw?
 
+secrets.env
+
 # 용량이 너무 커서 제외시킨 파일
 Spring/교안자료/토비의 스프링3.pdf
 Spring/환경세팅자료/

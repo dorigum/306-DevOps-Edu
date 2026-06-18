@@ -4,21 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "12f02272ab7539ac",
+        "id": "af0ac46be0664c79",
         "type": "tabs",
         "children": [
           {
-            "id": "488863cf6be439f3",
+            "id": "30247e29c0a19169",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "공부 기록/2026-06-15.md",
-                "mode": "source",
-                "source": false
+                "file": "캡처/Pasted image 20260616094027.png"
               },
-              "icon": "lucide-file",
-              "title": "2026-06-15"
+              "icon": "lucide-image",
+              "title": "Pasted image 20260616094027"
             }
           }
         ]
@@ -185,8 +183,9 @@
       "chat-with-bard:New Gemini Chat": false
     }
   },
-  "active": "488863cf6be439f3",
+  "active": "30247e29c0a19169",
   "lastOpenFiles": [
+    "공부 기록/2026-06-15.md",
     "캡처/Pasted image 20260616092525.png",
     "캡처/Pasted image 20260615152732.png",
     "캡처/Pasted image 20260615152416.png",
@@ -197,9 +196,7 @@
     "캡처/Pasted image 20260615105846.png",
     "캡처/Pasted image 20260615104054.png",
     "공부 기록/2026-06-16.md",
-    "Pasted image 20260616100353.png",
-    "Pasted image 20260616100336.png",
-    "공부 기록/2026-06-15.md",
+    "캡처/Pasted image 20260616100353.png",
     "공부 기록/2026-06-12.md",
     "무제.md",
     "프로젝트 문서/🏠도연_프로젝트 기능 구현 가이드라인.md",

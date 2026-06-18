@@ -1,0 +1,16 @@
+### Search jobs by skills
+GET http://localhost:8082/api/jobs?skills=java
+###
+GET http://localhost:8082/api/jobs?skills=Go
+###
+GET http://localhost:8082/api/jobs?skills=Kubernetes
+
+### Search Job by ids
+GET http://localhost:8082/api/jobs?ids=1
+###
+GET http://localhost:8082/api/jobs?ids=1,2,3,4,5
+
+### Fetch the job details by given ID
+GET http://localhost:8082/api/jobs/1
+###
+GET http://localhost:8082/api/jobs/2

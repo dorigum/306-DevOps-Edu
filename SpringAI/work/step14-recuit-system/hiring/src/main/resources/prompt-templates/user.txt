@@ -1,0 +1,15 @@
+Job Title:
+{jobTitle}
+
+Job Description:
+{jobDescription}
+
+Required Skills:
+{requiredSkills}
+
+Candidate Resume:
+{candidateResume}
+
+TASK
+1. 정해진 채점 기준에 따라 이력서를 직무 요건과 비교하여 평가합니다.
+2. 정량적 일치 점수와 그에 대한 근거를 제시합니다.
