@@ -27,9 +27,10 @@ public class CareerAdvisorClient {
 
     public List<JobEvaluationResult> evaluateJobs(CandidateDetails candidate, List<JobSummary> jobs) {
         JobEvaluationResponse response = this.chatClient.prompt()
-                /**AdvisorParams.ENABLE_NATIVE_STRUCTURED_OUTPUT은 LLM이 자유로운 텍스트가 아닌 JSON Schema
+                /* AdvisorParams.ENABLE_NATIVE_STRUCTURED_OUTPUT은 LLM이 자유로운 텍스트가 아닌 JSON Schema
                  * 기반의 구조화된 응답을 생성하도록 하여, Spring AI가 결과를 Java 객체(.entity())로
-                 * 안정적으로 변환할 수 있게 해주는 옵션*/
+                 * 안정적으로 변환할 수 있게 해주는 옵션
+                 */
                 .advisors(AdvisorParams.ENABLE_NATIVE_STRUCTURED_OUTPUT)
                 .system(this.prompts.evaluateJobs().system())
                 .user(spec -> spec.text(this.prompts.evaluateJobs().user())

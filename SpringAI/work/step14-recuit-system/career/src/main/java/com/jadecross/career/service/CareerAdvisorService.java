@@ -28,10 +28,10 @@ public class CareerAdvisorService {
         // 1. 후보자의 상세 정보를 가져온다.
         var candidate = this.candidateClient.getCandidateDetails(candidateId);
 
-        //2. 후보자의 스킬셋을 기반으로 관련된 일자리들을 검색한다.
-        var jobs = this.jobClient.searchBySkills(candidate.skills()); //ex) [Java, Spring Boot, Hibernate, AWS]
+        // 2. 후보자의 스킬셋을 기반으로 관련된 일자리들을 검색한다.
+        var jobs = this.jobClient.searchBySkills(candidate.skills()); // ex) [Java, Spring Boot, Hibernate, AWS]
 
-        //3. 각 일자리와 후보자의 매칭 점수를 계산한다.
+        // 3. 각 일자리와 후보자의 매칭 점수를 계산한다.
         return this.advisorClient.evaluateJobs(candidate, jobs)
                                  .stream()
                                  .sorted(Comparator.comparingInt(JobEvaluationResult::matchScore).reversed())
@@ -50,13 +50,13 @@ public class CareerAdvisorService {
     }
 
     public TailoredResume generateResume(Integer candidateId, Integer jobId) {
-        //1. 후보자 상세 정보를 가져온다.
+        // 1. 후보자 상세 정보를 가져온다.
         var candidate = this.candidateClient.getCandidateDetails(candidateId);
 
-        //2. jobId에 해당하는 일자이 상세정보 가져온다.
+        // 2. jobId에 해당하는 일자리 상세 정보를 가져온다.
         var job = this.jobClient.getJobDetails(jobId);
 
-        //3. 후보자 정보와 일자리 정보를 기반으로 맞춤형 이력서를 생성한다.
+        // 3. 후보자 정보와 일자리 정보를 기반으로 맞춤형 이력서를 생성한다.
         return this.advisorClient.generateResume(candidate, job);
     }
 

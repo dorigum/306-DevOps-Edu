@@ -55,6 +55,7 @@ public class ApplicationConfiguration {
                 this.getPromptSet("evaluate-jobs"),
                 this.getPromptSet("generate-resume")
         );
+
         return new CareerAdvisorClient(chatClient, prompts, jsonMapper);
     }
 
@@ -69,6 +70,7 @@ public class ApplicationConfiguration {
         try{
             var resource = this.resourceLoader.getResource(resourcePath);
             return resource.getContentAsString(Charset.defaultCharset());
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

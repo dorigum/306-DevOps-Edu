@@ -22,20 +22,19 @@ public class CareerAdvisorController {
         this.careerAdvisorService = careerAdvisorService;
     }
 
-    /**
+    /*
      * 예) http://localhost:8083/api/career-advisor/find-jobs?candidateId=1
-     *
-     * */
+     */
     @GetMapping("/find-jobs")
     public List<JobEvaluationResult> findJobs(@RequestParam Integer candidateId) {
         log.info("Finding jobs for candidateId: {}", candidateId);
         return this.careerAdvisorService.findJobs(candidateId);
     }
 
-    /**
+    /*
      * 후보자가 선택한 여러 개의 직업에 대해 비교 분석 결과를 반환하는 엔드포인트
-        * 예) http://localhost:8083/api/career-advisor/compare-jobs?candidateId=1&jobIds=1,2,3
-     * */
+     * 예) http://localhost:8083/api/career-advisor/compare-jobs?candidateId=1&jobIds=1,2,3
+     */
     @GetMapping("/compare-jobs")
     public JobsComparisonResult compareJobs(@RequestParam Integer candidateId, @RequestParam List<Integer> jobIds) {
         log.info("Comparing jobs for candidateId: {}, jobIds: {}", candidateId, jobIds);
@@ -47,5 +46,4 @@ public class CareerAdvisorController {
         log.info("Generating resume for candidateId: {}, jobId: {}", candidateId, jobId);
         return this.careerAdvisorService.generateResume(candidateId, jobId);
     }
-
 }
